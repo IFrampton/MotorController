@@ -1,11 +1,14 @@
-C:\GIT\Davis\BoardSupport/BspTimer.h:23:30:static long int BspTimer::GetFreeRunningCounter()	4	static
-C:\GIT\Davis\BoardSupport/BspGpio.h:29:23:static void BspGpio::On(unsigned char)	16	static
-C:\GIT\Davis\BoardSupport/BspGpio.h:30:23:static void BspGpio::Off(unsigned char)	16	static
-C:\GIT\Davis\Code/Loading.h:40:30:static void Loading::StartMeasuredSection(unsigned char)	24	static
-C:\GIT\Davis\Code/Loading.h:45:30:static void Loading::StopMeasuredSection(unsigned char)	32	static
-../Code/Main.cpp:24:5:int main()	8	static
-../Code/Main.cpp:32:6:static void Main::InitialBootup()	8	static
-../Code/Main.cpp:61:6:static void Main::IdleTask(long unsigned int)	24	static
-../Code/Main.cpp:95:6:static void Main::ToggleLed()	8	static
-../Code/Main.cpp:163:6:static void Main::CheckToWrite()	8	static
-../Code/Main.cpp:172:6:static void Main::HighPriTimer()	16	static
+C:\GIT\Davis\MotorController\BoardSupport/BspTimer.h:23:30:static long int BspTimer::GetFreeRunningCounter()	4	static
+C:\GIT\Davis\MotorController\BoardSupport/BspPwm.h:16:30:static void BspPwm::SetupCallback(void (*)())	16	static
+C:\GIT\Davis\MotorController\BoardSupport/BspPwm.h:17:30:static void BspPwm::UpdatePwm(unsigned char, long unsigned int*)	16	static
+C:\GIT\Davis\MotorController\BoardSupport/BspPwm.h:39:39:static long unsigned int BspPwm::GetFullRangeCount()	4	static
+C:\GIT\Davis\MotorController\BoardSupport/BspGpio.h:30:23:static void BspGpio::Off(unsigned char)	16	static
+C:\GIT\Davis\MotorController\Code/Loading.h:40:30:static void Loading::StartMeasuredSection(unsigned char)	24	static
+C:\GIT\Davis\MotorController\Code/Loading.h:45:30:static void Loading::StopMeasuredSection(unsigned char)	32	static
+../Code/Main.cpp:28:5:int main()	8	static
+../Code/Main.cpp:36:6:static void Main::InitialBootup()	16	static
+../Code/Main.cpp:86:6:static void Main::IdleTask(long unsigned int)	24	static
+../Code/Main.cpp:120:6:static void Main::ToggleLed()	8	static
+../Code/Main.cpp:190:6:static void Main::CheckToWrite()	8	static
+../Code/Main.cpp:199:6:static void Main::HighPriTimer()	16	static
+../Code/Main.cpp:209:6:static void Main::PwmUpdate()	16	static

@@ -5,6 +5,7 @@
 #include "BspPwm.h"
 #include "BspGpio.h"
 #include "BspFlash.h"
+#include "Protection.h"
 #include "MemoryStructure.h"
 #include "Loading.h"
 
@@ -16,6 +17,9 @@ unsigned long Main::_periodCounter = 0;
 unsigned long Main::_timePeriod = 0;
 
 unsigned char Main::_ledTracker = 0;
+
+unsigned long Main::_pwm[12];
+
 bool Main::_writeToFlash = false;
 
 
@@ -38,21 +42,42 @@ void Main::InitialBootup()
 	BspFlash::Initialize();
 	MemoryStructure::Initialize();
 	BspAnalog::Initialize();
-	BspPwm::Initialize();
+	BspPwm::Initialize(1000);
 	Loading::Initialize();
 	SlowTimer::Initialize();
 	BspGpio::Initialize();
+	Protection::Initialize();
 	// Setup GPIO
+#ifdef USE_LED_AS_DIGITAL
 	_digitalLeds[GREEN_LED] = BspGpio::SetupDigitalOutput(0, 18);
 	_digitalLeds[RED_LED] =   BspGpio::SetupDigitalOutput(0, 21);
 	_digitalLeds[BLUE_LED] =  BspGpio::SetupDigitalOutput(0, 22);
+#else
+	BspGpio::SetupGeneric(0, 18, 4); 	// ADC0_0
+	//BspGpio::SetupGeneric(0, 21, 0); 	// ADC0_0
+	_digitalLeds[RED_LED] =   BspGpio::SetupDigitalOutput(0, 21);
+	BspGpio::Off(_digitalLeds[RED_LED]);
+	BspGpio::SetupGeneric(0, 22, 4); 	// ADC0_0
+#endif
+	// Setup Analog
+	BspGpio::SetupGeneric(0, 23, 0, false, false, true); 	// ADC0_0
+	BspGpio::SetupGeneric(0, 10, 0, false, false, true); 	// ADC0_1
+	BspGpio::SetupGeneric(0, 15, 0, false, false, true); 	// ADC0_2
+	BspGpio::SetupGeneric(0, 31, 0, false, false, true); 	// ADC0_3
+	BspGpio::SetupGeneric(1, 8, 0, false, false, true); 	// ADC0_4
+	BspGpio::SetupGeneric(0, 16, 0, false, false, true);	// ADC0_8
+//	BspGpio::SetupGeneric(0, 11, 0, false, false, true);	// ADC0_9
+//	BspGpio::SetupGeneric(0, 12, 0, false, false, true);	// ADC0_10
+	BspGpio::SetupGeneric(1, 0, 0, false, false, true);		// ADC0_11
+	BspGpio::SetupGeneric(1, 9, 0, false, false, true);		// ADC0_12
 
 	// Setup Low Priority Tasks
-	SlowTimer::SetupTimer(10, ToggleLed);
+	SlowTimer::SetupTimer(1000, ToggleLed);
 	SlowTimer::SetupTimer(1000, CheckToWrite);
 
 	// Setup Timer (Temporary - for testing)
 	BspTimer::SetupTimer(960000, HighPriTimer);
+	BspPwm::SetupCallback(PwmUpdate);
 
 	// When finished initializing, call idle task (with Slow Timer operating at 100Hz)
 	IdleTask(1000);
@@ -95,6 +120,7 @@ void Main::IdleTask(unsigned long slowTimerFrequency)
 void Main::ToggleLed(void)
 {
 	Loading::StartMeasuredSection(1);
+#ifdef USE_LED_AS_DIGITAL
 	switch(_ledTracker)
 	{
 		case 0:
@@ -157,6 +183,7 @@ void Main::ToggleLed(void)
 	}
 	_ledTracker++;
 	_ledTracker &= 7;
+#endif
 	Loading::StopMeasuredSection(1);
 }
 
@@ -179,3 +206,22 @@ void Main::HighPriTimer(void)
 	Loading::StopMeasuredSection(2);
 }
 
+void Main::PwmUpdate(void)
+{
+	Loading::StartMeasuredSection(5);
+#ifndef USE_LED_AS_DIGITAL
+	_pwm[0] = 0;
+	long value = (float)BspPwm::GetFullRangeCount() * MemoryStructure::_memStruct.AnalogInputs.Analog.Data[0] / 3.3f;
+	if(value < 0)
+	value = 0;
+	_pwm[1] = value;
+	BspPwm::UpdatePwm(1,_pwm);
+	_pwm[0] = 0;
+	value = (float)BspPwm::GetFullRangeCount() * MemoryStructure::_memStruct.AnalogInputs.Analog.Data[1] / 3.3f;
+	if(value < 0)
+	value = 0;
+	_pwm[1] = value;
+#endif
+	BspPwm::UpdatePwm(3,_pwm);
+	Loading::StopMeasuredSection(5);
+}

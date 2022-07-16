@@ -20,6 +20,7 @@ class Main
 	private: static unsigned long _periodCounter;
 	private: static unsigned long _timePeriod;
 	private: static unsigned char _ledTracker;
+	private: static unsigned long _pwm[12];
 	private: static bool _writeToFlash;
 	/* Function Declarations */
 	public:  static void InitialBootup(void);
@@ -27,6 +28,7 @@ class Main
 	private: static void ToggleLed(void);
 	private: static void CheckToWrite(void);
 	private: static void HighPriTimer(void);
+	private: static void PwmUpdate(void);
 };
 extern "C"
 {

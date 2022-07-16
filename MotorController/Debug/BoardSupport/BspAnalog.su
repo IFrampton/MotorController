@@ -1,1 +1,9 @@
-../BoardSupport/BspAnalog.cpp:6:6:static void BspAnalog::Initialize()	4	static
+C:\GIT\Davis\MotorController\CMSIS/core_cm33.h:2127:22:void __NVIC_EnableIRQ(IRQn_Type)	16	static
+C:\GIT\Davis\MotorController\CMSIS/core_cm33.h:2324:22:void __NVIC_SetPriority(IRQn_Type, uint32_t)	16	static
+C:\GIT\Davis\MotorController\BoardSupport/BspTimer.h:23:30:static long int BspTimer::GetFreeRunningCounter()	4	static
+C:\GIT\Davis\MotorController\Code/Loading.h:40:30:static void Loading::StartMeasuredSection(unsigned char)	24	static
+C:\GIT\Davis\MotorController\Code/Loading.h:45:30:static void Loading::StopMeasuredSection(unsigned char)	32	static
+../BoardSupport/BspAnalog.cpp:9:6:static void BspAnalog::Initialize()	8	static
+../BoardSupport/BspAnalog.cpp:137:15:static unsigned char BspAnalog::Calibrate()	24	static
+../BoardSupport/BspAnalog.cpp:201:6:static void BspAnalog::DummyFunction()	4	static
+../BoardSupport/BspAnalog.cpp:208:6:void ADC0_IRQHandler()	32	static
