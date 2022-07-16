@@ -5,6 +5,7 @@
 #include "BspPwm.h"
 #include "BspGpio.h"
 #include "BspFlash.h"
+#include "Protection.h"
 #include "MemoryStructure.h"
 #include "Loading.h"
 
@@ -42,13 +43,25 @@ void Main::InitialBootup()
 	Loading::Initialize();
 	SlowTimer::Initialize();
 	BspGpio::Initialize();
+	Protection::Initialize();
 	// Setup GPIO
 	_digitalLeds[GREEN_LED] = BspGpio::SetupDigitalOutput(0, 18);
 	_digitalLeds[RED_LED] =   BspGpio::SetupDigitalOutput(0, 21);
 	_digitalLeds[BLUE_LED] =  BspGpio::SetupDigitalOutput(0, 22);
+	// Setup Analog
+	BspGpio::SetupGeneric(0, 23, 0, false, false, true); 	// ADC0_0
+	BspGpio::SetupGeneric(0, 10, 0, false, false, true); 	// ADC0_1
+	BspGpio::SetupGeneric(0, 15, 0, false, false, true); 	// ADC0_2
+	BspGpio::SetupGeneric(0, 31, 0, false, false, true); 	// ADC0_3
+	BspGpio::SetupGeneric(1, 8, 0, false, false, true); 	// ADC0_4
+	BspGpio::SetupGeneric(0, 16, 0, false, false, true);	// ADC0_8
+//	BspGpio::SetupGeneric(0, 11, 0, false, false, true);	// ADC0_9
+//	BspGpio::SetupGeneric(0, 12, 0, false, false, true);	// ADC0_10
+	BspGpio::SetupGeneric(1, 0, 0, false, false, true);		// ADC0_11
+	BspGpio::SetupGeneric(1, 9, 0, false, false, true);		// ADC0_12
 
 	// Setup Low Priority Tasks
-	SlowTimer::SetupTimer(10, ToggleLed);
+	SlowTimer::SetupTimer(1000, ToggleLed);
 	SlowTimer::SetupTimer(1000, CheckToWrite);
 
 	// Setup Timer (Temporary - for testing)
