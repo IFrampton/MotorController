@@ -39,6 +39,9 @@ void BspFlash::WriteConfig()
 	WritePage(FlashLocation, sizeof(MemoryStructure::_nvmStruct), (unsigned long *)&MemoryStructure::_nvmStruct);
 	//Enable Interrupts
 	NVIC_EnableIRQ(SCT0_IRQn);
+	// Write to flash
+	WritePage(FlashLocation, sizeof(MemoryStructure::_nvmStruct), (unsigned long *)&MemoryStructure::_nvmStruct);
+	//Enable Interrupts
 	NVIC_EnableIRQ(ADC0_IRQn);
 	NVIC_EnableIRQ(CTIMER0_IRQn);
 	NVIC_EnableIRQ(CTIMER1_IRQn);

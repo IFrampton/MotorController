@@ -6,7 +6,11 @@
  * Generated linker script file for LPC5502
  * Created from memory.ldt by FMCreateLinkMemory
  * Using Freemarker v2.3.30
+<<<<<<< HEAD
  * MCUXpresso IDE v11.5.1 [Build 7266] [2022-04-13] on Jul 17, 2022, 9:06:58 AM
+=======
+ * MCUXpresso IDE v11.5.1 [Build 7266] [2022-04-13] on Jul 16, 2022, 1:41:45 PM
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
  */
 
 MEMORY

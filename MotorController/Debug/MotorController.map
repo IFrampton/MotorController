@@ -69,8 +69,11 @@ Discarded input sections
  .bss           0x00000000        0x0 ./Device/startup_lpc5502.o
  .text.CTIMER0_IRQHandler
                 0x00000000        0x8 ./Device/startup_lpc5502.o
+<<<<<<< HEAD
  .text.SCT0_IRQHandler
                 0x00000000        0x8 ./Device/startup_lpc5502.o
+=======
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
  .text.ADC0_IRQHandler
                 0x00000000        0x8 ./Device/startup_lpc5502.o
  .debug_macro   0x00000000      0xb80 ./Device/startup_lpc5502.o
@@ -146,8 +149,11 @@ Discarded input sections
                 0x00000000       0x44 ./Code/Main.o
  .text._ZN7Loading19StopMeasuredSectionEh
                 0x00000000       0x68 ./Code/Main.o
+<<<<<<< HEAD
  .bss._ZN4Main11_ledTrackerE
                 0x00000000        0x1 ./Code/Main.o
+=======
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
  .debug_macro   0x00000000      0xb80 ./Code/Main.o
  .debug_macro   0x00000000       0x46 ./Code/Main.o
  .debug_macro   0x00000000      0x34e ./Code/Main.o
@@ -372,7 +378,11 @@ END GROUP
                 0x04004000                __top_SRAMX = 0x4004000
                 0x04004000                __top_RAM2 = 0x4004000
 
+<<<<<<< HEAD
 .text           0x00000000     0x2dfc
+=======
+.text           0x00000000     0x2abc
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
  FILL mask 0xff
                 0x00000000                __vectors_start__ = ABSOLUTE (.)
  *(SORT_BY_ALIGNMENT(.isr_vector))
@@ -382,16 +392,28 @@ END GROUP
                 0x00000134                . = ALIGN (0x4)
                 0x00000134                __section_table_start = .
                 0x00000134                __data_section_table = .
+<<<<<<< HEAD
                 0x00000134        0x4 LONG 0x2dfc LOADADDR (.data)
                 0x00000138        0x4 LONG 0x20000000 ADDR (.data)
                 0x0000013c        0x4 LONG 0x10 SIZEOF (.data)
                 0x00000140        0x4 LONG 0x2dfc LOADADDR (.data_RAM2)
+=======
+                0x00000134        0x4 LONG 0x2abc LOADADDR (.data)
+                0x00000138        0x4 LONG 0x20000000 ADDR (.data)
+                0x0000013c        0x4 LONG 0xc SIZEOF (.data)
+                0x00000140        0x4 LONG 0x2abc LOADADDR (.data_RAM2)
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
                 0x00000144        0x4 LONG 0x4000000 ADDR (.data_RAM2)
                 0x00000148        0x4 LONG 0x0 SIZEOF (.data_RAM2)
                 0x0000014c                __data_section_table_end = .
                 0x0000014c                __bss_section_table = .
+<<<<<<< HEAD
                 0x0000014c        0x4 LONG 0x20000010 ADDR (.bss)
                 0x00000150        0x4 LONG 0x320 SIZEOF (.bss)
+=======
+                0x0000014c        0x4 LONG 0x2000000c ADDR (.bss)
+                0x00000150        0x4 LONG 0x2f0 SIZEOF (.bss)
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
                 0x00000154        0x4 LONG 0x4000000 ADDR (.bss_RAM2)
                 0x00000158        0x4 LONG 0x0 SIZEOF (.bss_RAM2)
                 0x0000015c                __bss_section_table_end = .
@@ -530,6 +552,7 @@ END GROUP
  .text._ZN7Loading15UpdateEvery1SecEm
                 0x0000083c      0x120 ./Code/Loading.o
                 0x0000083c                Loading::UpdateEvery1Sec(unsigned long)
+<<<<<<< HEAD
  .text._ZN6BspPwm13SetupCallbackEPFvvE
                 0x0000095c       0x20 ./Code/Main.o
                 0x0000095c                BspPwm::SetupCallback(void (*)())
@@ -892,15 +915,369 @@ END GROUP
                 0x00002df0                _fini
  .fini          0x00002df4        0x8 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\crtn.o
                 0x00002dfc                . = ALIGN (0x4)
+=======
+ .text._ZN7BspGpio2OnEh
+                0x0000095c       0x34 ./Code/Main.o
+                0x0000095c                BspGpio::On(unsigned char)
+ .text._ZN7BspGpio3OffEh
+                0x00000990       0x34 ./Code/Main.o
+                0x00000990                BspGpio::Off(unsigned char)
+ .text._ZN4Main13InitialBootupEv
+                0x000009c4      0x13c ./Code/Main.o
+                0x000009c4                Main::InitialBootup()
+ .text._ZN4Main8IdleTaskEm
+                0x00000b00       0xd0 ./Code/Main.o
+                0x00000b00                Main::IdleTask(unsigned long)
+ .text._ZN4Main9ToggleLedEv
+                0x00000bd0      0x164 ./Code/Main.o
+                0x00000bd0                Main::ToggleLed()
+ .text._ZN4Main12CheckToWriteEv
+                0x00000d34       0x20 ./Code/Main.o
+                0x00000d34                Main::CheckToWrite()
+ .text._ZN9SlowTimer10InitializeEv
+                0x00000d54       0x70 ./Code/SlowTimer.o
+                0x00000d54                SlowTimer::Initialize()
+ .text._ZN9SlowTimer14PeriodicUpdateEm
+                0x00000dc4       0xc0 ./Code/SlowTimer.o
+                0x00000dc4                SlowTimer::PeriodicUpdate(unsigned long)
+ .text._ZN9SlowTimer10SetupTimerEmPFvvE
+                0x00000e84       0x6c ./Code/SlowTimer.o
+                0x00000e84                SlowTimer::SetupTimer(unsigned long, void (*)())
+ .text.__NVIC_EnableIRQ
+                0x00000ef0       0x3c ./BoardSupport/BspAnalog.o
+ .text.__NVIC_SetPriority
+                0x00000f2c       0x54 ./BoardSupport/BspAnalog.o
+ .text._ZN9BspAnalog10InitializeEv
+                0x00000f80      0x15c ./BoardSupport/BspAnalog.o
+                0x00000f80                BspAnalog::Initialize()
+ .text._ZN9BspAnalog9CalibrateEv
+                0x000010dc      0x138 ./BoardSupport/BspAnalog.o
+                0x000010dc                BspAnalog::Calibrate()
+ .text.ADC0_IRQHandler
+                0x00001214      0x20c ./BoardSupport/BspAnalog.o
+                0x00001214                ADC0_IRQHandler
+ .text.__NVIC_EnableIRQ
+                0x00001420       0x3c ./BoardSupport/BspFlash.o
+ .text.__NVIC_DisableIRQ
+                0x0000145c       0x48 ./BoardSupport/BspFlash.o
+ .text._ZN8BspFlash10InitializeEv
+                0x000014a4       0x7c ./BoardSupport/BspFlash.o
+                0x000014a4                BspFlash::Initialize()
+ .text._ZN8BspFlash11WriteConfigEv
+                0x00001520       0x60 ./BoardSupport/BspFlash.o
+                0x00001520                BspFlash::WriteConfig()
+ .text._ZN8BspFlash9WritePageEmmPm
+                0x00001580      0x1b4 ./BoardSupport/BspFlash.o
+                0x00001580                BspFlash::WritePage(unsigned long, unsigned long, unsigned long*)
+ .text._ZN7BspGpio18SetupDigitalOutputEhh
+                0x00001734       0xf4 ./BoardSupport/BspGpio.o
+                0x00001734                BspGpio::SetupDigitalOutput(unsigned char, unsigned char)
+ .text._ZN7BspGpio12SetupGenericEhhhbbb
+                0x00001828       0xa0 ./BoardSupport/BspGpio.o
+                0x00001828                BspGpio::SetupGeneric(unsigned char, unsigned char, unsigned char, bool, bool, bool)
+ .text._ZN6BspPwm10InitializeEv
+                0x000018c8       0x38 ./BoardSupport/BspPwm.o
+                0x000018c8                BspPwm::Initialize()
+ .text.__NVIC_EnableIRQ
+                0x00001900       0x3c ./BoardSupport/BspTimer.o
+ .text.__NVIC_SetPriority
+                0x0000193c       0x54 ./BoardSupport/BspTimer.o
+ .text._ZN8BspTimer10InitializeEv
+                0x00001990      0x158 ./BoardSupport/BspTimer.o
+                0x00001990                BspTimer::Initialize()
+ .text._ZN8BspTimer10SetupTimerEmPFvvE
+                0x00001ae8       0xf8 ./BoardSupport/BspTimer.o
+                0x00001ae8                BspTimer::SetupTimer(unsigned long, void (*)())
+ .text._ZN8BspTimer23SetupFreeRunningCounterEv
+                0x00001be0       0x34 ./BoardSupport/BspTimer.o
+                0x00001be0                BspTimer::SetupFreeRunningCounter()
+ .text.CTIMER0_IRQHandler
+                0x00001c14       0x74 ./BoardSupport/BspTimer.o
+                0x00001c14                CTIMER0_IRQHandler
+ .text          0x00001c88       0x30 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\libgcc.a(_aeabi_uldivmod.o)
+                0x00001c88                __aeabi_uldivmod
+ .text          0x00001cb8       0x40 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\libgcc.a(_fixunssfdi.o)
+                0x00001cb8                __fixunssfdi
+                0x00001cb8                __aeabi_f2ulz
+ .text          0x00001cf8      0x2ec c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x00001cf8                __udivmoddi4
+ .text          0x00001fe4      0x254 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\libgcc.a(_arm_muldf3.o)
+                0x00001fe4                __muldf3
+                0x00001fe4                __aeabi_dmul
+ .text          0x00002238        0x4 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\libgcc.a(_dvmd_tls.o)
+                0x00002238                __aeabi_idiv0
+                0x00002238                __aeabi_ldiv0
+ .text          0x0000223c      0x378 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\libgcc.a(_arm_addsubdf3.o)
+                0x0000223c                __aeabi_drsub
+                0x00002244                __aeabi_dsub
+                0x00002244                __subdf3
+                0x00002248                __aeabi_dadd
+                0x00002248                __adddf3
+                0x000024c0                __floatunsidf
+                0x000024c0                __aeabi_ui2d
+                0x000024e0                __floatsidf
+                0x000024e0                __aeabi_i2d
+                0x00002504                __aeabi_f2d
+                0x00002504                __extendsfdf2
+                0x00002548                __floatundidf
+                0x00002548                __aeabi_ul2d
+                0x00002558                __floatdidf
+                0x00002558                __aeabi_l2d
+ .text          0x000025b4       0x40 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\libgcc.a(_arm_fixunsdfsi.o)
+                0x000025b4                __aeabi_d2uiz
+                0x000025b4                __fixunsdfsi
+ .text.__libc_init_array
+                0x000025f4       0x48 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libc_nano.a(lib_a-init.o)
+                0x000025f4                __libc_init_array
+ .text          0x0000263c       0x40 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\crtbegin.o
+ .text._ZN10Protection5LogicEv
+                0x0000267c       0x2e ./Model/Protection.o
+                0x0000267c                Protection::Logic()
+ .text.WDT_BOD_IRQHandler
+                0x000026aa        0x8 ./Device/startup_lpc5502.o
+                0x000026aa                WDT_BOD_IRQHandler
+ .text.DMA0_IRQHandler
+                0x000026b2        0x8 ./Device/startup_lpc5502.o
+                0x000026b2                DMA0_IRQHandler
+ .text.GINT0_IRQHandler
+                0x000026ba        0x8 ./Device/startup_lpc5502.o
+                0x000026ba                GINT0_IRQHandler
+ .text.GINT1_IRQHandler
+                0x000026c2        0x8 ./Device/startup_lpc5502.o
+                0x000026c2                GINT1_IRQHandler
+ .text.PIN_INT0_IRQHandler
+                0x000026ca        0x8 ./Device/startup_lpc5502.o
+                0x000026ca                PIN_INT0_IRQHandler
+ .text.PIN_INT1_IRQHandler
+                0x000026d2        0x8 ./Device/startup_lpc5502.o
+                0x000026d2                PIN_INT1_IRQHandler
+ .text.PIN_INT2_IRQHandler
+                0x000026da        0x8 ./Device/startup_lpc5502.o
+                0x000026da                PIN_INT2_IRQHandler
+ .text.PIN_INT3_IRQHandler
+                0x000026e2        0x8 ./Device/startup_lpc5502.o
+                0x000026e2                PIN_INT3_IRQHandler
+ .text.UTICK0_IRQHandler
+                0x000026ea        0x8 ./Device/startup_lpc5502.o
+                0x000026ea                UTICK0_IRQHandler
+ .text.MRT0_IRQHandler
+                0x000026f2        0x8 ./Device/startup_lpc5502.o
+                0x000026f2                MRT0_IRQHandler
+ .text.CTIMER1_IRQHandler
+                0x000026fa        0x8 ./Device/startup_lpc5502.o
+                0x000026fa                CTIMER1_IRQHandler
+ .text.SCT0_IRQHandler
+                0x00002702        0x8 ./Device/startup_lpc5502.o
+                0x00002702                SCT0_IRQHandler
+ .text.CTIMER3_IRQHandler
+                0x0000270a        0x8 ./Device/startup_lpc5502.o
+                0x0000270a                CTIMER3_IRQHandler
+ .text.FLEXCOMM0_IRQHandler
+                0x00002712        0x8 ./Device/startup_lpc5502.o
+                0x00002712                FLEXCOMM0_IRQHandler
+ .text.FLEXCOMM1_IRQHandler
+                0x0000271a        0x8 ./Device/startup_lpc5502.o
+                0x0000271a                FLEXCOMM1_IRQHandler
+ .text.FLEXCOMM2_IRQHandler
+                0x00002722        0x8 ./Device/startup_lpc5502.o
+                0x00002722                FLEXCOMM2_IRQHandler
+ .text.FLEXCOMM3_IRQHandler
+                0x0000272a        0x8 ./Device/startup_lpc5502.o
+                0x0000272a                FLEXCOMM3_IRQHandler
+ .text.FLEXCOMM4_IRQHandler
+                0x00002732        0x8 ./Device/startup_lpc5502.o
+                0x00002732                FLEXCOMM4_IRQHandler
+ .text.FLEXCOMM5_IRQHandler
+                0x0000273a        0x8 ./Device/startup_lpc5502.o
+                0x0000273a                FLEXCOMM5_IRQHandler
+ .text.FLEXCOMM6_IRQHandler
+                0x00002742        0x8 ./Device/startup_lpc5502.o
+                0x00002742                FLEXCOMM6_IRQHandler
+ .text.FLEXCOMM7_IRQHandler
+                0x0000274a        0x8 ./Device/startup_lpc5502.o
+                0x0000274a                FLEXCOMM7_IRQHandler
+ .text.Reserved39_IRQHandler
+                0x00002752        0x8 ./Device/startup_lpc5502.o
+                0x00002752                Reserved39_IRQHandler
+ .text.ACMP_IRQHandler
+                0x0000275a        0x8 ./Device/startup_lpc5502.o
+                0x0000275a                ACMP_IRQHandler
+ .text.Reserved41_IRQHandler
+                0x00002762        0x8 ./Device/startup_lpc5502.o
+                0x00002762                Reserved41_IRQHandler
+ .text.Reserved42_IRQHandler
+                0x0000276a        0x8 ./Device/startup_lpc5502.o
+                0x0000276a                Reserved42_IRQHandler
+ .text.Reserved43_IRQHandler
+                0x00002772        0x8 ./Device/startup_lpc5502.o
+                0x00002772                Reserved43_IRQHandler
+ .text.Reserved44_IRQHandler
+                0x0000277a        0x8 ./Device/startup_lpc5502.o
+                0x0000277a                Reserved44_IRQHandler
+ .text.RTC_IRQHandler
+                0x00002782        0x8 ./Device/startup_lpc5502.o
+                0x00002782                RTC_IRQHandler
+ .text.Reserved46_IRQHandler
+                0x0000278a        0x8 ./Device/startup_lpc5502.o
+                0x0000278a                Reserved46_IRQHandler
+ .text.Reserved47_IRQHandler
+                0x00002792        0x8 ./Device/startup_lpc5502.o
+                0x00002792                Reserved47_IRQHandler
+ .text.PIN_INT4_IRQHandler
+                0x0000279a        0x8 ./Device/startup_lpc5502.o
+                0x0000279a                PIN_INT4_IRQHandler
+ .text.PIN_INT5_IRQHandler
+                0x000027a2        0x8 ./Device/startup_lpc5502.o
+                0x000027a2                PIN_INT5_IRQHandler
+ .text.PIN_INT6_IRQHandler
+                0x000027aa        0x8 ./Device/startup_lpc5502.o
+                0x000027aa                PIN_INT6_IRQHandler
+ .text.PIN_INT7_IRQHandler
+                0x000027b2        0x8 ./Device/startup_lpc5502.o
+                0x000027b2                PIN_INT7_IRQHandler
+ .text.CTIMER2_IRQHandler
+                0x000027ba        0x8 ./Device/startup_lpc5502.o
+                0x000027ba                CTIMER2_IRQHandler
+ .text.CTIMER4_IRQHandler
+                0x000027c2        0x8 ./Device/startup_lpc5502.o
+                0x000027c2                CTIMER4_IRQHandler
+ .text.OS_EVENT_IRQHandler
+                0x000027ca        0x8 ./Device/startup_lpc5502.o
+                0x000027ca                OS_EVENT_IRQHandler
+ .text.Reserved55_IRQHandler
+                0x000027d2        0x8 ./Device/startup_lpc5502.o
+                0x000027d2                Reserved55_IRQHandler
+ .text.Reserved56_IRQHandler
+                0x000027da        0x8 ./Device/startup_lpc5502.o
+                0x000027da                Reserved56_IRQHandler
+ .text.Reserved57_IRQHandler
+                0x000027e2        0x8 ./Device/startup_lpc5502.o
+                0x000027e2                Reserved57_IRQHandler
+ .text.Reserved58_IRQHandler
+                0x000027ea        0x8 ./Device/startup_lpc5502.o
+                0x000027ea                Reserved58_IRQHandler
+ .text.CAN0_IRQ0_IRQHandler
+                0x000027f2        0x8 ./Device/startup_lpc5502.o
+                0x000027f2                CAN0_IRQ0_IRQHandler
+ .text.CAN0_IRQ1_IRQHandler
+                0x000027fa        0x8 ./Device/startup_lpc5502.o
+                0x000027fa                CAN0_IRQ1_IRQHandler
+ .text.Reserved61_IRQHandler
+                0x00002802        0x8 ./Device/startup_lpc5502.o
+                0x00002802                Reserved61_IRQHandler
+ .text.Reserved62_IRQHandler
+                0x0000280a        0x8 ./Device/startup_lpc5502.o
+                0x0000280a                Reserved62_IRQHandler
+ .text.Reserved63_IRQHandler
+                0x00002812        0x8 ./Device/startup_lpc5502.o
+                0x00002812                Reserved63_IRQHandler
+ .text.Reserved64_IRQHandler
+                0x0000281a        0x8 ./Device/startup_lpc5502.o
+                0x0000281a                Reserved64_IRQHandler
+ .text.SEC_HYPERVISOR_CALL_IRQHandler
+                0x00002822        0x8 ./Device/startup_lpc5502.o
+                0x00002822                SEC_HYPERVISOR_CALL_IRQHandler
+ .text.SEC_GPIO_INT0_IRQ0_IRQHandler
+                0x0000282a        0x8 ./Device/startup_lpc5502.o
+                0x0000282a                SEC_GPIO_INT0_IRQ0_IRQHandler
+ .text.SEC_GPIO_INT0_IRQ1_IRQHandler
+                0x00002832        0x8 ./Device/startup_lpc5502.o
+                0x00002832                SEC_GPIO_INT0_IRQ1_IRQHandler
+ .text.PLU_IRQHandler
+                0x0000283a        0x8 ./Device/startup_lpc5502.o
+                0x0000283a                PLU_IRQHandler
+ .text.SEC_VIO_IRQHandler
+                0x00002842        0x8 ./Device/startup_lpc5502.o
+                0x00002842                SEC_VIO_IRQHandler
+ .text.Reserved70_IRQHandler
+                0x0000284a        0x8 ./Device/startup_lpc5502.o
+                0x0000284a                Reserved70_IRQHandler
+ .text.CASER_IRQHandler
+                0x00002852        0x8 ./Device/startup_lpc5502.o
+                0x00002852                CASER_IRQHandler
+ .text.PUF_IRQHandler
+                0x0000285a        0x8 ./Device/startup_lpc5502.o
+                0x0000285a                PUF_IRQHandler
+ .text.Reserved73_IRQHandler
+                0x00002862        0x8 ./Device/startup_lpc5502.o
+                0x00002862                Reserved73_IRQHandler
+ .text.DMA1_IRQHandler
+                0x0000286a        0x8 ./Device/startup_lpc5502.o
+                0x0000286a                DMA1_IRQHandler
+ .text.FLEXCOMM8_IRQHandler
+                0x00002872        0x8 ./Device/startup_lpc5502.o
+                0x00002872                FLEXCOMM8_IRQHandler
+ .text.CDOG_IRQHandler
+                0x0000287a        0x8 ./Device/startup_lpc5502.o
+                0x0000287a                CDOG_IRQHandler
+ .text.findPll0PreDiv
+                0x00002882       0x3e ./Device/system_LPC5502.o
+ .text.findPll0PostDiv
+                0x000028c0       0x62 ./Device/system_LPC5502.o
+ .text.findPll1PreDiv
+                0x00002922       0x3e ./Device/system_LPC5502.o
+ .text.findPll1PostDiv
+                0x00002960       0x62 ./Device/system_LPC5502.o
+ .text.findPll1MMult
+                0x000029c2       0x2e ./Device/system_LPC5502.o
+ .text.SystemInitHook
+                0x000029f0        0xe ./Device/system_LPC5502.o
+                0x000029f0                SystemInitHook
+ .text.main     0x000029fe       0x12 ./Code/Main.o
+                0x000029fe                main
+ .text._ZN4Main12HighPriTimerEv
+                0x00002a10       0x2e ./Code/Main.o
+                0x00002a10                Main::HighPriTimer()
+ .text._ZN9SlowTimer13DummyFunctionEv
+                0x00002a3e        0xe ./Code/SlowTimer.o
+                0x00002a3e                SlowTimer::DummyFunction()
+ .text._ZN9BspAnalog13DummyFunctionEv
+                0x00002a4c        0xe ./BoardSupport/BspAnalog.o
+                0x00002a4c                BspAnalog::DummyFunction()
+ .text._ZN7BspGpio10InitializeEv
+                0x00002a5a       0x36 ./BoardSupport/BspGpio.o
+                0x00002a5a                BspGpio::Initialize()
+ .text._ZN8BspTimer13DummyFunctionEv
+                0x00002a90        0xe ./BoardSupport/BspTimer.o
+                0x00002a90                BspTimer::DummyFunction()
+ *(SORT_BY_ALIGNMENT(.rodata) SORT_BY_ALIGNMENT(.rodata.*) SORT_BY_ALIGNMENT(.constdata) SORT_BY_ALIGNMENT(.constdata.*))
+                0x00002aa0                . = ALIGN (0x4)
+ *fill*         0x00002a9e        0x2 ff
+                0x00002aa0                . = ALIGN (0x4)
+ *(.init)
+ .init          0x00002aa0        0x4 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\crti.o
+                0x00002aa0                _init
+ .init          0x00002aa4        0x8 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\crtn.o
+                0x00002aac                . = ALIGN (0x4)
+                0x00002aac                __preinit_array_start = .
+ *(SORT_BY_ALIGNMENT(.preinit_array))
+                0x00002aac                __preinit_array_end = .
+                0x00002aac                . = ALIGN (0x4)
+                0x00002aac                __init_array_start = .
+ *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.init_array.*)))
+ *(SORT_BY_ALIGNMENT(.init_array))
+ .init_array    0x00002aac        0x4 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\crtbegin.o
+                0x00002ab0                __init_array_end = .
+ *(.fini)
+ .fini          0x00002ab0        0x4 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\crti.o
+                0x00002ab0                _fini
+ .fini          0x00002ab4        0x8 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\crtn.o
+                0x00002abc                . = ALIGN (0x4)
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
  *crtbegin.o(SORT_BY_ALIGNMENT(.ctors))
  *(SORT_BY_ALIGNMENT(EXCLUDE_FILE(*crtend.o) .ctors))
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.ctors.*)))
  *crtend.o(SORT_BY_ALIGNMENT(.ctors))
+<<<<<<< HEAD
                 0x00002dfc                . = ALIGN (0x4)
+=======
+                0x00002abc                . = ALIGN (0x4)
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
  *crtbegin.o(SORT_BY_ALIGNMENT(.dtors))
  *(SORT_BY_ALIGNMENT(EXCLUDE_FILE(*crtend.o) .dtors))
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.dtors.*)))
  *crtend.o(SORT_BY_ALIGNMENT(.dtors))
+<<<<<<< HEAD
                 0x00002dfc                . = ALIGN (0x4)
                 0x00002dfc                _etext = .
 
@@ -920,6 +1297,27 @@ END GROUP
  .iplt          0x00002dfc        0x0 ./Model/MemoryStructure.o
 
 .data_RAM2      0x04000000        0x0 load address 0x00002dfc
+=======
+                0x00002abc                . = ALIGN (0x4)
+                0x00002abc                _etext = .
+
+.glue_7         0x00002abc        0x0
+ .glue_7        0x00002abc        0x0 linker stubs
+
+.glue_7t        0x00002abc        0x0
+ .glue_7t       0x00002abc        0x0 linker stubs
+
+.vfp11_veneer   0x00002abc        0x0
+ .vfp11_veneer  0x00002abc        0x0 linker stubs
+
+.v4_bx          0x00002abc        0x0
+ .v4_bx         0x00002abc        0x0 linker stubs
+
+.iplt           0x00002abc        0x0
+ .iplt          0x00002abc        0x0 ./Model/MemoryStructure.o
+
+.data_RAM2      0x04000000        0x0 load address 0x00002abc
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
  FILL mask 0xff
                 [!provide]                PROVIDE (__start_data_RAM2 = .)
                 [!provide]                PROVIDE (__start_data_SRAMX = .)
@@ -940,7 +1338,11 @@ END GROUP
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _end_uninit_RESERVED = .
 
+<<<<<<< HEAD
 .data           0x20000000       0x10 load address 0x00002dfc
+=======
+.data           0x20000000        0xc load address 0x00002abc
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
  FILL mask 0xff
                 0x20000000                _data = .
                 [!provide]                PROVIDE (__start_data_RAM = .)
@@ -960,6 +1362,7 @@ END GROUP
  .data._ZN9BspAnalog9_callbackE
                 0x20000008        0x4 ./BoardSupport/BspAnalog.o
                 0x20000008                BspAnalog::_callback
+<<<<<<< HEAD
  .data._ZN6BspPwm9_callbackE
                 0x2000000c        0x4 ./BoardSupport/BspPwm.o
                 0x2000000c                BspPwm::_callback
@@ -970,6 +1373,15 @@ END GROUP
 
 .igot.plt       0x20000010        0x0 load address 0x00002e0c
  .igot.plt      0x20000010        0x0 ./Model/MemoryStructure.o
+=======
+                0x2000000c                . = ALIGN (0x4)
+                0x2000000c                _edata = .
+                [!provide]                PROVIDE (__end_data_RAM = .)
+                [!provide]                PROVIDE (__end_data_SRAM0 = .)
+
+.igot.plt       0x2000000c        0x0 load address 0x00002ac8
+ .igot.plt      0x2000000c        0x0 ./Model/MemoryStructure.o
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
 
 .bss_RAM2       0x04000000        0x0
                 [!provide]                PROVIDE (__start_bss_RAM2 = .)
@@ -982,12 +1394,18 @@ END GROUP
                 [!provide]                PROVIDE (__end_bss_RAM2 = .)
                 [!provide]                PROVIDE (__end_bss_SRAMX = .)
 
+<<<<<<< HEAD
 .bss            0x20000010      0x320
                 0x20000010                _bss = .
+=======
+.bss            0x2000000c      0x2f0
+                0x2000000c                _bss = .
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
                 [!provide]                PROVIDE (__start_bss_RAM = .)
                 [!provide]                PROVIDE (__start_bss_SRAM0 = .)
  *(SORT_BY_ALIGNMENT(.bss*))
  .bss._ZN15MemoryStructure10_memStructE
+<<<<<<< HEAD
                 0x20000010       0xd0 ./Model/MemoryStructure.o
                 0x20000010                MemoryStructure::_memStruct
  .bss._ZN15MemoryStructure10_nvmStructE
@@ -1065,6 +1483,84 @@ END GROUP
                 0x20000330                . = ALIGN (0x4)
  *fill*         0x2000032f        0x1 
                 0x20000330                _ebss = .
+=======
+                0x2000000c       0xd0 ./Model/MemoryStructure.o
+                0x2000000c                MemoryStructure::_memStruct
+ .bss._ZN15MemoryStructure10_nvmStructE
+                0x200000dc       0x5c ./Model/MemoryStructure.o
+                0x200000dc                MemoryStructure::_nvmStruct
+ .bss._ZN7Loading5_dataE
+                0x20000138        0x4 ./Code/Loading.o
+                0x20000138                Loading::_data
+ .bss._ZN4Main12_digitalLedsE
+                0x2000013c        0x3 ./Code/Main.o
+                0x2000013c                Main::_digitalLeds
+ *fill*         0x2000013f        0x1 
+ .bss._ZN4Main25_counterValueOnLastUpdateE
+                0x20000140        0x4 ./Code/Main.o
+                0x20000140                Main::_counterValueOnLastUpdate
+ .bss._ZN4Main16_idleTaskCounterE
+                0x20000144        0x4 ./Code/Main.o
+                0x20000144                Main::_idleTaskCounter
+ .bss._ZN4Main14_periodCounterE
+                0x20000148        0x4 ./Code/Main.o
+                0x20000148                Main::_periodCounter
+ .bss._ZN4Main11_timePeriodE
+                0x2000014c        0x4 ./Code/Main.o
+                0x2000014c                Main::_timePeriod
+ .bss._ZN9SlowTimer11_slowTimersE
+                0x20000150       0x60 ./Code/SlowTimer.o
+                0x20000150                SlowTimer::_slowTimers
+ .bss._ZN9BspAnalog7_configE
+                0x200001b0        0x4 ./BoardSupport/BspAnalog.o
+                0x200001b0                BspAnalog::_config
+ .bss._ZN7BspGpio5_gpioE
+                0x200001b4       0x80 ./BoardSupport/BspGpio.o
+                0x200001b4                BspGpio::_gpio
+ .bss._ZN8BspTimer10_timerDataE
+                0x20000234       0xa0 ./BoardSupport/BspTimer.o
+                0x20000234                BspTimer::_timerData
+ .bss           0x200002d4       0x1c c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\crtbegin.o
+ .bss._ZN7Loading12_initializedE
+                0x200002f0        0x1 ./Code/Loading.o
+                0x200002f0                Loading::_initialized
+ .bss._ZN4Main11_ledTrackerE
+                0x200002f1        0x1 ./Code/Main.o
+                0x200002f1                Main::_ledTracker
+ .bss._ZN4Main13_writeToFlashE
+                0x200002f2        0x1 ./Code/Main.o
+                0x200002f2                Main::_writeToFlash
+ .bss._ZN9SlowTimer10_nextTimerE
+                0x200002f3        0x1 ./Code/SlowTimer.o
+                0x200002f3                SlowTimer::_nextTimer
+ .bss._ZN9SlowTimer12_initializedE
+                0x200002f4        0x1 ./Code/SlowTimer.o
+                0x200002f4                SlowTimer::_initialized
+ .bss._ZN9BspAnalog12_initializedE
+                0x200002f5        0x1 ./BoardSupport/BspAnalog.o
+                0x200002f5                BspAnalog::_initialized
+ .bss._ZN9BspAnalog9_channel4E
+                0x200002f6        0x1 ./BoardSupport/BspAnalog.o
+                0x200002f6                BspAnalog::_channel4
+ .bss._ZN8BspFlash12_initializedE
+                0x200002f7        0x1 ./BoardSupport/BspFlash.o
+                0x200002f7                BspFlash::_initialized
+ .bss._ZN7BspGpio7_nextIoE
+                0x200002f8        0x1 ./BoardSupport/BspGpio.o
+                0x200002f8                BspGpio::_nextIo
+ .bss._ZN6BspPwm12_initializedE
+                0x200002f9        0x1 ./BoardSupport/BspPwm.o
+                0x200002f9                BspPwm::_initialized
+ .bss._ZN8BspTimer10_nextTimerE
+                0x200002fa        0x1 ./BoardSupport/BspTimer.o
+                0x200002fa                BspTimer::_nextTimer
+ .bss._ZN8BspTimer12_initializedE
+                0x200002fb        0x1 ./BoardSupport/BspTimer.o
+                0x200002fb                BspTimer::_initialized
+ *(SORT_BY_ALIGNMENT(COMMON))
+                0x200002fc                . = ALIGN (0x4)
+                0x200002fc                _ebss = .
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
                 [!provide]                PROVIDE (__end_bss_RAM = .)
                 [!provide]                PROVIDE (__end_bss_SRAM0 = .)
                 [!provide]                PROVIDE (end = .)
@@ -1080,6 +1576,7 @@ END GROUP
                 [!provide]                PROVIDE (__end_noinit_RAM2 = .)
                 [!provide]                PROVIDE (__end_noinit_SRAMX = .)
 
+<<<<<<< HEAD
 .noinit         0x20000330        0x0
                 0x20000330                _noinit = .
                 [!provide]                PROVIDE (__start_noinit_RAM = .)
@@ -1087,12 +1584,22 @@ END GROUP
  *(SORT_BY_ALIGNMENT(.noinit*))
                 0x20000330                . = ALIGN (0x4)
                 0x20000330                _end_noinit = .
+=======
+.noinit         0x200002fc        0x0
+                0x200002fc                _noinit = .
+                [!provide]                PROVIDE (__start_noinit_RAM = .)
+                [!provide]                PROVIDE (__start_noinit_SRAM0 = .)
+ *(SORT_BY_ALIGNMENT(.noinit*))
+                0x200002fc                . = ALIGN (0x4)
+                0x200002fc                _end_noinit = .
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
                 [!provide]                PROVIDE (__end_noinit_RAM = .)
                 [!provide]                PROVIDE (__end_noinit_SRAM0 = .)
 
 .ARM.extab
  *(SORT_BY_ALIGNMENT(.ARM.extab*) SORT_BY_ALIGNMENT(.gnu.linkonce.armextab.*))
 
+<<<<<<< HEAD
 .ARM.exidx      0x00002e0c        0x8
                 0x00002e0c                __exidx_start = .
  *(SORT_BY_ALIGNMENT(.ARM.exidx*) SORT_BY_ALIGNMENT(.gnu.linkonce.armexidx.*))
@@ -1118,6 +1625,33 @@ END GROUP
                 0x20000b30      0x800
                 0x20001330                . = (. + _StackSize)
  *fill*         0x20000b30      0x800 
+=======
+.ARM.exidx      0x00002ac8        0x8
+                0x00002ac8                __exidx_start = .
+ *(SORT_BY_ALIGNMENT(.ARM.exidx*) SORT_BY_ALIGNMENT(.gnu.linkonce.armexidx.*))
+ .ARM.exidx     0x00002ac8        0x8 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x00002ad0                __exidx_end = .
+                0x00000800                _HeapSize = 0x800
+
+.rel.dyn        0x00002ad0        0x0
+ .rel.iplt      0x00002ad0        0x0 ./Model/MemoryStructure.o
+
+.eh_frame       0x00002ad0        0x0
+ .eh_frame      0x00002ad0        0x0 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\crtbegin.o
+
+.heap           0x200002fc      0x800
+                0x200002fc                _pvHeapStart = .
+                0x20000afc                . = (. + _HeapSize)
+ *fill*         0x200002fc      0x800 
+                0x20000afc                . = ALIGN (0x4)
+                0x20000afc                _pvHeapLimit = .
+                0x00000800                _StackSize = 0x800
+
+.heap2stackfill
+                0x20000afc      0x800
+                0x200012fc                . = (. + _StackSize)
+ *fill*         0x20000afc      0x800 
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
 
 .stack          0x20007800        0x0
                 0x20007800                _vStackBase = .
@@ -1125,17 +1659,27 @@ END GROUP
                 0x20008000                _vStackTop = (. + _StackSize)
                 [!provide]                PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (ResetISR + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
                 0x00000000                _image_start = LOADADDR (.text)
+<<<<<<< HEAD
                 0x00002e0c                _image_end = (LOADADDR (.data) + SIZEOF (.data))
                 0x00002e0c                _image_size = (_image_end - _image_start)
 OUTPUT(MotorController.axf elf32-littlearm)
 LOAD linker stubs
 
 .debug_info     0x00000000     0xa35f
+=======
+                0x00002ac8                _image_end = (LOADADDR (.data) + SIZEOF (.data))
+                0x00002ac8                _image_size = (_image_end - _image_start)
+OUTPUT(MotorController.axf elf32-littlearm)
+LOAD linker stubs
+
+.debug_info     0x00000000     0x8e61
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
  .debug_info    0x00000000      0x536 ./Model/MemoryStructure.o
  .debug_info    0x00000536      0x4b0 ./Model/Protection.o
  .debug_info    0x000009e6      0x71d ./Device/startup_lpc5502.o
  .debug_info    0x00001103     0x1549 ./Device/system_LPC5502.o
  .debug_info    0x0000264c      0x245 ./Code/Loading.o
+<<<<<<< HEAD
  .debug_info    0x00002891     0x1307 ./Code/Main.o
  .debug_info    0x00003b98      0x212 ./Code/SlowTimer.o
  .debug_info    0x00003daa     0x1c44 ./BoardSupport/BspAnalog.o
@@ -1145,11 +1689,23 @@ LOAD linker stubs
  .debug_info    0x00008ce9     0x1676 ./BoardSupport/BspTimer.o
 
 .debug_abbrev   0x00000000     0x1ba5
+=======
+ .debug_info    0x00002891      0xba4 ./Code/Main.o
+ .debug_info    0x00003435      0x212 ./Code/SlowTimer.o
+ .debug_info    0x00003647     0x1c44 ./BoardSupport/BspAnalog.o
+ .debug_info    0x0000528b      0x752 ./BoardSupport/BspFlash.o
+ .debug_info    0x000059dd     0x114a ./BoardSupport/BspGpio.o
+ .debug_info    0x00006b27      0xcc4 ./BoardSupport/BspPwm.o
+ .debug_info    0x000077eb     0x1676 ./BoardSupport/BspTimer.o
+
+.debug_abbrev   0x00000000     0x19ab
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
  .debug_abbrev  0x00000000      0x1b2 ./Model/MemoryStructure.o
  .debug_abbrev  0x000001b2      0x267 ./Model/Protection.o
  .debug_abbrev  0x00000419      0x15d ./Device/startup_lpc5502.o
  .debug_abbrev  0x00000576      0x1e7 ./Device/system_LPC5502.o
  .debug_abbrev  0x0000075d      0x159 ./Code/Loading.o
+<<<<<<< HEAD
  .debug_abbrev  0x000008b6      0x3d8 ./Code/Main.o
  .debug_abbrev  0x00000c8e      0x181 ./Code/SlowTimer.o
  .debug_abbrev  0x00000e0f      0x356 ./BoardSupport/BspAnalog.o
@@ -1159,6 +1715,17 @@ LOAD linker stubs
  .debug_abbrev  0x000018ba      0x2eb ./BoardSupport/BspTimer.o
 
 .debug_aranges  0x00000000      0x5c0
+=======
+ .debug_abbrev  0x000008b6      0x347 ./Code/Main.o
+ .debug_abbrev  0x00000bfd      0x181 ./Code/SlowTimer.o
+ .debug_abbrev  0x00000d7e      0x356 ./BoardSupport/BspAnalog.o
+ .debug_abbrev  0x000010d4      0x247 ./BoardSupport/BspFlash.o
+ .debug_abbrev  0x0000131b      0x26f ./BoardSupport/BspGpio.o
+ .debug_abbrev  0x0000158a      0x136 ./BoardSupport/BspPwm.o
+ .debug_abbrev  0x000016c0      0x2eb ./BoardSupport/BspTimer.o
+
+.debug_aranges  0x00000000      0x588
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
  .debug_aranges
                 0x00000000       0x30 ./Model/MemoryStructure.o
  .debug_aranges
@@ -1170,6 +1737,7 @@ LOAD linker stubs
  .debug_aranges
                 0x00000370       0x28 ./Code/Loading.o
  .debug_aranges
+<<<<<<< HEAD
                 0x00000398       0x88 ./Code/Main.o
  .debug_aranges
                 0x00000420       0x38 ./Code/SlowTimer.o
@@ -1185,11 +1753,29 @@ LOAD linker stubs
                 0x00000570       0x50 ./BoardSupport/BspTimer.o
 
 .debug_ranges   0x00000000      0x500
+=======
+                0x00000398       0x70 ./Code/Main.o
+ .debug_aranges
+                0x00000408       0x38 ./Code/SlowTimer.o
+ .debug_aranges
+                0x00000440       0x60 ./BoardSupport/BspAnalog.o
+ .debug_aranges
+                0x000004a0       0x40 ./BoardSupport/BspFlash.o
+ .debug_aranges
+                0x000004e0       0x38 ./BoardSupport/BspGpio.o
+ .debug_aranges
+                0x00000518       0x20 ./BoardSupport/BspPwm.o
+ .debug_aranges
+                0x00000538       0x50 ./BoardSupport/BspTimer.o
+
+.debug_ranges   0x00000000      0x4c8
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
  .debug_ranges  0x00000000       0x20 ./Model/MemoryStructure.o
  .debug_ranges  0x00000020       0x38 ./Model/Protection.o
  .debug_ranges  0x00000058      0x260 ./Device/startup_lpc5502.o
  .debug_ranges  0x000002b8       0x78 ./Device/system_LPC5502.o
  .debug_ranges  0x00000330       0x18 ./Code/Loading.o
+<<<<<<< HEAD
  .debug_ranges  0x00000348       0x78 ./Code/Main.o
  .debug_ranges  0x000003c0       0x28 ./Code/SlowTimer.o
  .debug_ranges  0x000003e8       0x50 ./BoardSupport/BspAnalog.o
@@ -1197,6 +1783,15 @@ LOAD linker stubs
  .debug_ranges  0x00000468       0x28 ./BoardSupport/BspGpio.o
  .debug_ranges  0x00000490       0x30 ./BoardSupport/BspPwm.o
  .debug_ranges  0x000004c0       0x40 ./BoardSupport/BspTimer.o
+=======
+ .debug_ranges  0x00000348       0x60 ./Code/Main.o
+ .debug_ranges  0x000003a8       0x28 ./Code/SlowTimer.o
+ .debug_ranges  0x000003d0       0x50 ./BoardSupport/BspAnalog.o
+ .debug_ranges  0x00000420       0x30 ./BoardSupport/BspFlash.o
+ .debug_ranges  0x00000450       0x28 ./BoardSupport/BspGpio.o
+ .debug_ranges  0x00000478       0x10 ./BoardSupport/BspPwm.o
+ .debug_ranges  0x00000488       0x40 ./BoardSupport/BspTimer.o
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
 
 .debug_macro    0x00000000    0x1259d
  .debug_macro   0x00000000       0xa7 ./Model/MemoryStructure.o
@@ -1226,12 +1821,17 @@ LOAD linker stubs
  .debug_macro   0x0001248b       0x89 ./BoardSupport/BspPwm.o
  .debug_macro   0x00012514       0x89 ./BoardSupport/BspTimer.o
 
+<<<<<<< HEAD
 .debug_line     0x00000000     0x326e
+=======
+.debug_line     0x00000000     0x2f60
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
  .debug_line    0x00000000      0x278 ./Model/MemoryStructure.o
  .debug_line    0x00000278      0x302 ./Model/Protection.o
  .debug_line    0x0000057a      0x6c3 ./Device/startup_lpc5502.o
  .debug_line    0x00000c3d      0x5d5 ./Device/system_LPC5502.o
  .debug_line    0x00001212      0x335 ./Code/Loading.o
+<<<<<<< HEAD
  .debug_line    0x00001547      0x561 ./Code/Main.o
  .debug_line    0x00001aa8      0x139 ./Code/SlowTimer.o
  .debug_line    0x00001be1      0x61b ./BoardSupport/BspAnalog.o
@@ -1241,6 +1841,17 @@ LOAD linker stubs
  .debug_line    0x00002e90      0x3de ./BoardSupport/BspTimer.o
 
 .debug_str      0x00000000    0x8ff11
+=======
+ .debug_line    0x00001547      0x511 ./Code/Main.o
+ .debug_line    0x00001a58      0x139 ./Code/SlowTimer.o
+ .debug_line    0x00001b91      0x633 ./BoardSupport/BspAnalog.o
+ .debug_line    0x000021c4      0x4df ./BoardSupport/BspFlash.o
+ .debug_line    0x000026a3      0x317 ./BoardSupport/BspGpio.o
+ .debug_line    0x000029ba      0x1c8 ./BoardSupport/BspPwm.o
+ .debug_line    0x00002b82      0x3de ./BoardSupport/BspTimer.o
+
+.debug_str      0x00000000    0x8fbd0
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
  .debug_str     0x00000000    0x8c35e ./Model/MemoryStructure.o
                               0x8c53d (size before relaxing)
  .debug_str     0x0008c35e      0x209 ./Model/Protection.o
@@ -1251,6 +1862,7 @@ LOAD linker stubs
                               0x8db56 (size before relaxing)
  .debug_str     0x0008eda7       0x73 ./Code/Loading.o
                               0x8c26b (size before relaxing)
+<<<<<<< HEAD
  .debug_str     0x0008ee1a      0x82b ./Code/Main.o
                               0x8cf01 (size before relaxing)
  .debug_str     0x0008f645       0x71 ./Code/SlowTimer.o
@@ -1264,6 +1876,21 @@ LOAD linker stubs
  .debug_str     0x0008fe1a       0x5c ./BoardSupport/BspPwm.o
                               0x8d192 (size before relaxing)
  .debug_str     0x0008fe76       0x9b ./BoardSupport/BspTimer.o
+=======
+ .debug_str     0x0008ee1a      0x511 ./Code/Main.o
+                              0x8cb7d (size before relaxing)
+ .debug_str     0x0008f32b       0x71 ./Code/SlowTimer.o
+                               0x3343 (size before relaxing)
+ .debug_str     0x0008f39c      0x593 ./BoardSupport/BspAnalog.o
+                              0x8d488 (size before relaxing)
+ .debug_str     0x0008f92f      0x10a ./BoardSupport/BspFlash.o
+                              0x8c716 (size before relaxing)
+ .debug_str     0x0008fa39       0xc7 ./BoardSupport/BspGpio.o
+                              0x8ca1a (size before relaxing)
+ .debug_str     0x0008fb00       0x35 ./BoardSupport/BspPwm.o
+                              0x8c876 (size before relaxing)
+ .debug_str     0x0008fb35       0x9b ./BoardSupport/BspTimer.o
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
                               0x8d045 (size before relaxing)
 
 .comment        0x00000000       0x49
@@ -1330,12 +1957,17 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000044e       0x38 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\crtbegin.o
 
+<<<<<<< HEAD
 .debug_frame    0x00000000     0x1390
+=======
+.debug_frame    0x00000000     0x1290
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
  .debug_frame   0x00000000       0x7c ./Model/MemoryStructure.o
  .debug_frame   0x0000007c       0xe8 ./Model/Protection.o
  .debug_frame   0x00000164      0x6b4 ./Device/startup_lpc5502.o
  .debug_frame   0x00000818      0x210 ./Device/system_LPC5502.o
  .debug_frame   0x00000a28       0x58 ./Code/Loading.o
+<<<<<<< HEAD
  .debug_frame   0x00000a80      0x1f8 ./Code/Main.o
  .debug_frame   0x00000c78       0xa4 ./Code/SlowTimer.o
  .debug_frame   0x00000d1c      0x16c ./BoardSupport/BspAnalog.o
@@ -1350,6 +1982,22 @@ LOAD linker stubs
  .debug_frame   0x00001294       0xac c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\libgcc.a(_arm_addsubdf3.o)
  .debug_frame   0x00001340       0x24 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\libgcc.a(_arm_fixunsdfsi.o)
  .debug_frame   0x00001364       0x2c c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libc_nano.a(lib_a-init.o)
+=======
+ .debug_frame   0x00000a80      0x18c ./Code/Main.o
+ .debug_frame   0x00000c0c       0xa4 ./Code/SlowTimer.o
+ .debug_frame   0x00000cb0      0x16c ./BoardSupport/BspAnalog.o
+ .debug_frame   0x00000e1c       0xcc ./BoardSupport/BspFlash.o
+ .debug_frame   0x00000ee8       0xac ./BoardSupport/BspGpio.o
+ .debug_frame   0x00000f94       0x30 ./BoardSupport/BspPwm.o
+ .debug_frame   0x00000fc4      0x110 ./BoardSupport/BspTimer.o
+ .debug_frame   0x000010d4       0x2c c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x00001100       0x2c c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\libgcc.a(_fixunssfdi.o)
+ .debug_frame   0x0000112c       0x38 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x00001164       0x30 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\libgcc.a(_arm_muldf3.o)
+ .debug_frame   0x00001194       0xac c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x00001240       0x24 c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v8-m.main+fp/hard\libgcc.a(_arm_fixunsdfsi.o)
+ .debug_frame   0x00001264       0x2c c:/nxp/mcuxpressoide_11.5.1_7266/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.5.1.202201181444/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libc_nano.a(lib_a-init.o)
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
 
 Cross Reference Table
 
@@ -1500,7 +2148,10 @@ MemoryStructure::Initialize()                     ./Model/MemoryStructure.o
                                                   ./Code/Main.o
 MemoryStructure::_memStruct                       ./Model/MemoryStructure.o
                                                   ./BoardSupport/BspAnalog.o
+<<<<<<< HEAD
                                                   ./Code/Main.o
+=======
+>>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
 MemoryStructure::_nvmStruct                       ./Model/MemoryStructure.o
                                                   ./BoardSupport/BspFlash.o
 NMI_Handler                                       ./Device/startup_lpc5502.o
