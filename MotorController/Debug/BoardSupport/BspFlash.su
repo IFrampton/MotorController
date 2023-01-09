@@ -2,8 +2,4 @@ C:\GIT\Davis\MotorController\CMSIS/core_cm33.h:2127:22:void __NVIC_EnableIRQ(IRQ
 C:\GIT\Davis\MotorController\CMSIS/core_cm33.h:2165:22:void __NVIC_DisableIRQ(IRQn_Type)	16	static
 ../BoardSupport/BspFlash.cpp:6:6:static void BspFlash::Initialize()	32	static
 ../BoardSupport/BspFlash.cpp:28:6:static void BspFlash::WriteConfig()	8	static
-<<<<<<< HEAD
 ../BoardSupport/BspFlash.cpp:50:15:static unsigned char BspFlash::WritePage(long unsigned int, long unsigned int, long unsigned int*)	32	static
-=======
-../BoardSupport/BspFlash.cpp:48:15:static unsigned char BspFlash::WritePage(long unsigned int, long unsigned int, long unsigned int*)	32	static
->>>>>>> b191c1bfa6c668a684b0400705b2ed4b0aa55c43
