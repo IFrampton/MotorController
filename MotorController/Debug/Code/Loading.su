@@ -1,0 +1,2 @@
+../Code/Loading.cpp:7:6:static void Loading::Initialize()	4	static
+../Code/Loading.cpp:18:6:static void Loading::UpdateEvery1Sec(long unsigned int)	32	static

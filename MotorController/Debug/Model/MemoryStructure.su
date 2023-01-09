@@ -1,0 +1,3 @@
+C:\GIT\Davis\MotorController\Code/Loading.h:39:23:static void Loading::LinkMemorySpace(Loading::LoadingData*)	16	static
+C:\GIT\Davis\MotorController\BoardSupport/BspAnalog.h:31:23:static void BspAnalog::LinkMemorySpace(BspAnalog::AnalogConfig*)	16	static
+../Model/MemoryStructure.cpp:6:6:static void MemoryStructure::Initialize()	8	static
