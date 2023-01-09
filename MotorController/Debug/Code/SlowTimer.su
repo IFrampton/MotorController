@@ -1,4 +1,0 @@
-../Code/SlowTimer.cpp:7:6:static void SlowTimer::Initialize()	16	static
-../Code/SlowTimer.cpp:18:6:static void SlowTimer::PeriodicUpdate(long unsigned int)	24	static
-../Code/SlowTimer.cpp:39:15:static unsigned char SlowTimer::SetupTimer(long unsigned int, void (*)())	24	static
-../Code/SlowTimer.cpp:55:6:static void SlowTimer::DummyFunction()	4	static

@@ -1,4 +1,0 @@
-../BoardSupport/BspGpio.cpp:8:6:static void BspGpio::Initialize()	4	static
-../BoardSupport/BspGpio.cpp:17:15:static unsigned char BspGpio::SetupDigitalInput(unsigned char, unsigned char)	32	static
-../BoardSupport/BspGpio.cpp:37:15:static unsigned char BspGpio::SetupDigitalOutput(unsigned char, unsigned char)	32	static
-../BoardSupport/BspGpio.cpp:56:6:static void BspGpio::SetupGeneric(unsigned char, unsigned char, unsigned char, bool, bool, bool)	24	static
