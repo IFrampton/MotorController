@@ -56,7 +56,7 @@ char BspTimer::Setup(long clockCycles, void (*funct)(void), unsigned char pri, b
 				(0  <<  7)	|	// ARPE = 0; TIMx_ARR is not buffered
 			(oneShot<<  3)	|	// OPM = configured; One Pulse mode is set in function call
 				(1  <<  2)	|	// URS = 1; Update request source is only a counter overflow / underflow
-				(0  <<  1)	|	// UEV = 0; Update event is enabled
+				(0  <<  1)	|	// UDIS = 0; Update event (UEV) is enabled
 				(1  <<  0)	;	// CEN = 1; Counter enabled
 	tim->CR2 = 0;
 	tim->DIER = (0  <<  8)	|	// UDE = 0; Update DMA request disabled

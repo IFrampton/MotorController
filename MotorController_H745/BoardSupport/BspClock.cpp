@@ -94,7 +94,7 @@ void BspClock::Initialize(long extFreq, long cpuFreq)
 					(0  << 20) |	// DIVQ2EN = 0; PLL2 DIVQ divider output enable (output is disabled)
 					(0  << 19) |	// DIVP2EN = 0; PLL2 DIVP divider output enable (output is disabled)
 					(0  << 18) |	// DIVR1EN = 0; PLL1 DIVR divider output enable (output is disabled)
-					(0  << 17) |	// DIVQ1EN = 0; PLL1 DIVQ divider output enable (output is disabled)
+					(1  << 17) |	// DIVQ1EN = 0; PLL1 DIVQ divider output enable (output is disabled)
 					(1  << 16) |	// DIVP1EN = 0; PLL1 DIVP divider output enable (output is disabled)
 					(2  << 10) |	// PLL3RGE = 2; PLL3 input frequency range (0 = 1-2MHz, 1 = 2-4MHz, 2 = 4-8Mhz, 3 = 8-16MHz)
 					(0  <<  9) |	// PLL3VCOSEL = 1; PLL3 VCO Selection (0 = wide range (192-960MHz), 1 = medium range (150-420MHz)
@@ -109,7 +109,7 @@ void BspClock::Initialize(long extFreq, long cpuFreq)
 	RCC->PLL1DIVR = (3  << 24) |	// DIVR1 = 3; (PLL1 DIVR division factor = 4) // Gives 240MHz
 					(3  << 16) |	// DIVQ1 = 3; (PLL1 DIVQ division factor = 4) // Gives 240MHz
 					(1  <<  9) |	// DIVP1 = 1; (PLL1 DIVP division factor = 2) // Gives 480MHz
-					(59 <<  0) ;	// DIVN1 = 59; (PLL1 DIVN division factor = 59, generates HSE X 60 frequency = 480MHz)
+		/*59*/		(49 <<  0) ;	// DIVN1 = 59; (PLL1 DIVN division factor = 59, generates HSE X 60 frequency = 480MHz)
 
 	RCC->D1CCIPR = 	(2  << 28) |	// CKPERSEL = 2; per_ck source selection (0 = HSI, 1 = CSI, 2 = HSE, 3 = none)
 					(0  << 16) |	// SDMMCSEL = 0; SDMMC kernel clock source selection (use PLL1_q_CLK)

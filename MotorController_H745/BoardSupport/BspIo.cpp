@@ -64,7 +64,7 @@ void BspIo::Initialize(void)
 	InitAltFunction(6, 9, 5);	// I_1_MISO
 	// SPI2
 	InitAltFunction(3, 3, 5);	// I_2_SCLK
-	InitAltFunction(2, 1, 5);	// I_2_MISO
+	InitAltFunction(2, 2, 5);	// I_2_MISO
 	// SPI3
 	InitAltFunction(2, 10, 6);	// I_3_SCLK
 	InitAltFunction(1, 4, 6);	// I_3_MISO
@@ -253,10 +253,10 @@ void BspIo::InitAltFunction(char port, unsigned char pin, char alternate)
 	gp->MODER &= ~(3 << (pin << 1));
 	gp->MODER |= (2 << (pin << 1));
 	// Set speed to very high speed
-	gp->OSPEEDR |= (3 << pin);
+	gp->OSPEEDR |= (3 << (pin << 1));
 	// disable pulldown and pullup
-	gp->PUPDR &= ~(3 << pin);
-	gp->PUPDR |= (0 << pin);
+	gp->PUPDR &= ~(3 << (pin << 1));
+	gp->PUPDR |= (0 << (pin << 1));
 	// Set alternate function
 	unsigned char reg = pin >> 3;
 	alternate &= 0xF;
