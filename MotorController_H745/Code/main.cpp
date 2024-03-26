@@ -7,7 +7,8 @@
 #include "BspSpi.h"
 #include "Motor.h"
 
-#define SEND_GIBBERISH
+//#define SEND_GIBBERISH
+#define EXPECT_REAL_DATA
 
 unsigned long _dummyVariable[4] = {0, 0, 0, 0};
 unsigned long _gibberish[16] =
@@ -30,7 +31,7 @@ unsigned short _timeStamp = 0;
 bool _toggle = false;
 unsigned short _currents[3][8] = {{0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0}};
 unsigned char _currentLoc[3] = {0, 0, 0};
-unsigned long _updatePeriod = 120000;
+unsigned long _updatePeriod = 100000;
 bool _tggle = false;
 
 char _txHnd = -2;
@@ -103,11 +104,10 @@ int main(void)
 		if(elapsedTime > _updatePeriod)
 		{
 			elapsedTime -= _updatePeriod;
-#if 1
 			if(BspCan::CheckForNewData(_hndl))
 			{
 				BspCan::GetData(_hndl, &_identifier, &_length, _data, &_extended, &_error, &_timeStamp);
-				if((_identifier == (0x0101 << 18)) && (_extended == false) && (_length == 8))
+				if((_identifier == (0x101 << 18)) && (_extended == false) && (_length == 8))
 				{
 					unsigned short data = _data[0] & 0xFFFF;
 					if(data < 0xFFFF)
@@ -141,16 +141,16 @@ int main(void)
 				case 0:
 				{
 					unsigned short data = (unsigned short)(Motor::_motorInputs.BusVoltage * 50.0f);
-					_txData[0] = data;
+					_txData[1] = data;
 					data = (unsigned short)(Motor::_motorOutputs.Voltage[0] * 50.0f);
-					_txData[0] <<= 16;
-					_txData[0] += data;
-					data = (unsigned short)(Motor::_motorOutputs.Voltage[1] * 50.0f);
-					_txData[1] += data;
-					data = (unsigned short)(Motor::_motorOutputs.Voltage[2] * 50.0f);
 					_txData[1] <<= 16;
 					_txData[1] += data;
-					BspCan::Transmit(_txHnd, 0x0200, &_txData[0], 8, false);
+					data = (unsigned short)(Motor::_motorOutputs.Voltage[1] * 50.0f);
+					_txData[0] += data;
+					data = (unsigned short)(Motor::_motorOutputs.Voltage[2] * 50.0f);
+					_txData[0] <<= 16;
+					_txData[0] += data;
+					BspCan::Transmit(_txHnd, 0x200, &_txData[0], 8, false);
 					_canMessage++;
 					break;
 				}
@@ -158,16 +158,27 @@ int main(void)
 				case 1:
 				{
 					unsigned short data = 0xFFFF;
-					_txData[0] = data;
+					_txData[1] = data;
+#ifdef EXPECT_REAL_DATA
 					data = (unsigned short)(Motor::_motorInputs.Current[0] * 50.0f + 32767.0f);
-					_txData[0] <<= 16;
-					_txData[0] += data;
-					data = (unsigned short)(Motor::_motorInputs.Current[1] * 50.0f + 32767.0f);
-					_txData[1] += data;
-					data = (unsigned short)(Motor::_motorInputs.Current[2] * 50.0f + 32767.0f);
 					_txData[1] <<= 16;
 					_txData[1] += data;
-					BspCan::Transmit(_txHnd, 0x0201, &_txData[0], 8, false);
+					data = (unsigned short)(Motor::_motorInputs.Current[1] * 50.0f + 32767.0f);
+					_txData[0] += data;
+					data = (unsigned short)(Motor::_motorInputs.Current[2] * 50.0f + 32767.0f);
+					_txData[0] <<= 16;
+					_txData[0] += data;
+#else
+					data = (unsigned short)(Motor::_motorInputs.Current[0] * 1.0f + 0.0f);
+					_txData[1] <<= 16;
+					_txData[1] += data;
+					data = (unsigned short)(Motor::_motorInputs.Current[1] * 1.0f + 0.0f);
+					_txData[0] += data;
+					data = (unsigned short)(Motor::_motorInputs.Current[2] * 1.0f + 0.0f);
+					_txData[0] <<= 16;
+					_txData[0] += data;
+#endif
+					BspCan::Transmit(_txHnd, 0x201, &_txData[0], 8, false);
 					_canMessage++;
 					break;
 				}
@@ -176,21 +187,20 @@ int main(void)
 				default:
 				{
 					unsigned short data = (unsigned short)(Motor::_motorOutputs.Amplitude * 10000.0f + 32767.0f);
-					_txData[0] = data;
+					_txData[1] = data;
 					data = (unsigned short)(Motor::_motorOutputs.Frequency * 10.0f);
-					_txData[0] <<= 16;
-					_txData[0] += data;
-					data = (unsigned short)(Motor::_motorOutputs.RealCurrent * 50.0f + 32767.0f);
-					_txData[1] += data;
-					data = (unsigned short)(Motor::_motorOutputs.ReactiveCurrent * 50.0f + 32767.0f);
 					_txData[1] <<= 16;
 					_txData[1] += data;
-					BspCan::Transmit(_txHnd, 0x0202, &_txData[0], 8, false);
+					data = (unsigned short)(Motor::_motorOutputs.RealCurrent * 50.0f + 32767.0f);
+					_txData[0] += data;
+					data = (unsigned short)(Motor::_motorOutputs.ReactiveCurrent * 50.0f + 32767.0f);
+					_txData[0] <<= 16;
+					_txData[0] += data;
+					BspCan::Transmit(_txHnd, 0x202, &_txData[0], 8, false);
 					_canMessage = 0;
 					break;
 				}
 			}
-#endif
 		}
 #ifdef SEND_GIBBERISH
 #ifdef FORCE_TOGGLE

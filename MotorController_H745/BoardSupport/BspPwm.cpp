@@ -140,7 +140,7 @@ void BspPwm::SetupFixedPwm(unsigned char timer, unsigned long frequency, unsigne
 
 void BspPwm::SetupSwitchPwm(unsigned long frequency, unsigned short deadtime, void (*funct)(void), unsigned char pri)
 {
-	unsigned long period = (CpuClockSpeed) / (frequency >> 2);
+	unsigned long period = (CpuClockSpeed) / (frequency >> 1);
 	// Setup Timer
 	TIM1->CR1 = (0  << 11)	|	// UIFREMAP = 0; UIF status bit not copied to TIMx_CNT bit 31
 				(0  <<  8)	|	// CKD = 0; Clock Division is not enabled (t_DTS = t_ck_int)

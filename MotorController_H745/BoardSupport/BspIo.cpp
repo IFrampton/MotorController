@@ -18,6 +18,23 @@ void BspIo::Initialize(void)
 	RCC->AHB4ENR |= 0x7FF;
 	RCC_C2->AHB4ENR |= 0x7FF;
 
+	// Turn on the analog multiplexer
+	SYSCFG->PMCR =  (0  << 27)	|	// PC3SO = 0; PC3 switch open (0 = closed)
+					(0  << 26)	|	// PC2SO = 0; PC2 switch open (0 = closed)
+					(0  << 25)	|	// PA1SO = 0; PA1 switch open (0 = closed)
+					(0  << 24)	|	// PA0SO = 0; PA0 switch open (0 = closed)
+					(0  << 21)	|	// EPIS = 0; Ethernet PHY Interface Selection (0 = Ethernet uses MII)
+					(1  <<  9)	|	// BOOSTVDDSEL = 1; Analog switch supply voltage selection (1 = VDD)
+					(1  <<  8)	|	// BOOSTE = 1; Booster Enable (1 = booster enabled)
+					(0  <<  7)	|	// PB9FMP = 0; PB(9) FM+ (0 = FM+ disabled)
+					(0  <<  6)	|	// PB8FMP = 0; PB(8) FM+ (0 = FM+ disabled)
+					(0  <<  5)	|	// PB7FMP = 0; PB(7) FM+ (0 = FM+ disabled)
+					(0  <<  4)	|	// PB6FMP = 0; PB(6) FM+ (0 = FM+ disabled)
+					(0  <<  3)	|	// I2C4FMP = 0; I2C4 FM+ (0 = FM+ disabled)
+					(0  <<  2)	|	// I2C3FMP = 0; I2C3 FM+ (0 = FM+ disabled)
+					(0  <<  1)	|	// I2C2FMP = 0; I2C2 FM+ (0 = FM+ disabled)
+					(0  <<  0)	;	// I2C1FMP = 0; I2C1 FM+ (0 = FM+ disabled)
+
 	// Setup Each Function on the Controller
 
 	// Setup Analog Inputs.
