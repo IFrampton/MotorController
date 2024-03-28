@@ -34,6 +34,15 @@ void BspClock::Initialize(long extFreq, long cpuFreq)
 				(0  <<  1) |	// LDOEN = 0; Low dropout regulator disabled
 				(0  <<  0) ;	// BYPASS = 1; Power management unit bypass (bypassed, voltage monitoring still active)
 
+	//Allow High Speed Mode
+#ifdef SPEED_400MHz
+	PWR->D3CR = (3  << 14) |	// VOS = 3; Voltage Scaling selection according to performance (0 = reserved, 1 = VOS3, 2 = VOS2 3 = VOS1)
+				(0  << 13) ;	// VOSRDY = 0; The USB Vdd33ESB voltage level detector is disabled
+#else
+	PWR->D3CR = (1  << 14) |	// VOS = 3; Voltage Scaling selection according to performance (0 = reserved, 1 = VOS3, 2 = VOS2 3 = VOS1)
+				(0  << 13) ;	// VOSRDY = 0; The USB Vdd33ESB voltage level detector is disabled
+#endif
+
 	/*
 	// Datasheet Page 375
 	Initialize the PLLs registers according to the required frequency.
@@ -83,7 +92,7 @@ void BspClock::Initialize(long extFreq, long cpuFreq)
 
 	// Set PLL Ratios
 	RCC->PLLCKSELR = (0  << 20) |	// DIVM3 = 0; Disable PLL3 (not in use) to save power
-					 (0  << 12) |	// DIVM2 = 0; Disable PLL2 (not in use) to save power
+					 (1  << 12) |	// DIVM2 = 0; Disable PLL2 (not in use) to save power
 					 (1  <<  4) |	// DIVM1 = 1; Set PLL1 to external oscillator (8MHz)
 					 (2  <<  0) ;	// PLLSRC = 2; (0 = HSI, 1 = CSI, 2 = HSE, 3 = none)
 
@@ -92,24 +101,36 @@ void BspClock::Initialize(long extFreq, long cpuFreq)
 					(0  << 22) |	// DIVP3EN = 0; PLL3 DIVP divider output enable (output is disabled)
 					(0  << 21) |	// DIVR2EN = 0; PLL2 DIVR divider output enable (output is disabled)
 					(0  << 20) |	// DIVQ2EN = 0; PLL2 DIVQ divider output enable (output is disabled)
-					(0  << 19) |	// DIVP2EN = 0; PLL2 DIVP divider output enable (output is disabled)
+					(1  << 19) |	// DIVP2EN = 0; PLL2 DIVP divider output enable (output is disabled)
 					(0  << 18) |	// DIVR1EN = 0; PLL1 DIVR divider output enable (output is disabled)
 					(1  << 17) |	// DIVQ1EN = 0; PLL1 DIVQ divider output enable (output is disabled)
 					(1  << 16) |	// DIVP1EN = 0; PLL1 DIVP divider output enable (output is disabled)
 					(2  << 10) |	// PLL3RGE = 2; PLL3 input frequency range (0 = 1-2MHz, 1 = 2-4MHz, 2 = 4-8Mhz, 3 = 8-16MHz)
-					(0  <<  9) |	// PLL3VCOSEL = 1; PLL3 VCO Selection (0 = wide range (192-960MHz), 1 = medium range (150-420MHz)
+					(0  <<  9) |	// PLL3VCOSEL = 0; PLL3 VCO Selection (0 = wide range (192-960MHz), 1 = medium range (150-420MHz)
 					(0  <<  8) |	// PLL3FRACEN = 0; PLL3 fractional latch enable (latch is disabled)
-					(2  <<  6) |	// PLL2RGE = 2; PLL3 input frequency range (0 = 1-2MHz, 1 = 2-4MHz, 2 = 4-8Mhz, 3 = 8-16MHz)
-					(0  <<  5) |	// PLL2VCOSEL = 1; PLL3 VCO Selection (0 = wide range (192-960MHz), 1 = medium range (150-420MHz)
-					(0  <<  4) |	// PLL2FRACEN = 0; PLL3 fractional latch enable (latch is disabled)
-					(2  <<  2) |	// PLL1RGE = 2; PLL3 input frequency range (0 = 1-2MHz, 1 = 2-4MHz, 2 = 4-8Mhz, 3 = 8-16MHz)
-					(0  <<  1) |	// PLL1VCOSEL = 1; PLL3 VCO Selection (0 = wide range (192-960MHz), 1 = medium range (150-420MHz)
-					(0  <<  0) ;	// PLL1FRACEN = 0; PLL3 fractional latch enable (latch is disabled)
+					(2  <<  6) |	// PLL2RGE = 2; PLL2 input frequency range (0 = 1-2MHz, 1 = 2-4MHz, 2 = 4-8Mhz, 3 = 8-16MHz)
+					(0  <<  5) |	// PLL2VCOSEL = 0; PLL2 VCO Selection (0 = wide range (192-960MHz), 1 = medium range (150-420MHz)
+					(0  <<  4) |	// PLL2FRACEN = 0; PLL2 fractional latch enable (latch is disabled)
+					(2  <<  2) |	// PLL1RGE = 2; PLL1 input frequency range (0 = 1-2MHz, 1 = 2-4MHz, 2 = 4-8Mhz, 3 = 8-16MHz)
+					(0  <<  1) |	// PLL1VCOSEL = 0; PLL1 VCO Selection (0 = wide range (192-960MHz), 1 = medium range (150-420MHz)
+					(0  <<  0) ;	// PLL1FRACEN = 0; PLL1 fractional latch enable (latch is disabled)
 
-	RCC->PLL1DIVR = (3  << 24) |	// DIVR1 = 3; (PLL1 DIVR division factor = 4) // Gives 240MHz
-					(3  << 16) |	// DIVQ1 = 3; (PLL1 DIVQ division factor = 4) // Gives 240MHz
-					(1  <<  9) |	// DIVP1 = 1; (PLL1 DIVP division factor = 2) // Gives 480MHz
-		/*59*/		(49 <<  0) ;	// DIVN1 = 59; (PLL1 DIVN division factor = 59, generates HSE X 60 frequency = 480MHz)
+#ifdef SPEED_400MHz
+	RCC->PLL1DIVR = (1  << 24) |	// DIVR1 = 1; (PLL1 DIVR division factor = 2) // Gives 200MHz
+					(1  << 16) |	// DIVQ1 = 1; (PLL1 DIVQ division factor = 2) // Gives 200MHz
+					(0  <<  9) |	// DIVP1 = 0; (PLL1 DIVP division factor = 1) // Gives 400MHz
+		/*59*/		(99 <<  0) ;	// DIVN1 = 49; (PLL1 DIVN division factor = 49, generates HSE X 50 frequency = 400MHz)
+#else
+	RCC->PLL1DIVR = (3  << 24) |	// DIVR1 = 3; (PLL1 DIVR division factor = 4) // Gives 100MHz
+					(3  << 16) |	// DIVQ1 = 3; (PLL1 DIVQ division factor = 4) // Gives 100MHz
+					(1  <<  9) |	// DIVP1 = 1; (PLL1 DIVP division factor = 2) // Gives 200MHz
+		/*59*/		(49 <<  0) ;	// DIVN1 = 49; (PLL1 DIVN division factor = 49, generates HSE X 50 frequency = 400MHz)
+#endif
+
+	RCC->PLL2DIVR = (3  << 24) |	// DIVR1 = 3; (PLL2 DIVR division factor = 4) // Gives 100MHz
+					(3  << 16) |	// DIVQ1 = 3; (PLL2 DIVQ division factor = 4) // Gives 100MHz
+					(3  <<  9) |	// DIVP1 = 3; (PLL2 DIVP division factor = 4) // Gives 100MHz
+					(49 <<  0) ;	// DIVN1 = 49; (PLL2 DIVN division factor = 59, generates HSE X 50 frequency = 400MHz)
 
 	RCC->D1CCIPR = 	(2  << 28) |	// CKPERSEL = 2; per_ck source selection (0 = HSI, 1 = CSI, 2 = HSE, 3 = none)
 					(0  << 16) |	// SDMMCSEL = 0; SDMMC kernel clock source selection (use PLL1_q_CLK)
@@ -128,7 +149,7 @@ void BspClock::Initialize(long extFreq, long cpuFreq)
 
 	// Enable relevant PLLs
 	RCC->CR |= (1 << 24); // PLL1
-	//RCC->CR |= (1 << 26); // PLL2
+	RCC->CR |= (1 << 26); // PLL2
 	//RCC->CR |= (1 << 28); // PLL3
 
 	while(!(RCC->CR & (1<<25)))

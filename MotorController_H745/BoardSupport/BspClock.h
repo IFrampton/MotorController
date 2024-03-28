@@ -5,6 +5,14 @@
 #ifndef BSPCLOCK_H
 #define BSPCLOCK_H
 
+//#define SPEED_400MHz
+
+#ifdef SPEED_400MHz
+#define CpuClockFrequency 200000000
+#else
+#define CpuClockFrequency 100000000
+#endif
+
 #ifdef __cplusplus
 class BspClock
 {

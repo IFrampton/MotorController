@@ -39,16 +39,25 @@ void Motor::Initialize(void)
 	_analogConfig.ExternalOffset[2] = 0;
 	_analogConfig.ExternalScaleFactor[2] = 1.0f;
 #endif
-	_motorConfig.MotorVoltsPerHz = 60.0f;
-	_motorConfig.FrequencyRampRate = 10.0f;
-	_motorConfig.FrequencyTarget = 100.0f;
+	_motorConfig.MotorVoltsPerHz = 19.0f;
+	_motorConfig.FrequencyRampRate = 1.0f;
+	_motorConfig.FrequencyTarget = 10.0f;
+	_motorConfig.Offset = 0.002f;
 #endif
 
+#ifdef METERING_BOARD_REV2
 	BspAnalog::SetupChannel(0, 14, &_analogChannels[ANA_V_BUS]);
-	//BspAnalog::SetupChannel(0, 15, &_analogChannels[ANA_V_A]);
-	//BspAnalog::SetupChannel(0, 19, &_analogChannels[ANA_V_B]);
-	//BspAnalog::SetupChannel(0, 3,  &_analogChannels[ANA_V_C]);
-	//BspAnalog::SetupChannel(0, 7,  &_analogChannels[ANA_I_IN]);
+	BspAnalog::SetupChannel(0, 15, &_analogChannels[ANA_V_A]);
+	BspAnalog::SetupChannel(0, 19, &_analogChannels[ANA_V_B]);
+	BspAnalog::SetupChannel(0, 3,  &_analogChannels[ANA_V_C]);
+	BspAnalog::SetupChannel(0, 7,  &_analogChannels[ANA_I_IN]);
+#else
+	BspAnalog::SetupChannel(0, 7, &_analogChannels[ANA_V_BUS]);
+	BspAnalog::SetupChannel(0, 3, &_analogChannels[ANA_V_A]);
+	BspAnalog::SetupChannel(0, 19, &_analogChannels[ANA_V_B]);
+	BspAnalog::SetupChannel(0, 15,  &_analogChannels[ANA_V_C]);
+	BspAnalog::SetupChannel(0, 14,  &_analogChannels[ANA_I_IN]);
+#endif
 	//BspAnalog::SetupChannel(0, 4,  &_analogChannels[ANA_T_1]);
 	//BspAnalog::SetupChannel(0, 8,  &_analogChannels[ANA_T_2]);
 	//BspAnalog::SetupChannel(0, 9,  &_analogChannels[ANA_RSLV_SIN]);
@@ -63,6 +72,7 @@ void Motor::Initialize(void)
 	unsigned short pwmPeriod = BspPwm::GetSwitchPeriod();
 	_periodFactor = (float)pwmPeriod * 0.5f;
 	_halfPeriod = pwmPeriod >> 1;
+	BspAnalog::StartConversion();
 }
 
 void Motor::Logic()
@@ -75,7 +85,7 @@ void Motor::Logic()
 	float busVoltage = BspAnalog::GetFastSingleSample(&_analogChannels[ANA_V_BUS]);
 	_motorInputs.BusVoltage = busVoltage;
 	float motorBackEmf = _motorOutputs.Frequency * _motorConfig.MotorVoltsPerHz;
-	float amplitude = motorBackEmf / busVoltage;
+	float amplitude = motorBackEmf / busVoltage + _motorConfig.Offset;
 	if(amplitude > 1.0f)
 	{
 		amplitude = 1.0f;
@@ -119,20 +129,20 @@ void Motor::Logic()
 	}
 	SineTable::Sine_3Phase(_motorOutputs.Phase, _motorOutputs.Point);
 	_motorOutputs.Voltage[0] = _motorOutputs.Point[0] * motorBackEmf;
-	_motorOutputs.Voltage[1] = _motorOutputs.Point[1] * motorBackEmf;
 	_motorOutputs.Voltage[1] = _motorOutputs.Point[2] * motorBackEmf;
+	_motorOutputs.Voltage[2] = _motorOutputs.Point[1] * motorBackEmf;
 	_motorOutputs.RealCurrent = _motorOutputs.Point[0] * _motorInputs.Current[0] +
-								_motorOutputs.Point[1] * _motorInputs.Current[1] +
-								_motorOutputs.Point[2] * _motorInputs.Current[2];
-	_motorOutputs.ReactiveCurrent = ((_motorOutputs.Point[0] - _motorOutputs.Point[1]) *  _motorInputs.Current[2] +
-									 (_motorOutputs.Point[1] - _motorOutputs.Point[2]) *  _motorInputs.Current[0] +
-									 (_motorOutputs.Point[2] - _motorOutputs.Point[0]) *  _motorInputs.Current[1]) * (1.0f / 1.73205f);
+								_motorOutputs.Point[2] * _motorInputs.Current[1] +
+								_motorOutputs.Point[1] * _motorInputs.Current[2];
+	_motorOutputs.ReactiveCurrent = ((_motorOutputs.Point[0] - _motorOutputs.Point[2]) *  _motorInputs.Current[2] +
+									 (_motorOutputs.Point[2] - _motorOutputs.Point[1]) *  _motorInputs.Current[0] +
+									 (_motorOutputs.Point[1] - _motorOutputs.Point[0]) *  _motorInputs.Current[1]) * (1.0f / 1.73205f);
 	float ampFactor =  _motorOutputs.Amplitude * _periodFactor;
 	unsigned short period = (_motorOutputs.Point[0] * ampFactor) + _halfPeriod;
 	BspPwm::SetSwitchDutyCycle(0, period);
-	period = (_motorOutputs.Point[1] * ampFactor) + _halfPeriod;
-	BspPwm::SetSwitchDutyCycle(1, period);
 	period = (_motorOutputs.Point[2] * ampFactor) + _halfPeriod;
+	BspPwm::SetSwitchDutyCycle(1, period);
+	period = (_motorOutputs.Point[1] * ampFactor) + _halfPeriod;
 	BspPwm::SetSwitchDutyCycle(2, period);
 }
 

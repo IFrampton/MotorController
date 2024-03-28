@@ -36,11 +36,14 @@ class BspAnalog
 			long *Offset;
 			float *ScaleFactor;
 	};
-	private: static long AnalogDataBuffer[3][19];
+	private: static long _analogDataBuffer[3][19];
 	private: static bool _initialized;
 	private: static unsigned char _nextChannel[3];
+	private: static unsigned char _dmaRxChannel[3];
+	private: static unsigned char _dmaTxChannel;
 	public:  static void InitializeAdc(void);
 	public:  static unsigned char SetupChannel(char converter, char channel, AnalogType *channelData);
+	public:  static void StartConversion(void) {ADC1->CR |= (1 << 2);}
 
 	//private: static volatile unsigned short *_spiData[3];
 	//private: static volatile unsigned char *_spiDataReady[3];

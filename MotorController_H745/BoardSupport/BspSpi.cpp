@@ -5,6 +5,7 @@
  *      Author: Isaac Frampton
  */
 
+#include "BspClock.h"
 #include "BspSpi.h"
 
 
@@ -12,6 +13,8 @@
 
 char BspSpi::Initialize(char port, unsigned long bitRate, volatile unsigned short **dataReg, volatile unsigned char **newDataFlag, unsigned short **readComplete)
 {
+	RCC->D2CCIP1R &= ~(3 << 12);
+	RCC->D2CCIP1R |= (1 << 12); // use pll2_p_clk (which is unchanged with CPU speed)
 	SPI_TypeDef *spi = SPI1;
 	// Turn on the kernel clock to the peripheral
 	switch(port)

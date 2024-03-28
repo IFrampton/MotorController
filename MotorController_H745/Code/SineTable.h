@@ -5,15 +5,21 @@
 #ifndef SINE_TABLE_H
 #define SINE_TABLE_H
 
+//#define STEP_SINE
+
 #ifdef __cplusplus
 class SineTable
 {
 	private: static float _sineTableFactor;
 	private: static float _sineTable[513];
-	private: static long  _intSineTable[63];
+#ifdef STEP_SINE
+	private: static unsigned short  _intSineTable[64];
+#else
+	private: static unsigned short  _intSineTable[256];
+#endif
 	public:  static inline float *GetSineTableAddress(void) {return _sineTable;}
-	public:  static inline long  *GetIntSineTableAddress(void) {return _intSineTable;}
-	public:  static inline long  GetIntTableLength(void) {return(sizeof(_intSineTable) / sizeof(long));}
+	public:  static inline unsigned short  *GetIntSineTableAddress(void) {return &_intSineTable[0];}
+	public:  static inline short  GetIntTableLength(void) {return(sizeof(_intSineTable) / sizeof(short));}
 	public:  static inline float Sine(float degrees)
 	{
 		float angle = degrees * _sineTableFactor;
@@ -36,7 +42,7 @@ class SineTable
 		float sampleDifference = nextSample - prevSample;
 		*sine = prevSample + sampleDifference * rem;
 		sine++;
-		angle += 120.0f / 360.0f * sizeof(_sineTable) / sizeof(float);
+		angle += 120.0f / 360.0f * (sizeof(_sineTable) / sizeof(float) - 1);
 		index = (long)angle;
 		rem = angle - float(index);
 		index &= (sizeof(_sineTable) / sizeof(float)) - 2;
@@ -45,7 +51,7 @@ class SineTable
 		sampleDifference = nextSample - prevSample;
 		*sine = prevSample + sampleDifference * rem;
 		sine++;
-		angle += 120.0f / 360.0f * sizeof(_sineTable) / sizeof(float);
+		angle += 120.0f / 360.0f * (sizeof(_sineTable) / sizeof(float) - 1);
 		index = (long)angle;
 		rem = angle - float(index);
 		index &= (sizeof(_sineTable) / sizeof(float)) - 2;

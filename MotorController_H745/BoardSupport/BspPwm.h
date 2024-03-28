@@ -5,8 +5,6 @@
 #ifndef BSPPWM_H
 #define BSPTIMER_H
 
-#define CpuClockSpeed 100000000
-
 #ifdef __cplusplus
 class BspPwm
 {

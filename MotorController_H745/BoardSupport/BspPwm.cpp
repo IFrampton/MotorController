@@ -6,6 +6,7 @@
  */
 
 #include "stm32h7xx.h"
+#include "BspClock.h"
 #include "BspPwm.h"
 
 void (*BspPwm::_function[2])(void) = {DummyFunction, DummyFunction};
@@ -41,7 +42,7 @@ void BspPwm::Initialize(void)
 void BspPwm::SetupFixedPwm(unsigned char timer, unsigned long frequency, unsigned short deadtime)
 {
 	// Note: this is up/down counting to achieve deadtime.
-	unsigned long period = (CpuClockSpeed) / (frequency);
+	unsigned long period = (CpuClockFrequency) / (frequency);
 	TIM_TypeDef *tim = TIM2;
 	switch(timer)
 	{
@@ -140,7 +141,7 @@ void BspPwm::SetupFixedPwm(unsigned char timer, unsigned long frequency, unsigne
 
 void BspPwm::SetupSwitchPwm(unsigned long frequency, unsigned short deadtime, void (*funct)(void), unsigned char pri)
 {
-	unsigned long period = (CpuClockSpeed) / (frequency >> 1);
+	unsigned long period = (CpuClockFrequency) / (frequency >> 1);
 	// Setup Timer
 	TIM1->CR1 = (0  << 11)	|	// UIFREMAP = 0; UIF status bit not copied to TIMx_CNT bit 31
 				(0  <<  8)	|	// CKD = 0; Clock Division is not enabled (t_DTS = t_ck_int)

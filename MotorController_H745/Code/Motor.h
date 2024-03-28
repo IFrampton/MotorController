@@ -35,6 +35,7 @@ class Motor
 		float MotorVoltsPerHz;
 		float FrequencyRampRate;
 		float FrequencyTarget;
+		float Offset;
 	};
 	struct MotorInputs
 	{

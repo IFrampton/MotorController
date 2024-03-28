@@ -1,6 +1,8 @@
 #include "main.h"
+#include "SineTable.h"
 #include "BspTimer.h"
 #include "BspIo.h"
+#include "BspDma.h"
 #include "BspPwm.h"
 #include "BspCan.h"
 #include "BspClock.h"
@@ -46,6 +48,9 @@ int main(void)
 	// Setup the timers
 	BspTimer::Initialize();
 
+	// Power on the DMA
+	BspDma::Initialize();
+
 	// Setup the I/O
 	BspIo::Initialize();
 
@@ -58,9 +63,18 @@ int main(void)
 	BspPwm::SetupFixedPwm(4, 2000000, 20);
 	BspPwm::SetupFixedPwm(5, 2000000, 20);
 
-	// Setup SPI for Phase A
+	// Setup Analog Inputs and Outputs
 	BspAnalog::InitializeAdc();
 	BspAnalog::InitializeExternal();
+
+	BspAnalog::InitializeDac();
+	// LP Timer Triggers DAC
+	// To create 10kHz, we need a counter at 16us (64 points in sine wave).
+#ifdef STEP_SINE
+	BspTimer::SetupLpTimer(1562);
+#else
+	BspTimer::SetupLpTimer(390);
+#endif
 
 	// Setup the switch PWM
 	BspPwm::SetupSwitchPwm(10000, 300, Main::PwmFunct, 6);
@@ -73,7 +87,7 @@ int main(void)
 	#ifdef FORCE_TOGGLE
 	BspCan::PutInTestMode();
 	#else
-	_hndl = BspCan::Subscribe(1234, &_canLoc, false);
+	_hndl = BspCan::Subscribe(0x101, &_canLoc, false);
 	_txHnd = BspCan::GetTxHandle();
 	#endif
 
@@ -107,7 +121,7 @@ int main(void)
 			if(BspCan::CheckForNewData(_hndl))
 			{
 				BspCan::GetData(_hndl, &_identifier, &_length, _data, &_extended, &_error, &_timeStamp);
-				if((_identifier == (0x101 << 18)) && (_extended == false) && (_length == 8))
+				if(((_identifier >> 18) == 0x101) && (_extended == false) && (_length == 8))
 				{
 					unsigned short data = _data[0] & 0xFFFF;
 					if(data < 0xFFFF)
@@ -127,7 +141,7 @@ int main(void)
 					data = _data[1] >> 16;
 					if(data < 0xFFFF)
 					{
-						//Motor::_motorConfig.FrequencyRampRate = (float)data * 0.01f;
+						Motor::_motorConfig.Offset = (float)data * 0.0001f;
 					}
 				}
 				//else if()
@@ -142,12 +156,12 @@ int main(void)
 				{
 					unsigned short data = (unsigned short)(Motor::_motorInputs.BusVoltage * 50.0f);
 					_txData[1] = data;
-					data = (unsigned short)(Motor::_motorOutputs.Voltage[0] * 50.0f);
+					data = (unsigned short)(Motor::_motorOutputs.Voltage[0] * 25.0f + 32767.0f);
 					_txData[1] <<= 16;
 					_txData[1] += data;
-					data = (unsigned short)(Motor::_motorOutputs.Voltage[1] * 50.0f);
-					_txData[0] += data;
-					data = (unsigned short)(Motor::_motorOutputs.Voltage[2] * 50.0f);
+					data = (unsigned short)(Motor::_motorOutputs.Voltage[1] * 25.0f + 32767.0f);
+					_txData[0] = data;
+					data = (unsigned short)(Motor::_motorOutputs.Voltage[2] * 25.0f + 32767.0f);
 					_txData[0] <<= 16;
 					_txData[0] += data;
 					BspCan::Transmit(_txHnd, 0x200, &_txData[0], 8, false);
@@ -164,7 +178,7 @@ int main(void)
 					_txData[1] <<= 16;
 					_txData[1] += data;
 					data = (unsigned short)(Motor::_motorInputs.Current[1] * 50.0f + 32767.0f);
-					_txData[0] += data;
+					_txData[0] = data;
 					data = (unsigned short)(Motor::_motorInputs.Current[2] * 50.0f + 32767.0f);
 					_txData[0] <<= 16;
 					_txData[0] += data;
@@ -192,7 +206,7 @@ int main(void)
 					_txData[1] <<= 16;
 					_txData[1] += data;
 					data = (unsigned short)(Motor::_motorOutputs.RealCurrent * 50.0f + 32767.0f);
-					_txData[0] += data;
+					_txData[0] = data;
 					data = (unsigned short)(Motor::_motorOutputs.ReactiveCurrent * 50.0f + 32767.0f);
 					_txData[0] <<= 16;
 					_txData[0] += data;
