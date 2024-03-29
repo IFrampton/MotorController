@@ -66,6 +66,8 @@ class Motor
 	private: static float _deltaT;
 	private: static float _periodFactor;
 	private: static short _halfPeriod;
+	private: static bool _loggingInput[32];
+	private: static unsigned long _logInputIndex;
 	public:  static void Initialize(void);
 	public:  static void Logic(void);
 };

@@ -16,14 +16,16 @@ float Motor::_deltatFactor = 36.0f / 10000.0f;
 float Motor::_deltaT = 1.0f / 10000.0f;
 float Motor::_periodFactor = 24000.0f;
 short Motor::_halfPeriod = 24000;
+bool Motor::_loggingInput[32];
+unsigned long Motor::_logInputIndex = 0;
 
 void Motor::Initialize(void)
 {
 #ifdef KLUDGED_CONFIGURATION
 	//<KLUDGE> Setup parameters until an interface is operational.
 	BspAnalog::InitializePointer(&_analogConfig);
-	_analogConfig.Offset[0][14] = -32767;
-	_analogConfig.ScaleFactor[0][14] = 1000.0f/(1.5f * 32768.0f);
+	_analogConfig.Offset[0][7] = 30;
+	_analogConfig.ScaleFactor[0][7] = 30.2f / 1978.0f;//1000.0f/(1.5f * 32768.0f);
 #ifdef EXPECT_REAL_DATA
 	_analogConfig.ExternalOffset[0] = 25640;
 	_analogConfig.ExternalScaleFactor[0] = 100.0f/(1.024f * 20156.0f);//600.0f/(1.024f * 20156.0f);
@@ -58,10 +60,10 @@ void Motor::Initialize(void)
 	BspAnalog::SetupChannel(0, 15,  &_analogChannels[ANA_V_C]);
 	BspAnalog::SetupChannel(0, 14,  &_analogChannels[ANA_I_IN]);
 #endif
-	//BspAnalog::SetupChannel(0, 4,  &_analogChannels[ANA_T_1]);
-	//BspAnalog::SetupChannel(0, 8,  &_analogChannels[ANA_T_2]);
-	//BspAnalog::SetupChannel(0, 9,  &_analogChannels[ANA_RSLV_SIN]);
-	//BspAnalog::SetupChannel(0, 5,  &_analogChannels[ANA_RSLV_COS]);
+	BspAnalog::SetupChannel(0, 4,  &_analogChannels[ANA_T_1]);
+	BspAnalog::SetupChannel(0, 8,  &_analogChannels[ANA_T_2]);
+	BspAnalog::SetupChannel(0, 9,  &_analogChannels[ANA_RSLV_SIN]);
+	BspAnalog::SetupChannel(0, 5,  &_analogChannels[ANA_RSLV_COS]);
 	BspAnalog::SetupExternalChannel(0, &_externalChannels[ANA_I_A]);
 	BspAnalog::SetupExternalChannel(1, &_externalChannels[ANA_I_B]);
 	BspAnalog::SetupExternalChannel(2, &_externalChannels[ANA_I_C]);
@@ -77,11 +79,14 @@ void Motor::Initialize(void)
 
 void Motor::Logic()
 {
+	_loggingInput[_logInputIndex] = (GPIOC->IDR & 0x4) > 0;
+	_logInputIndex++;
+	_logInputIndex &= 31;
 	_motorInputs.Current[0] = BspAnalog::GetFastExternalSample(&_externalChannels[ANA_I_A]);
-	//_motorInputs.Current[1] = BspAnalog::GetFastExternalSample(&_externalChannels[ANA_I_B]);
+	_motorInputs.Current[1] = BspAnalog::GetFastExternalSample(&_externalChannels[ANA_I_B]);
 	_motorInputs.Current[2] = BspAnalog::GetFastExternalSample(&_externalChannels[ANA_I_C]);
 	//<KLUDGE> For now, SPI2 only reads 0 (even with all the right signals), so calculate i2.
-	_motorInputs.Current[1] = -(_motorInputs.Current[0] + _motorInputs.Current[2]);
+	//_motorInputs.Current[1] = -(_motorInputs.Current[0] + _motorInputs.Current[2]);
 	float busVoltage = BspAnalog::GetFastSingleSample(&_analogChannels[ANA_V_BUS]);
 	_motorInputs.BusVoltage = busVoltage;
 	float motorBackEmf = _motorOutputs.Frequency * _motorConfig.MotorVoltsPerHz;

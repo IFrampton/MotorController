@@ -229,7 +229,7 @@ void BspAnalog::InitializeAdc(void)
 //				(1  << 18)	|	// PRESC = 2; ADC prescaler (0 = divide by 1, 1 = divide by 2, 2 = divide by 4, ...)
 				// 10MHz
 				(5  << 18)	|	// PRESC = 5; ADC prescaler (0 = divide by 1, 1 = divide by 2, 2 = divide by 4, 5 = divide by 10 ...)
-				(1  << 16)	|	// CKMODE = 1; ADC clock mode (1 = adc_sclk / 1)
+				(0  << 16)	|	// CKMODE = 1; ADC clock mode (0 = adc_kernel_clk (pll2_p_clk) 1 = adc_sclk / 1)
 				(2  << 14)	|	// DAMDF = 2; Dual ADC mode data format (2 = data formatting for 32 down to 1 bit resolution)
 				(0  <<  8)	|	// DELAY = 0; Delay between two sampling phases (0 = no delay)
 				(0  <<  0)	;	// DUAL = 0; Dual ADC mode selection (0 = All ADCs are independent)

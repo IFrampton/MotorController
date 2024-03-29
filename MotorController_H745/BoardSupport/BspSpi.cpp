@@ -26,6 +26,9 @@ char BspSpi::Initialize(char port, unsigned long bitRate, volatile unsigned shor
 		case 1:
 		{
 			spi = SPI1;
+			// Remove Reset
+			RCC->APB2RSTR &= ~(1 << 12);
+			// Enable
 			RCC->APB2ENR |= (1 << 12);
 			RCC_C2->APB2ENR |= (1 << 12);
 			break;
@@ -33,13 +36,20 @@ char BspSpi::Initialize(char port, unsigned long bitRate, volatile unsigned shor
 		case 2:
 		{
 			spi = SPI2;
+			// Remove Reset
+			RCC->APB1LRSTR &= ~(1 << 14);
+			// Enable
 			RCC->APB1LENR |= (1 << 14);
 			RCC_C2->APB1LENR |= (1 << 14);
+			Initialize_SystemConfig();
 			break;
 		}
 		case 3:
 		{
 			spi = SPI3;
+			// Remove Reset
+			RCC->APB1LRSTR &= ~(1 << 15);
+			// Enable
 			RCC->APB1LENR |= (1 << 15);
 			RCC_C2->APB1LENR |= (1 << 15);
 			break;
@@ -47,6 +57,9 @@ char BspSpi::Initialize(char port, unsigned long bitRate, volatile unsigned shor
 		case 4:
 		{
 			spi = SPI4;
+			// Remove Reset
+			RCC->APB2RSTR &= ~(1 << 13);
+			// Enable
 			RCC->APB2ENR |= (1 << 13);
 			RCC_C2->APB2ENR |= (1 << 13);
 			break;
@@ -54,6 +67,9 @@ char BspSpi::Initialize(char port, unsigned long bitRate, volatile unsigned shor
 		case 5:
 		{
 			spi = SPI5;
+			// Remove Reset
+			RCC->APB2RSTR &= ~(1 << 20);
+			// Enable
 			RCC->APB2ENR |= (1 << 20);
 			RCC_C2->APB2ENR |= (1 << 20);
 			break;
@@ -61,6 +77,9 @@ char BspSpi::Initialize(char port, unsigned long bitRate, volatile unsigned shor
 		case 6:
 		{
 			spi = SPI6;
+			// Remove Reset
+			RCC->APB4RSTR &= ~(1 << 5);
+			// Enable
 			RCC->APB4ENR |= (1 << 5);
 			RCC_C2->APB4ENR |= (1 << 5);
 			break;
@@ -131,4 +150,32 @@ char BspSpi::Initialize(char port, unsigned long bitRate, volatile unsigned shor
 	spi->CR1 |= (1  <<  0); // SPE = 1;
 	spi->CR1 |= (1  <<  9); // CSTART = 1;
 	return 0;
+}
+
+void BspSpi::Initialize_SystemConfig(void)
+{
+	// Remove reset
+	RCC->APB4RSTR &= ~(1 << 1);
+	// Enable Clock
+	RCC->APB4ENR |= (1 << 1);
+	RCC_C2->APB4ENR |= (1 << 1);
+	// Disable in low power mode
+	RCC->APB4LPENR &= ~(1 << 1);
+
+	// Connect Analog switches
+	SYSCFG->PMCR =  (0  << 27)	|	// PC3SO = 0; PC3 Switch Open (0 = closed, PC3_C = PC3)
+					(0  << 26)	|	// PC2SO = 0; PC2 Switch Open (0 = closed, PC2_C = PC2)
+					(0  << 26)	|	// PA1SO = 0; PA1 Switch Open (0 = closed, PA1_C = PA1)
+					(0  << 26)	|	// PA0SO = 0; PA0 Switch Open (0 = closed, PA0_C = PA0)
+					(0  << 21)	|	// EPIS = 0; Ethernet PHY Interface Selection (0 = MII)
+					(1  <<  9)	|	// BOOSTVDDSEL = 1; Analog switch supply voltage selection (VDD/VDDS/booster)(1 = Vdd selected)
+					(0  <<  8)	|	// BOOSTE = 1; Booster Enable (1 = Booster is enabled)
+					(0  <<  7)	|	// PB9FMP = 0; PB(9) FM+ (0 = disabled)
+					(0  <<  6)	|	// PB8FMP = 0; PB(8) FM+ (0 = disabled)
+					(0  <<  5)	|	// PB7FMP = 0; PB(7) FM+ (0 = disabled)
+					(0  <<  4)	|	// PB6FMP = 0; PB(6) FM+ (0 = disabled)
+					(0  <<  3)	|	// I2C4FMP = 0; I2C4 FM+ (0 = disabled)
+					(0  <<  2)	|	// I2C3FMP = 0; I2C3 FM+ (0 = disabled)
+					(0  <<  1)	|	// I2C2FMP = 0; I2C2 FM+ (0 = disabled)
+					(0  <<  0)	;	// I2C1FMP = 0; I2C1 FM+ (0 = disabled)
 }

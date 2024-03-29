@@ -38,6 +38,7 @@ class BspSpi
 	public:  static inline unsigned long ReadData(volatile unsigned short *dataReg) {return(*dataReg);}
 	public:  static inline void SetReadComplete(unsigned short *readComplete) {*readComplete = (1 << 11) | (1 << 6);}
 
+	private: static void Initialize_SystemConfig(void);
 };
 #endif
 
