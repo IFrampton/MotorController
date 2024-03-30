@@ -21,7 +21,32 @@ class BspAnalog
 		long ExternalOffset[3];
 		float ExternalScaleFactor[3];
 	};
-	private: static AnalogConfig *_configuration;
+	public: struct AnalogDigitalConfig
+	{
+		bool Spare;
+	};
+	public: struct AnalogInputs
+	{
+		short RawData[32];
+	};
+	public: struct AnalogDigitalInputs
+	{
+		bool Spare;
+	};
+	public: struct AnalogOutputs
+	{
+		float ScaledData[32];
+	};
+	public: struct AnalogDigitalOutputs
+	{
+		bool Spare;
+	};
+	private: static AnalogConfig *_config;
+	//private: static AnalogDigitalConfig *_digitalConfig;
+	private: static AnalogInputs *_analogIn;
+	//private: static AnalogDigitalInputs *_digitalIn;
+	private: static AnalogOutputs *_analogOut;
+	//private: static AnalogDigitalOutputs *_digitalOut;
 	public: struct AnalogType
 	{
 			unsigned long *BaseLocation;
@@ -38,6 +63,7 @@ class BspAnalog
 	};
 	private: static long _analogDataBuffer[3][19];
 	private: static bool _initialized;
+	private: static bool _dataLinked;
 	private: static unsigned char _nextChannel[3];
 	private: static unsigned char _dmaRxChannel[3];
 	private: static unsigned char _dmaTxChannel;
@@ -54,14 +80,13 @@ class BspAnalog
 	public:  static unsigned char SetupExternalChannel(char channel, ExternalAnalogType *channelData);
 
 	public:  static void InitializeDac(void);
-	public:  static void InitializePointer(AnalogConfig *configuration) {_configuration = configuration;}
-	public:  static inline float GetFastSingleSample(AnalogType *channelData)
+	public:  static _inline_ float GetFastSingleSample(AnalogType *channelData)
 	{
 		long value = *channelData->BaseLocation;
 		value -= *channelData->Offset;
 		return (float)value * *channelData->ScaleFactor;
 	}
-	public:  static inline float GetFastExternalSample(ExternalAnalogType *channelData)
+	public:  static _inline_ float GetFastExternalSample(ExternalAnalogType *channelData)
 	{
 		volatile unsigned short *readLoc = channelData->BaseLocation;
 		long value = 0;
@@ -76,6 +101,14 @@ class BspAnalog
 		value -= *channelData->Offset * count;
 		BspSpi::SetReadComplete(channelData->ReadComplete);
 		return (float)value * *channelData->ScaleFactor / (float)count;
+	}
+
+	public:  static void LinkData(AnalogConfig *config, AnalogInputs *analogIn, AnalogOutputs *analogOut )
+	{
+		_config = config;
+		_analogIn = analogIn;
+		_analogOut = analogOut;
+		_dataLinked = true;
 	}
 };
 #endif

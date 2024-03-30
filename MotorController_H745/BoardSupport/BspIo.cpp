@@ -8,7 +8,6 @@
 #include "BspIo.h"
 
 #define FOUR_INPUTS
-//#define USE_TIM2_TWICE
 
 BspIo::PinInfo	BspIo::_pinInfo[NUMBER_OF_GPIO];
 

@@ -3,7 +3,7 @@
 // Includes templates for PWM functions and inlined functions
 
 #ifndef BSPPWM_H
-#define BSPTIMER_H
+#define BSPPWM_H
 
 #ifdef __cplusplus
 class BspPwm
@@ -16,9 +16,9 @@ class BspPwm
 	public:  static void SetupFixedPwm(unsigned char timer, unsigned long frequency, unsigned short deadtime);
 	public:  static void SetupSwitchPwm(unsigned long frequency, unsigned short deadtime, void (*funct)(void), unsigned char pri);
 	private: static void DummyFunction(void);
-	public:  static inline volatile unsigned short GetSwitchPeriod() {return(_period);}
-	public:  static inline void SetSwitchDutyCycle(char channel, short dutyCycle) {*((unsigned short *)(unsigned long)&TIM1->CCR1 + ((unsigned long)channel << 1)) = dutyCycle;}
+	public:  static _inline_ volatile unsigned short GetSwitchPeriod() {return(_period);}
+	public:  static _inline_ void SetSwitchDutyCycle(char channel, short dutyCycle) {*((unsigned short *)(unsigned long)&TIM1->CCR1 + ((unsigned long)channel << 1)) = dutyCycle;}
 };
 #endif
 
-#endif //BSPTIMER_H
+#endif //BSPPWM_H

@@ -5,8 +5,12 @@
 #ifndef BSPTIMER_H
 #define BSPTIMER_H
 
+#include "stm32h7xx.h"
+
 #define SUPPORTED_TIMERS 2
 #define SUPPORTED_LP_TIMERS 5
+
+#define TIMER_CLOCK_FREQUENCY 200000000
 
 #ifdef __cplusplus
 class BspTimer
@@ -18,7 +22,12 @@ class BspTimer
 	public:  static void Initialize(void);
 	public:  static char Setup(long clockCycles, void (*funct)(void), unsigned char pri, bool oneShot);
 	public:  static char SetupLpTimer(unsigned long period_in_ns);
+	public:  static void SetupFreeRunningCounter(void);
 	private: static void DummyFunction(void);
+	public:  static _inline_ unsigned long GetFreeRunningCounter(void)
+	{
+		return TIM5->CNT;
+	}
 };
 #endif
 

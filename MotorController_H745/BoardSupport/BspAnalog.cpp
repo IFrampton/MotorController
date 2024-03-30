@@ -9,9 +9,12 @@
 #include "BspDma.h"
 #include "SineTable.h"
 
-BspAnalog::AnalogConfig *BspAnalog::_configuration = (BspAnalog::AnalogConfig *)&BspAnalog::DummyVariable;
+BspAnalog::AnalogConfig *BspAnalog::_config = (BspAnalog::AnalogConfig *)&BspAnalog::DummyVariable;
+BspAnalog::AnalogInputs *BspAnalog::_analogIn = (BspAnalog::AnalogInputs *)&BspAnalog::DummyVariable;
+BspAnalog::AnalogOutputs *BspAnalog::_analogOut = (BspAnalog::AnalogOutputs *)&BspAnalog::DummyVariable;
 long BspAnalog::_analogDataBuffer[3][19];
 bool BspAnalog::_initialized;
+bool BspAnalog::_dataLinked;
 unsigned char BspAnalog::_nextChannel[3];
 unsigned char BspAnalog::_dmaRxChannel[3];
 unsigned char BspAnalog::_dmaTxChannel;
@@ -271,10 +274,14 @@ unsigned char BspAnalog::SetupChannel(char converter, char channel, AnalogType *
 	{
 		return 255;
 	}
+	if(!_dataLinked)
+	{
+		return 254;
+	}
 	// prevent too many channels on each converter
 	if(_nextChannel[(long)converter] >= 16)
 	{
-		return 254;
+		return 253;
 	}
 	ADC_TypeDef *adc;
 	switch(converter)
@@ -314,8 +321,8 @@ unsigned char BspAnalog::SetupChannel(char converter, char channel, AnalogType *
 	adc->PCSEL |= (1 << channel);
 
 	channelData->BaseLocation = (unsigned long *)&_analogDataBuffer[(long)converter][_nextChannel[(long)converter]];
-	channelData->Offset = &_configuration->Offset[(long)converter][(long)channel];
-	channelData->ScaleFactor = &_configuration->ScaleFactor[(long)converter][(long)channel];
+	channelData->Offset = &_config->Offset[(long)converter][(long)channel];
+	channelData->ScaleFactor = &_config->ScaleFactor[(long)converter][(long)channel];
 	_nextChannel[(long)converter]++;
 
 	BspDma::UpdateLength(_dmaRxChannel[(long)converter], _nextChannel[(long)converter]);
@@ -344,15 +351,19 @@ unsigned char BspAnalog::SetupExternalChannel(char channel, ExternalAnalogType *
 	{
 		return 255;
 	}
-	// catch possible exception
-	if(channel >= 3)
+	if(!_dataLinked)
 	{
 		return 254;
 	}
+	// catch possible exception
+	if(channel >= 3)
+	{
+		return 253;
+	}
 
 	//channelData->BaseLocation = (unsigned long *)_spiData[(long)channel];
-	channelData->Offset = &_configuration->ExternalOffset[(long)channel];
-	channelData->ScaleFactor = &_configuration->ExternalScaleFactor[(long)channel];
+	channelData->Offset = &_config->ExternalOffset[(long)channel];
+	channelData->ScaleFactor = &_config->ExternalScaleFactor[(long)channel];
 	BspSpi::Initialize(channel + 1, 9375000, &channelData->BaseLocation, &channelData->DataReady, &channelData->ReadComplete);
 	// Success
 	return 0;

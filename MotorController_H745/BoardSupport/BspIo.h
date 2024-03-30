@@ -7,6 +7,8 @@
 
 #include "stm32h7xx.h"
 
+#define USE_TIM2_TWICE
+
 #ifdef __cplusplus
 class BspIo
 {

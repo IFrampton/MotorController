@@ -8,7 +8,7 @@
 #include "BspAnalog.h"
 
 #ifdef __cplusplus
-class Motor
+class MotorControl
 {
 	enum AnalogChannels
 	{
@@ -30,19 +30,27 @@ class Motor
 		ANA_I_C,
 		NUM_EXTERNAL_ANALOGS
 	};
-	struct MotorConfig
+	public: struct MotorConfig
 	{
 		float MotorVoltsPerHz;
 		float FrequencyRampRate;
 		float FrequencyTarget;
 		float Offset;
 	};
-	struct MotorInputs
+	public: struct MotorDigitalConfig
+	{
+		bool Spare;
+	};
+	public: struct MotorInputs
 	{
 		float Current[3];
 		float BusVoltage;
 	};
-	struct MotorOutputs
+	public: struct MotorDigitalInputs
+	{
+		bool Spare;
+	};
+	public: struct MotorOutputs
 	{
 		float Amplitude;
 		float Frequency;
@@ -52,16 +60,16 @@ class Motor
 		float RealCurrent;
 		float ReactiveCurrent;
 	};
+	public: struct MotorDigitalOutputs
+	{
+		bool Spare;
+	};
 	private: static BspAnalog::AnalogType _analogChannels[NUM_ANALOGS];
 	private: static BspAnalog::ExternalAnalogType _externalChannels[NUM_EXTERNAL_ANALOGS];
-	private: static BspAnalog::AnalogConfig _analogConfig;
-	//<KLUDGE> (Should be private)
-	//private: static MotorConfig _motorConfig;
-	//private: static MotorInputs _motorInputs;
-	//private: static MotorOutputs _motorOutputs;
-	public: static MotorConfig _motorConfig;
-	public: static MotorInputs _motorInputs;
-	public: static MotorOutputs _motorOutputs;
+	private: static MotorConfig *_config;
+	private: static MotorInputs *_analogIn;
+	private: static MotorOutputs *_analogOut;
+	private: static bool _dataLinked;
 	private: static float _deltatFactor;
 	private: static float _deltaT;
 	private: static float _periodFactor;
@@ -70,6 +78,14 @@ class Motor
 	private: static unsigned long _logInputIndex;
 	public:  static void Initialize(void);
 	public:  static void Logic(void);
+
+	public:  static void LinkData(MotorConfig *config, MotorInputs *analogIn, MotorOutputs *analogOut )
+	{
+		_config = config;
+		_analogIn = analogIn;
+		_analogOut = analogOut;
+		_dataLinked = true;
+	}
 };
 #endif
 

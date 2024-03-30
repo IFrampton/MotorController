@@ -37,6 +37,8 @@
  extern "C" {
 #endif /* __cplusplus */
 
+
+#define _inline_ __attribute__((always_inline))
 /** @addtogroup Peripheral_interrupt_number_definition
   * @{
   */

@@ -22,7 +22,7 @@ void BspPwm::Initialize(void)
 	// TIM2 (used for Input power control)
 	// TIM3 (used for CAN power control)
 	// TIM4 (used for Metering power control)
-	// TIM5 (used for Switch power supply control)
+	// TIM5 (used for Switch power supply control or a 32-bit free-running counter)
 	// TIM6 (used as a general purpose timer)
 	// TIM7 (used as a general purpose timer)
 
