@@ -44,9 +44,11 @@ class ProcLoading
 		//long TicksInASecond;
 		long IsrOverhead;
 		long CountsPerSecond;
+		long DefaultPacketRate;
 	};
 	public: struct LoadingDigitalConfig
 	{
+		bool SendDefaultPackets;
 		bool Spare;
 	};
 	public: struct LoadingInputs

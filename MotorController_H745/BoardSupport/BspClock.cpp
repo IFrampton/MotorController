@@ -156,6 +156,14 @@ void BspClock::Initialize(long extFreq, long cpuFreq)
 	{
 	}
 
+	// Set flash to safe value
+#ifdef SPEED_400MHz
+	FLASH->ACR = (2 <<  4)	|	// WRHIGHFREQ = 2; Flash Signal Delay (2 = support 225MHz in VOS1)
+				(5  <<  0)	;	// LATENCY = 3; Read latency (4 = four wait states are used to read a flash word from memory)
+#else
+	FLASH->ACR = (1 <<  4)	|	// WRHIGHFREQ = 1; Flash Signal Delay (1 = support 135MHz in VOS1)
+				(3  <<  0)	;	// LATENCY = 3; Read latency (3 = three wait states are used to read a flash word from memory)
+#endif
 	// Use the PLL
 	RCC->CFGR |= (3 << 0);
 }

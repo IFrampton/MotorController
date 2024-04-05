@@ -20,7 +20,7 @@ class BspTimer
 	private: static unsigned char _nextLpTimer;
 
 	public:  static void Initialize(void);
-	public:  static char Setup(long clockCycles, void (*funct)(void), unsigned char pri, bool oneShot);
+	public:  static char Setup(unsigned long period_in_ns, void (*funct)(void), unsigned char pri, bool oneShot);
 	public:  static char SetupLpTimer(unsigned long period_in_ns);
 	public:  static void SetupFreeRunningCounter(void);
 	private: static void DummyFunction(void);

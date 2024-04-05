@@ -9,8 +9,6 @@
 #include "BspSpi.h"
 
 
-//BspSpi::PortInfo	BspIo::_pinInfo[NUMBER_OF_GPIO];
-
 char BspSpi::Initialize(char port, unsigned long bitRate, volatile unsigned short **dataReg, volatile unsigned char **newDataFlag, unsigned short **readComplete)
 {
 	RCC->D2CCIP1R &= ~(3 << 12);

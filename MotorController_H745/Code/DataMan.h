@@ -6,8 +6,10 @@
 #define DATAMAN_H
 
 #include "BspAnalog.h"
+#include "BspFlash.h"
 #include "Motor.h"
 #include "Loading.h"
+#include "Fccp.h"
 
 #ifdef __cplusplus
 class DataMan
@@ -33,8 +35,8 @@ class DataMan
 	};
 	struct ConfigMan
 	{
-		AnalogConfigMan Analog;
-		DigitalConfigMan Digital;
+		AnalogConfigMan *Analog;
+		DigitalConfigMan *Digital;
 	};
 	struct AnalogInputMan
 	{
@@ -70,10 +72,26 @@ class DataMan
 	//<KLUDGE> These should be private
 	public:  static ConfigMan _config;
 	public:  static VariableMan _variables;
+
+	private: static unsigned long _relativeVariableLookup[NUM_MODULES][4];
+	private: static unsigned long _relativeConfigLookup[NUM_MODULES][2];
+
+	private: static char _rxHndl;
+	private: static char _txHndl;
+	private: static Fccp::CanData _receiveData;
+	private: static unsigned long _txData[2];
+	private: static unsigned char _canMessage;
+	private: static long _defaultPacketCounter;
+
 	public:  static void Initialize();
 	public:  static void Logic();
 	public:  static void *GetConfigAddress(unsigned long address, bool relative, unsigned char module, unsigned char type);
-	public:  static void *GetVariableAddress(unsigned long address, bool relative, unsigned char module, unsigned char type);
+	public:  static void *GetVariableAddress(unsigned long address, unsigned char module, unsigned char type);
+	public:  static unsigned char WriteData(unsigned long address, unsigned char dataType, bool nvm, bool relative, unsigned long data);
+	public:  static unsigned long GetData(unsigned long address, unsigned char dataType, bool nvm, bool relative);
+	public:  static unsigned long *GetAddress(unsigned long address, unsigned char dataType, bool nvm, bool relative);
+	public:  static void SendDefaultCanPackets();
+	public:  static void SaveToNonVolatile() {if(MotorControl::OkToSave()){BspFlash::Write();}}
 };
 #endif
 

@@ -1,52 +1,27 @@
 #include "main.h"
-#include "SineTable.h"
+//#include "SineTable.h"
+#include "BspClock.h"
+#include "BspFlash.h"
 #include "BspTimer.h"
 #include "BspIo.h"
 #include "BspDma.h"
 #include "BspPwm.h"
 #include "BspCan.h"
-#include "BspClock.h"
 #include "BspSpi.h"
 #include "Motor.h"
 #include "DataMan.h"
+//#include "Fccp.h"
 #include "SlowTimer.h"
 #include "Loading.h"
-
-//#define SEND_GIBBERISH
-#define EXPECT_REAL_DATA
-
-unsigned long _dummyVariable[4] = {0, 0, 0, 0};
-unsigned long _gibberish[16] =
-{
-		0xDEADBEEF, 0xDEADBEEF, 0xC8, 0xDEADBEEF,
-		0xDEADBEEF, 0xDEADBEEF, 0xDEADBEEF, 0xDEADBEEF,
-		0xDEADBEEF, 0xDEADBEEF, 0xDEADBEEF, 0xDEADBEEF,
-		0xDEADBEEF, 0xDEADBEEF, 0xDEADBEEF, 0xDEADBEEF
-};
-unsigned long *_canLoc = _dummyVariable;
-char _hndl = -2;
-unsigned long _identifier = 0;
-char _length = 0;
-unsigned long _data[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-unsigned long _txData[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-unsigned char _canMessage = 0;
-bool _extended = false;
-bool _error = false;
-unsigned short _timeStamp = 0;
-bool _toggle = false;
-unsigned short _currents[3][8] = {{0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0}};
-unsigned char _currentLoc[3] = {0, 0, 0};
-unsigned long _updatePeriod = 100000;
-bool _tggle = false;
-
-char _txHnd = -2;
-
 
 int main(void)
 {
 	//unsigned long long counts = 0;
 	// Setup the clocks
 	BspClock::Initialize(8000000, 240000000);
+
+	// Read Data from NVM
+	BspFlash::Initialize();
 
 	// Setup the timers
 	BspTimer::Initialize();
@@ -63,7 +38,7 @@ int main(void)
 #if 1
 
 	// Setup the fixed PWM
-	BspPwm::SetupFixedPwm(2, 2000000, 20);
+	BspPwm::SetupFixedPwm(2, 2000000, 5);
 	BspPwm::SetupFixedPwm(3, 2000000, 20);
 	BspPwm::SetupFixedPwm(4, 2000000, 20);
 #ifndef USE_TIM2_TWICE
@@ -85,16 +60,16 @@ int main(void)
 
 	// Setup the switch PWM
 	//BspPwm::SetupSwitchPwm(10000, 300, Main::PwmFunct, 6);
+	// Invoked in Data man below, so required.
+	BspCan::Initialize();
+	//BspCan::SetupDevice(500000, 0);
+
 #endif
 	DataMan::Initialize();
 #if 1
-	BspCan::Initialize();
 
 	MotorControl::Initialize();
 
-	//BspCan::SetupDevice(500000, 0);
-	_hndl = BspCan::Subscribe(0x101, &_canLoc, false);
-	_txHnd = BspCan::GetTxHandle();
 
 	SysTick->CTRL = 5;//1;// bit 2 uses CPU clock vs. CPU / 8
 	SysTick->LOAD = 0xFFFFFF;
@@ -147,6 +122,8 @@ int main(void)
 	}
 }
 
+bool _toggle = false;
+
 void Main::PwmFunct(void)
 {
 	ProcLoading::BeginTask(ProcLoading::Spare_Task);
@@ -163,103 +140,6 @@ void Main::PwmFunct(void)
 		BspIo::ClearIoPin(&BspIo::_pinInfo[BspIo::LED_YELLOW]);
 		BspIo::ClearIoPin(&BspIo::_pinInfo[BspIo::LED_GREEN]);
 		_toggle = true;
-	}
-	if(BspCan::CheckForNewData(_hndl))
-	{
-		BspCan::GetData(_hndl, &_identifier, &_length, _data, &_extended, &_error, &_timeStamp);
-		if(((_identifier >> 18) == 0x101) && (_extended == false) && (_length == 8))
-		{
-			unsigned short data = _data[0] & 0xFFFF;
-			if(data < 0xFFFF)
-			{
-				DataMan::_config.Analog.Motor.FrequencyTarget = (float)data * 0.1f;
-			}
-			data = _data[0] >> 16;
-			if(data < 0xFFFF)
-			{
-				DataMan::_config.Analog.Motor.FrequencyRampRate = (float)data * 0.01f;
-			}
-			data = _data[1] & 0xFFFF;
-			if(data < 0xFFFF)
-			{
-				DataMan::_config.Analog.Motor.MotorVoltsPerHz = (float)data * 0.001f;
-			}
-			data = _data[1] >> 16;
-			if(data < 0xFFFF)
-			{
-				DataMan::_config.Analog.Motor.Offset = (float)data * 0.0001f;
-			}
-		}
-		//else if()
-		//{
-			// Only one packet at this time
-		//}
-	}
-	switch(_canMessage)
-	{
-		// Motor Voltages
-		case 0:
-		{
-			unsigned short data = (unsigned short)(DataMan::_variables.AnalogIn.Motor.BusVoltage * 50.0f);
-			_txData[1] = data;
-			data = (unsigned short)(DataMan::_variables.AnalogOut.Motor.Voltage[0] * 25.0f + 32767.0f);
-			_txData[1] <<= 16;
-			_txData[1] += data;
-			data = (unsigned short)(DataMan::_variables.AnalogOut.Motor.Voltage[1] * 25.0f + 32767.0f);
-			_txData[0] = data;
-			data = (unsigned short)(DataMan::_variables.AnalogOut.Motor.Voltage[2] * 25.0f + 32767.0f);
-			_txData[0] <<= 16;
-			_txData[0] += data;
-			BspCan::Transmit(_txHnd, 0x200, &_txData[0], 8, false);
-			_canMessage++;
-			break;
-		}
-		// Motor Currents
-		case 1:
-		{
-			unsigned short data = 0xFFFF;
-			_txData[1] = data;
-#ifdef EXPECT_REAL_DATA
-			data = (unsigned short)(DataMan::_variables.AnalogIn.Motor.Current[0] * 50.0f + 32767.0f);
-			_txData[1] <<= 16;
-			_txData[1] += data;
-			data = (unsigned short)(DataMan::_variables.AnalogIn.Motor.Current[1] * 50.0f + 32767.0f);
-			_txData[0] = data;
-			data = (unsigned short)(DataMan::_variables.AnalogIn.Motor.Current[2] * 50.0f + 32767.0f);
-			_txData[0] <<= 16;
-			_txData[0] += data;
-#else
-			data = (unsigned short)(DataMan::_variables.AnalogIn.Motor.Current[0] * 1.0f + 0.0f);
-			_txData[1] <<= 16;
-			_txData[1] += data;
-			data = (unsigned short)(DataMan::_variables.AnalogIn.Motor.Current[1] * 1.0f + 0.0f);
-			_txData[0] += data;
-			data = (unsigned short)(DataMan::_variables.AnalogIn.Motor.Current[2] * 1.0f + 0.0f);
-			_txData[0] <<= 16;
-			_txData[0] += data;
-#endif
-			BspCan::Transmit(_txHnd, 0x201, &_txData[0], 8, false);
-			_canMessage++;
-			break;
-		}
-		// Other Information
-		case 2:
-		default:
-		{
-			unsigned short data = (unsigned short)(DataMan::_variables.AnalogOut.Motor.Amplitude * 10000.0f + 32767.0f);
-			_txData[1] = data;
-			data = (unsigned short)(DataMan::_variables.AnalogOut.Motor.Frequency * 10.0f);
-			_txData[1] <<= 16;
-			_txData[1] += data;
-			data = (unsigned short)(DataMan::_variables.AnalogOut.Motor.RealCurrent * 50.0f + 32767.0f);
-			_txData[0] = data;
-			data = (unsigned short)(DataMan::_variables.AnalogOut.Motor.ReactiveCurrent * 50.0f + 32767.0f);
-			_txData[0] <<= 16;
-			_txData[0] += data;
-			BspCan::Transmit(_txHnd, 0x202, &_txData[0], 8, false);
-			_canMessage = 0;
-			break;
-		}
 	}
 	ProcLoading::EndTask(ProcLoading::Spare_Task);
 }

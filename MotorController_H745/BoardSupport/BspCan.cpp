@@ -309,7 +309,8 @@ void BspCan::SetupDevice(long baudRate, unsigned char device)
 
 // We are only using buffers for this test code. Maybe we'll go down a different
 // path at a later date, but the FIFOs seem rather complicated.
-char BspCan::Subscribe(unsigned long messageId, unsigned long **address, bool extended)
+//char BspCan::Subscribe(unsigned long messageId, unsigned long **address, bool extended)
+char BspCan::Subscribe(unsigned long messageId, bool extended)
 {
 	unsigned char bank = (unsigned char)extended;
 	if(_nextBuffer[bank] >= SUPPORTED_BUFFERS)
@@ -329,9 +330,9 @@ char BspCan::Subscribe(unsigned long messageId, unsigned long **address, bool ex
 						(0  << 10) |	// Reserved = 0; Filter for RX buffers
 						(0  <<  9) |	// SFID2[10:9] = 0; Store message into an RX buffer
 						(0  <<  6) |	// SFID2[8:6] = 0; Set no Extension Interface registers
-						(ofs<<  0) ;	// SFID2[5:0] = addr; offset to the Rx buffer start address for storage of a matchign message
-		unsigned char elementSize = 2 + (DATA_BYTES >> 2);
-		*address = (unsigned long *)((unsigned long)MESSAGE_RAM_LOC + ((_rxBufferBase + ofs * elementSize) << 2));
+						(ofs<<  0) ;	// SFID2[5:0] = addr; offset to the Rx buffer start address for storage of a matching message
+//		unsigned char elementSize = 2 + (DATA_BYTES >> 2);
+//		*address = (unsigned long *)((unsigned long)MESSAGE_RAM_LOC + ((_rxBufferBase + ofs * elementSize) << 2));
 	}
 	else // extended
 	{
@@ -348,15 +349,15 @@ char BspCan::Subscribe(unsigned long messageId, unsigned long **address, bool ex
 						(0  <<  9) |	// EFID2[10:9] = 0; Store message into an RX buffer
 						(0  <<  6) |	// EFID2[8:6] = 0; Set no Extension Interface registers
 						(ofs<<  0) ;	// EFID2[5:0] = addr; offset to the Rx buffer start address for storage of a matchign message
-		unsigned char elementSize = 2 + (DATA_BYTES >> 2);
-		*address = (unsigned long *)((unsigned long)MESSAGE_RAM_LOC + ((_rxBufferBase + ofs * elementSize) << 2));
+//		unsigned char elementSize = 2 + (DATA_BYTES >> 2);
+//		*address = (unsigned long *)((unsigned long)MESSAGE_RAM_LOC + ((_rxBufferBase + ofs * elementSize) << 2));
 	}
 	char buffer = _nextBuffer[bank];
 	_nextBuffer[bank]++;
 	return buffer + bank * SUPPORTED_BUFFERS;
 }
 
-void BspCan::GetData(char handle, unsigned long *identifier, char *length, unsigned long *data, bool *extended, bool *error, unsigned short *timestamp)
+void BspCan::GetData(char handle, unsigned long *identifier, unsigned char *length, unsigned long *data, bool *extended, bool *error, unsigned short *timestamp)
 {
 	unsigned char elementSize = 2 + (DATA_BYTES >> 2);
 	unsigned long *address = (unsigned long *)((unsigned long)MESSAGE_RAM_LOC + ((_rxBufferBase + handle * elementSize) << 2));
@@ -367,6 +368,27 @@ void BspCan::GetData(char handle, unsigned long *identifier, char *length, unsig
 	unsigned char dlc = (*address >> 16) & 0xF;
 	*length = _bytesInMessage[dlc];
 	*timestamp = *address & 0xFFFF;
+	address++;
+	for(char x = _dwordsToCopy[dlc]; x; x--)
+	{
+		*(data++) = *(address++);
+	}
+	// Update the word to indicate that the message was received.
+	unsigned long *newDat = (unsigned long *)&FDCAN1->NDAT1;
+	newDat += (handle >> 5);
+	handle &= 0x1F;
+	*newDat |= (1 << handle);
+}
+
+void BspCan::GetData(char handle, unsigned long *identifier, unsigned char *length, unsigned long *data, bool *extended)
+{
+	unsigned char elementSize = 2 + (DATA_BYTES >> 2);
+	unsigned long *address = (unsigned long *)((unsigned long)MESSAGE_RAM_LOC + ((_rxBufferBase + handle * elementSize) << 2));
+	*extended = (*address & ((unsigned long)1 << 30));
+	*identifier = *address & 0x1FFFFFFF;
+	address++;
+	unsigned char dlc = (*address >> 16) & 0xF;
+	*length = _bytesInMessage[dlc];
 	address++;
 	for(char x = _dwordsToCopy[dlc]; x; x--)
 	{

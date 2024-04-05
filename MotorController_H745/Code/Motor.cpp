@@ -1,3 +1,4 @@
+#include <math.h>
 #include "Motor.h"
 #include "BspAnalog.h"
 #include "BspPwm.h"
@@ -46,10 +47,10 @@ void MotorControl::Initialize(void)
 	//Only compute once (switching frequency does not change)
 	_deltatFactor = 360.0f / 10000.0f;
 	_deltaT = 1.0f / 10000.0f;
+	BspPwm::SetupSwitchPwm(10000, 300, Logic, 6);
 	unsigned short pwmPeriod = BspPwm::GetSwitchPeriod();
 	_periodFactor = (float)pwmPeriod * 0.5f;
 	_halfPeriod = pwmPeriod >> 1;
-	BspPwm::SetupSwitchPwm(10000, 300, Logic, 6);
 
 	BspAnalog::StartConversion();
 }
@@ -57,18 +58,29 @@ void MotorControl::Initialize(void)
 void MotorControl::Logic()
 {
 	ProcLoading::BeginTask(ProcLoading::Motor_Task);
+	Fccp::SnapshotHandler();
 	_loggingInput[_logInputIndex] = (GPIOC->IDR & 0x4) > 0;
 	_logInputIndex++;
 	_logInputIndex &= 31;
 	_analogIn->Current[0] = BspAnalog::GetFastExternalSample(&_externalChannels[ANA_I_A]);
 	_analogIn->Current[1] = BspAnalog::GetFastExternalSample(&_externalChannels[ANA_I_B]);
 	_analogIn->Current[2] = BspAnalog::GetFastExternalSample(&_externalChannels[ANA_I_C]);
-	//<KLUDGE> For now, SPI2 only reads 0 (even with all the right signals), so calculate i2.
-	//_motorInputs.Current[1] = -(_motorInputs.Current[0] + _motorInputs.Current[2]);
 	float busVoltage = BspAnalog::GetFastSingleSample(&_analogChannels[ANA_V_BUS]);
 	_analogIn->BusVoltage = busVoltage;
-	float motorBackEmf = _analogOut->Frequency * _config->MotorVoltsPerHz;
-	float amplitude = motorBackEmf / busVoltage + _config->Offset;
+#ifdef FLUX_ESTIMATION
+#else
+	if(busVoltage < 2.0f)
+	{
+		busVoltage = 2.0f;
+	}
+	float motorBackEmf = fabsf(_analogOut->Frequency) * _config->MotorVoltsPerHz;
+	// Limit Frequency to prevent pole slippage.
+	if(motorBackEmf > busVoltage)
+	{
+		_analogOut->Frequency *= busVoltage / motorBackEmf;
+		motorBackEmf = fabsf(_analogOut->Frequency) * _config->MotorVoltsPerHz;
+	}
+	float amplitude = (motorBackEmf + _config->StoppedVoltage) / busVoltage;
 	if(amplitude > 1.0f)
 	{
 		amplitude = 1.0f;
@@ -110,16 +122,21 @@ void MotorControl::Logic()
 	{
 		_analogOut->Phase -= 360.0f;
 	}
+	if(_analogOut->Phase < 0.0f)
+	{
+		_analogOut->Phase += 360.0f;
+	}
+#endif
 	SineTable::Sine_3Phase(_analogOut->Phase, _analogOut->Point);
 	_analogOut->Voltage[0] = _analogOut->Point[0] * motorBackEmf;
 	_analogOut->Voltage[1] = _analogOut->Point[2] * motorBackEmf;
 	_analogOut->Voltage[2] = _analogOut->Point[1] * motorBackEmf;
-	_analogOut->RealCurrent = _analogOut->Point[0] * _analogIn->Current[0] +
+	_analogOut->RealCurrent = (_analogOut->Point[0] * _analogIn->Current[0] +
 								_analogOut->Point[2] * _analogIn->Current[1] +
-								_analogOut->Point[1] * _analogIn->Current[2];
+								_analogOut->Point[1] * _analogIn->Current[2]) * (1.0f / 1.73205f);
 	_analogOut->ReactiveCurrent = ((_analogOut->Point[0] - _analogOut->Point[2]) *  _analogIn->Current[2] +
 									 (_analogOut->Point[2] - _analogOut->Point[1]) *  _analogIn->Current[0] +
-									 (_analogOut->Point[1] - _analogOut->Point[0]) *  _analogIn->Current[1]) * (1.0f / 1.73205f);
+									 (_analogOut->Point[1] - _analogOut->Point[0]) *  _analogIn->Current[1]) * (1.0f / 3.0f);
 	float ampFactor =  _analogOut->Amplitude * _periodFactor;
 	unsigned short period = (_analogOut->Point[0] * ampFactor) + _halfPeriod;
 	BspPwm::SetSwitchDutyCycle(0, period);
@@ -130,3 +147,7 @@ void MotorControl::Logic()
 	ProcLoading::EndTask(ProcLoading::Motor_Task);
 }
 
+bool MotorControl::OkToSave()
+{
+	return ((_analogIn->BusVoltage < 10.0f) && (_analogOut->Frequency < 1));
+}

@@ -72,8 +72,40 @@ void BspTimer::Initialize(void)
 	// Everything else is configured in the setup routine.
 }
 
-char BspTimer::Setup(long clockCycles, void (*funct)(void), unsigned char pri, bool oneShot)
+char BspTimer::Setup(unsigned long period_in_ns, void (*funct)(void), unsigned char pri, bool oneShot)
 {
+	unsigned long period = (unsigned long long)period_in_ns * (unsigned long long)TIMER_CLOCK_FREQUENCY / (unsigned long long)1000000000;
+	unsigned long minimumPrescaler = period >> 16;
+	unsigned long maximumPrescaler = period >> 15;
+	unsigned long error = period;
+	unsigned long bestPsc = 0;
+	unsigned long tempArr = 0;
+	for(unsigned long pscTst = minimumPrescaler; pscTst < maximumPrescaler; pscTst++)
+	{
+		tempArr = period / (pscTst + 1);
+		// ARR can't exceed 65535, but the bitshift above won't always give a divider that works
+		if(tempArr > 65535)
+		{
+			tempArr = 65535;
+		}
+		unsigned long calcPeriod = (pscTst + 1) * tempArr;
+		unsigned long tempError = (calcPeriod - period);
+		if(tempError < 0)
+		{
+			tempError = -tempError;
+		}
+		if(tempError < error)
+		{
+			error = tempError;
+			bestPsc = pscTst;
+			// Perfect match
+			if(error == 0)
+			{
+				break;
+			}
+		}
+	}
+
 	if(_nextTimer >= SUPPORTED_TIMERS)
 	{
 		return -1;
@@ -102,8 +134,8 @@ char BspTimer::Setup(long clockCycles, void (*funct)(void), unsigned char pri, b
 	tim->CR2 = 0;
 	tim->DIER = (0  <<  8)	|	// UDE = 0; Update DMA request disabled
 				(1  <<  0)	;	// UIE = 1; Update interrupt enabled
-	tim->PSC = clockCycles >> 16;
-	tim->ARR = clockCycles & 0xFFFF;
+	tim->PSC = bestPsc & 0xFFFF;
+	tim->ARR = tempArr & 0xFFFF;
 
 	// Setup Interrupt
 	_function[_nextTimer] = funct;
@@ -274,11 +306,11 @@ extern "C"
 void TIM6_DAC_IRQHandler(void)
 {
 	BspTimer::_function[0]();
-	TIM7->SR = 1;
+	TIM6->SR = 0;
 }
 void TIM7_IRQHandler(void)
 {
 	BspTimer::_function[1]();
-	TIM7->SR = 1;
+	TIM7->SR = 0;
 }
 }

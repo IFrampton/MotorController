@@ -35,7 +35,7 @@ class MotorControl
 		float MotorVoltsPerHz;
 		float FrequencyRampRate;
 		float FrequencyTarget;
-		float Offset;
+		float StoppedVoltage;
 	};
 	public: struct MotorDigitalConfig
 	{
@@ -79,6 +79,7 @@ class MotorControl
 	public:  static void Initialize(void);
 	public:  static void Logic(void);
 
+	public:  static bool OkToSave();
 	public:  static void LinkData(MotorConfig *config, MotorInputs *analogIn, MotorOutputs *analogOut )
 	{
 		_config = config;
