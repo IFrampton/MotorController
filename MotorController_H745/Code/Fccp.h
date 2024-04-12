@@ -28,6 +28,7 @@ class Fccp
 		Handler_Snapshot,
 		NUMBER_OF_HANDLERS
 	};
+	private: static const unsigned long SnapshotTimeout = 300000;
 #ifdef USE_EXTENDED_ADDRESSES
 	private: static const unsigned long Id_RequestOneTimeData = 0x3FF70000;
 	private: static const unsigned long Id_RequestSubscribedData = 0x3FF80000;
@@ -45,7 +46,7 @@ class Fccp
 	private: static const unsigned long Id_ResponseSnapshotData = 0x300;
 	private: static const bool UseExtended = false;
 #endif
-	private: enum DataTypes
+	public: enum DataTypes
 	{
 		DataType_Bool,
 		DataType_Int8,
@@ -129,6 +130,11 @@ class Fccp
 		TriggerType_RisingEdge,
 		TriggerType_FallingEdge
 	};
+	private: enum SnapshotStatus
+	{
+		SnapshotStatus_Done = 0x80,
+		SnapshotStatus_Retransmit = 0x40
+	};
 	private: struct RequestSnapshotData
 	{
 		union// SnapshotDataPayload
@@ -138,6 +144,7 @@ class Fccp
 				unsigned char Identifier;
 				unsigned char Page;
 				unsigned char TriggerDataType;
+				unsigned char Pad1;
 				unsigned long TriggerAddress;
 			};
 			struct// Page1_TriggerDefinition2
@@ -145,6 +152,7 @@ class Fccp
 				unsigned char unk1; //Identifier
 				unsigned char unk2; //Page
 				unsigned char TriggerType;
+				unsigned char Pad2;
 				float TriggerLevel;
 			};
 			struct// Page2_TriggerFilterDefinition
@@ -152,6 +160,7 @@ class Fccp
 				unsigned char unk3; //Identifier
 				unsigned char unk4; //Page
 				unsigned char Spare1;
+				unsigned char Pad3;
 				float TriggerFilterTimeConstant;
 			};
 			struct// Page3_TimeDefinition
@@ -159,6 +168,7 @@ class Fccp
 				unsigned char unk5; //Identifier
 				unsigned char unk6; //Page
 				unsigned char ChannelCount;
+				unsigned char Pad4;
 				unsigned long SamplesBeforeTrigger;
 			};
 			struct// Page4_ChannelDefinition
@@ -166,6 +176,7 @@ class Fccp
 				unsigned char unk7; //Identifier
 				unsigned char unk8; //Page
 				unsigned char Index;
+				unsigned char ChannelDataType;
 				unsigned long ChannelAddress;
 			};
 			struct// Page5_NextDataPoint
@@ -173,6 +184,7 @@ class Fccp
 				unsigned char unk9;  //Identifier
 				unsigned char unk10; //Page
 				unsigned char PacketNum;
+				unsigned char Status;
 				unsigned long DataIndex;
 			};
 		};
@@ -228,6 +240,7 @@ class Fccp
 	private: static char _txHandles[NUMBER_OF_HANDLERS];
 	private: static CanData _canData[NUMBER_OF_HANDLERS];
 	private: static unsigned long _txData[NUMBER_OF_HANDLERS][2];
+	private: static float _dummyVariable;
 	//<KLUDGE> These should be private
 	public:  static void Initialize();
 	private: static bool _forceFlash;
@@ -242,6 +255,8 @@ class Fccp
 	private: static SnapshotDesc _snapshot;
 	private: static unsigned char _snapshotId;
 	private: static unsigned long _snapshotBuffer[65536];
+	private: static unsigned long _timeoutCounter[6];
+
 	private: static void SnapshotPacketHandler();
 	public:  static _inline_ void SnapshotHandler()
 	{
@@ -249,16 +264,16 @@ class Fccp
 		// This routine runs in the high-speed task, so additional logic hit the processor loading pretty hard.
 		if(_snapshot.Configured)
 		{
-			register unsigned long **snapshotAddress = (unsigned long **)_snapshot.ChannelAddress[0];
+			register unsigned long *snapshotAddress = (unsigned long *)_snapshot.ChannelAddress;
 			register unsigned long *snapshotBuffer = _snapshotBuffer;
-			snapshotBuffer += _snapshot.UpdateIndex;
+			register unsigned long ref = _snapshot.UpdateIndex;
 			for(char x = _snapshot.ChannelCount; x; x--)
 			{
-				*(snapshotBuffer++) = *(*(snapshotAddress++));
-				snapshotBuffer = (unsigned long *)((unsigned long)snapshotBuffer & (sizeof(_snapshotBuffer) / sizeof(unsigned long) - 1));
+				*(snapshotBuffer + ref++) = *(unsigned long *)*(snapshotAddress++);
+				ref &= (sizeof(_snapshotBuffer) / sizeof(unsigned long) - 1);
 			}
 			// Keep track of the updated index
-			_snapshot.UpdateIndex += _snapshot.ChannelCount;
+			_snapshot.UpdateIndex = ref;
 			// Prevents overwriting Pre-Trigger Data
 			if(_snapshot.Triggered)
 			{
@@ -284,7 +299,9 @@ class Fccp
 					if(_snapshot.TriggerHandler())
 					{
 						_snapshot.Triggered = true;
-						_snapshot.TransmitIndex = _snapshot.UpdateIndex;
+						unsigned long txIdx = _snapshot.UpdateIndex - _snapshot.SamplesBeforeTrigger * _snapshot.ChannelCount;
+						txIdx &= (sizeof(_snapshotBuffer) / sizeof(unsigned long) - 1);
+						_snapshot.TransmitIndex = txIdx;
 					}
 #ifdef VERIFY_SAMPLE_COUNT_BEFORE_TRIGGER
 				}
@@ -298,70 +315,70 @@ class Fccp
 	}
 	public:  static bool BoolRisingTrigger()
 	{
-		bool condition = *(bool *)(&_snapshot.TrigAddress);
+		bool condition = *(bool *)_snapshot.TrigAddress;
 		bool trig = condition && !_snapshot.PrevCondition;
 		_snapshot.PrevCondition = condition;
 		return trig;
 	}
 	public:  static bool BoolFallingTrigger()
 	{
-		bool condition = *(bool *)(&_snapshot.TrigAddress);
+		bool condition = *(bool *)_snapshot.TrigAddress;
 		bool trig = !condition && _snapshot.PrevCondition;
 		_snapshot.PrevCondition = condition;
 		return trig;
 	}
 	public:  static bool Int8RisingTrigger()
 	{
-		bool condition = *(char *)(&_snapshot.TrigAddress) >= (*(long *)(&_snapshot.TriggerLevel) & 0xFF);
+		bool condition = *(char *)_snapshot.TrigAddress >= (*(long *)(&_snapshot.TriggerLevel) & 0xFF);
 		bool trig = condition && !_snapshot.PrevCondition;
 		_snapshot.PrevCondition = condition;
 		return trig;
 	}
 	public:  static bool Int8FallingTrigger()
 	{
-		bool condition = *(char *)(&_snapshot.TrigAddress) >= (*(long *)(&_snapshot.TriggerLevel) & 0xFF);
+		bool condition = *(char *)_snapshot.TrigAddress >= (*(long *)(&_snapshot.TriggerLevel) & 0xFF);
 		bool trig = !condition && _snapshot.PrevCondition;
 		_snapshot.PrevCondition = condition;
 		return trig;
 	}
 	public:  static bool Int16RisingTrigger()
 	{
-		bool condition = *(short *)(&_snapshot.TrigAddress) >= (*(long *)(&_snapshot.TriggerLevel) & 0xFFFF);
+		bool condition = *(short *)_snapshot.TrigAddress >= (*(long *)(&_snapshot.TriggerLevel) & 0xFFFF);
 		bool trig = condition && !_snapshot.PrevCondition;
 		_snapshot.PrevCondition = condition;
 		return trig;
 	}
 	public:  static bool Int16FallingTrigger()
 	{
-		bool condition = *(short *)(&_snapshot.TrigAddress) >= (*(long *)(&_snapshot.TriggerLevel) & 0xFFFF);
+		bool condition = *(short *)_snapshot.TrigAddress >= (*(long *)(&_snapshot.TriggerLevel) & 0xFFFF);
 		bool trig = !condition && _snapshot.PrevCondition;
 		_snapshot.PrevCondition = condition;
 		return trig;
 	}
 	public:  static bool Int32RisingTrigger()
 	{
-		bool condition = *(long *)(&_snapshot.TrigAddress) >= (*(long *)(&_snapshot.TriggerLevel));
+		bool condition = *(long *)_snapshot.TrigAddress >= (*(long *)(&_snapshot.TriggerLevel));
 		bool trig = condition && !_snapshot.PrevCondition;
 		_snapshot.PrevCondition = condition;
 		return trig;
 	}
 	public:  static bool Int32FallingTrigger()
 	{
-		bool condition = *(long *)(&_snapshot.TrigAddress) >= (*(long *)(&_snapshot.TriggerLevel));
+		bool condition = *(long *)_snapshot.TrigAddress >= (*(long *)(&_snapshot.TriggerLevel));
 		bool trig = !condition && _snapshot.PrevCondition;
 		_snapshot.PrevCondition = condition;
 		return trig;
 	}
 	public:  static bool FloatRisingTrigger()
 	{
-		bool condition = *(float *)(&_snapshot.TrigAddress) >= (*(float *)(&_snapshot.TriggerLevel));
+		bool condition = *(float *)_snapshot.TrigAddress >= (*(float *)(&_snapshot.TriggerLevel));
 		bool trig = condition && !_snapshot.PrevCondition;
 		_snapshot.PrevCondition = condition;
 		return trig;
 	}
 	public:  static bool FloatFallingTrigger()
 	{
-		bool condition = *(float *)(&_snapshot.TrigAddress) >= (*(float *)(&_snapshot.TriggerLevel));
+		bool condition = *(float *)_snapshot.TrigAddress >= (*(float *)(&_snapshot.TriggerLevel));
 		bool trig = !condition && _snapshot.PrevCondition;
 		_snapshot.PrevCondition = condition;
 		return trig;

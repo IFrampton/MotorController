@@ -7,6 +7,7 @@ Fccp::CanData Fccp::_canData[NUMBER_OF_HANDLERS];
 char Fccp::_rxHandles[NUMBER_OF_HANDLERS];
 char Fccp::_txHandles[NUMBER_OF_HANDLERS];
 unsigned long Fccp::_txData[NUMBER_OF_HANDLERS][2] = {{0,0},{0,0},{0,0}};
+float Fccp::_dummyVariable = -345.67f;
 
 void Fccp::Initialize()
 {
@@ -23,6 +24,11 @@ void Fccp::Initialize()
 	for(long x = 0; x < SUPPORTED_SUBSCRIPTIONS; x++)
 	{
 		_subscriptions[x].Rate = 0xFFFF;
+	}
+
+	for(long x = 0; x < SUPPORTED_SNAPSHOT_CHANNELS; x++)
+	{
+		_snapshot.ChannelAddress[x] = (unsigned long)(&_dummyVariable);
 	}
 }
 
@@ -53,10 +59,10 @@ void Fccp::OneTimePacketHandler()
 			// First, check if this is a read or write request
 			if(data->Control == OneTime_Ctrl_Write)
 			{
-				_lastWrittenData.Identifier = data->Identifier;
-				_lastWrittenData.Control = OneTime_Ctrl_Write;
-				_lastWrittenData.Type = data->Type;
-				_lastWrittenData.Data = data->Data;
+				register unsigned long *source = (unsigned long *)_canData[Handler_OneTime].Data;
+				register unsigned long *dest = (unsigned long *)&_lastWrittenData;
+				*(dest++) = *(source++);
+				*(dest++) = *(source++);
 			}
 			else
 			{
@@ -157,6 +163,7 @@ void Fccp::SubscribePacketHandler()
 Fccp::SnapshotDesc Fccp::_snapshot;
 unsigned char Fccp::_snapshotId = 0;
 unsigned long Fccp::_snapshotBuffer[65536];
+unsigned long Fccp::_timeoutCounter[6] = {0,0,0,0,0,0};
 
 void Fccp::SnapshotPacketHandler()
 {
@@ -184,32 +191,44 @@ void Fccp::SnapshotPacketHandler()
 							case DataType_Bool:
 							{
 								_snapshot.TriggerDataType = DataType_Bool;
-								_snapshot.TrigAddress = (unsigned char *)data->TriggerAddress;
+								// Note: The GetAddress Function is always 32-bit aligned. The trigger may not be.
+								unsigned long address = (unsigned long)DataMan::GetAddress(data->TriggerAddress, data->TriggerDataType & Type_DataType, data->TriggerDataType & Type_Nvm, data->TriggerDataType & Type_RelativeAddr);
+								// Retrieve additional Address data;
+								address += data->TriggerAddress & 0x3;
+								_snapshot.TrigAddress = (unsigned char *)address;
 								break;
 							}
 							case DataType_Int8:
 							{
 								_snapshot.TriggerDataType = DataType_Int8;
-								_snapshot.TrigAddress = (unsigned char *)data->TriggerAddress;
+								// Note: The GetAddress Function is always 32-bit aligned. The trigger may not be.
+								unsigned long address = (unsigned long)DataMan::GetAddress(data->TriggerAddress, data->TriggerDataType & Type_DataType, data->TriggerDataType & Type_Nvm, data->TriggerDataType & Type_RelativeAddr);
+								// Retrieve additional Address data;
+								address += data->TriggerAddress & 0x3;
+								_snapshot.TrigAddress = (unsigned char *)address;
 								break;
 							}
 							case DataType_Int16:
 							{
 								_snapshot.TriggerDataType = DataType_Int16;
-								_snapshot.TrigAddress = (unsigned char *)(data->TriggerAddress & 0xFFFFFFFE);
+								// Note: The GetAddress Function is always 32-bit aligned. The trigger may not be.
+								unsigned long address = (unsigned long)DataMan::GetAddress(data->TriggerAddress, data->TriggerDataType & Type_DataType, data->TriggerDataType & Type_Nvm, data->TriggerDataType & Type_RelativeAddr);
+								// Retrieve additional Address data;
+								address += data->TriggerAddress & 0x2;
+								_snapshot.TrigAddress = (unsigned char *)address;
 								break;
 							}
 							case DataType_Int32:
 							{
 								_snapshot.TriggerDataType = DataType_Int32;
-								_snapshot.TrigAddress = (unsigned char *)(data->TriggerAddress & 0xFFFFFFFC);
+								_snapshot.TrigAddress = (unsigned char *)DataMan::GetAddress(data->TriggerAddress, data->TriggerDataType & Type_DataType, data->TriggerDataType & Type_Nvm, data->TriggerDataType & Type_RelativeAddr);
 								break;
 							}
 							case DataType_Float:
 							default:
 							{
 								_snapshot.TriggerDataType = DataType_Float;
-								_snapshot.TrigAddress = (unsigned char *)(data->TriggerAddress & 0xFFFFFFFC);
+								_snapshot.TrigAddress = (unsigned char *)DataMan::GetAddress(data->TriggerAddress, data->TriggerDataType & Type_DataType, data->TriggerDataType & Type_Nvm, data->TriggerDataType & Type_RelativeAddr);
 								break;
 							}
 						}
@@ -355,18 +374,25 @@ void Fccp::SnapshotPacketHandler()
 					{
 						_snapshot.IntendedChannelCount = data->ChannelCount;
 						// Determine how many samples to capture
-						_snapshot.SamplesToCapture = sizeof(_snapshotBuffer)/sizeof(unsigned long) / data->ChannelCount;
-						// The snapshot is constantly rolling over. There is no way to capture more samples before the trigger
-						// than what are stored in the buffer.
-						if(data->SamplesBeforeTrigger <= _snapshot.SamplesToCapture)
+						if(data->ChannelCount > 0)
 						{
-							_snapshot.SamplesBeforeTrigger = data->SamplesBeforeTrigger;
-							_snapshot.Samples = data->SamplesBeforeTrigger;
+							_snapshot.SamplesToCapture = (sizeof(_snapshotBuffer)/sizeof(unsigned long)) / data->ChannelCount;
 						}
 						else
 						{
+							_snapshot.SamplesToCapture = (sizeof(_snapshotBuffer) / sizeof(unsigned long));
+						}
+						// The snapshot is constantly rolling over. There is no way to capture more samples before the trigger
+						// than what are stored in the buffer.
+						if(data->SamplesBeforeTrigger >= _snapshot.SamplesToCapture)
+						{
 							_snapshot.SamplesBeforeTrigger = _snapshot.SamplesToCapture;
 							_snapshot.Samples = _snapshot.SamplesToCapture;
+						}
+						else
+						{
+							_snapshot.SamplesBeforeTrigger = data->SamplesBeforeTrigger;
+							_snapshot.Samples = data->SamplesBeforeTrigger;
 						}
 
 						// Page 3 has been received
@@ -386,7 +412,7 @@ void Fccp::SnapshotPacketHandler()
 						// subscribing to too many channels
 						if(data->PacketNum == _snapshot.ChannelCount)
 						{
-							_snapshot.ChannelAddress[_snapshot.ChannelCount] = (unsigned long)(data->ChannelAddress & 0xFFFFFFFC);
+							_snapshot.ChannelAddress[_snapshot.ChannelCount] = (unsigned long)DataMan::GetAddress(data->ChannelAddress, data->ChannelDataType & Type_DataType, data->ChannelDataType & Type_Nvm, data->ChannelDataType & Type_RelativeAddr);
 							if(_snapshot.ChannelCount < SUPPORTED_SNAPSHOT_CHANNELS - 1)
 							{
 								_snapshot.ChannelCount++;
@@ -405,13 +431,21 @@ void Fccp::SnapshotPacketHandler()
 				}
 				case SnapshotPage5_NextDataPoint:
 				{
-					if(_snapshot.Configured && _snapshot.Transmitting)
+					if(_snapshot.Transmitting)
 					{
 						// Don't check if packet number has incremented of if index has changed. This is used for validation
 						// on the interface side and it may need to re-request a packet.
-						_snapshot.NextPacketNum = data->PacketNum;
-						_snapshot.NextPacketIndex = data->Index;
-						_snapshot.NextPacketReady = true;
+						if((data->Status & SnapshotStatus_Done))
+						{
+							_snapshot.Transmitting = false;
+							_snapshot.Triggered = false;
+						}
+						else
+						{
+							_snapshot.NextPacketReady = true;
+							_snapshot.NextPacketNum = data->PacketNum;
+							_snapshot.NextPacketIndex = data->DataIndex;
+						}
 					}
 					break;
 				}
@@ -431,6 +465,26 @@ void Fccp::SnapshotPacketHandler()
 			_snapshot.WasConfigured = _snapshot.Configured;
 		}
 	}
+	// No messages are being requested. Give up adter a while and revert to listening for another snapshot
+	if(_snapshot.Transmitting)
+	{
+		_timeoutCounter[0]++;
+		if(++_timeoutCounter[0] >= SnapshotTimeout)
+		{
+			_timeoutCounter[0] = 0;
+			_snapshot.NextPacketReady = false;
+			_snapshot.Triggered = false;
+			_snapshot.Transmitting = false;
+		}
+	}
+	// Catch the end of the data Capture and send the first packet so the interface knows it is ready.
+	if(!_snapshot.Configured && _snapshot.WasConfigured)
+	{
+		_snapshot.NextPacketReady = true;
+		_snapshot.NextPacketIndex = 0;
+		_snapshot.NextPacketNum = _snapshot.ConfiguredIdentifier;
+		_snapshot.WasConfigured = _snapshot.Configured;
+	}
 	if(_snapshot.NextPacketReady)
 	{
 		_snapshot.NextPacketReady = false;
@@ -442,6 +496,7 @@ void Fccp::SnapshotPacketHandler()
 		_txData[Handler_Snapshot][1] = _snapshotBuffer[index];
 		// Requested Packet Number is part of the response identifier
 		BspCan::Transmit(_txHandles[Handler_Snapshot], Id_ResponseSnapshotData + _snapshot.NextPacketNum, &_txData[Handler_Snapshot][0], 8, false);
+		_timeoutCounter[0] = 0;
 	}
 }
 

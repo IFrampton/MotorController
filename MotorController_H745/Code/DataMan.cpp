@@ -94,6 +94,7 @@ void *DataMan::GetConfigAddress(unsigned long address, bool relative, unsigned c
 	{
 		if(type == 0)
 		{
+			// Return entire 32-bit word
 			unsigned long baseLocation = (unsigned long)_config.Digital;
 			return (void *)((baseLocation + _relativeConfigLookup[module][1] + address) & 0xFFFFFFFC);
 		}
@@ -102,6 +103,7 @@ void *DataMan::GetConfigAddress(unsigned long address, bool relative, unsigned c
 	}
 	if(type == 0)
 	{
+		// Return entire 32-bit word
 		unsigned long baseLocation = (unsigned long)_config.Digital;
 		return (void *)((baseLocation + address) & 0xFFFFFFFC);
 	}
@@ -111,7 +113,7 @@ void *DataMan::GetConfigAddress(unsigned long address, bool relative, unsigned c
 
 void *DataMan::GetVariableAddress(unsigned long address, unsigned char module, unsigned char type)
 {
-	// NOTE: There is no portection on the address; it can be as big as desired (which can cause a read past the end of memory)
+	// NOTE: There is no protection on the address; it can be as big as desired (which can cause a read past the end of memory)
 	// prevent overflow
 	if(module >= NUM_MODULES)
 	{
@@ -126,30 +128,107 @@ void *DataMan::GetVariableAddress(unsigned long address, unsigned char module, u
 
 unsigned char DataMan::WriteData(unsigned long address, unsigned char dataType, bool nvm, bool relative, unsigned long data)
 {
-	if(relative)
+	unsigned short addr = address & 0xFFFF;
+	address >>= 16;
+	unsigned char type = address & 0xFF;
+	unsigned char module = address >> 8;
+	switch(dataType)
 	{
-		unsigned short addr = address & 0xFFFF;
-		address >>= 16;
-		unsigned char type = address & 0xFF;
-		unsigned char module = address >> 8;
-		if(nvm)
+		case Fccp::DataType_Bool:
+		case Fccp::DataType_Int8:
 		{
-			*(unsigned long *)GetConfigAddress(addr, 1, module, dataType) = data;
+			if(relative)
+			{
+				if(nvm)
+				{
+					register char offset = addr & 0x3;
+					register unsigned long location = (unsigned long)GetConfigAddress(addr, 1, module, dataType);
+					*(unsigned char *)(location + offset) = (char)data;
+					break;
+				}
+				else
+				{
+					register char offset = addr & 0x3;
+					register unsigned long location = (unsigned long)GetVariableAddress(addr, module, type);
+					*(unsigned char *)(location + offset) = (char)data;
+				}
+			}
+			else
+			{
+				if(nvm)
+				{
+					register char offset = addr & 0x3;
+					register unsigned long location = (unsigned long)GetConfigAddress(addr, 0, 0, dataType);
+					*(unsigned char *)(location + offset) = (char)data;
+				}
+				else
+				{
+					register char offset = addr & 0x3;
+					*(unsigned char *)(address + offset) = (char)data;
+				}
+			}
+			break;
 		}
-		else
+		case Fccp::DataType_Int16:
 		{
-			*(unsigned long *)GetVariableAddress(addr, module, type) = data;
+			if(relative)
+			{
+				if(nvm)
+				{
+					register char offset = addr & 0x2;
+					register unsigned long location = (unsigned long)GetConfigAddress(addr, 1, module, dataType);
+					*(unsigned short *)(location + offset) = (short)data;
+				}
+				else
+				{
+					register char offset = addr & 0x2;
+					register unsigned long location = (unsigned long)GetVariableAddress(addr, module, type);
+					*(unsigned short *)(location + offset) = (short)data;
+				}
+			}
+			else
+			{
+				if(nvm)
+				{
+					register char offset = addr & 0x2;
+					register unsigned long location = (unsigned long)GetConfigAddress(addr, 0, 0, dataType);
+					*(unsigned short *)(location + offset) = (short)data;
+				}
+				else
+				{
+					register char offset = addr & 0x2;
+					*(unsigned short *)(address + offset) = (short)data;
+				}
+			}
+			break;
 		}
-	}
-	else
-	{
-		if(nvm)
+		case Fccp::DataType_Int32:
+		case Fccp::DataType_Float:
+		default:
 		{
-			*(unsigned long *)GetConfigAddress(address, 0, 0, dataType) = data;
-		}
-		else
-		{
-			*(unsigned long *)address = data;
+			if(relative)
+			{
+				if(nvm)
+				{
+					*(unsigned long *)GetConfigAddress(addr, 1, module, dataType) = data;
+				}
+				else
+				{
+					*(unsigned long *)GetVariableAddress(addr, module, type) = data;
+				}
+			}
+			else
+			{
+				if(nvm)
+				{
+					*(unsigned long *)GetConfigAddress(address, 0, 0, dataType) = data;
+				}
+				else
+				{
+					*(unsigned long *)address = data;
+				}
+			}
+			break;
 		}
 	}
 	// Note: No error reporting for now
@@ -233,17 +312,17 @@ void DataMan::SendDefaultCanPackets()
 			data = _receiveData.Data[0] >> 16;
 			if(data < 0xFFFF)
 			{
-				DataMan::_config.Analog->Motor.FrequencyRampRate = (float)data * 0.01f;
+				DataMan::_config.Analog->Motor.FrequencyRampRate[1] = (float)data * 0.01f;
 			}
 			data = _receiveData.Data[1] & 0xFFFF;
 			if(data < 0xFFFF)
 			{
-				DataMan::_config.Analog->Motor.MotorVoltsPerHz = (float)data * 0.001f;
+				DataMan::_config.Analog->Motor.MotorVoltsPerHz[1] = (float)data * 0.001f;
 			}
 			data = _receiveData.Data[1] >> 16;
 			if(data < 0xFFFF)
 			{
-				DataMan::_config.Analog->Motor.StoppedVoltage = (float)data * 0.0001f;
+				DataMan::_config.Analog->Motor.StoppedVoltage[1] = (float)data * 0.0001f;
 			}
 		}
 		//else if()

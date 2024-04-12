@@ -32,10 +32,11 @@ class MotorControl
 	};
 	public: struct MotorConfig
 	{
-		float MotorVoltsPerHz;
-		float FrequencyRampRate;
+		float MotorVoltsPerHz[2];
+		float FrequencyRampRate[2];
+		float StoppedVoltage[2];
 		float FrequencyTarget;
-		float StoppedVoltage;
+		float ClosedLoopFrequency;
 	};
 	public: struct MotorDigitalConfig
 	{

@@ -73,47 +73,97 @@ void MotorControl::Logic()
 	{
 		busVoltage = 2.0f;
 	}
-	float motorBackEmf = fabsf(_analogOut->Frequency) * _config->MotorVoltsPerHz;
-	// Limit Frequency to prevent pole slippage.
-	if(motorBackEmf > busVoltage)
+	float motorBackEmf;
+	if(_analogOut->Frequency < _config->ClosedLoopFrequency)
 	{
-		_analogOut->Frequency *= busVoltage / motorBackEmf;
-		motorBackEmf = fabsf(_analogOut->Frequency) * _config->MotorVoltsPerHz;
-	}
-	float amplitude = (motorBackEmf + _config->StoppedVoltage) / busVoltage;
-	if(amplitude > 1.0f)
-	{
-		amplitude = 1.0f;
-	}
-	else if (amplitude < -1.0f)
-	{
-		amplitude = -1.0f;
-	}
-	_analogOut->Amplitude = amplitude;
-	// Ramping Up
-	if(_analogOut->Frequency < _config->FrequencyTarget)
-	{
-		float increase = _config->FrequencyRampRate * _deltaT;
-		if(_analogOut->Frequency + increase > _config->FrequencyTarget)
+		motorBackEmf = fabsf(_analogOut->Frequency) * _config->MotorVoltsPerHz[0];
+		// Limit Frequency to prevent pole slippage.
+		if(motorBackEmf > busVoltage)
 		{
-			_analogOut->Frequency = _config->FrequencyTarget;
+			_analogOut->Frequency *= busVoltage / motorBackEmf;
+			motorBackEmf = fabsf(_analogOut->Frequency) * _config->MotorVoltsPerHz[0];
 		}
+		float amplitude = (motorBackEmf + _config->StoppedVoltage[0]) / busVoltage;
+		if(amplitude > 1.0f)
+		{
+			amplitude = 1.0f;
+		}
+		else if (amplitude < -1.0f)
+		{
+			amplitude = -1.0f;
+		}
+		_analogOut->Amplitude = amplitude;
+		// Ramping Up
+		if(_analogOut->Frequency < _config->FrequencyTarget)
+		{
+			float increase = _config->FrequencyRampRate[0] * _deltaT;
+			if(_analogOut->Frequency + increase > _config->FrequencyTarget)
+			{
+				_analogOut->Frequency = _config->FrequencyTarget;
+			}
+			else
+			{
+				_analogOut->Frequency += increase;
+			}
+		}
+		// Ramping down or steady
 		else
 		{
-			_analogOut->Frequency += increase;
+			float decrease = _config->FrequencyRampRate[0] * _deltaT;
+			if(_analogOut->Frequency - decrease < _config->FrequencyTarget)
+			{
+				_analogOut->Frequency = _config->FrequencyTarget;
+			}
+			else
+			{
+				_analogOut->Frequency -= decrease;
+			}
 		}
 	}
-	// Ramping down or steady
 	else
 	{
-		float decrease = _config->FrequencyRampRate * _deltaT;
-		if(_analogOut->Frequency - decrease < _config->FrequencyTarget)
+		motorBackEmf = fabsf(_analogOut->Frequency) * _config->MotorVoltsPerHz[1];
+		// Limit Frequency to prevent pole slippage.
+		if(motorBackEmf > busVoltage)
 		{
-			_analogOut->Frequency = _config->FrequencyTarget;
+			_analogOut->Frequency *= busVoltage / motorBackEmf;
+			motorBackEmf = fabsf(_analogOut->Frequency) * _config->MotorVoltsPerHz[1];
 		}
+		float amplitude = (motorBackEmf + _config->StoppedVoltage[1]) / busVoltage;
+		if(amplitude > 1.0f)
+		{
+			amplitude = 1.0f;
+		}
+		else if (amplitude < -1.0f)
+		{
+			amplitude = -1.0f;
+		}
+		_analogOut->Amplitude = amplitude;
+		// Ramping Up
+		if(_analogOut->Frequency < _config->FrequencyTarget)
+		{
+			float increase = _config->FrequencyRampRate[1] * _deltaT;
+			if(_analogOut->Frequency + increase > _config->FrequencyTarget)
+			{
+				_analogOut->Frequency = _config->FrequencyTarget;
+			}
+			else
+			{
+				_analogOut->Frequency += increase;
+			}
+		}
+		// Ramping down or steady
 		else
 		{
-			_analogOut->Frequency -= decrease;
+			float decrease = _config->FrequencyRampRate[1] * _deltaT;
+			if(_analogOut->Frequency - decrease < _config->FrequencyTarget)
+			{
+				_analogOut->Frequency = _config->FrequencyTarget;
+			}
+			else
+			{
+				_analogOut->Frequency -= decrease;
+			}
 		}
 	}
 	// calculate phase now

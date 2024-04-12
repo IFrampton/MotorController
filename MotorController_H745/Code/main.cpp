@@ -14,8 +14,11 @@
 #include "SlowTimer.h"
 #include "Loading.h"
 
+int _tempVar = 0;
+
 int main(void)
 {
+	_tempVar = sizeof(unsigned long);
 	//unsigned long long counts = 0;
 	// Setup the clocks
 	BspClock::Initialize(8000000, 240000000);
