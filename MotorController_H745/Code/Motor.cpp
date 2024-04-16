@@ -11,8 +11,10 @@
 BspAnalog::AnalogType MotorControl::_analogChannels[NUM_ANALOGS];
 BspAnalog::ExternalAnalogType MotorControl::_externalChannels[NUM_EXTERNAL_ANALOGS];
 MotorControl::MotorConfig *MotorControl::_config;
+MotorControl::MotorDigitalConfig *MotorControl::_digitalConfig;
 MotorControl::MotorInputs *MotorControl::_analogIn;
 MotorControl::MotorOutputs *MotorControl::_analogOut;
+MotorControl::MotorDigitalOutputs *MotorControl::_digitalOut;
 bool MotorControl::_dataLinked = false;
 float MotorControl::_deltatFactor = 36.0f / 10000.0f;
 float MotorControl::_deltaT = 1.0f / 10000.0f;
@@ -65,128 +67,203 @@ void MotorControl::Logic()
 	_analogIn->Current[0] = BspAnalog::GetFastExternalSample(&_externalChannels[ANA_I_A]);
 	_analogIn->Current[1] = BspAnalog::GetFastExternalSample(&_externalChannels[ANA_I_B]);
 	_analogIn->Current[2] = BspAnalog::GetFastExternalSample(&_externalChannels[ANA_I_C]);
+	bool fault = false;
+	if(_analogIn->Current[0] > _config->CurrentFault)
+	{
+		fault = true;
+	}
+	else if(_analogIn->Current[0] < -_config->CurrentFault)
+	{
+		fault = true;
+	}
+	if(_analogIn->Current[1] > _config->CurrentFault)
+	{
+		fault = true;
+	}
+	else if(_analogIn->Current[1] < -_config->CurrentFault)
+	{
+		fault = true;
+	}
+	if(_analogIn->Current[2] > _config->CurrentFault)
+	{
+		fault = true;
+	}
+	else if(_analogIn->Current[2] < -_config->CurrentFault)
+	{
+		fault = true;
+	}
+	if(fault && !_digitalOut->Faulted)
+	{
+		BspPwm::DisablePWM();
+		_digitalOut->Faulted = true;
+		_analogOut->Frequency = 0.0f;
+	}
+	if((_digitalConfig->Reset == 1) && (_digitalOut->PrevReset != 1))
+	{
+		BspPwm::EnablePWM();
+		_digitalOut->Faulted = false;
+	}
+	_digitalOut->PrevReset = _digitalConfig->Reset;
 	float busVoltage = BspAnalog::GetFastSingleSample(&_analogChannels[ANA_V_BUS]);
 	_analogIn->BusVoltage = busVoltage;
-#ifdef FLUX_ESTIMATION
-#else
-	if(busVoltage < 2.0f)
-	{
-		busVoltage = 2.0f;
-	}
-	float motorBackEmf;
-	if(_analogOut->Frequency < _config->ClosedLoopFrequency)
-	{
-		motorBackEmf = fabsf(_analogOut->Frequency) * _config->MotorVoltsPerHz[0];
-		// Limit Frequency to prevent pole slippage.
-		if(motorBackEmf > busVoltage)
-		{
-			_analogOut->Frequency *= busVoltage / motorBackEmf;
-			motorBackEmf = fabsf(_analogOut->Frequency) * _config->MotorVoltsPerHz[0];
-		}
-		float amplitude = (motorBackEmf + _config->StoppedVoltage[0]) / busVoltage;
-		if(amplitude > 1.0f)
-		{
-			amplitude = 1.0f;
-		}
-		else if (amplitude < -1.0f)
-		{
-			amplitude = -1.0f;
-		}
-		_analogOut->Amplitude = amplitude;
-		// Ramping Up
-		if(_analogOut->Frequency < _config->FrequencyTarget)
-		{
-			float increase = _config->FrequencyRampRate[0] * _deltaT;
-			if(_analogOut->Frequency + increase > _config->FrequencyTarget)
-			{
-				_analogOut->Frequency = _config->FrequencyTarget;
-			}
-			else
-			{
-				_analogOut->Frequency += increase;
-			}
-		}
-		// Ramping down or steady
-		else
-		{
-			float decrease = _config->FrequencyRampRate[0] * _deltaT;
-			if(_analogOut->Frequency - decrease < _config->FrequencyTarget)
-			{
-				_analogOut->Frequency = _config->FrequencyTarget;
-			}
-			else
-			{
-				_analogOut->Frequency -= decrease;
-			}
-		}
-	}
-	else
-	{
-		motorBackEmf = fabsf(_analogOut->Frequency) * _config->MotorVoltsPerHz[1];
-		// Limit Frequency to prevent pole slippage.
-		if(motorBackEmf > busVoltage)
-		{
-			_analogOut->Frequency *= busVoltage / motorBackEmf;
-			motorBackEmf = fabsf(_analogOut->Frequency) * _config->MotorVoltsPerHz[1];
-		}
-		float amplitude = (motorBackEmf + _config->StoppedVoltage[1]) / busVoltage;
-		if(amplitude > 1.0f)
-		{
-			amplitude = 1.0f;
-		}
-		else if (amplitude < -1.0f)
-		{
-			amplitude = -1.0f;
-		}
-		_analogOut->Amplitude = amplitude;
-		// Ramping Up
-		if(_analogOut->Frequency < _config->FrequencyTarget)
-		{
-			float increase = _config->FrequencyRampRate[1] * _deltaT;
-			if(_analogOut->Frequency + increase > _config->FrequencyTarget)
-			{
-				_analogOut->Frequency = _config->FrequencyTarget;
-			}
-			else
-			{
-				_analogOut->Frequency += increase;
-			}
-		}
-		// Ramping down or steady
-		else
-		{
-			float decrease = _config->FrequencyRampRate[1] * _deltaT;
-			if(_analogOut->Frequency - decrease < _config->FrequencyTarget)
-			{
-				_analogOut->Frequency = _config->FrequencyTarget;
-			}
-			else
-			{
-				_analogOut->Frequency -= decrease;
-			}
-		}
-	}
-	// calculate phase now
-	_analogOut->Phase += _analogOut->Frequency * _deltatFactor;
-	if(_analogOut->Phase >= 360.0f)
-	{
-		_analogOut->Phase -= 360.0f;
-	}
-	if(_analogOut->Phase < 0.0f)
-	{
-		_analogOut->Phase += 360.0f;
-	}
-#endif
-	SineTable::Sine_3Phase(_analogOut->Phase, _analogOut->Point);
-	_analogOut->Voltage[0] = _analogOut->Point[0] * motorBackEmf;
-	_analogOut->Voltage[1] = _analogOut->Point[2] * motorBackEmf;
-	_analogOut->Voltage[2] = _analogOut->Point[1] * motorBackEmf;
 	_analogOut->RealCurrent = (_analogOut->Point[0] * _analogIn->Current[0] +
 								_analogOut->Point[2] * _analogIn->Current[1] +
 								_analogOut->Point[1] * _analogIn->Current[2]) * (1.0f / 1.73205f);
 	_analogOut->ReactiveCurrent = ((_analogOut->Point[0] - _analogOut->Point[2]) *  _analogIn->Current[2] +
 									 (_analogOut->Point[2] - _analogOut->Point[1]) *  _analogIn->Current[0] +
 									 (_analogOut->Point[1] - _analogOut->Point[0]) *  _analogIn->Current[1]) * (1.0f / 3.0f);
+	float motorBackEmf = 0.0f;
+	if(!_digitalOut->Faulted)
+	{
+#ifdef FLUX_ESTIMATION
+#else
+		if(busVoltage < 2.0f)
+		{
+			busVoltage = 2.0f;
+		}
+		float freqTarget = _config->FrequencyTarget;
+		if(_analogOut->Frequency < _config->ClosedLoopFrequency)
+		{
+			float allowableFrequency = (busVoltage - _config->StoppedVoltage[0]) /  _config->MotorVoltsPerHz[0];
+			if(freqTarget > allowableFrequency)
+			{
+				if(allowableFrequency > 0)
+				{
+					freqTarget = allowableFrequency;
+				}
+				else
+				{
+					freqTarget = 0;
+				}
+			}
+			if(_analogOut->Frequency < freqTarget)
+			{
+				float increase = _config->FrequencyRampRate[0] * _deltaT;
+				if(_analogOut->Frequency + increase > freqTarget)
+				{
+					_analogOut->Frequency = freqTarget;
+				}
+				else
+				{
+					_analogOut->Frequency += increase;
+				}
+			}
+			// Ramping down or steady
+			else
+			{
+				float decrease = _config->FrequencyRampRate[0] * _deltaT;
+				if(_analogOut->Frequency - decrease < freqTarget)
+				{
+					_analogOut->Frequency = freqTarget;
+				}
+				else
+				{
+					_analogOut->Frequency -= decrease;
+				}
+			}
+
+			motorBackEmf = fabsf(_analogOut->Frequency) * _config->MotorVoltsPerHz[0];
+
+			float amplitude = (motorBackEmf + _config->StoppedVoltage[0]) / busVoltage;
+			if(amplitude > 1.0f)
+			{
+				amplitude = 1.0f;
+			}
+			else if (amplitude < -1.0f)
+			{
+				amplitude = -1.0f;
+			}
+			_analogOut->Amplitude = amplitude;
+		}
+		else // Normal Operation
+		{
+			float allowableFrequency = (busVoltage - _config->StoppedVoltage[1]) /  _config->MotorVoltsPerHz[1];
+			if(freqTarget > allowableFrequency)
+			{
+				if(allowableFrequency > 0)
+				{
+					freqTarget = allowableFrequency;
+				}
+				else
+				{
+					freqTarget = 0;
+				}
+			}
+			if(_analogOut->Frequency < freqTarget)
+			{
+				float increase = _config->FrequencyRampRate[1] * _deltaT;
+				if(_analogOut->Frequency + increase > freqTarget)
+				{
+					_analogOut->Frequency = freqTarget;
+				}
+				else
+				{
+					_analogOut->Frequency += increase;
+				}
+			}
+			// Ramping down or steady
+			else
+			{
+				float decrease = _config->FrequencyRampRate[1] * _deltaT;
+				if(_analogOut->Frequency - decrease < freqTarget)
+				{
+					_analogOut->Frequency = freqTarget;
+				}
+				else
+				{
+					_analogOut->Frequency -= decrease;
+				}
+			}
+
+			float error = _config->ReactivePower_Target - _analogOut->ReactiveCurrent;
+			_analogOut->ReactivePower_Pterm = _config->ReactivePower_PGain * error;
+			_analogOut->ReactivePower_Iterm = _config->ReactivePower_IGain * error;
+			float d_error = error - _analogOut->ReactivePower_Error;
+			_analogOut->ReactivePower_Dterm = _config->ReactivePower_DGain * d_error;
+			_analogOut->ReactivePower_TDterm = _config->ReactivePower_TDGain * d_error;
+			_analogOut->ReactivePower_Error = error;
+			float integrator = _analogOut->ReactivePower_Integrator +  _analogOut->ReactivePower_Iterm + _analogOut->ReactivePower_TDterm;
+			// Limit Integrator
+			if(integrator > _config->ReactivePower_MaxIntegrator)
+			{
+				integrator = _config->ReactivePower_MaxIntegrator;
+			}
+			else if(integrator < _config->ReactivePower_MinIntegrator)
+			{
+				integrator = _config->ReactivePower_MinIntegrator;
+			}
+			_analogOut->ReactivePower_Integrator = integrator;
+			_analogOut->ReactivePower_Adjustment = _analogOut->ReactivePower_Pterm + _analogOut->ReactivePower_Integrator + _analogOut->ReactivePower_Dterm;
+
+			motorBackEmf = fabsf(_analogOut->Frequency) * _config->MotorVoltsPerHz[1];
+
+			float amplitude = (motorBackEmf + _config->StoppedVoltage[1] + _analogOut->ReactivePower_Adjustment) / busVoltage;
+			if(amplitude > 1.0f)
+			{
+				amplitude = 1.0f;
+			}
+			else if (amplitude < -1.0f)
+			{
+				amplitude = -1.0f;
+			}
+			_analogOut->Amplitude = amplitude;
+		}
+		// calculate phase now
+		_analogOut->Phase += _analogOut->Frequency * _deltatFactor;
+		if(_analogOut->Phase >= 360.0f)
+		{
+			_analogOut->Phase -= 360.0f;
+		}
+		if(_analogOut->Phase < 0.0f)
+		{
+			_analogOut->Phase += 360.0f;
+		}
+#endif
+	}
+	SineTable::Sine_3Phase(_analogOut->Phase, _analogOut->Point);
+	_analogOut->Voltage[0] = _analogOut->Point[0] * motorBackEmf;
+	_analogOut->Voltage[1] = _analogOut->Point[2] * motorBackEmf;
+	_analogOut->Voltage[2] = _analogOut->Point[1] * motorBackEmf;
 	float ampFactor =  _analogOut->Amplitude * _periodFactor;
 	unsigned short period = (_analogOut->Point[0] * ampFactor) + _halfPeriod;
 	BspPwm::SetSwitchDutyCycle(0, period);

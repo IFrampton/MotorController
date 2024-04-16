@@ -30,6 +30,7 @@ class BspIo
 		LED_RED,
 		LED_YELLOW,
 		LED_GREEN,
+		SPARE_FOR_PWM,
 		NUMBER_OF_GPIO
 	};
 	public:  static PinInfo _pinInfo[NUMBER_OF_GPIO];

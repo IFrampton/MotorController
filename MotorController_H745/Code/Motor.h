@@ -37,10 +37,18 @@ class MotorControl
 		float StoppedVoltage[2];
 		float FrequencyTarget;
 		float ClosedLoopFrequency;
+		float ReactivePower_Target;
+		float ReactivePower_PGain;
+		float ReactivePower_IGain;
+		float ReactivePower_DGain;
+		float ReactivePower_TDGain;
+		float ReactivePower_MaxIntegrator;
+		float ReactivePower_MinIntegrator;
+		float CurrentFault;
 	};
 	public: struct MotorDigitalConfig
 	{
-		bool Spare;
+		bool Reset;
 	};
 	public: struct MotorInputs
 	{
@@ -60,16 +68,26 @@ class MotorControl
 		float Voltage[3];
 		float RealCurrent;
 		float ReactiveCurrent;
+		float ReactivePower_Pterm;
+		float ReactivePower_Iterm;
+		float ReactivePower_Dterm;
+		float ReactivePower_TDterm;
+		float ReactivePower_Error;
+		float ReactivePower_Integrator;
+		float ReactivePower_Adjustment;
 	};
 	public: struct MotorDigitalOutputs
 	{
-		bool Spare;
+		bool Faulted;
+		bool PrevReset;
 	};
 	private: static BspAnalog::AnalogType _analogChannels[NUM_ANALOGS];
 	private: static BspAnalog::ExternalAnalogType _externalChannels[NUM_EXTERNAL_ANALOGS];
 	private: static MotorConfig *_config;
+	private: static MotorDigitalConfig *_digitalConfig;
 	private: static MotorInputs *_analogIn;
 	private: static MotorOutputs *_analogOut;
+	private: static MotorDigitalOutputs *_digitalOut;
 	private: static bool _dataLinked;
 	private: static float _deltatFactor;
 	private: static float _deltaT;
@@ -81,11 +99,13 @@ class MotorControl
 	public:  static void Logic(void);
 
 	public:  static bool OkToSave();
-	public:  static void LinkData(MotorConfig *config, MotorInputs *analogIn, MotorOutputs *analogOut )
+	public:  static void LinkData(MotorConfig *config, MotorDigitalConfig *digitalConfig, MotorInputs *analogIn, MotorOutputs *analogOut, MotorDigitalOutputs *digitalOut )
 	{
 		_config = config;
+		_digitalConfig = digitalConfig;
 		_analogIn = analogIn;
 		_analogOut = analogOut;
+		_digitalOut = digitalOut;
 		_dataLinked = true;
 	}
 };

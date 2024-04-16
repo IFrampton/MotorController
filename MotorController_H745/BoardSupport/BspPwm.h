@@ -18,6 +18,8 @@ class BspPwm
 	private: static void DummyFunction(void);
 	public:  static _inline_ volatile unsigned short GetSwitchPeriod() {return(_period);}
 	public:  static _inline_ void SetSwitchDutyCycle(char channel, short dutyCycle) {*((unsigned short *)(unsigned long)&TIM1->CCR1 + ((unsigned long)channel << 1)) = dutyCycle;}
+	public:  static _inline_ void DisablePWM(void) {TIM1->BDTR &= ~(1 << 15);} // Clears Main Output Enable
+	public:  static _inline_ void EnablePWM(void) {TIM1->BDTR |= (1 << 15);} // Sets Main Output Enable
 };
 #endif
 

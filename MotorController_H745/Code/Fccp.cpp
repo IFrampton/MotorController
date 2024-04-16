@@ -141,11 +141,12 @@ void Fccp::SubscribePacketHandler()
 		// Will not time out if rate is set to max.
 		if(++_subscriptions[x].Counter > _subscriptions[x].Rate)
 		{
-			_subscriptions[x].Counter = 1;
 			// Note: While subscription 0 is valid internally, it is not valid on the bus.
 			// It is passed on the bus as subscription 1
 			if(_subscriptionsToUpdate < 2)
 			{
+				// Only Reset Counter if data was sent
+				_subscriptions[x].Counter = 1;
 				_subscriptionAddressOffset += ((x+1) << (_subscriptionsToUpdate * SUBSCRIPTION_BITSHIFT_FACTOR));
 				_txData[handlerIndex][_subscriptionsToUpdate] = *_subscriptions[x].Address;
 				_subscriptionsToUpdate++;

@@ -101,6 +101,14 @@ void BspIo::Initialize(void)
 
 	// Setup Switch PWM
 	//InitAltFunction(char port, char pin, char alternate)
+	// Setup pins to force low (GPIO Output with force low)
+	InitOutput(0, 8, &_pinInfo[SPARE_FOR_PWM]);		// CTRL_A_H
+	InitOutput(0, 9, &_pinInfo[SPARE_FOR_PWM]);		// CTRL_B_H
+	InitOutput(0, 10, &_pinInfo[SPARE_FOR_PWM]);	// CTRL_C_H
+	InitOutput(1, 13, &_pinInfo[SPARE_FOR_PWM]);	// CTRL_A_L
+	InitOutput(1, 14, &_pinInfo[SPARE_FOR_PWM]);	// CTRL_B_L
+	InitOutput(1, 15, &_pinInfo[SPARE_FOR_PWM]);	// CTRL_C_L
+
 	InitAltFunction(0, 8, 1);	// CTRL_A_H
 	InitAltFunction(0, 9, 1);	// CTRL_B_H
 	InitAltFunction(0, 10, 1);	// CTRL_C_H

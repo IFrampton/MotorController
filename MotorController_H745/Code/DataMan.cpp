@@ -21,7 +21,7 @@ void DataMan::Initialize()
 	_config.Digital = (DigitalConfigMan *)BspFlash::GetDigitalBufferLocation();
 
 	BspAnalog::LinkData(&_config.Analog->Analog, &_variables.AnalogIn.Analog, &_variables.AnalogOut.Analog);
-	MotorControl::LinkData(&_config.Analog->Motor, &_variables.AnalogIn.Motor, &_variables.AnalogOut.Motor);
+	MotorControl::LinkData(&_config.Analog->Motor, &_config.Digital->Motor, &_variables.AnalogIn.Motor, &_variables.AnalogOut.Motor, &_variables.DigitalOut.Motor);
 	ProcLoading::LinkData(&_config.Analog->Loading, &_variables.AnalogIn.Loading, &_variables.AnalogOut.Loading);
 #ifdef KLUDGED_CONFIGURATION
 	//<KLUDGE> Setup parameters until an interface is operational.
@@ -128,10 +128,6 @@ void *DataMan::GetVariableAddress(unsigned long address, unsigned char module, u
 
 unsigned char DataMan::WriteData(unsigned long address, unsigned char dataType, bool nvm, bool relative, unsigned long data)
 {
-	unsigned short addr = address & 0xFFFF;
-	address >>= 16;
-	unsigned char type = address & 0xFF;
-	unsigned char module = address >> 8;
 	switch(dataType)
 	{
 		case Fccp::DataType_Bool:
@@ -139,6 +135,10 @@ unsigned char DataMan::WriteData(unsigned long address, unsigned char dataType, 
 		{
 			if(relative)
 			{
+				unsigned short addr = address & 0xFFFF;
+				address >>= 16;
+				unsigned char type = address & 0xFF;
+				unsigned char module = address >> 8;
 				if(nvm)
 				{
 					register char offset = addr & 0x3;
@@ -157,13 +157,13 @@ unsigned char DataMan::WriteData(unsigned long address, unsigned char dataType, 
 			{
 				if(nvm)
 				{
-					register char offset = addr & 0x3;
-					register unsigned long location = (unsigned long)GetConfigAddress(addr, 0, 0, dataType);
+					register char offset = address & 0x3;
+					register unsigned long location = (unsigned long)GetConfigAddress(address, 0, 0, dataType);
 					*(unsigned char *)(location + offset) = (char)data;
 				}
 				else
 				{
-					register char offset = addr & 0x3;
+					register char offset = address & 0x3;
 					*(unsigned char *)(address + offset) = (char)data;
 				}
 			}
@@ -173,6 +173,10 @@ unsigned char DataMan::WriteData(unsigned long address, unsigned char dataType, 
 		{
 			if(relative)
 			{
+				unsigned short addr = address & 0xFFFF;
+				address >>= 16;
+				unsigned char type = address & 0xFF;
+				unsigned char module = address >> 8;
 				if(nvm)
 				{
 					register char offset = addr & 0x2;
@@ -190,13 +194,13 @@ unsigned char DataMan::WriteData(unsigned long address, unsigned char dataType, 
 			{
 				if(nvm)
 				{
-					register char offset = addr & 0x2;
-					register unsigned long location = (unsigned long)GetConfigAddress(addr, 0, 0, dataType);
+					register char offset = address & 0x2;
+					register unsigned long location = (unsigned long)GetConfigAddress(address, 0, 0, dataType);
 					*(unsigned short *)(location + offset) = (short)data;
 				}
 				else
 				{
-					register char offset = addr & 0x2;
+					register char offset = address & 0x2;
 					*(unsigned short *)(address + offset) = (short)data;
 				}
 			}
@@ -208,6 +212,10 @@ unsigned char DataMan::WriteData(unsigned long address, unsigned char dataType, 
 		{
 			if(relative)
 			{
+				unsigned short addr = address & 0xFFFF;
+				address >>= 16;
+				unsigned char type = address & 0xFF;
+				unsigned char module = address >> 8;
 				if(nvm)
 				{
 					*(unsigned long *)GetConfigAddress(addr, 1, module, dataType) = data;
