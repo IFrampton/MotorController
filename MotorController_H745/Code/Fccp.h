@@ -53,6 +53,9 @@ class Fccp
 		DataType_Int16,
 		DataType_Int32,
 		DataType_Float,
+		DataType_Int64,
+		DataType_Double,
+		DataType_Definition,
 		NUM_DATA_TYPES
 	};
 	private: enum ExtractTypes

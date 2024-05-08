@@ -117,7 +117,7 @@ char BspSpi::Initialize(char port, unsigned long bitRate, volatile unsigned shor
 				(0  << 19)	|	// SP = 0; Serial Protocol (SPI Motorola)
 				(2  << 17)	|	// COMM = 2; Simplex Received
 				(0  << 15)	|	// IOSWP = 0; MISO = MISO and MOSI = MOSI
-				(7  <<  4)	|	// MIDI = 7; Master Inter-Data Idleness (no extra delay)
+				(7 <<  4)	|	// MIDI = 7; Master Inter-Data Idleness (no extra delay)
 				(0  <<  0)	;	// MSSI = 0; Master SS idleness (no extra delay)
 	spi->IER = 0;	// No interrupts supported
 	spi->CRCPOLY = 0;	// No CRC is used, therefore, no polynomial is required
@@ -126,7 +126,7 @@ char BspSpi::Initialize(char port, unsigned long bitRate, volatile unsigned shor
 	spi->UDRDR = 0xDEADBEEF;	// Send oxDEADBEEF if there is an underrun (this is never used because this device is operating as a master).
 	spi->I2SCFGR = 	(1  << 25)	|	// MCKOE = 1; Master clock output is enabled
 					(0  << 24)	|	// ODD = 0;	Real divider value is I2SDIV * 2
-					(5  << 16)	|	// I2SDIV = 5; Real divider value is I2SDIV * 2 = 10
+					(7  << 16)	|	// I2SDIV = 5; Real divider value is I2SDIV * 2 = 10
 					(0  << 14)	|	// DATFMT = 0; Data Format (The data is right-aligned)
 					(0  << 13)	|	// WSINV = 0; Word select inversion (Left Channel first)
 					(0  << 12)	|	// FIXCH = 0; Fixed Channel length in slave (the channel length is not 16 or 32 bits)

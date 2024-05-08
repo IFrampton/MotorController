@@ -163,7 +163,7 @@ void BspPwm::SetupSwitchPwm(unsigned long frequency, unsigned short deadtime, vo
 				(0  <<  9)	|	// OIS1N = 0; Output Idle State for OC1N output is 0 (logic low)
 				(0  <<  8)	|	// OIS1 = 0; Output Idle State for OC1 output is 0 (logic low)
 				(0  <<  7)	|	// TI1 = 0; The TIM1_CH1 pin is connected to TI1 input
-				(0  <<  4)	|	// MMS = 0; Master Mode Selection (0 = Reset)
+				(2  <<  4)	|	// MMS = 2; Master Mode Selection (0 = Reset, 2 = reload event makes trigger)
 				(0  <<  3)	|	// CCDS = 0; Capture/Compare DMA Selection (DMA request sent when CCx event occurs)
 				(0  <<  2)	|	// CCUS = 0; Capture/Compare Control Update Selection (0 = When bits are loaded, they are updated by setting the COMG bit only)
 				(0  <<  0)	;	// CCPC = 0; Capture/Compare Preloaded Control (CCxE, CCxNE, and OCxM bits are not preloaded)
@@ -252,6 +252,7 @@ void BspPwm::SetupSwitchPwm(unsigned long frequency, unsigned short deadtime, vo
 				(1  <<  0)	;	// CC1E = 0; Capture/Compare 1 Output Enable (Enabled)
 	TIM1->CNT = 0;
 	TIM1->PSC = period >> 16;
+	period--;
 	period &= 0xFFFF;
 	TIM1->ARR = period;
 	_period = period;

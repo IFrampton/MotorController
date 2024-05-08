@@ -44,15 +44,44 @@ class MotorControl
 		float ReactivePower_TDGain;
 		float ReactivePower_MaxIntegrator;
 		float ReactivePower_MinIntegrator;
+		float Speed_Target;
+		float Speed_PGain;
+		float Speed_IGain;
+		float Speed_DGain;
+		float Speed_TDGain;
+		float Speed_MaxIntegrator;
+		float Speed_MinIntegrator;
+		float Speed_MaxOutput;
+		float Speed_MinOutput;
+		float Phase_PGain;
+		float Phase_IGain;
+		float Phase_DGain;
+		float Phase_TDGain;
+		float Phase_MaxIntegrator;
+		float Phase_MinIntegrator;
+		float Phase_MaxDeltaF;
 		float CurrentFault;
+		float DefaultMaxFeedbackAmplitude;
+		float FeedbackFactor;
+		float PhaseOffset;
+		float CosinePhaseOffset;
+		float DeltaT;
+		float FrequencyToSpeedFactor;
+		float FilterCoefficient;
+		float Resistance;
+		float InductorCoefficient;
+		long Speedtimeout;
+		long Mode;
 	};
 	public: struct MotorDigitalConfig
 	{
 		bool Reset;
+		bool UpdateMinMax;
 	};
 	public: struct MotorInputs
 	{
 		float Current[3];
+		float Feedback[2];
 		float BusVoltage;
 	};
 	public: struct MotorDigitalInputs
@@ -64,7 +93,7 @@ class MotorControl
 		float Amplitude;
 		float Frequency;
 		float Phase;
-		float Point[3];
+		float Point[6];
 		float Voltage[3];
 		float RealCurrent;
 		float ReactiveCurrent;
@@ -75,11 +104,37 @@ class MotorControl
 		float ReactivePower_Error;
 		float ReactivePower_Integrator;
 		float ReactivePower_Adjustment;
+		float MotorSpeed;
+		float Speed_Pterm;
+		float Speed_Iterm;
+		float Speed_Dterm;
+		float Speed_TDterm;
+		float Speed_Error;
+		float Speed_Integrator;
+		float Speed_ControlOutput;
+		float Phase_Pterm;
+		float Phase_Iterm;
+		float Phase_Dterm;
+		float Phase_TDterm;
+		float Phase_Error;
+		float Phase_Integrator;
+		float Phase_ControlOutput;
+		float Angles[3];
+		float MaxFeedbackAmplitude[2];
+		float LastFeedbackAmplitude[2];
+		float OldPhase;
+		float FilteredSine;
+		float MotorBackEmf;
+		float CurrentTargets[2];
+		float AppliedVoltages[2];
+		long TimeoutCounter;
+		long Samples;
 	};
 	public: struct MotorDigitalOutputs
 	{
 		bool Faulted;
 		bool PrevReset;
+		bool PrevHighAngle;
 	};
 	private: static BspAnalog::AnalogType _analogChannels[NUM_ANALOGS];
 	private: static BspAnalog::ExternalAnalogType _externalChannels[NUM_EXTERNAL_ANALOGS];
@@ -97,6 +152,7 @@ class MotorControl
 	private: static unsigned long _logInputIndex;
 	public:  static void Initialize(void);
 	public:  static void Logic(void);
+	public:  static float GetResolverAngle();
 
 	public:  static bool OkToSave();
 	public:  static void LinkData(MotorConfig *config, MotorDigitalConfig *digitalConfig, MotorInputs *analogIn, MotorOutputs *analogOut, MotorDigitalOutputs *digitalOut )

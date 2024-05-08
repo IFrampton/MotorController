@@ -29,6 +29,10 @@
   .fpu softvfp
   .thumb
 
+//  (b31..b24) Major Version, (b23..b16) Minor Version, (b15..b0) Build Number
+.equ FirmwareVersion, 0x00000000
+.equ VariableVersion, 0
+
 .global  g_pfnVectors
 .global  Default_Handler
 
@@ -133,8 +137,8 @@ g_pfnVectors:
   .word  MemManage_Handler
   .word  BusFault_Handler
   .word  UsageFault_Handler
-  .word  0
-  .word  0
+  .word  FirmwareVersion
+  .word  VariableVersion
   .word  0
   .word  0
   .word  SVC_Handler

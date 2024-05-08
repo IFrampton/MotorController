@@ -69,7 +69,19 @@ class BspAnalog
 	private: static unsigned char _dmaTxChannel;
 	public:  static void InitializeAdc(void);
 	public:  static unsigned char SetupChannel(char converter, char channel, AnalogType *channelData);
-	public:  static void StartConversion(void) {ADC1->CR |= (1 << 2);}
+	public:  static _inline_ void StartConversion(void) {ADC1->CR |= (1 << 2); ADC2->CR |= (1 << 2);}
+	public:  static _inline_ void UpdateRawValues()
+	{
+		_analogIn->RawData[0] = _analogDataBuffer[0][0];
+		_analogIn->RawData[1] = _analogDataBuffer[0][1];
+		_analogIn->RawData[2] = _analogDataBuffer[0][2];
+		_analogIn->RawData[3] = _analogDataBuffer[0][3];
+		_analogIn->RawData[4] = _analogDataBuffer[0][4];
+		_analogIn->RawData[5] = _analogDataBuffer[1][0];
+		_analogIn->RawData[6] = _analogDataBuffer[1][1];
+		_analogIn->RawData[7] = _analogDataBuffer[1][2];
+		_analogIn->RawData[8] = _analogDataBuffer[1][3];
+	}
 
 	//private: static volatile unsigned short *_spiData[3];
 	//private: static volatile unsigned char *_spiDataReady[3];

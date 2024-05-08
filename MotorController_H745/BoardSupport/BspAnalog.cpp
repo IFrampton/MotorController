@@ -38,11 +38,12 @@ void BspAnalog::InitializeAdc(void)
 	RCC_C1->AHB4ENR &= ~(1 << 24);
 
 	// Enable ADC for Core 2 (Core 2 is believed to be the M4 core)
-	RCC_C2->AHB1ENR |= (1 << 1);
+	RCC_C2->AHB1ENR |= (1 << 5);
 	RCC_C2->AHB4ENR |= (1 << 24);
 
 	// Clear Status Flags
 	ADC1->ISR = 0x000007FF;
+	ADC2->ISR = 0x000007FF;
 
 	// Setup relevant interrupts
 	ADC1->IER = (0  << 10)	|	// JQOVFIE = 0; Injected context queue overflow interrupt enable
@@ -56,6 +57,7 @@ void BspAnalog::InitializeAdc(void)
 				(0  <<  2)	|	// OSCIE = 0; End of regular conversion interrupt enable (0 = disabled)
 				(0  <<  1)	|	// EOSMPIE = 0; End of sampling flag interrupt enable for regular conversions (0 = disabled)
 				(0  <<  0)	;	// ADRDYIE = 0; ADC ready interrupt enable (0 = disabled)
+	ADC2->IER = ADC1->IER;
 	ADC1->CR =  (0  << 31)	|	// ADCAL = 0; ADC calibration (0 = Calibration complete)
 				(0  << 30)	|	// ADCALDIF = 0; Different mode for calibration (0 = single ended)
 				(0  << 29)	|	// DEEPPWD = 0; Deep power down enable (0 = disabled)
@@ -75,7 +77,7 @@ void BspAnalog::InitializeAdc(void)
 				(0  <<  2)	|	// ADSTART = 0; ADC start of regular conversion (0 = no conversion ongoing)
 				(0  <<  1)	|	// ADDIS = 0; ADC disable command (0 = no command ongoing)
 				(0  <<  0)	;	// ADEN = 0; ADC enable command (0 = no command ongoing)
-
+	ADC2->CR = ADC1->CR;
 	ADC1->CFGR = (0 << 31)	|	// JQDIS = 0; Injected Queue disabled
 				(0  << 28)	|	// AWD1CH = 0; Analog Input Channel 0 is monitored by watchdog (unused)
 				(0  << 25)	|	// JAUTO = 0; Automatic injected group conversion disabled
@@ -87,13 +89,17 @@ void BspAnalog::InitializeAdc(void)
 				(0  << 17)	|	// DISCNUM = 0; Discontinuous channel count is 1
 				(0  << 16)	|	// DISCEN = 0; Discontinuous mode for regular channels is disabled
 				(0  << 14)	|	// AUTDLY = 0; Delayed conversion mode is off
-				(1  << 13)	|	// CONT = 1; Single / Continuous conversion mode for regular conversions is enabled
+			  //(1  << 13)	|	// CONT = 1; Single / Continuous conversion mode for regular conversions is enabled
+				(0  << 13)	|	// CONT = 0; Single / Continuous conversion mode for regular conversions is enabled
 				(0  << 12)	|	// OVRMOD = 0; Overrun Mode
-				(0  << 10)	|	// EXTEN = 0; External trigger enable and polarity selection for regular channels (external trigger disabled)
-				(0  <<  5)	|	// EXTSEL = 0; External trigger selection for regular group (0 = Event 0)
+			  //(0  << 10)	|	// EXTEN = 0; External trigger enable and polarity selection for regular channels (external trigger disabled)
+			    (1  << 10)	|	// EXTEN = 1; External trigger enable and polarity selection for regular channels (external trigger disabled)
+			  //(0  <<  5)	|	// EXTSEL = 0; External trigger selection for regular group (0 = Event 0 = tim1_oc1)
+			    (9  <<  5)	|	// EXTSEL = 9; External trigger selection for regular group (9 = Event 9 = tim1_trgo)
 //				(0  <<  2)	|	// RES = 0; Data resolution (0 = 16 bits, 5 = 14 bits, 6 = 12 bits, 3 = 10 bits, 7 = 8 bits)
 				(5  <<  2)	|	// RES = 5; Data resolution (0 = 16 bits, 5 = 14 bits, 6 = 12 bits, 3 = 10 bits, 7 = 8 bits)
 				(3  <<  0)	;	// DMNGT = 3; Data Management Confirmation (3 - DMA circular mode)
+	ADC2->CFGR = ADC1->CFGR;
 	ADC1->CFGR2 = (0<< 31)	|	// LSHIFT = 0; Left Shift factor (0 = no left shift)
 //				(31 << 16)	|	// OSVR = 31; Oversampling Ratio (31 = 32 samples are down-sampled)
 				(7 << 16)	|	// OSVR = 31; Oversampling Ratio (7 = 8 samples are down-sampled)
@@ -106,26 +112,53 @@ void BspAnalog::InitializeAdc(void)
 				(1  <<  5)	|	// OVSS = 0; Oversampling right shift (0 = no right shift)
 				(0  <<  1)	|	// JOVSE = 0; Injected oversampling enable (0 = disabled)
 				(1  <<  0)	;	// ROVSE = 0; Regular oversampling enable (1 = enabled)
-	ADC1->SMPR1 = (2<< 27)	|	// SMP9 = 1; Channel 9 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  << 24)	|	// SMP8 = 1; Channel 8 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  << 21)	|	// SMP7 = 1; Channel 7 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  << 18)	|	// SMP6 = 1; Channel 6 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  << 15)	|	// SMP5 = 1; Channel 5 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  << 12)	|	// SMP4 = 1; Channel 4 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  <<  9)	|	// SMP3 = 1; Channel 3 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  <<  6)	|	// SMP2 = 1; Channel 2 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  <<  3)	|	// SMP1 = 1; Channel 1 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  <<  0)	;	// SMP0 = 1; Channel 0 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-	ADC1->SMPR2 = (2<< 27)	|	// SMP19 = 1; Channel 19 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  << 24)	|	// SMP18 = 1; Channel 18 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  << 21)	|	// SMP17 = 1; Channel 17 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  << 18)	|	// SMP16 = 1; Channel 16 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  << 15)	|	// SMP15 = 1; Channel 15 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  << 12)	|	// SMP14 = 1; Channel 14 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  <<  9)	|	// SMP13 = 1; Channel 13 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  <<  6)	|	// SMP12 = 1; Channel 12 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  <<  3)	|	// SMP11 = 1; Channel 11 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
-				(2  <<  0)	;	// SMP10 = 1; Channel 10 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+	ADC2->CFGR2 = ADC1->CFGR2;
+	// Setup Sampling Time = t (Note: with 14bit conversion = 7.5 samples)
+	// t=0 gives 9 ADC Clocks = 1.1MSPS @ 10MHz input.
+	//		With 9 channels measured and 8 samples averaged gives 648 Counts per conversion, or 15.432kHz
+	//		With 8 channels measured and 8 samples averaged gives 576 Counts per conversion, or 17.361kHz
+	//		With 5 channels measured and 8 samples averaged gives 360 Counts per conversion, or 27.778kHz
+	//		With 4 channels measured and 8 samples averaged gives 288 Counts per conversion, or 34.722kHz
+	// t=1 gives 10 ADC Clocks = 1MSPS @ 10MHz input.
+	//		With 9 channels measured and 8 samples averaged gives 720 Counts per conversion, or 13.889kHz
+	//		With 8 channels measured and 8 samples averaged gives 640 Counts per conversion, or 15.625kHz
+	//		With 5 channels measured and 8 samples averaged gives 400 Counts per conversion, or 25kHz
+	//		With 4 channels measured and 8 samples averaged gives 320 Counts per conversion, or 31.25kHz
+	//		With 5 channels measured and 16 samples averaged gives 800 Counts per conversion, or 12.5kHz *** ADC1
+	//		With 4 channels measured and 16 samples averaged gives 640 Counts per conversion, or 15.625kHz *** ADC2
+	// t=2 gives 16 ADC Clocks = 625kSPS @ 10MHz input.
+	//		With 9 channels measured and 8 samples averaged gives 1152 Counts per conversion, or 8.681kHz
+	//		With 8 channels measured and 8 samples averaged gives 1024 Counts per conversion, or 9.766kHz
+	//		With 5 channels measured and 8 samples averaged gives 640 Counts per conversion, or 15.625kHz
+	//		With 4 channels measured and 8 samples averaged gives 512 Counts per conversion, or 19.531kHz
+	// t=3 gives 24 ADC Clocks = 417kSPS @ 10MHz input.
+	//		With 9 channels measured and 8 samples averaged gives 1728 Counts per conversion, or 5.787kHz
+	//		With 8 channels measured and 8 samples averaged gives 1536 Counts per conversion, or 6.51kHz
+	//		With 5 channels measured and 8 samples averaged gives 960 Counts per conversion, or 10.416kHz *** ADC1
+	//		With 4 channels measured and 8 samples averaged gives 768 Counts per conversion, or 13.021kHz *** ADC2
+	unsigned char t = 3;
+	ADC1->SMPR1 = (t<< 27)	|	// SMP9 = 1; Channel 9 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  << 24)	|	// SMP8 = 1; Channel 8 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  << 21)	|	// SMP7 = 1; Channel 7 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  << 18)	|	// SMP6 = 1; Channel 6 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  << 15)	|	// SMP5 = 1; Channel 5 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  << 12)	|	// SMP4 = 1; Channel 4 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  <<  9)	|	// SMP3 = 1; Channel 3 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  <<  6)	|	// SMP2 = 1; Channel 2 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  <<  3)	|	// SMP1 = 1; Channel 1 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  <<  0)	;	// SMP0 = 1; Channel 0 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+	ADC2->SMPR1 = ADC1->SMPR1;
+	ADC1->SMPR2 = (t<< 27)	|	// SMP19 = 1; Channel 19 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  << 24)	|	// SMP18 = 1; Channel 18 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  << 21)	|	// SMP17 = 1; Channel 17 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  << 18)	|	// SMP16 = 1; Channel 16 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  << 15)	|	// SMP15 = 1; Channel 15 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  << 12)	|	// SMP14 = 1; Channel 14 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  <<  9)	|	// SMP13 = 1; Channel 13 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  <<  6)	|	// SMP12 = 1; Channel 12 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  <<  3)	|	// SMP11 = 1; Channel 11 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+				(t  <<  0)	;	// SMP10 = 1; Channel 10 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
+	ADC2->SMPR2 = ADC1->SMPR2;
 	ADC1->PCSEL = (0<< 19)	|	// PCSEL19 = 0; Channel 19 is not pre-selected for conversion
 				(0  << 18)	|	// PCSEL18 = 0; Channel 18 is not pre-selected for conversion
 				(0  << 17)	|	// PCSEL17 = 0; Channel 17 is not pre-selected for conversion
@@ -146,26 +179,33 @@ void BspAnalog::InitializeAdc(void)
 				(0  <<  2)	|	// PCSEL2 = 0; Channel 2 is not pre-selected for conversion
 				(0  <<  1)	|	// PCSEL1 = 0; Channel 1 is not pre-selected for conversion
 				(0  <<  0)	;	// PCSEL0 = 0; Channel 0 is not pre-selected for conversion
+	ADC2->PCSEL = ADC1->PCSEL;
 	// Thresholds are not used
 	ADC1->LTR1 = 0; // Analog watchdog lower threshold register 1
+	ADC2->LTR1 = ADC1->LTR1;
 	ADC1->HTR1 = 0x03FFFFFF; // Analog watchdog higher threshold register 1
+	ADC2->HTR1 = ADC1->HTR1;
 	ADC1->SQR1 = (0 << 24)	|	// SQ4 = 0; 4th conversion in regular sequence
 				(0  << 18)	|	// SQ3 = 0; 3rd conversion in regular sequence
 				(0  << 12)	|	// SQ2 = 0; 2nd conversion in regular sequence
 				(0  <<  6)	|	// SQ1 = 0; 1st conversion in regular sequence
 				(0  <<  0)	;	// L = 0; Regular channel sequence length (0 = 1 conversion)
+	ADC2->SQR1 = ADC1->SQR1;
 	ADC1->SQR2 = (0 << 24)	|	// SQ9 = 0; 9th conversion in regular sequence
 				(0  << 18)	|	// SQ8 = 0; 8th conversion in regular sequence
 				(0  << 12)	|	// SQ7 = 0; 7th conversion in regular sequence
 				(0  <<  6)	|	// SQ6 = 0; 6th conversion in regular sequence
 				(0  <<  0)	;	// SQ5 = 0; 5th conversion in regular sequence
+	ADC2->SQR2 = ADC1->SQR2;
 	ADC1->SQR3 = (0 << 24)	|	// SQ14 = 0; 14th conversion in regular sequence
 				(0  << 18)	|	// SQ13 = 0; 13th conversion in regular sequence
 				(0  << 12)	|	// SQ12 = 0; 12th conversion in regular sequence
 				(0  <<  6)	|	// SQ11 = 0; 11th conversion in regular sequence
 				(0  <<  0)	;	// SQ10 = 0; 10th conversion in regular sequence
+	ADC2->SQR3 = ADC1->SQR3;
 	ADC1->SQR4 = (0 <<  6)	|	// SQ16 = 0; 16th conversion in regular sequence
 				(0  <<  0)	;	// SQ15 = 0; 15th conversion in regular sequence
+	ADC2->SQR4 = ADC1->SQR4;
 
 	volatile unsigned int read = ADC1->DR;
 
@@ -177,31 +217,46 @@ void BspAnalog::InitializeAdc(void)
 				(0  <<  7)	|	// JEXTEN = 0; External trigger enable and polarity selection for injected channels (0 = disabled)
 				(0  <<  2)	|	// JEXTSEL = 0; External trigger selection for injected group (0 = event 0)
 				(0  <<  0)	;	// JL = 0; Injected channel sequence length (0 = 1 conversion)
+	ADC2->JSQR = ADC1->JSQR;
 	ADC1->OFR1 = (0 << 31)	|	// SSATE = 0; Signed saturation enable (0 = offset is subtracted)
 				(0  << 26)	|	// OFFSET_CH = 0; Channel selection for the data offset y (channel 0)
 				(0  <<  0)	;	// OFFSET = 0; Data offset y for the channel programmed into bits OFFSETy_CH[4:0] (0 = no offset)
+	ADC2->OFR1 = ADC1->OFR1;
 	ADC1->OFR2 = (0 << 31)	|	// SSATE = 0; Signed saturation enable (0 = offset is subtracted)
 				(0  << 26)	|	// OFFSET_CH = 0; Channel selection for the data offset y (channel 0)
 				(0  <<  0)	;	// OFFSET = 0; Data offset y for the channel programmed into bits OFFSETy_CH[4:0] (0 = no offset)
+	ADC2->OFR2 = ADC1->OFR2;
 	ADC1->OFR3 = (0 << 31)	|	// SSATE = 0; Signed saturation enable (0 = offset is subtracted)
 				(0  << 26)	|	// OFFSET_CH = 0; Channel selection for the data offset y (channel 0)
 				(0  <<  0)	;	// OFFSET = 0; Data offset y for the channel programmed into bits OFFSETy_CH[4:0] (0 = no offset)
+	ADC2->OFR3 = ADC1->OFR3;
 	ADC1->OFR4 = (0 << 31)	|	// SSATE = 0; Signed saturation enable (0 = offset is subtracted)
 				(0  << 26)	|	// OFFSET_CH = 0; Channel selection for the data offset y (channel 0)
 				(0  <<  0)	;	// OFFSET = 0; Data offset y for the channel programmed into bits OFFSETy_CH[4:0] (0 = no offset)
+	ADC2->OFR4 = ADC1->OFR4;
 
 	read = ADC1->JDR1;
 	read = ADC1->JDR2;
 	read = ADC1->JDR3;
 	read = ADC1->JDR4;
+	read = ADC2->JDR1;
+	read = ADC2->JDR2;
+	read = ADC2->JDR3;
+	read = ADC2->JDR4;
 
 	// Thresholds are not used
 	ADC1->AWD2CR = 0;
+	ADC2->AWD2CR = ADC1->AWD2CR;
 	ADC1->LTR2 = 0; // Analog watchdog lower threshold register 2
+	ADC2->LTR2 = ADC1->LTR2;
 	ADC1->HTR2 = 0x03FFFFFF; // Analog watchdog higher threshold register 2
+	ADC2->HTR2 = ADC1->HTR2;
 	ADC1->AWD3CR = 0;
+	ADC2->AWD3CR = ADC1->AWD3CR;
 	ADC1->LTR3 = 0; // Analog watchdog lower threshold register 3
+	ADC2->LTR3 = ADC1->LTR3;
 	ADC1->HTR3 = 0x03FFFFFF; // Analog watchdog higher threshold register 3
+	ADC2->HTR3 = ADC1->HTR3;
 
 	// Differential mode is unused in this configuration
 	ADC1->DIFSEL = (0<<19)	|	//DIFSEL19 = 0; Differential mode for channel 19 (0 = disabled)
@@ -224,6 +279,7 @@ void BspAnalog::InitializeAdc(void)
 				(0  <<  2)	|	//DIFSEL2 = 0; Differential mode for channel 2 (0 = disabled)
 				(0  <<  1)	|	//DIFSEL1 = 0; Differential mode for channel 1 (0 = disabled)
 				(0  <<  0)	;	//DIFSEL0 = 0; Differential mode for channel 0 (0 = disabled)
+	ADC2->DIFSEL = ADC1->DIFSEL;
 
 	ADC12_COMMON->CCR = (0  << 24)	|	// VBATEN = 0; VBAT Enable (0 = channel disabled)
 				(1  << 23)	|	// TSEN = 0; Temperature Sensor Voltage Enable (1 = channel enabled)
@@ -233,7 +289,7 @@ void BspAnalog::InitializeAdc(void)
 				// 10MHz
 				(5  << 18)	|	// PRESC = 5; ADC prescaler (0 = divide by 1, 1 = divide by 2, 2 = divide by 4, 5 = divide by 10 ...)
 				(0  << 16)	|	// CKMODE = 1; ADC clock mode (0 = adc_kernel_clk (pll2_p_clk) 1 = adc_sclk / 1)
-				(2  << 14)	|	// DAMDF = 2; Dual ADC mode data format (2 = data formatting for 32 down to 1 bit resolution)
+				(0  << 14)	|	// DAMDF = 2; Dual ADC mode data format (2 = data formatting for 32 down to 1 bit resolution)
 				(0  <<  8)	|	// DELAY = 0; Delay between two sampling phases (0 = no delay)
 				(0  <<  0)	;	// DUAL = 0; Dual ADC mode selection (0 = All ADCs are independent)
 
@@ -260,9 +316,24 @@ void BspAnalog::InitializeAdc(void)
 	// Wait for ADC ready
 	while((ADC1->ISR & (1 << 0)) == 0);
 
+	// Wait for voltage regulator
+	while((ADC2->ISR & (1 << 12)) == 0);
+
+	// <TODO = calibrate>
+	ADC2->CR |= (unsigned long)(1 << 31);
+
+	// Wait for calibration to complete
+	while((ADC2->CR & (1 << 31)));
+
+	// Enable ADC
+	ADC2->CR |= (1 << 0);
+
+	// Wait for ADC ready
+	while((ADC2->ISR & (1 << 0)) == 0);
+
 	_dmaRxChannel[0] = BspDma::SetupRxChannel(9, (unsigned long *)&ADC1->DR, (unsigned long *)&_analogDataBuffer[0][0], 2, sizeof(_analogDataBuffer[0][0]) / sizeof(long));
-	//_dmaRxChannel[1] = BspDma::SetupRxChannel(10, (unsigned long *)ADC2->DR, (unsigned long *)&_analogDataBuffer[1][0], 2, sizeof(_analogDataBuffer[0][0]) / sizeof(long));
-	//_dmaRxChannel[2] = BspDma::SetupRxChannel(115, (unsigned long *)ADC3->DR, (unsigned long *)&_analogDataBuffer[2][0], 2, sizeof(_analogDataBuffer[0][0]) / sizeof(long));
+	_dmaRxChannel[1] = BspDma::SetupRxChannel(10, (unsigned long *)&ADC2->DR, (unsigned long *)&_analogDataBuffer[1][0], 2, sizeof(_analogDataBuffer[0][0]) / sizeof(long));
+	//_dmaRxChannel[2] = BspDma::SetupRxChannel(115, (unsigned long *)&ADC3->DR, (unsigned long *)&_analogDataBuffer[2][0], 2, sizeof(_analogDataBuffer[0][0]) / sizeof(long));
 
 	_initialized = true;
 }

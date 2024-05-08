@@ -264,6 +264,11 @@ unsigned long DataMan::GetData(unsigned long address, unsigned char dataType, bo
 	{
 		if(nvm)
 		{
+			// Definition Data is handled separately (this is encoded into the firmware)
+			if(dataType == Fccp::DataType_Definition)
+			{
+				return(BspFlash::GetDefinition(address));
+			}
 			return *(unsigned long *)GetConfigAddress(address, 0, 0, dataType);
 		}
 		else

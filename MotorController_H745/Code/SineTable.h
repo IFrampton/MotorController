@@ -6,6 +6,7 @@
 #define SINE_TABLE_H
 
 //#define STEP_SINE
+#define SYNC_SINE_WITH_PWM
 
 #ifdef __cplusplus
 class SineTable
@@ -15,8 +16,14 @@ class SineTable
 #ifdef STEP_SINE
 	private: static unsigned short  _intSineTable[64];
 #else
+#ifdef SYNC_SINE_WITH_PWM
+	private: static unsigned short  _intSineTable[200];
+#else
 	private: static unsigned short  _intSineTable[256];
 #endif
+#endif
+	private: static float _arcSineTable[362];
+	private: static float _arcCosineTable[362];
 	public:  static inline float *GetSineTableAddress(void) {return _sineTable;}
 	public:  static inline unsigned short  *GetIntSineTableAddress(void) {return &_intSineTable[0];}
 	public:  static inline short  GetIntTableLength(void) {return(sizeof(_intSineTable) / sizeof(short));}
@@ -59,6 +66,24 @@ class SineTable
 		nextSample = _sineTable[index + 1];
 		sampleDifference = nextSample - prevSample;
 		*sine = prevSample + sampleDifference * rem;
+	}
+	public:  static inline float ArcSine(float amplitude)
+	{
+		float idx = ((amplitude + 1.0f) * 180.0f);
+		long index = (long)idx;
+		float rem = idx - (float)index;
+		float first = _arcSineTable[index];
+		float difference = _arcSineTable[index+1] - first;
+		return first + difference * rem;
+	}
+	public:  static inline float ArcCosine(float amplitude)
+	{
+		float idx = ((amplitude + 1.0f) * 180.0f);
+		long index = (long)idx;
+		float rem = idx - (float)index;
+		float first = _arcCosineTable[index];
+		float difference = _arcCosineTable[index+1] - first;
+		return first + difference * rem;
 	}
 };
 #endif

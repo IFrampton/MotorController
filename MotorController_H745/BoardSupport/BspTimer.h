@@ -28,6 +28,11 @@ class BspTimer
 	{
 		return TIM5->CNT;
 	}
+	public:  static _inline_ void StartLpTimer()
+	{
+		// Start the timer
+		LPTIM1->CR |= (1 << 2);
+	}
 };
 #endif
 

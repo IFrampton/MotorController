@@ -1,5 +1,5 @@
 #include "main.h"
-//#include "SineTable.h"
+#include "SineTable.h"
 #include "BspClock.h"
 #include "BspFlash.h"
 #include "BspTimer.h"
@@ -35,6 +35,13 @@ int main(void)
 	// Power on the DMA
 	BspDma::Initialize();
 
+	// Setup Analog Inputs and Outputs
+	BspAnalog::InitializeAdc();
+	BspAnalog::InitializeExternal();
+
+	// Load valid Values
+	BspAnalog::StartConversion();
+
 	// Initial PWM setup
 	BspPwm::Initialize();
 
@@ -48,17 +55,17 @@ int main(void)
 	BspPwm::SetupFixedPwm(5, 2000000, 20);
 #endif
 
-	// Setup Analog Inputs and Outputs
-	BspAnalog::InitializeAdc();
-	BspAnalog::InitializeExternal();
-
 	BspAnalog::InitializeDac();
 	// LP Timer Triggers DAC
 	// To create 10kHz, we need a counter at 16us (64 points in sine wave).
 #ifdef STEP_SINE
 	BspTimer::SetupLpTimer(1562);
 #else
+#ifdef SYNC_SINE_WITH_PWM
+	BspTimer::SetupLpTimer(500);
+#else
 	BspTimer::SetupLpTimer(390);
+#endif
 #endif
 
 	// Setup the switch PWM
@@ -151,6 +158,7 @@ extern "C"
 {
 void HardFault_Handler(void)
 {
+	BspPwm::DisablePWM();
 	while(1)
 	{
 	}

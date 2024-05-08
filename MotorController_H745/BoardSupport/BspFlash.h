@@ -11,6 +11,8 @@
 #define DIGITAL_SIZE 128
 #define DATA_ADDRESS 0x081E0000
 #define DATA_SIZE 0x0020000
+#define DEFINITION_ADDRESS 0x0810001C
+#define DEFINITION_MASK 0x3
 
 #ifdef __cplusplus
 class BspFlash
@@ -29,6 +31,7 @@ class BspFlash
 
 	public:  static _inline_ long *GetAnalogBufferLocation(){return((long *)_flashBuffer);}
 	public:  static _inline_ char *GetDigitalBufferLocation(){return((char *)_flashDigitalBuffer);}
+	public:  static _inline_ unsigned long GetDefinition(unsigned long addr) {return(*(unsigned long *)((DEFINITION_ADDRESS + addr) & DEFINITION_MASK));}
 };
 #endif
 

@@ -213,9 +213,10 @@ char BspTimer::SetupLpTimer(unsigned long period_in_ns)
 				(0  <<  1)	|	// SNGSTART = 0; LPTIM start in Continuous mode (0 = don't start)
 				(1  <<  0)	;	// ENABLE = 1; LPTIM enable (1 = enable)
 	lptim->CMP = requiredPeriod >> 1;
-	lptim->ARR = requiredPeriod;
+	lptim->ARR = requiredPeriod - 1;
 	// Start the timer
-	lptim->CR |= (1 << 2);
+	// Done elsewhere
+	//lptim->CR |= (1 << 2);
 
 	char nxtTmr = _nextLpTimer;
 	_nextLpTimer++;
