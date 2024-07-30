@@ -1,0 +1,2017 @@
+Archive member included to satisfy reference by file (symbol)
+
+c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-exit.o)
+                              c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard/crt0.o (exit)
+c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-impure.o)
+                              c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-exit.o) (_global_impure_ptr)
+c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-init.o)
+                              c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard/crt0.o (__libc_init_array)
+c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-memset.o)
+                              c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard/crt0.o (memset)
+c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_aeabi_uldivmod.o)
+                              ./BoardSupport/BspTimer.o (__aeabi_uldivmod)
+c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_udivmoddi4.o)
+                              c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_aeabi_uldivmod.o) (__udivmoddi4)
+c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_dvmd_tls.o)
+                              c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_aeabi_uldivmod.o) (__aeabi_ldiv0)
+c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libnosys.a(_exit.o)
+                              c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-exit.o) (_exit)
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crti.o
+ .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crti.o
+ .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crti.o
+ .data          0x0000000000000000        0x4 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtbegin.o
+ .rodata        0x0000000000000000       0x24 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtbegin.o
+ .text          0x0000000000000000       0x7c c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard/crt0.o
+ .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard/crt0.o
+ .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard/crt0.o
+ .ARM.extab     0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard/crt0.o
+ .ARM.exidx     0x0000000000000000       0x10 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard/crt0.o
+ .ARM.attributes
+                0x0000000000000000       0x1c c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard/crt0.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0x8 ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspAnalog.o
+ .text          0x0000000000000000        0x0 ./BoardSupport/BspAnalog.o
+ .data          0x0000000000000000        0x0 ./BoardSupport/BspAnalog.o
+ .bss           0x0000000000000000        0x0 ./BoardSupport/BspAnalog.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspCan.o
+ .text          0x0000000000000000        0x0 ./BoardSupport/BspCan.o
+ .data          0x0000000000000000        0x0 ./BoardSupport/BspCan.o
+ .bss           0x0000000000000000        0x0 ./BoardSupport/BspCan.o
+ .text._ZN6BspCan11SetupDeviceElh
+                0x0000000000000000       0x40 ./BoardSupport/BspCan.o
+ .text._ZN6BspCan7GetDataEcPmPhS0_PbS2_Pt
+                0x0000000000000000       0xfc ./BoardSupport/BspCan.o
+ .text._ZN6BspCan13PutInTestModeEv
+                0x0000000000000000       0x60 ./BoardSupport/BspCan.o
+ .text._ZN6BspCan13SetTxRegisterEb
+                0x0000000000000000       0x24 ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000000000      0xb6e ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000000000       0x2e ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000000000       0x41 ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000000000       0x1c ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000000000       0x22 ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000000000       0x8e ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000000000       0x51 ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000000000      0x103 ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000000000       0x6a ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000000000      0x1df ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000000000       0x1c ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000000000       0x22 ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000000000       0xfb ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000000000     0x1011 ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000000000      0x11f ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000000000    0x26d45 ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000000000       0x6d ./BoardSupport/BspCan.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspClock.o
+ .text          0x0000000000000000        0x0 ./BoardSupport/BspClock.o
+ .data          0x0000000000000000        0x0 ./BoardSupport/BspClock.o
+ .bss           0x0000000000000000        0x0 ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000000000      0xb6e ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000000000       0x2e ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000000000       0x41 ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000000000       0x1c ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000000000       0x22 ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000000000       0x8e ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000000000       0x51 ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000000000      0x103 ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000000000       0x6a ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000000000      0x1df ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000000000       0x1c ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000000000       0x22 ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000000000       0xfb ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000000000     0x1011 ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000000000      0x11f ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000000000    0x26d45 ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000000000       0x6d ./BoardSupport/BspClock.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspDma.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspDma.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspDma.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspDma.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspDma.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspDma.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspDma.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspDma.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspDma.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspDma.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspDma.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspDma.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspDma.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspDma.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspDma.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspDma.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspDma.o
+ .text          0x0000000000000000        0x0 ./BoardSupport/BspDma.o
+ .data          0x0000000000000000        0x0 ./BoardSupport/BspDma.o
+ .bss           0x0000000000000000        0x0 ./BoardSupport/BspDma.o
+ .debug_macro   0x0000000000000000      0xb6e ./BoardSupport/BspDma.o
+ .debug_macro   0x0000000000000000       0x2e ./BoardSupport/BspDma.o
+ .debug_macro   0x0000000000000000       0x41 ./BoardSupport/BspDma.o
+ .debug_macro   0x0000000000000000       0x1c ./BoardSupport/BspDma.o
+ .debug_macro   0x0000000000000000       0x22 ./BoardSupport/BspDma.o
+ .debug_macro   0x0000000000000000       0x8e ./BoardSupport/BspDma.o
+ .debug_macro   0x0000000000000000       0x51 ./BoardSupport/BspDma.o
+ .debug_macro   0x0000000000000000      0x103 ./BoardSupport/BspDma.o
+ .debug_macro   0x0000000000000000       0x6a ./BoardSupport/BspDma.o
+ .debug_macro   0x0000000000000000      0x1df ./BoardSupport/BspDma.o
+ .debug_macro   0x0000000000000000       0x1c ./BoardSupport/BspDma.o
+ .debug_macro   0x0000000000000000       0x22 ./BoardSupport/BspDma.o
+ .debug_macro   0x0000000000000000       0xfb ./BoardSupport/BspDma.o
+ .debug_macro   0x0000000000000000     0x1011 ./BoardSupport/BspDma.o
+ .debug_macro   0x0000000000000000      0x11f ./BoardSupport/BspDma.o
+ .debug_macro   0x0000000000000000    0x26d45 ./BoardSupport/BspDma.o
+ .debug_macro   0x0000000000000000       0x6d ./BoardSupport/BspDma.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspFlash.o
+ .text          0x0000000000000000        0x0 ./BoardSupport/BspFlash.o
+ .data          0x0000000000000000        0x0 ./BoardSupport/BspFlash.o
+ .bss           0x0000000000000000        0x0 ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000000000      0xb6e ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000000000       0x2e ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000000000       0x41 ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000000000       0x1c ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000000000       0x22 ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000000000       0x8e ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000000000       0x51 ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000000000      0x103 ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000000000       0x6a ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000000000      0x1df ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000000000       0x1c ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000000000       0x22 ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000000000       0xfb ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000000000     0x1011 ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000000000      0x11f ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000000000    0x26d45 ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000000000       0x6d ./BoardSupport/BspFlash.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspIo.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspIo.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspIo.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspIo.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspIo.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspIo.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspIo.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspIo.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspIo.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspIo.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspIo.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspIo.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspIo.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspIo.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspIo.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspIo.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspIo.o
+ .text          0x0000000000000000        0x0 ./BoardSupport/BspIo.o
+ .data          0x0000000000000000        0x0 ./BoardSupport/BspIo.o
+ .bss           0x0000000000000000        0x0 ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000000000      0xb6e ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000000000       0x2e ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000000000       0x41 ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000000000       0x1c ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000000000       0x22 ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000000000       0x8e ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000000000       0x51 ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000000000      0x103 ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000000000       0x6a ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000000000      0x1df ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000000000       0x1c ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000000000       0x22 ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000000000       0xfb ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000000000     0x1011 ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000000000      0x11f ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000000000    0x26d45 ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000000000       0x6d ./BoardSupport/BspIo.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspPwm.o
+ .text          0x0000000000000000        0x0 ./BoardSupport/BspPwm.o
+ .data          0x0000000000000000        0x0 ./BoardSupport/BspPwm.o
+ .bss           0x0000000000000000        0x0 ./BoardSupport/BspPwm.o
+ .bss._ZN6BspPwm8_nextPwmE
+                0x0000000000000000        0x1 ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000      0xb6e ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000       0x2e ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000       0x41 ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000       0x1c ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000       0x22 ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000       0x8e ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000       0x51 ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000      0x103 ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000       0x6a ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000      0x1df ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000       0x1c ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000       0x22 ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000       0xfb ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000     0x1011 ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000      0x11f ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000    0x26d45 ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000       0x6d ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000000000       0x10 ./BoardSupport/BspPwm.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspSpi.o
+ .text          0x0000000000000000        0x0 ./BoardSupport/BspSpi.o
+ .data          0x0000000000000000        0x0 ./BoardSupport/BspSpi.o
+ .bss           0x0000000000000000        0x0 ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000      0xb6e ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000       0x10 ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000       0x2e ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000       0x41 ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000       0x1c ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000       0x22 ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000       0x8e ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000       0x51 ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000      0x103 ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000       0x6a ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000      0x1df ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000       0x1c ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000       0x22 ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000       0xfb ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000     0x1011 ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000      0x11f ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000    0x26d45 ./BoardSupport/BspSpi.o
+ .debug_macro   0x0000000000000000       0x6d ./BoardSupport/BspSpi.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/BspTimer.o
+ .text          0x0000000000000000        0x0 ./BoardSupport/BspTimer.o
+ .data          0x0000000000000000        0x0 ./BoardSupport/BspTimer.o
+ .bss           0x0000000000000000        0x0 ./BoardSupport/BspTimer.o
+ .debug_macro   0x0000000000000000      0xb6e ./BoardSupport/BspTimer.o
+ .debug_macro   0x0000000000000000       0x2e ./BoardSupport/BspTimer.o
+ .debug_macro   0x0000000000000000       0x41 ./BoardSupport/BspTimer.o
+ .debug_macro   0x0000000000000000       0x1c ./BoardSupport/BspTimer.o
+ .debug_macro   0x0000000000000000       0x22 ./BoardSupport/BspTimer.o
+ .debug_macro   0x0000000000000000       0x8e ./BoardSupport/BspTimer.o
+ .debug_macro   0x0000000000000000       0x51 ./BoardSupport/BspTimer.o
+ .debug_macro   0x0000000000000000      0x103 ./BoardSupport/BspTimer.o
+ .debug_macro   0x0000000000000000       0x6a ./BoardSupport/BspTimer.o
+ .debug_macro   0x0000000000000000      0x1df ./BoardSupport/BspTimer.o
+ .debug_macro   0x0000000000000000       0x1c ./BoardSupport/BspTimer.o
+ .debug_macro   0x0000000000000000       0x22 ./BoardSupport/BspTimer.o
+ .debug_macro   0x0000000000000000       0xfb ./BoardSupport/BspTimer.o
+ .debug_macro   0x0000000000000000     0x1011 ./BoardSupport/BspTimer.o
+ .debug_macro   0x0000000000000000      0x11f ./BoardSupport/BspTimer.o
+ .debug_macro   0x0000000000000000    0x26d45 ./BoardSupport/BspTimer.o
+ .debug_macro   0x0000000000000000       0x6d ./BoardSupport/BspTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/SlowTimer.o
+ .group         0x0000000000000000        0xc ./BoardSupport/SlowTimer.o
+ .text          0x0000000000000000        0x0 ./BoardSupport/SlowTimer.o
+ .data          0x0000000000000000        0x0 ./BoardSupport/SlowTimer.o
+ .bss           0x0000000000000000        0x0 ./BoardSupport/SlowTimer.o
+ .debug_macro   0x0000000000000000      0xb6e ./BoardSupport/SlowTimer.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/DataMan.o
+ .text          0x0000000000000000        0x0 ./Code/DataMan.o
+ .data          0x0000000000000000        0x0 ./Code/DataMan.o
+ .bss           0x0000000000000000        0x0 ./Code/DataMan.o
+ .debug_macro   0x0000000000000000      0xb6e ./Code/DataMan.o
+ .debug_macro   0x0000000000000000       0x2e ./Code/DataMan.o
+ .debug_macro   0x0000000000000000       0x41 ./Code/DataMan.o
+ .debug_macro   0x0000000000000000       0x1c ./Code/DataMan.o
+ .debug_macro   0x0000000000000000       0x22 ./Code/DataMan.o
+ .debug_macro   0x0000000000000000       0x8e ./Code/DataMan.o
+ .debug_macro   0x0000000000000000       0x51 ./Code/DataMan.o
+ .debug_macro   0x0000000000000000      0x103 ./Code/DataMan.o
+ .debug_macro   0x0000000000000000       0x6a ./Code/DataMan.o
+ .debug_macro   0x0000000000000000      0x1df ./Code/DataMan.o
+ .debug_macro   0x0000000000000000       0x1c ./Code/DataMan.o
+ .debug_macro   0x0000000000000000       0x22 ./Code/DataMan.o
+ .debug_macro   0x0000000000000000       0xfb ./Code/DataMan.o
+ .debug_macro   0x0000000000000000     0x1011 ./Code/DataMan.o
+ .debug_macro   0x0000000000000000      0x11f ./Code/DataMan.o
+ .debug_macro   0x0000000000000000    0x26d45 ./Code/DataMan.o
+ .debug_macro   0x0000000000000000       0x6d ./Code/DataMan.o
+ .debug_macro   0x0000000000000000       0x2e ./Code/DataMan.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Fccp.o
+ .text          0x0000000000000000        0x0 ./Code/Fccp.o
+ .data          0x0000000000000000        0x0 ./Code/Fccp.o
+ .bss           0x0000000000000000        0x0 ./Code/Fccp.o
+ .bss._ZN4Fccp19_subscribedMessagesE
+                0x0000000000000000        0x1 ./Code/Fccp.o
+ .bss._ZN4Fccp11_snapshotIdE
+                0x0000000000000000        0x1 ./Code/Fccp.o
+ .debug_macro   0x0000000000000000      0xb6e ./Code/Fccp.o
+ .debug_macro   0x0000000000000000       0x2e ./Code/Fccp.o
+ .debug_macro   0x0000000000000000       0x41 ./Code/Fccp.o
+ .debug_macro   0x0000000000000000       0x1c ./Code/Fccp.o
+ .debug_macro   0x0000000000000000       0x22 ./Code/Fccp.o
+ .debug_macro   0x0000000000000000       0x8e ./Code/Fccp.o
+ .debug_macro   0x0000000000000000       0x51 ./Code/Fccp.o
+ .debug_macro   0x0000000000000000      0x103 ./Code/Fccp.o
+ .debug_macro   0x0000000000000000       0x6a ./Code/Fccp.o
+ .debug_macro   0x0000000000000000      0x1df ./Code/Fccp.o
+ .debug_macro   0x0000000000000000       0x1c ./Code/Fccp.o
+ .debug_macro   0x0000000000000000       0x22 ./Code/Fccp.o
+ .debug_macro   0x0000000000000000       0xfb ./Code/Fccp.o
+ .debug_macro   0x0000000000000000     0x1011 ./Code/Fccp.o
+ .debug_macro   0x0000000000000000      0x11f ./Code/Fccp.o
+ .debug_macro   0x0000000000000000    0x26d45 ./Code/Fccp.o
+ .debug_macro   0x0000000000000000       0x6d ./Code/Fccp.o
+ .debug_macro   0x0000000000000000       0x2e ./Code/Fccp.o
+ .debug_macro   0x0000000000000000       0x1c ./Code/Fccp.o
+ .debug_macro   0x0000000000000000       0x10 ./Code/Fccp.o
+ .debug_macro   0x0000000000000000       0x22 ./Code/Fccp.o
+ .debug_macro   0x0000000000000000       0x2e ./Code/Fccp.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Loading.o
+ .text          0x0000000000000000        0x0 ./Code/Loading.o
+ .data          0x0000000000000000        0x0 ./Code/Loading.o
+ .bss           0x0000000000000000        0x0 ./Code/Loading.o
+ .debug_macro   0x0000000000000000      0xb6e ./Code/Loading.o
+ .debug_macro   0x0000000000000000       0x2e ./Code/Loading.o
+ .debug_macro   0x0000000000000000       0x41 ./Code/Loading.o
+ .debug_macro   0x0000000000000000       0x1c ./Code/Loading.o
+ .debug_macro   0x0000000000000000       0x22 ./Code/Loading.o
+ .debug_macro   0x0000000000000000       0x8e ./Code/Loading.o
+ .debug_macro   0x0000000000000000       0x51 ./Code/Loading.o
+ .debug_macro   0x0000000000000000      0x103 ./Code/Loading.o
+ .debug_macro   0x0000000000000000       0x6a ./Code/Loading.o
+ .debug_macro   0x0000000000000000      0x1df ./Code/Loading.o
+ .debug_macro   0x0000000000000000       0x1c ./Code/Loading.o
+ .debug_macro   0x0000000000000000       0x22 ./Code/Loading.o
+ .debug_macro   0x0000000000000000       0xfb ./Code/Loading.o
+ .debug_macro   0x0000000000000000     0x1011 ./Code/Loading.o
+ .debug_macro   0x0000000000000000      0x11f ./Code/Loading.o
+ .debug_macro   0x0000000000000000    0x26d45 ./Code/Loading.o
+ .debug_macro   0x0000000000000000       0x6d ./Code/Loading.o
+ .debug_macro   0x0000000000000000       0x16 ./Code/Loading.o
+ .debug_macro   0x0000000000000000       0x10 ./Code/Loading.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/Motor.o
+ .text          0x0000000000000000        0x0 ./Code/Motor.o
+ .data          0x0000000000000000        0x0 ./Code/Motor.o
+ .bss           0x0000000000000000        0x0 ./Code/Motor.o
+ .debug_macro   0x0000000000000000      0xb6e ./Code/Motor.o
+ .debug_macro   0x0000000000000000       0x22 ./Code/Motor.o
+ .debug_macro   0x0000000000000000       0x2e ./Code/Motor.o
+ .debug_macro   0x0000000000000000       0x41 ./Code/Motor.o
+ .debug_macro   0x0000000000000000       0x1c ./Code/Motor.o
+ .debug_macro   0x0000000000000000      0x103 ./Code/Motor.o
+ .debug_macro   0x0000000000000000       0x6a ./Code/Motor.o
+ .debug_macro   0x0000000000000000      0x1df ./Code/Motor.o
+ .debug_macro   0x0000000000000000       0x1c ./Code/Motor.o
+ .debug_macro   0x0000000000000000       0x22 ./Code/Motor.o
+ .debug_macro   0x0000000000000000       0xfb ./Code/Motor.o
+ .debug_macro   0x0000000000000000     0x1011 ./Code/Motor.o
+ .debug_macro   0x0000000000000000      0x11f ./Code/Motor.o
+ .debug_macro   0x0000000000000000    0x26d45 ./Code/Motor.o
+ .debug_macro   0x0000000000000000       0x6d ./Code/Motor.o
+ .debug_macro   0x0000000000000000       0x2e ./Code/Motor.o
+ .debug_macro   0x0000000000000000       0x1c ./Code/Motor.o
+ .debug_macro   0x0000000000000000       0x10 ./Code/Motor.o
+ .debug_macro   0x0000000000000000       0x22 ./Code/Motor.o
+ .debug_macro   0x0000000000000000       0x10 ./Code/Motor.o
+ .group         0x0000000000000000        0xc ./Code/SineTable.o
+ .group         0x0000000000000000        0xc ./Code/SineTable.o
+ .text          0x0000000000000000        0x0 ./Code/SineTable.o
+ .data          0x0000000000000000        0x0 ./Code/SineTable.o
+ .bss           0x0000000000000000        0x0 ./Code/SineTable.o
+ .debug_macro   0x0000000000000000      0xb6e ./Code/SineTable.o
+ .debug_macro   0x0000000000000000       0x10 ./Code/SineTable.o
+ .group         0x0000000000000000        0x8 ./Code/main.o
+ .group         0x0000000000000000        0x8 ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .group         0x0000000000000000        0xc ./Code/main.o
+ .text          0x0000000000000000        0x0 ./Code/main.o
+ .data          0x0000000000000000        0x0 ./Code/main.o
+ .bss           0x0000000000000000        0x0 ./Code/main.o
+ .debug_macro   0x0000000000000000      0xb6e ./Code/main.o
+ .debug_macro   0x0000000000000000       0x10 ./Code/main.o
+ .debug_macro   0x0000000000000000       0x10 ./Code/main.o
+ .debug_macro   0x0000000000000000       0x2e ./Code/main.o
+ .debug_macro   0x0000000000000000       0x41 ./Code/main.o
+ .debug_macro   0x0000000000000000       0x1c ./Code/main.o
+ .debug_macro   0x0000000000000000       0x22 ./Code/main.o
+ .debug_macro   0x0000000000000000       0x8e ./Code/main.o
+ .debug_macro   0x0000000000000000       0x51 ./Code/main.o
+ .debug_macro   0x0000000000000000      0x103 ./Code/main.o
+ .debug_macro   0x0000000000000000       0x6a ./Code/main.o
+ .debug_macro   0x0000000000000000      0x1df ./Code/main.o
+ .debug_macro   0x0000000000000000       0x1c ./Code/main.o
+ .debug_macro   0x0000000000000000       0x22 ./Code/main.o
+ .debug_macro   0x0000000000000000       0xfb ./Code/main.o
+ .debug_macro   0x0000000000000000     0x1011 ./Code/main.o
+ .debug_macro   0x0000000000000000      0x11f ./Code/main.o
+ .debug_macro   0x0000000000000000    0x26d45 ./Code/main.o
+ .debug_macro   0x0000000000000000       0x6d ./Code/main.o
+ .debug_macro   0x0000000000000000       0x28 ./Code/main.o
+ .debug_macro   0x0000000000000000       0x1c ./Code/main.o
+ .debug_macro   0x0000000000000000       0x2e ./Code/main.o
+ .debug_macro   0x0000000000000000       0x22 ./Code/main.o
+ .debug_macro   0x0000000000000000       0x10 ./Code/main.o
+ .text          0x0000000000000000       0x14 ./Startup/startup_stm32h747xihx.o
+ .data          0x0000000000000000        0x0 ./Startup/startup_stm32h747xihx.o
+ .bss           0x0000000000000000        0x0 ./Startup/startup_stm32h747xihx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .group         0x0000000000000000        0xc ./Startup/system_stm32h7xx.o
+ .text          0x0000000000000000        0x0 ./Startup/system_stm32h7xx.o
+ .data          0x0000000000000000        0x0 ./Startup/system_stm32h7xx.o
+ .bss           0x0000000000000000        0x0 ./Startup/system_stm32h7xx.o
+ .text.SystemCoreClockUpdate
+                0x0000000000000000      0x154 ./Startup/system_stm32h7xx.o
+ .data.SystemCoreClock
+                0x0000000000000000        0x4 ./Startup/system_stm32h7xx.o
+ .data.SystemD2Clock
+                0x0000000000000000        0x4 ./Startup/system_stm32h7xx.o
+ .rodata.D1CorePrescTable
+                0x0000000000000000       0x10 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000       0x2e ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000       0x41 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000       0x22 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000       0x51 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000      0x103 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000       0x6a ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000      0x1df ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000       0x1c ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000       0x22 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000       0xfb ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000      0x11f ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000    0x26d45 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000       0x6d ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000       0x1d ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000       0x3c ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000       0x16 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000       0x34 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000       0x10 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000       0x58 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000       0x71 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x0000000000000000      0x12a ./Startup/system_stm32h7xx.o
+ .text          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-exit.o)
+ .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-exit.o)
+ .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-exit.o)
+ .text.exit     0x0000000000000000       0x28 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-exit.o)
+ .debug_frame   0x0000000000000000       0x28 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-exit.o)
+ .ARM.attributes
+                0x0000000000000000       0x32 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-exit.o)
+ .text          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-impure.o)
+ .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-impure.o)
+ .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x0000000000000000        0x4 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-impure.o)
+ .data.impure_data
+                0x0000000000000000       0x60 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-impure.o)
+ .rodata._global_impure_ptr
+                0x0000000000000000        0x4 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x0000000000000000       0x32 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-impure.o)
+ .text          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-init.o)
+ .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-init.o)
+ .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-init.o)
+ .text          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-memset.o)
+ .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-memset.o)
+ .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-memset.o)
+ .text.memset   0x0000000000000000       0x10 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x0000000000000000       0x20 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x0000000000000000       0x32 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-memset.o)
+ .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_udivmoddi4.o)
+ .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_udivmoddi4.o)
+ .ARM.extab     0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_udivmoddi4.o)
+ .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_dvmd_tls.o)
+ .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_dvmd_tls.o)
+ .text          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libnosys.a(_exit.o)
+ .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libnosys.a(_exit.o)
+ .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libnosys.a(_exit.o)
+ .text._exit    0x0000000000000000        0x2 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libnosys.a(_exit.o)
+ .debug_frame   0x0000000000000000       0x20 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libnosys.a(_exit.o)
+ .ARM.attributes
+                0x0000000000000000       0x32 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libnosys.a(_exit.o)
+ .text          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtend.o
+ .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtend.o
+ .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtend.o
+ .rodata        0x0000000000000000       0x24 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtend.o
+ .eh_frame      0x0000000000000000        0x4 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtend.o
+ .ARM.attributes
+                0x0000000000000000       0x32 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtend.o
+ .text          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtn.o
+ .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtn.o
+ .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x0000000008100000 0x0000000000100000 xr
+RAM              0x0000000010000000 0x0000000000050000 xrw
+ITCMRAM          0x0000000000000000 0x0000000000010000 xrw
+IRAM2            0x0000000038000000 0x0000000000010000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crti.o
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtbegin.o
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard/crt0.o
+LOAD ./BoardSupport/BspAnalog.o
+LOAD ./BoardSupport/BspCan.o
+LOAD ./BoardSupport/BspClock.o
+LOAD ./BoardSupport/BspDma.o
+LOAD ./BoardSupport/BspFlash.o
+LOAD ./BoardSupport/BspIo.o
+LOAD ./BoardSupport/BspPwm.o
+LOAD ./BoardSupport/BspSpi.o
+LOAD ./BoardSupport/BspTimer.o
+LOAD ./BoardSupport/SlowTimer.o
+LOAD ./Code/DataMan.o
+LOAD ./Code/Fccp.o
+LOAD ./Code/Loading.o
+LOAD ./Code/Motor.o
+LOAD ./Code/SineTable.o
+LOAD ./Code/main.o
+LOAD ./Startup/startup_stm32h747xihx.o
+LOAD ./Startup/system_stm32h7xx.o
+START GROUP
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libstdc++_nano.a
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libsupc++_nano.a
+END GROUP
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libstdc++_nano.a
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libm.a
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a
+START GROUP
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a
+END GROUP
+START GROUP
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libnosys.a
+END GROUP
+START GROUP
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libnosys.a
+END GROUP
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtend.o
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtn.o
+                0x0000000010048000                _estack = 0x10048000
+                0x0000000000000200                _Min_Heap_Size = 0x200
+                0x0000000000000800                _Min_Stack_Size = 0x800
+
+.isr_vector     0x0000000008100000      0x298
+                0x0000000008100000                . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x0000000008100000      0x298 ./Startup/startup_stm32h747xihx.o
+                0x0000000008100000                g_pfnVectors
+                0x0000000008100298                . = ALIGN (0x4)
+
+.text           0x0000000008100298     0x6ddc
+                0x0000000008100298                . = ALIGN (0x4)
+ *(.text)
+ .text          0x0000000008100298       0x40 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtbegin.o
+ .text          0x00000000081002d8       0x30 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_aeabi_uldivmod.o)
+                0x00000000081002d8                __aeabi_uldivmod
+ .text          0x0000000008100308      0x2d0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_udivmoddi4.o)
+                0x0000000008100308                __udivmoddi4
+ .text          0x00000000081005d8        0x4 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_dvmd_tls.o)
+                0x00000000081005d8                __aeabi_idiv0
+                0x00000000081005d8                __aeabi_ldiv0
+ *(.text*)
+ .text._ZN6BspDma12UpdateLengthEhh
+                0x00000000081005dc       0xbc ./BoardSupport/BspAnalog.o
+                0x00000000081005dc                BspDma::UpdateLength(unsigned char, unsigned char)
+ .text._ZN9SineTable22GetIntSineTableAddressEv
+                0x0000000008100698       0x14 ./BoardSupport/BspAnalog.o
+                0x0000000008100698                SineTable::GetIntSineTableAddress()
+ .text._ZN9SineTable17GetIntTableLengthEv
+                0x00000000081006ac       0x10 ./BoardSupport/BspAnalog.o
+                0x00000000081006ac                SineTable::GetIntTableLength()
+ .text._ZN9BspAnalog13InitializeAdcEv
+                0x00000000081006bc      0x438 ./BoardSupport/BspAnalog.o
+                0x00000000081006bc                BspAnalog::InitializeAdc()
+ .text._ZN9BspAnalog12SetupChannelEccPNS_10AnalogTypeE
+                0x0000000008100af4      0x1c0 ./BoardSupport/BspAnalog.o
+                0x0000000008100af4                BspAnalog::SetupChannel(char, char, BspAnalog::AnalogType*)
+ .text._ZN9BspAnalog18InitializeExternalEv
+                0x0000000008100cb4       0x18 ./BoardSupport/BspAnalog.o
+                0x0000000008100cb4                BspAnalog::InitializeExternal()
+ .text._ZN9BspAnalog20SetupExternalChannelEcPNS_18ExternalAnalogTypeE
+                0x0000000008100ccc       0x90 ./BoardSupport/BspAnalog.o
+                0x0000000008100ccc                BspAnalog::SetupExternalChannel(char, BspAnalog::ExternalAnalogType*)
+ .text._ZN9BspAnalog13InitializeDacEv
+                0x0000000008100d5c       0xc0 ./BoardSupport/BspAnalog.o
+                0x0000000008100d5c                BspAnalog::InitializeDac()
+ .text._ZN6BspCan10InitializeEv
+                0x0000000008100e1c      0x2f4 ./BoardSupport/BspCan.o
+                0x0000000008100e1c                BspCan::Initialize()
+ .text._ZN6BspCan9SubscribeEmb
+                0x0000000008101110       0xe8 ./BoardSupport/BspCan.o
+                0x0000000008101110                BspCan::Subscribe(unsigned long, bool)
+ .text._ZN6BspCan7GetDataEcPmPhS0_Pb
+                0x00000000081011f8       0xe8 ./BoardSupport/BspCan.o
+                0x00000000081011f8                BspCan::GetData(char, unsigned long*, unsigned char*, unsigned long*, bool*)
+ .text._ZN6BspCan15CheckForNewDataEc
+                0x00000000081012e0       0x5c ./BoardSupport/BspCan.o
+                0x00000000081012e0                BspCan::CheckForNewData(char)
+ .text._ZN6BspCan11GetTxHandleEv
+                0x000000000810133c       0x38 ./BoardSupport/BspCan.o
+                0x000000000810133c                BspCan::GetTxHandle()
+ .text._ZN6BspCan8TransmitEcmPmhb
+                0x0000000008101374       0xfc ./BoardSupport/BspCan.o
+                0x0000000008101374                BspCan::Transmit(char, unsigned long, unsigned long*, unsigned char, bool)
+ .text._ZN8BspClock10InitializeEll
+                0x0000000008101470      0x10c ./BoardSupport/BspClock.o
+                0x0000000008101470                BspClock::Initialize(long, long)
+ .text._ZN6BspDma10InitializeEv
+                0x000000000810157c       0xf0 ./BoardSupport/BspDma.o
+                0x000000000810157c                BspDma::Initialize()
+ .text._ZN6BspDma14SetupTxChannelEhPmS0_ht
+                0x000000000810166c      0x148 ./BoardSupport/BspDma.o
+                0x000000000810166c                BspDma::SetupTxChannel(unsigned char, unsigned long*, unsigned long*, unsigned char, unsigned short)
+ .text._ZN6BspDma14SetupRxChannelEhPmS0_ht
+                0x00000000081017b4      0x150 ./BoardSupport/BspDma.o
+                0x00000000081017b4                BspDma::SetupRxChannel(unsigned char, unsigned long*, unsigned long*, unsigned char, unsigned short)
+ .text.__NVIC_EnableIRQ
+                0x0000000008101904       0x3c ./BoardSupport/BspFlash.o
+ .text.__NVIC_DisableIRQ
+                0x0000000008101940       0x48 ./BoardSupport/BspFlash.o
+ .text._ZN8BspFlash10InitializeEv
+                0x0000000008101988       0x9c ./BoardSupport/BspFlash.o
+                0x0000000008101988                BspFlash::Initialize()
+ .text._ZN8BspFlash5WriteEv
+                0x0000000008101a24       0xa8 ./BoardSupport/BspFlash.o
+                0x0000000008101a24                BspFlash::Write()
+ .text._ZN8BspFlash11EraseSectorEcc
+                0x0000000008101acc       0x7c ./BoardSupport/BspFlash.o
+                0x0000000008101acc                BspFlash::EraseSector(char, char)
+ .text._ZN8BspFlash9WriteDataEcPmS0_t
+                0x0000000008101b48      0x17c ./BoardSupport/BspFlash.o
+                0x0000000008101b48                BspFlash::WriteData(char, unsigned long*, unsigned long*, unsigned short)
+ .text._ZN8BspFlash11UnlockFlashEc
+                0x0000000008101cc4       0x48 ./BoardSupport/BspFlash.o
+                0x0000000008101cc4                BspFlash::UnlockFlash(char)
+ .text._ZN8BspFlash9LockFlashEc
+                0x0000000008101d0c       0x30 ./BoardSupport/BspFlash.o
+                0x0000000008101d0c                BspFlash::LockFlash(char)
+ .text._ZN5BspIo10InitializeEv
+                0x0000000008101d3c      0x2e4 ./BoardSupport/BspIo.o
+                0x0000000008101d3c                BspIo::Initialize()
+ .text._ZN5BspIo11GetGpioPortEc
+                0x0000000008102020       0xc0 ./BoardSupport/BspIo.o
+                0x0000000008102020                BspIo::GetGpioPort(char)
+ .text._ZN5BspIo9InitInputEchPNS_7PinInfoE
+                0x00000000081020e0       0xd2 ./BoardSupport/BspIo.o
+                0x00000000081020e0                BspIo::InitInput(char, unsigned char, BspIo::PinInfo*)
+ .text._ZN5BspIo10InitOutputEchPNS_7PinInfoE
+                0x00000000081021b2       0xde ./BoardSupport/BspIo.o
+                0x00000000081021b2                BspIo::InitOutput(char, unsigned char, BspIo::PinInfo*)
+ .text._ZN5BspIo15InitAltFunctionEchc
+                0x0000000008102290       0xe4 ./BoardSupport/BspIo.o
+                0x0000000008102290                BspIo::InitAltFunction(char, unsigned char, char)
+ .text._ZN5BspIo10InitAnalogEch
+                0x0000000008102374       0x9a ./BoardSupport/BspIo.o
+                0x0000000008102374                BspIo::InitAnalog(char, unsigned char)
+ *fill*         0x000000000810240e        0x2 
+ .text.__NVIC_EnableIRQ
+                0x0000000008102410       0x3c ./BoardSupport/BspPwm.o
+ .text.__NVIC_SetPriority
+                0x000000000810244c       0x54 ./BoardSupport/BspPwm.o
+ .text._ZN6BspPwm10InitializeEv
+                0x00000000081024a0       0x50 ./BoardSupport/BspPwm.o
+                0x00000000081024a0                BspPwm::Initialize()
+ .text._ZN6BspPwm13SetupFixedPwmEhmt
+                0x00000000081024f0       0xf8 ./BoardSupport/BspPwm.o
+                0x00000000081024f0                BspPwm::SetupFixedPwm(unsigned char, unsigned long, unsigned short)
+ .text._ZN6BspPwm14SetupSwitchPwmEmtPFvvEh
+                0x00000000081025e8      0x15c ./BoardSupport/BspPwm.o
+                0x00000000081025e8                BspPwm::SetupSwitchPwm(unsigned long, unsigned short, void (*)(), unsigned char)
+ .text._ZN6BspPwm13DummyFunctionEv
+                0x0000000008102744        0xe ./BoardSupport/BspPwm.o
+                0x0000000008102744                BspPwm::DummyFunction()
+ *fill*         0x0000000008102752        0x2 
+ .text.TIM1_UP_IRQHandler
+                0x0000000008102754       0x1c ./BoardSupport/BspPwm.o
+                0x0000000008102754                TIM1_UP_IRQHandler
+ .text._ZN6BspSpi10InitializeEcmPPVtPPVhPPt
+                0x0000000008102770      0x234 ./BoardSupport/BspSpi.o
+                0x0000000008102770                BspSpi::Initialize(char, unsigned long, unsigned short volatile**, unsigned char volatile**, unsigned short**)
+ .text._ZN6BspSpi23Initialize_SystemConfigEv
+                0x00000000081029a4       0x60 ./BoardSupport/BspSpi.o
+                0x00000000081029a4                BspSpi::Initialize_SystemConfig()
+ .text.__NVIC_EnableIRQ
+                0x0000000008102a04       0x3c ./BoardSupport/BspTimer.o
+ .text.__NVIC_SetPriority
+                0x0000000008102a40       0x54 ./BoardSupport/BspTimer.o
+ .text._ZN8BspTimer10InitializeEv
+                0x0000000008102a94      0x150 ./BoardSupport/BspTimer.o
+                0x0000000008102a94                BspTimer::Initialize()
+ *fill*         0x0000000008102be4        0x4 
+ .text._ZN8BspTimer5SetupEmPFvvEhb
+                0x0000000008102be8      0x184 ./BoardSupport/BspTimer.o
+                0x0000000008102be8                BspTimer::Setup(unsigned long, void (*)(), unsigned char, bool)
+ .text._ZN8BspTimer12SetupLpTimerEm
+                0x0000000008102d6c       0xf4 ./BoardSupport/BspTimer.o
+                0x0000000008102d6c                BspTimer::SetupLpTimer(unsigned long)
+ .text._ZN8BspTimer23SetupFreeRunningCounterEv
+                0x0000000008102e60       0x90 ./BoardSupport/BspTimer.o
+                0x0000000008102e60                BspTimer::SetupFreeRunningCounter()
+ .text._ZN8BspTimer13DummyFunctionEv
+                0x0000000008102ef0        0xe ./BoardSupport/BspTimer.o
+                0x0000000008102ef0                BspTimer::DummyFunction()
+ *fill*         0x0000000008102efe        0x2 
+ .text.TIM6_DAC_IRQHandler
+                0x0000000008102f00       0x1c ./BoardSupport/BspTimer.o
+                0x0000000008102f00                TIM6_DAC_IRQHandler
+ .text.TIM7_IRQHandler
+                0x0000000008102f1c       0x1c ./BoardSupport/BspTimer.o
+                0x0000000008102f1c                TIM7_IRQHandler
+ .text._ZN9SlowTimer10InitializeEv
+                0x0000000008102f38       0x68 ./BoardSupport/SlowTimer.o
+                0x0000000008102f38                SlowTimer::Initialize()
+ .text._ZN9SlowTimer5SetupElPFvvE
+                0x0000000008102fa0       0x84 ./BoardSupport/SlowTimer.o
+                0x0000000008102fa0                SlowTimer::Setup(long, void (*)())
+ .text._ZN9SlowTimer6UpdateEv
+                0x0000000008103024       0x5c ./BoardSupport/SlowTimer.o
+                0x0000000008103024                SlowTimer::Update()
+ .text._ZN9SlowTimer13DummyFunctionEv
+                0x0000000008103080        0xe ./BoardSupport/SlowTimer.o
+                0x0000000008103080                SlowTimer::DummyFunction()
+ *fill*         0x000000000810308e        0x2 
+ .text._ZN9BspAnalog8LinkDataEPNS_12AnalogConfigEPNS_12AnalogInputsEPNS_13AnalogOutputsE
+                0x0000000008103090       0x40 ./Code/DataMan.o
+                0x0000000008103090                BspAnalog::LinkData(BspAnalog::AnalogConfig*, BspAnalog::AnalogInputs*, BspAnalog::AnalogOutputs*)
+ .text._ZN12MotorControl8LinkDataEPNS_11MotorConfigEPNS_18MotorDigitalConfigEPNS_11MotorInputsEPNS_12MotorOutputsEPNS_19MotorDigitalOutputsE
+                0x00000000081030d0       0x58 ./Code/DataMan.o
+                0x00000000081030d0                MotorControl::LinkData(MotorControl::MotorConfig*, MotorControl::MotorDigitalConfig*, MotorControl::MotorInputs*, MotorControl::MotorOutputs*, MotorControl::MotorDigitalOutputs*)
+ .text._ZN11ProcLoading8LinkDataEPNS_13LoadingConfigEPNS_13LoadingInputsEPNS_14LoadingOutputsE
+                0x0000000008103128       0x40 ./Code/DataMan.o
+                0x0000000008103128                ProcLoading::LinkData(ProcLoading::LoadingConfig*, ProcLoading::LoadingInputs*, ProcLoading::LoadingOutputs*)
+ .text._ZN7DataMan10InitializeEv
+                0x0000000008103168       0xf0 ./Code/DataMan.o
+                0x0000000008103168                DataMan::Initialize()
+ .text._ZN7DataMan5LogicEv
+                0x0000000008103258       0xd8 ./Code/DataMan.o
+                0x0000000008103258                DataMan::Logic()
+ .text._ZN7DataMan16GetConfigAddressEmbhh
+                0x0000000008103330       0xa8 ./Code/DataMan.o
+                0x0000000008103330                DataMan::GetConfigAddress(unsigned long, bool, unsigned char, unsigned char)
+ .text._ZN7DataMan18GetVariableAddressEmhh
+                0x00000000081033d8       0x58 ./Code/DataMan.o
+                0x00000000081033d8                DataMan::GetVariableAddress(unsigned long, unsigned char, unsigned char)
+ .text._ZN7DataMan9WriteDataEmhbbm
+                0x0000000008103430      0x200 ./Code/DataMan.o
+                0x0000000008103430                DataMan::WriteData(unsigned long, unsigned char, bool, bool, unsigned long)
+ .text._ZN7DataMan7GetDataEmhbb
+                0x0000000008103630       0x96 ./Code/DataMan.o
+                0x0000000008103630                DataMan::GetData(unsigned long, unsigned char, bool, bool)
+ .text._ZN7DataMan10GetAddressEmhbb
+                0x00000000081036c6       0x7a ./Code/DataMan.o
+                0x00000000081036c6                DataMan::GetAddress(unsigned long, unsigned char, bool, bool)
+ .text._ZN7DataMan21SendDefaultCanPacketsEv
+                0x0000000008103740      0x3ac ./Code/DataMan.o
+                0x0000000008103740                DataMan::SendDefaultCanPackets()
+ .text._ZN4Fccp17BoolRisingTriggerEv
+                0x0000000008103aec       0x48 ./Code/Fccp.o
+                0x0000000008103aec                Fccp::BoolRisingTrigger()
+ .text._ZN4Fccp18BoolFallingTriggerEv
+                0x0000000008103b34       0x48 ./Code/Fccp.o
+                0x0000000008103b34                Fccp::BoolFallingTrigger()
+ .text._ZN4Fccp17Int8RisingTriggerEv
+                0x0000000008103b7c       0x5c ./Code/Fccp.o
+                0x0000000008103b7c                Fccp::Int8RisingTrigger()
+ .text._ZN4Fccp18Int8FallingTriggerEv
+                0x0000000008103bd8       0x5c ./Code/Fccp.o
+                0x0000000008103bd8                Fccp::Int8FallingTrigger()
+ .text._ZN4Fccp18Int16RisingTriggerEv
+                0x0000000008103c34       0x5c ./Code/Fccp.o
+                0x0000000008103c34                Fccp::Int16RisingTrigger()
+ .text._ZN4Fccp19Int16FallingTriggerEv
+                0x0000000008103c90       0x5c ./Code/Fccp.o
+                0x0000000008103c90                Fccp::Int16FallingTrigger()
+ .text._ZN4Fccp18Int32RisingTriggerEv
+                0x0000000008103cec       0x58 ./Code/Fccp.o
+                0x0000000008103cec                Fccp::Int32RisingTrigger()
+ .text._ZN4Fccp19Int32FallingTriggerEv
+                0x0000000008103d44       0x58 ./Code/Fccp.o
+                0x0000000008103d44                Fccp::Int32FallingTrigger()
+ .text._ZN4Fccp18FloatRisingTriggerEv
+                0x0000000008103d9c       0x5c ./Code/Fccp.o
+                0x0000000008103d9c                Fccp::FloatRisingTrigger()
+ .text._ZN4Fccp19FloatFallingTriggerEv
+                0x0000000008103df8       0x5c ./Code/Fccp.o
+                0x0000000008103df8                Fccp::FloatFallingTrigger()
+ .text._ZN7DataMan17SaveToNonVolatileEv
+                0x0000000008103e54       0x16 ./Code/Fccp.o
+                0x0000000008103e54                DataMan::SaveToNonVolatile()
+ *fill*         0x0000000008103e6a        0x2 
+ .text._ZN4Fccp10InitializeEv
+                0x0000000008103e6c       0xc8 ./Code/Fccp.o
+                0x0000000008103e6c                Fccp::Initialize()
+ .text._ZN4Fccp5LogicEv
+                0x0000000008103f34       0x2c ./Code/Fccp.o
+                0x0000000008103f34                Fccp::Logic()
+ .text._ZN4Fccp20OneTimePacketHandlerEv
+                0x0000000008103f60      0x148 ./Code/Fccp.o
+                0x0000000008103f60                Fccp::OneTimePacketHandler()
+ .text._ZN4Fccp22SubscribePacketHandlerEv
+                0x00000000081040a8      0x1dc ./Code/Fccp.o
+                0x00000000081040a8                Fccp::SubscribePacketHandler()
+ .text._ZN4Fccp21SnapshotPacketHandlerEv
+                0x0000000008104284      0x694 ./Code/Fccp.o
+                0x0000000008104284                Fccp::SnapshotPacketHandler()
+ .text._ZN11ProcLoading10InitializeEv
+                0x0000000008104918       0x1c ./Code/Loading.o
+                0x0000000008104918                ProcLoading::Initialize()
+ .text._ZN11ProcLoading17UpdateEverySecondEm
+                0x0000000008104934      0x13c ./Code/Loading.o
+                0x0000000008104934                ProcLoading::UpdateEverySecond(unsigned long)
+ .text._ZN9SineTable11Sine_3PhaseEfPf
+                0x0000000008104a70      0x1b4 ./Code/Motor.o
+                0x0000000008104a70                SineTable::Sine_3Phase(float, float*)
+ .text._ZN9SineTable7ArcSineEf
+                0x0000000008104c24       0x98 ./Code/Motor.o
+                0x0000000008104c24                SineTable::ArcSine(float)
+ .text._ZN9SineTable9ArcCosineEf
+                0x0000000008104cbc       0x98 ./Code/Motor.o
+                0x0000000008104cbc                SineTable::ArcCosine(float)
+ .text._ZN12MotorControl10InitializeEv
+                0x0000000008104d54      0x180 ./Code/Motor.o
+                0x0000000008104d54                MotorControl::Initialize()
+ .text._ZN12MotorControl5LogicEv
+                0x0000000008104ed4     0x1cec ./Code/Motor.o
+                0x0000000008104ed4                MotorControl::Logic()
+ .text._ZN12MotorControl16GetResolverAngleEv
+                0x0000000008106bc0      0x118 ./Code/Motor.o
+                0x0000000008106bc0                MotorControl::GetResolverAngle()
+ .text._ZN12MotorControl8OkToSaveEv
+                0x0000000008106cd8       0x48 ./Code/Motor.o
+                0x0000000008106cd8                MotorControl::OkToSave()
+ .text._ZN5BspIo8SetIoPinEPNS_7PinInfoE
+                0x0000000008106d20       0x1e ./Code/main.o
+                0x0000000008106d20                BspIo::SetIoPin(BspIo::PinInfo*)
+ .text._ZN5BspIo10ClearIoPinEPNS_7PinInfoE
+                0x0000000008106d3e       0x1e ./Code/main.o
+                0x0000000008106d3e                BspIo::ClearIoPin(BspIo::PinInfo*)
+ .text.main     0x0000000008106d5c      0x138 ./Code/main.o
+                0x0000000008106d5c                main
+ .text._ZN4Main8PwmFunctEv
+                0x0000000008106e94       0xdc ./Code/main.o
+                0x0000000008106e94                Main::PwmFunct()
+ .text.HardFault_Handler
+                0x0000000008106f70       0x18 ./Code/main.o
+                0x0000000008106f70                HardFault_Handler
+ .text.MemManage_Handler
+                0x0000000008106f88        0x6 ./Code/main.o
+                0x0000000008106f88                MemManage_Handler
+ .text.BusFault_Handler
+                0x0000000008106f8e        0x6 ./Code/main.o
+                0x0000000008106f8e                BusFault_Handler
+ .text.UsageFault_Handler
+                0x0000000008106f94        0x6 ./Code/main.o
+                0x0000000008106f94                UsageFault_Handler
+ *fill*         0x0000000008106f9a        0x2 
+ .text.Reset_Handler
+                0x0000000008106f9c       0x50 ./Startup/startup_stm32h747xihx.o
+                0x0000000008106f9c                Reset_Handler
+ .text.Default_Handler
+                0x0000000008106fec        0x2 ./Startup/startup_stm32h747xihx.o
+                0x0000000008106fec                RTC_Alarm_IRQHandler
+                0x0000000008106fec                EXTI2_IRQHandler
+                0x0000000008106fec                TIM8_CC_IRQHandler
+                0x0000000008106fec                HRTIM1_Master_IRQHandler
+                0x0000000008106fec                DebugMon_Handler
+                0x0000000008106fec                UART8_IRQHandler
+                0x0000000008106fec                SPI4_IRQHandler
+                0x0000000008106fec                TIM1_CC_IRQHandler
+                0x0000000008106fec                BDMA_Channel6_IRQHandler
+                0x0000000008106fec                DMA2_Stream5_IRQHandler
+                0x0000000008106fec                HRTIM1_FLT_IRQHandler
+                0x0000000008106fec                JPEG_IRQHandler
+                0x0000000008106fec                DMA1_Stream5_IRQHandler
+                0x0000000008106fec                SysTick_Handler
+                0x0000000008106fec                BDMA_Channel1_IRQHandler
+                0x0000000008106fec                HRTIM1_TIMD_IRQHandler
+                0x0000000008106fec                TAMP_STAMP_IRQHandler
+                0x0000000008106fec                PendSV_Handler
+                0x0000000008106fec                NMI_Handler
+                0x0000000008106fec                EXTI3_IRQHandler
+                0x0000000008106fec                LPTIM4_IRQHandler
+                0x0000000008106fec                TIM8_TRG_COM_TIM14_IRQHandler
+                0x0000000008106fec                LPTIM2_IRQHandler
+                0x0000000008106fec                DFSDM1_FLT1_IRQHandler
+                0x0000000008106fec                DMAMUX2_OVR_IRQHandler
+                0x0000000008106fec                TIM8_UP_TIM13_IRQHandler
+                0x0000000008106fec                I2C3_ER_IRQHandler
+                0x0000000008106fec                DFSDM1_FLT2_IRQHandler
+                0x0000000008106fec                MDMA_IRQHandler
+                0x0000000008106fec                LPTIM3_IRQHandler
+                0x0000000008106fec                HSEM1_IRQHandler
+                0x0000000008106fec                EXTI0_IRQHandler
+                0x0000000008106fec                I2C2_EV_IRQHandler
+                0x0000000008106fec                DMA1_Stream2_IRQHandler
+                0x0000000008106fec                FPU_IRQHandler
+                0x0000000008106fec                OTG_HS_WKUP_IRQHandler
+                0x0000000008106fec                FDCAN1_IT1_IRQHandler
+                0x0000000008106fec                LTDC_ER_IRQHandler
+                0x0000000008106fec                DMA2_Stream2_IRQHandler
+                0x0000000008106fec                HRTIM1_TIME_IRQHandler
+                0x0000000008106fec                SPI1_IRQHandler
+                0x0000000008106fec                DCMI_IRQHandler
+                0x0000000008106fec                HRTIM1_TIMC_IRQHandler
+                0x0000000008106fec                DMA2_Stream3_IRQHandler
+                0x0000000008106fec                SAI2_IRQHandler
+                0x0000000008106fec                DFSDM1_FLT3_IRQHandler
+                0x0000000008106fec                USART6_IRQHandler
+                0x0000000008106fec                TIM17_IRQHandler
+                0x0000000008106fec                USART3_IRQHandler
+                0x0000000008106fec                BDMA_Channel7_IRQHandler
+                0x0000000008106fec                LPTIM5_IRQHandler
+                0x0000000008106fec                UART5_IRQHandler
+                0x0000000008106fec                ADC3_IRQHandler
+                0x0000000008106fec                DMA2_Stream0_IRQHandler
+                0x0000000008106fec                TIM4_IRQHandler
+                0x0000000008106fec                BDMA_Channel2_IRQHandler
+                0x0000000008106fec                QUADSPI_IRQHandler
+                0x0000000008106fec                I2C1_EV_IRQHandler
+                0x0000000008106fec                DMA1_Stream6_IRQHandler
+                0x0000000008106fec                DMAMUX1_OVR_IRQHandler
+                0x0000000008106fec                DMA1_Stream1_IRQHandler
+                0x0000000008106fec                TIM16_IRQHandler
+                0x0000000008106fec                UART4_IRQHandler
+                0x0000000008106fec                BDMA_Channel5_IRQHandler
+                0x0000000008106fec                TIM3_IRQHandler
+                0x0000000008106fec                RCC_IRQHandler
+                0x0000000008106fec                TIM8_BRK_TIM12_IRQHandler
+                0x0000000008106fec                TIM1_TRG_COM_IRQHandler
+                0x0000000008106fec                Default_Handler
+                0x0000000008106fec                ECC_IRQHandler
+                0x0000000008106fec                CEC_IRQHandler
+                0x0000000008106fec                EXTI15_10_IRQHandler
+                0x0000000008106fec                BDMA_Channel0_IRQHandler
+                0x0000000008106fec                ADC_IRQHandler
+                0x0000000008106fec                DMA1_Stream7_IRQHandler
+                0x0000000008106fec                HRTIM1_TIMA_IRQHandler
+                0x0000000008106fec                SPI5_IRQHandler
+                0x0000000008106fec                SDMMC1_IRQHandler
+                0x0000000008106fec                TIM5_IRQHandler
+                0x0000000008106fec                DMA2_Stream7_IRQHandler
+                0x0000000008106fec                TIM15_IRQHandler
+                0x0000000008106fec                PVD_AVD_IRQHandler
+                0x0000000008106fec                I2C3_EV_IRQHandler
+                0x0000000008106fec                EXTI9_5_IRQHandler
+                0x0000000008106fec                RTC_WKUP_IRQHandler
+                0x0000000008106fec                LTDC_IRQHandler
+                0x0000000008106fec                SAI3_IRQHandler
+                0x0000000008106fec                ETH_WKUP_IRQHandler
+                0x0000000008106fec                SPDIF_RX_IRQHandler
+                0x0000000008106fec                SPI2_IRQHandler
+                0x0000000008106fec                OTG_HS_EP1_IN_IRQHandler
+                0x0000000008106fec                DMA1_Stream0_IRQHandler
+                0x0000000008106fec                SVC_Handler
+                0x0000000008106fec                CRS_IRQHandler
+                0x0000000008106fec                CM7_SEV_IRQHandler
+                0x0000000008106fec                EXTI4_IRQHandler
+                0x0000000008106fec                RNG_IRQHandler
+                0x0000000008106fec                CM4_SEV_IRQHandler
+                0x0000000008106fec                HRTIM1_TIMB_IRQHandler
+                0x0000000008106fec                FDCAN2_IT1_IRQHandler
+                0x0000000008106fec                DSI_IRQHandler
+                0x0000000008106fec                ETH_IRQHandler
+                0x0000000008106fec                WWDG_RST_IRQHandler
+                0x0000000008106fec                BDMA_Channel4_IRQHandler
+                0x0000000008106fec                OTG_HS_EP1_OUT_IRQHandler
+                0x0000000008106fec                WWDG_IRQHandler
+                0x0000000008106fec                SPI6_IRQHandler
+                0x0000000008106fec                MDIOS_IRQHandler
+                0x0000000008106fec                I2C4_EV_IRQHandler
+                0x0000000008106fec                FDCAN2_IT0_IRQHandler
+                0x0000000008106fec                LPUART1_IRQHandler
+                0x0000000008106fec                FDCAN1_IT0_IRQHandler
+                0x0000000008106fec                TIM2_IRQHandler
+                0x0000000008106fec                OTG_FS_WKUP_IRQHandler
+                0x0000000008106fec                OTG_HS_IRQHandler
+                0x0000000008106fec                HSEM2_IRQHandler
+                0x0000000008106fec                DMA2D_IRQHandler
+                0x0000000008106fec                TIM1_BRK_IRQHandler
+                0x0000000008106fec                EXTI1_IRQHandler
+                0x0000000008106fec                SDMMC2_IRQHandler
+                0x0000000008106fec                OTG_FS_EP1_OUT_IRQHandler
+                0x0000000008106fec                BDMA_Channel3_IRQHandler
+                0x0000000008106fec                HOLD_CORE_IRQHandler
+                0x0000000008106fec                UART7_IRQHandler
+                0x0000000008106fec                MDIOS_WKUP_IRQHandler
+                0x0000000008106fec                USART2_IRQHandler
+                0x0000000008106fec                DFSDM1_FLT0_IRQHandler
+                0x0000000008106fec                SAI4_IRQHandler
+                0x0000000008106fec                I2C2_ER_IRQHandler
+                0x0000000008106fec                DMA2_Stream1_IRQHandler
+                0x0000000008106fec                FLASH_IRQHandler
+                0x0000000008106fec                DMA2_Stream4_IRQHandler
+                0x0000000008106fec                USART1_IRQHandler
+                0x0000000008106fec                OTG_FS_IRQHandler
+                0x0000000008106fec                SPI3_IRQHandler
+                0x0000000008106fec                WAKEUP_PIN_IRQHandler
+                0x0000000008106fec                DMA1_Stream4_IRQHandler
+                0x0000000008106fec                OTG_FS_EP1_IN_IRQHandler
+                0x0000000008106fec                I2C1_ER_IRQHandler
+                0x0000000008106fec                FMC_IRQHandler
+                0x0000000008106fec                FDCAN_CAL_IRQHandler
+                0x0000000008106fec                SWPMI1_IRQHandler
+                0x0000000008106fec                COMP1_IRQHandler
+                0x0000000008106fec                LPTIM1_IRQHandler
+                0x0000000008106fec                I2C4_ER_IRQHandler
+                0x0000000008106fec                DMA2_Stream6_IRQHandler
+                0x0000000008106fec                SAI1_IRQHandler
+                0x0000000008106fec                DMA1_Stream3_IRQHandler
+ *fill*         0x0000000008106fee        0x2 
+ .text.SystemInit
+                0x0000000008106ff0       0x24 ./Startup/system_stm32h7xx.o
+                0x0000000008106ff0                SystemInit
+ .text.__libc_init_array
+                0x0000000008107014       0x48 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-init.o)
+                0x0000000008107014                __libc_init_array
+ *(.glue_7)
+ .glue_7        0x000000000810705c        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x000000000810705c        0x0 linker stubs
+ *(.eh_frame)
+ .eh_frame      0x000000000810705c        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtbegin.o
+ *(.init)
+ .init          0x000000000810705c        0x4 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crti.o
+                0x000000000810705c                _init
+ .init          0x0000000008107060        0x8 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtn.o
+ *(.fini)
+ .fini          0x0000000008107068        0x4 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crti.o
+                0x0000000008107068                _fini
+ .fini          0x000000000810706c        0x8 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtn.o
+                0x0000000008107074                . = ALIGN (0x4)
+                0x0000000008107074                _etext = .
+
+.vfp11_veneer   0x0000000008107074        0x0
+ .vfp11_veneer  0x0000000008107074        0x0 linker stubs
+
+.v4_bx          0x0000000008107074        0x0
+ .v4_bx         0x0000000008107074        0x0 linker stubs
+
+.iplt           0x0000000008107074        0x0
+ .iplt          0x0000000008107074        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtbegin.o
+
+.rodata         0x0000000008107074        0x0
+                0x0000000008107074                . = ALIGN (0x4)
+ *(.rodata)
+ *(.rodata*)
+                0x0000000008107074                . = ALIGN (0x4)
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+
+.ARM            0x0000000008107074        0x8
+                0x0000000008107074                __exidx_start = .
+ *(.ARM.exidx*)
+ .ARM.exidx     0x0000000008107074        0x8 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_udivmoddi4.o)
+                0x000000000810707c                __exidx_end = .
+
+.rel.dyn        0x000000000810707c        0x0
+ .rel.iplt      0x000000000810707c        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtbegin.o
+
+.preinit_array  0x000000000810707c        0x0
+                0x000000000810707c                PROVIDE (__preinit_array_start = .)
+ *(.preinit_array*)
+                0x000000000810707c                PROVIDE (__preinit_array_end = .)
+
+.init_array     0x000000000810707c        0x4
+                0x000000000810707c                PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array*)
+ .init_array    0x000000000810707c        0x4 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtbegin.o
+                0x0000000008107080                PROVIDE (__init_array_end = .)
+
+.fini_array     0x0000000008107080        0x4
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array*)
+ .fini_array    0x0000000008107080        0x4 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtbegin.o
+                [!provide]                        PROVIDE (__fini_array_end = .)
+                0x0000000008107084                _sidata = LOADADDR (.data)
+
+.data           0x0000000010000000     0x1588 load address 0x0000000008107084
+                0x0000000010000000                . = ALIGN (0x4)
+                0x0000000010000000                _sdata = .
+ *(.data)
+ *(.data*)
+ .data._ZN9BspAnalog7_configE
+                0x0000000010000000        0x4 ./BoardSupport/BspAnalog.o
+                0x0000000010000000                BspAnalog::_config
+ .data._ZN9BspAnalog9_analogInE
+                0x0000000010000004        0x4 ./BoardSupport/BspAnalog.o
+                0x0000000010000004                BspAnalog::_analogIn
+ .data._ZN9BspAnalog10_analogOutE
+                0x0000000010000008        0x4 ./BoardSupport/BspAnalog.o
+                0x0000000010000008                BspAnalog::_analogOut
+ .data._ZN9BspAnalog13DummyVariableE
+                0x000000001000000c        0x4 ./BoardSupport/BspAnalog.o
+                0x000000001000000c                BspAnalog::DummyVariable
+ .data._ZN6BspCan13_dwordsToCopyE
+                0x0000000010000010       0x10 ./BoardSupport/BspCan.o
+                0x0000000010000010                BspCan::_dwordsToCopy
+ .data._ZN6BspCan15_bytesInMessageE
+                0x0000000010000020       0x10 ./BoardSupport/BspCan.o
+                0x0000000010000020                BspCan::_bytesInMessage
+ .data._ZN6BspPwm9_functionE
+                0x0000000010000030        0x8 ./BoardSupport/BspPwm.o
+                0x0000000010000030                BspPwm::_function
+ .data._ZN8BspTimer9_functionE
+                0x0000000010000038        0x8 ./BoardSupport/BspTimer.o
+                0x0000000010000038                BspTimer::_function
+ .data._ZN7DataMan7_rxHndlE
+                0x0000000010000040        0x1 ./Code/DataMan.o
+                0x0000000010000040                DataMan::_rxHndl
+ .data._ZN7DataMan7_txHndlE
+                0x0000000010000041        0x1 ./Code/DataMan.o
+                0x0000000010000041                DataMan::_txHndl
+ *fill*         0x0000000010000042        0x2 
+ .data._ZN7DataMan23_relativeVariableLookupE
+                0x0000000010000044       0x30 ./Code/DataMan.o
+                0x0000000010000044                DataMan::_relativeVariableLookup
+ .data._ZN7DataMan21_relativeConfigLookupE
+                0x0000000010000074       0x18 ./Code/DataMan.o
+                0x0000000010000074                DataMan::_relativeConfigLookup
+ .data._ZN4Fccp14_dummyVariableE
+                0x000000001000008c        0x4 ./Code/Fccp.o
+                0x000000001000008c                Fccp::_dummyVariable
+ .data._ZN12MotorControl13_deltatFactorE
+                0x0000000010000090        0x4 ./Code/Motor.o
+                0x0000000010000090                MotorControl::_deltatFactor
+ .data._ZN12MotorControl7_deltaTE
+                0x0000000010000094        0x4 ./Code/Motor.o
+                0x0000000010000094                MotorControl::_deltaT
+ .data._ZN12MotorControl13_periodFactorE
+                0x0000000010000098        0x4 ./Code/Motor.o
+                0x0000000010000098                MotorControl::_periodFactor
+ .data._ZN12MotorControl11_halfPeriodE
+                0x000000001000009c        0x2 ./Code/Motor.o
+                0x000000001000009c                MotorControl::_halfPeriod
+ *fill*         0x000000001000009e        0x2 
+ .data._ZN9SineTable16_sineTableFactorE
+                0x00000000100000a0        0x4 ./Code/SineTable.o
+                0x00000000100000a0                SineTable::_sineTableFactor
+ .data._ZN9SineTable10_sineTableE
+                0x00000000100000a4      0x804 ./Code/SineTable.o
+                0x00000000100000a4                SineTable::_sineTable
+ .data._ZN9SineTable13_intSineTableE
+                0x00000000100008a8      0x190 ./Code/SineTable.o
+                0x00000000100008a8                SineTable::_intSineTable
+ .data._ZN9SineTable13_arcSineTableE
+                0x0000000010000a38      0x5a8 ./Code/SineTable.o
+                0x0000000010000a38                SineTable::_arcSineTable
+ .data._ZN9SineTable15_arcCosineTableE
+                0x0000000010000fe0      0x5a8 ./Code/SineTable.o
+                0x0000000010000fe0                SineTable::_arcCosineTable
+                0x0000000010001588                . = ALIGN (0x4)
+                0x0000000010001588                _edata = .
+
+.igot.plt       0x0000000010001588        0x0 load address 0x000000000810860c
+ .igot.plt      0x0000000010001588        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtbegin.o
+                0x0000000010001588                . = ALIGN (0x4)
+
+.bss            0x0000000010001588    0x40ba4 load address 0x000000000810860c
+                0x0000000010001588                _sbss = .
+                0x0000000010001588                __bss_start__ = _sbss
+ *(.bss)
+ .bss           0x0000000010001588       0x1c c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtbegin.o
+ *(.bss*)
+ .bss._ZN9BspAnalog17_analogDataBufferE
+                0x00000000100015a4       0xe4 ./BoardSupport/BspAnalog.o
+                0x00000000100015a4                BspAnalog::_analogDataBuffer
+ .bss._ZN9BspAnalog12_initializedE
+                0x0000000010001688        0x1 ./BoardSupport/BspAnalog.o
+                0x0000000010001688                BspAnalog::_initialized
+ .bss._ZN9BspAnalog11_dataLinkedE
+                0x0000000010001689        0x1 ./BoardSupport/BspAnalog.o
+                0x0000000010001689                BspAnalog::_dataLinked
+ *fill*         0x000000001000168a        0x2 
+ .bss._ZN9BspAnalog12_nextChannelE
+                0x000000001000168c        0x3 ./BoardSupport/BspAnalog.o
+                0x000000001000168c                BspAnalog::_nextChannel
+ *fill*         0x000000001000168f        0x1 
+ .bss._ZN9BspAnalog13_dmaRxChannelE
+                0x0000000010001690        0x3 ./BoardSupport/BspAnalog.o
+                0x0000000010001690                BspAnalog::_dmaRxChannel
+ .bss._ZN9BspAnalog13_dmaTxChannelE
+                0x0000000010001693        0x1 ./BoardSupport/BspAnalog.o
+                0x0000000010001693                BspAnalog::_dmaTxChannel
+ .bss._ZN9BspAnalog20_externalInitializedE
+                0x0000000010001694        0x1 ./BoardSupport/BspAnalog.o
+                0x0000000010001694                BspAnalog::_externalInitialized
+ *fill*         0x0000000010001695        0x3 
+ .bss._ZN6BspCan11_nextBufferE
+                0x0000000010001698        0x2 ./BoardSupport/BspCan.o
+                0x0000000010001698                BspCan::_nextBuffer
+ *fill*         0x000000001000169a        0x2 
+ .bss._ZN6BspCan11_nextHandleE
+                0x000000001000169c        0x2 ./BoardSupport/BspCan.o
+                0x000000001000169c                BspCan::_nextHandle
+ *fill*         0x000000001000169e        0x2 
+ .bss._ZN6BspCan12_mailBoxBaseE
+                0x00000000100016a0        0x4 ./BoardSupport/BspCan.o
+                0x00000000100016a0                BspCan::_mailBoxBase
+ .bss._ZN6BspCan13_rxBufferBaseE
+                0x00000000100016a4        0x2 ./BoardSupport/BspCan.o
+                0x00000000100016a4                BspCan::_rxBufferBase
+ .bss._ZN6BspCan13_txBufferBaseE
+                0x00000000100016a6        0x2 ./BoardSupport/BspCan.o
+                0x00000000100016a6                BspCan::_txBufferBase
+ .bss._ZN6BspDma11_nextStreamE
+                0x00000000100016a8        0x1 ./BoardSupport/BspDma.o
+                0x00000000100016a8                BspDma::_nextStream
+ *fill*         0x00000000100016a9        0x3 
+ .bss._ZN8BspFlash12_flashBufferE
+                0x00000000100016ac      0x400 ./BoardSupport/BspFlash.o
+                0x00000000100016ac                BspFlash::_flashBuffer
+ .bss._ZN8BspFlash19_flashDigitalBufferE
+                0x0000000010001aac       0x80 ./BoardSupport/BspFlash.o
+                0x0000000010001aac                BspFlash::_flashDigitalBuffer
+ .bss._ZN8BspFlash16_flashTempBufferE
+                0x0000000010001b2c       0x20 ./BoardSupport/BspFlash.o
+                0x0000000010001b2c                BspFlash::_flashTempBuffer
+ .bss._ZN5BspIo8_pinInfoE
+                0x0000000010001b4c       0xa0 ./BoardSupport/BspIo.o
+                0x0000000010001b4c                BspIo::_pinInfo
+ .bss._ZN6BspPwm7_periodE
+                0x0000000010001bec        0x2 ./BoardSupport/BspPwm.o
+                0x0000000010001bec                BspPwm::_period
+ .bss._ZN8BspTimer10_nextTimerE
+                0x0000000010001bee        0x1 ./BoardSupport/BspTimer.o
+                0x0000000010001bee                BspTimer::_nextTimer
+ .bss._ZN8BspTimer12_nextLpTimerE
+                0x0000000010001bef        0x1 ./BoardSupport/BspTimer.o
+                0x0000000010001bef                BspTimer::_nextLpTimer
+ .bss._ZN9SlowTimer10_timerDataE
+                0x0000000010001bf0       0x60 ./BoardSupport/SlowTimer.o
+                0x0000000010001bf0                SlowTimer::_timerData
+ .bss._ZN9SlowTimer10_nextTimerE
+                0x0000000010001c50        0x1 ./BoardSupport/SlowTimer.o
+                0x0000000010001c50                SlowTimer::_nextTimer
+ *fill*         0x0000000010001c51        0x3 
+ .bss._ZN7DataMan7_configE
+                0x0000000010001c54        0x8 ./Code/DataMan.o
+                0x0000000010001c54                DataMan::_config
+ .bss._ZN7DataMan10_variablesE
+                0x0000000010001c5c      0x230 ./Code/DataMan.o
+                0x0000000010001c5c                DataMan::_variables
+ .bss._ZN7DataMan12_receiveDataE
+                0x0000000010001e8c       0x10 ./Code/DataMan.o
+                0x0000000010001e8c                DataMan::_receiveData
+ .bss._ZN7DataMan7_txDataE
+                0x0000000010001e9c        0x8 ./Code/DataMan.o
+                0x0000000010001e9c                DataMan::_txData
+ .bss._ZN7DataMan11_canMessageE
+                0x0000000010001ea4        0x1 ./Code/DataMan.o
+                0x0000000010001ea4                DataMan::_canMessage
+ *fill*         0x0000000010001ea5        0x3 
+ .bss._ZN7DataMan21_defaultPacketCounterE
+                0x0000000010001ea8        0x4 ./Code/DataMan.o
+                0x0000000010001ea8                DataMan::_defaultPacketCounter
+ .bss._ZN4Fccp16_lastWrittenDataE
+                0x0000000010001eac        0x8 ./Code/Fccp.o
+                0x0000000010001eac                Fccp::_lastWrittenData
+ .bss._ZN4Fccp8_canDataE
+                0x0000000010001eb4       0x40 ./Code/Fccp.o
+                0x0000000010001eb4                Fccp::_canData
+ .bss._ZN4Fccp10_rxHandlesE
+                0x0000000010001ef4        0x4 ./Code/Fccp.o
+                0x0000000010001ef4                Fccp::_rxHandles
+ .bss._ZN4Fccp10_txHandlesE
+                0x0000000010001ef8        0x4 ./Code/Fccp.o
+                0x0000000010001ef8                Fccp::_txHandles
+ .bss._ZN4Fccp7_txDataE
+                0x0000000010001efc       0x20 ./Code/Fccp.o
+                0x0000000010001efc                Fccp::_txData
+ .bss._ZN4Fccp11_forceFlashE
+                0x0000000010001f1c        0x1 ./Code/Fccp.o
+                0x0000000010001f1c                Fccp::_forceFlash
+ *fill*         0x0000000010001f1d        0x3 
+ .bss._ZN4Fccp14_subscriptionsE
+                0x0000000010001f20       0x78 ./Code/Fccp.o
+                0x0000000010001f20                Fccp::_subscriptions
+ .bss._ZN4Fccp22_subscriptionsToUpdateE
+                0x0000000010001f98        0x1 ./Code/Fccp.o
+                0x0000000010001f98                Fccp::_subscriptionsToUpdate
+ *fill*         0x0000000010001f99        0x1 
+ .bss._ZN4Fccp26_subscriptionAddressOffsetE
+                0x0000000010001f9a        0x2 ./Code/Fccp.o
+                0x0000000010001f9a                Fccp::_subscriptionAddressOffset
+ .bss._ZN4Fccp14_handlerToggleE
+                0x0000000010001f9c        0x1 ./Code/Fccp.o
+                0x0000000010001f9c                Fccp::_handlerToggle
+ *fill*         0x0000000010001f9d        0x3 
+ .bss._ZN4Fccp9_snapshotE
+                0x0000000010001fa0       0x78 ./Code/Fccp.o
+                0x0000000010001fa0                Fccp::_snapshot
+ .bss._ZN4Fccp15_snapshotBufferE
+                0x0000000010002018    0x40000 ./Code/Fccp.o
+                0x0000000010002018                Fccp::_snapshotBuffer
+ .bss._ZN4Fccp15_timeoutCounterE
+                0x0000000010042018       0x18 ./Code/Fccp.o
+                0x0000000010042018                Fccp::_timeoutCounter
+ .bss._ZN11ProcLoading7_configE
+                0x0000000010042030        0x4 ./Code/Loading.o
+                0x0000000010042030                ProcLoading::_config
+ .bss._ZN11ProcLoading9_analogInE
+                0x0000000010042034        0x4 ./Code/Loading.o
+                0x0000000010042034                ProcLoading::_analogIn
+ .bss._ZN11ProcLoading10_analogOutE
+                0x0000000010042038        0x4 ./Code/Loading.o
+                0x0000000010042038                ProcLoading::_analogOut
+ .bss._ZN11ProcLoading11_dataLinkedE
+                0x000000001004203c        0x1 ./Code/Loading.o
+                0x000000001004203c                ProcLoading::_dataLinked
+ .bss._ZN11ProcLoading7_inTaskE
+                0x000000001004203d        0x1 ./Code/Loading.o
+                0x000000001004203d                ProcLoading::_inTask
+ *fill*         0x000000001004203e        0x2 
+ .bss._ZN12MotorControl15_analogChannelsE
+                0x0000000010042040       0x6c ./Code/Motor.o
+                0x0000000010042040                MotorControl::_analogChannels
+ .bss._ZN12MotorControl17_externalChannelsE
+                0x00000000100420ac       0x3c ./Code/Motor.o
+                0x00000000100420ac                MotorControl::_externalChannels
+ .bss._ZN12MotorControl7_configE
+                0x00000000100420e8        0x4 ./Code/Motor.o
+                0x00000000100420e8                MotorControl::_config
+ .bss._ZN12MotorControl14_digitalConfigE
+                0x00000000100420ec        0x4 ./Code/Motor.o
+                0x00000000100420ec                MotorControl::_digitalConfig
+ .bss._ZN12MotorControl9_analogInE
+                0x00000000100420f0        0x4 ./Code/Motor.o
+                0x00000000100420f0                MotorControl::_analogIn
+ .bss._ZN12MotorControl10_analogOutE
+                0x00000000100420f4        0x4 ./Code/Motor.o
+                0x00000000100420f4                MotorControl::_analogOut
+ .bss._ZN12MotorControl11_digitalOutE
+                0x00000000100420f8        0x4 ./Code/Motor.o
+                0x00000000100420f8                MotorControl::_digitalOut
+ .bss._ZN12MotorControl11_dataLinkedE
+                0x00000000100420fc        0x1 ./Code/Motor.o
+                0x00000000100420fc                MotorControl::_dataLinked
+ *fill*         0x00000000100420fd        0x3 
+ .bss._ZN12MotorControl13_loggingInputE
+                0x0000000010042100       0x20 ./Code/Motor.o
+                0x0000000010042100                MotorControl::_loggingInput
+ .bss._ZN12MotorControl14_logInputIndexE
+                0x0000000010042120        0x4 ./Code/Motor.o
+                0x0000000010042120                MotorControl::_logInputIndex
+ .bss._tempVar  0x0000000010042124        0x4 ./Code/main.o
+                0x0000000010042124                _tempVar
+ .bss._toggle   0x0000000010042128        0x1 ./Code/main.o
+                0x0000000010042128                _toggle
+ *(COMMON)
+                0x000000001004212c                . = ALIGN (0x4)
+ *fill*         0x0000000010042129        0x3 
+                0x000000001004212c                _ebss = .
+                0x000000001004212c                __bss_end__ = _ebss
+
+._user_heap_stack
+                0x000000001004212c      0xa04 load address 0x000000000810860c
+                0x0000000010042130                . = ALIGN (0x8)
+ *fill*         0x000000001004212c        0x4 
+                [!provide]                        PROVIDE (end = .)
+                [!provide]                        PROVIDE (_end = .)
+                0x0000000010042330                . = (. + _Min_Heap_Size)
+ *fill*         0x0000000010042130      0x200 
+                0x0000000010042b30                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000010042330      0x800 
+                0x0000000010042b30                . = ALIGN (0x8)
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+
+.ARM.attributes
+                0x0000000000000000       0x2e
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x0000000000000000       0x1e c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crti.o
+ .ARM.attributes
+                0x000000000000001e       0x32 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtbegin.o
+ .ARM.attributes
+                0x0000000000000050       0x32 ./BoardSupport/BspAnalog.o
+ .ARM.attributes
+                0x0000000000000082       0x32 ./BoardSupport/BspCan.o
+ .ARM.attributes
+                0x00000000000000b4       0x32 ./BoardSupport/BspClock.o
+ .ARM.attributes
+                0x00000000000000e6       0x32 ./BoardSupport/BspDma.o
+ .ARM.attributes
+                0x0000000000000118       0x32 ./BoardSupport/BspFlash.o
+ .ARM.attributes
+                0x000000000000014a       0x32 ./BoardSupport/BspIo.o
+ .ARM.attributes
+                0x000000000000017c       0x32 ./BoardSupport/BspPwm.o
+ .ARM.attributes
+                0x00000000000001ae       0x32 ./BoardSupport/BspSpi.o
+ .ARM.attributes
+                0x00000000000001e0       0x32 ./BoardSupport/BspTimer.o
+ .ARM.attributes
+                0x0000000000000212       0x32 ./BoardSupport/SlowTimer.o
+ .ARM.attributes
+                0x0000000000000244       0x32 ./Code/DataMan.o
+ .ARM.attributes
+                0x0000000000000276       0x32 ./Code/Fccp.o
+ .ARM.attributes
+                0x00000000000002a8       0x32 ./Code/Loading.o
+ .ARM.attributes
+                0x00000000000002da       0x32 ./Code/Motor.o
+ .ARM.attributes
+                0x000000000000030c       0x32 ./Code/SineTable.o
+ .ARM.attributes
+                0x000000000000033e       0x32 ./Code/main.o
+ .ARM.attributes
+                0x0000000000000370       0x21 ./Startup/startup_stm32h747xihx.o
+ .ARM.attributes
+                0x0000000000000391       0x32 ./Startup/system_stm32h7xx.o
+ .ARM.attributes
+                0x00000000000003c3       0x32 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000000000003f5       0x1e c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .ARM.attributes
+                0x0000000000000413       0x32 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_udivmoddi4.o)
+ .ARM.attributes
+                0x0000000000000445       0x1e c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x0000000000000463       0x1e c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard/crtn.o
+
+.RAM_D3
+ *(.RAM_D3)
+OUTPUT(MotorController_H745.elf elf32-littlearm)
+LOAD linker stubs
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc.a
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libm.a
+LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a
+
+.debug_info     0x0000000000000000    0x13392
+ .debug_info    0x0000000000000000     0x1227 ./BoardSupport/BspAnalog.o
+ .debug_info    0x0000000000001227     0x114d ./BoardSupport/BspCan.o
+ .debug_info    0x0000000000002374      0x814 ./BoardSupport/BspClock.o
+ .debug_info    0x0000000000002b88      0x8ae ./BoardSupport/BspDma.o
+ .debug_info    0x0000000000003436      0xd8b ./BoardSupport/BspFlash.o
+ .debug_info    0x00000000000041c1      0xc7d ./BoardSupport/BspIo.o
+ .debug_info    0x0000000000004e3e     0x1123 ./BoardSupport/BspPwm.o
+ .debug_info    0x0000000000005f61      0xa20 ./BoardSupport/BspSpi.o
+ .debug_info    0x0000000000006981     0x1298 ./BoardSupport/BspTimer.o
+ .debug_info    0x0000000000007c19      0x1f0 ./BoardSupport/SlowTimer.o
+ .debug_info    0x0000000000007e09     0x23c1 ./Code/DataMan.o
+ .debug_info    0x000000000000a1ca     0x21da ./Code/Fccp.o
+ .debug_info    0x000000000000c3a4      0x3c7 ./Code/Loading.o
+ .debug_info    0x000000000000c76b     0x3d33 ./Code/Motor.o
+ .debug_info    0x000000000001049e      0x1bf ./Code/SineTable.o
+ .debug_info    0x000000000001065d     0x2574 ./Code/main.o
+ .debug_info    0x0000000000012bd1       0x22 ./Startup/startup_stm32h747xihx.o
+ .debug_info    0x0000000000012bf3      0x79f ./Startup/system_stm32h7xx.o
+
+.debug_abbrev   0x0000000000000000     0x2b6c
+ .debug_abbrev  0x0000000000000000      0x312 ./BoardSupport/BspAnalog.o
+ .debug_abbrev  0x0000000000000312      0x23e ./BoardSupport/BspCan.o
+ .debug_abbrev  0x0000000000000550      0x11e ./BoardSupport/BspClock.o
+ .debug_abbrev  0x000000000000066e      0x1da ./BoardSupport/BspDma.o
+ .debug_abbrev  0x0000000000000848      0x272 ./BoardSupport/BspFlash.o
+ .debug_abbrev  0x0000000000000aba      0x2a8 ./BoardSupport/BspIo.o
+ .debug_abbrev  0x0000000000000d62      0x2b6 ./BoardSupport/BspPwm.o
+ .debug_abbrev  0x0000000000001018      0x17e ./BoardSupport/BspSpi.o
+ .debug_abbrev  0x0000000000001196      0x2c8 ./BoardSupport/BspTimer.o
+ .debug_abbrev  0x000000000000145e      0x179 ./BoardSupport/SlowTimer.o
+ .debug_abbrev  0x00000000000015d7      0x4a4 ./Code/DataMan.o
+ .debug_abbrev  0x0000000000001a7b      0x38e ./Code/Fccp.o
+ .debug_abbrev  0x0000000000001e09      0x173 ./Code/Loading.o
+ .debug_abbrev  0x0000000000001f7c      0x56f ./Code/Motor.o
+ .debug_abbrev  0x00000000000024eb       0xed ./Code/SineTable.o
+ .debug_abbrev  0x00000000000025d8      0x446 ./Code/main.o
+ .debug_abbrev  0x0000000000002a1e       0x12 ./Startup/startup_stm32h747xihx.o
+ .debug_abbrev  0x0000000000002a30      0x13c ./Startup/system_stm32h7xx.o
+
+.debug_aranges  0x0000000000000000      0x500
+ .debug_aranges
+                0x0000000000000000       0x58 ./BoardSupport/BspAnalog.o
+ .debug_aranges
+                0x0000000000000058       0x68 ./BoardSupport/BspCan.o
+ .debug_aranges
+                0x00000000000000c0       0x20 ./BoardSupport/BspClock.o
+ .debug_aranges
+                0x00000000000000e0       0x30 ./BoardSupport/BspDma.o
+ .debug_aranges
+                0x0000000000000110       0x58 ./BoardSupport/BspFlash.o
+ .debug_aranges
+                0x0000000000000168       0x48 ./BoardSupport/BspIo.o
+ .debug_aranges
+                0x00000000000001b0       0x50 ./BoardSupport/BspPwm.o
+ .debug_aranges
+                0x0000000000000200       0x28 ./BoardSupport/BspSpi.o
+ .debug_aranges
+                0x0000000000000228       0x60 ./BoardSupport/BspTimer.o
+ .debug_aranges
+                0x0000000000000288       0x38 ./BoardSupport/SlowTimer.o
+ .debug_aranges
+                0x00000000000002c0       0x70 ./Code/DataMan.o
+ .debug_aranges
+                0x0000000000000330       0x98 ./Code/Fccp.o
+ .debug_aranges
+                0x00000000000003c8       0x28 ./Code/Loading.o
+ .debug_aranges
+                0x00000000000003f0       0x50 ./Code/Motor.o
+ .debug_aranges
+                0x0000000000000440       0x18 ./Code/SineTable.o
+ .debug_aranges
+                0x0000000000000458       0x58 ./Code/main.o
+ .debug_aranges
+                0x00000000000004b0       0x28 ./Startup/startup_stm32h747xihx.o
+ .debug_aranges
+                0x00000000000004d8       0x28 ./Startup/system_stm32h7xx.o
+
+.debug_ranges   0x0000000000000000      0x4d0
+ .debug_ranges  0x0000000000000000       0x48 ./BoardSupport/BspAnalog.o
+ .debug_ranges  0x0000000000000048       0x58 ./BoardSupport/BspCan.o
+ .debug_ranges  0x00000000000000a0       0x10 ./BoardSupport/BspClock.o
+ .debug_ranges  0x00000000000000b0       0x20 ./BoardSupport/BspDma.o
+ .debug_ranges  0x00000000000000d0       0xa8 ./BoardSupport/BspFlash.o
+ .debug_ranges  0x0000000000000178       0x38 ./BoardSupport/BspIo.o
+ .debug_ranges  0x00000000000001b0       0x40 ./BoardSupport/BspPwm.o
+ .debug_ranges  0x00000000000001f0       0x18 ./BoardSupport/BspSpi.o
+ .debug_ranges  0x0000000000000208       0x68 ./BoardSupport/BspTimer.o
+ .debug_ranges  0x0000000000000270       0x28 ./BoardSupport/SlowTimer.o
+ .debug_ranges  0x0000000000000298       0x90 ./Code/DataMan.o
+ .debug_ranges  0x0000000000000328       0xb8 ./Code/Fccp.o
+ .debug_ranges  0x00000000000003e0       0x18 ./Code/Loading.o
+ .debug_ranges  0x00000000000003f8       0x58 ./Code/Motor.o
+ .debug_ranges  0x0000000000000450       0x48 ./Code/main.o
+ .debug_ranges  0x0000000000000498       0x20 ./Startup/startup_stm32h747xihx.o
+ .debug_ranges  0x00000000000004b8       0x18 ./Startup/system_stm32h7xx.o
+
+.debug_macro    0x0000000000000000    0x2da01
+ .debug_macro   0x0000000000000000       0xfa ./BoardSupport/BspAnalog.o
+ .debug_macro   0x00000000000000fa      0xb6e ./BoardSupport/BspAnalog.o
+ .debug_macro   0x0000000000000c68       0x2e ./BoardSupport/BspAnalog.o
+ .debug_macro   0x0000000000000c96       0x41 ./BoardSupport/BspAnalog.o
+ .debug_macro   0x0000000000000cd7       0x1c ./BoardSupport/BspAnalog.o
+ .debug_macro   0x0000000000000cf3       0x22 ./BoardSupport/BspAnalog.o
+ .debug_macro   0x0000000000000d15       0x8e ./BoardSupport/BspAnalog.o
+ .debug_macro   0x0000000000000da3       0x51 ./BoardSupport/BspAnalog.o
+ .debug_macro   0x0000000000000df4      0x103 ./BoardSupport/BspAnalog.o
+ .debug_macro   0x0000000000000ef7       0x6a ./BoardSupport/BspAnalog.o
+ .debug_macro   0x0000000000000f61      0x1df ./BoardSupport/BspAnalog.o
+ .debug_macro   0x0000000000001140       0x1c ./BoardSupport/BspAnalog.o
+ .debug_macro   0x000000000000115c       0x22 ./BoardSupport/BspAnalog.o
+ .debug_macro   0x000000000000117e       0xfb ./BoardSupport/BspAnalog.o
+ .debug_macro   0x0000000000001279     0x1011 ./BoardSupport/BspAnalog.o
+ .debug_macro   0x000000000000228a      0x11f ./BoardSupport/BspAnalog.o
+ .debug_macro   0x00000000000023a9    0x26d45 ./BoardSupport/BspAnalog.o
+ .debug_macro   0x00000000000290ee       0x6d ./BoardSupport/BspAnalog.o
+ .debug_macro   0x000000000002915b       0x10 ./BoardSupport/BspAnalog.o
+ .debug_macro   0x000000000002916b       0xdc ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000029247       0x2e ./BoardSupport/BspCan.o
+ .debug_macro   0x0000000000029275       0xdc ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000029351       0x10 ./BoardSupport/BspClock.o
+ .debug_macro   0x0000000000029361       0xdd ./BoardSupport/BspDma.o
+ .debug_macro   0x000000000002943e       0xe2 ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000029520       0x28 ./BoardSupport/BspFlash.o
+ .debug_macro   0x0000000000029548       0xe9 ./BoardSupport/BspIo.o
+ .debug_macro   0x0000000000029631       0xe6 ./BoardSupport/BspPwm.o
+ .debug_macro   0x0000000000029717       0xe6 ./BoardSupport/BspSpi.o
+ .debug_macro   0x00000000000297fd       0xe2 ./BoardSupport/BspTimer.o
+ .debug_macro   0x00000000000298df       0x16 ./BoardSupport/BspTimer.o
+ .debug_macro   0x00000000000298f5       0x1a ./BoardSupport/SlowTimer.o
+ .debug_macro   0x000000000002990f       0x10 ./BoardSupport/SlowTimer.o
+ .debug_macro   0x000000000002991f      0x134 ./Code/DataMan.o
+ .debug_macro   0x0000000000029a53       0x2e ./Code/DataMan.o
+ .debug_macro   0x0000000000029a81       0x1c ./Code/DataMan.o
+ .debug_macro   0x0000000000029a9d       0x10 ./Code/DataMan.o
+ .debug_macro   0x0000000000029aad       0x22 ./Code/DataMan.o
+ .debug_macro   0x0000000000029acf      0x12e ./Code/Fccp.o
+ .debug_macro   0x0000000000029bfd       0xf1 ./Code/Loading.o
+ .debug_macro   0x0000000000029cee      0x27f ./Code/Motor.o
+ .debug_macro   0x0000000000029f6d      0x18a ./Code/Motor.o
+ .debug_macro   0x000000000002a0f7       0x10 ./Code/Motor.o
+ .debug_macro   0x000000000002a107      0x3d1 ./Code/Motor.o
+ .debug_macro   0x000000000002a4d8       0x18 ./Code/Motor.o
+ .debug_macro   0x000000000002a4f0       0x4c ./Code/Motor.o
+ .debug_macro   0x000000000002a53c       0x1d ./Code/Motor.o
+ .debug_macro   0x000000000002a559       0x94 ./Code/Motor.o
+ .debug_macro   0x000000000002a5ed       0x3c ./Code/Motor.o
+ .debug_macro   0x000000000002a629       0x34 ./Code/Motor.o
+ .debug_macro   0x000000000002a65d      0x17b ./Code/Motor.o
+ .debug_macro   0x000000000002a7d8       0x16 ./Code/Motor.o
+ .debug_macro   0x000000000002a7ee       0x43 ./Code/Motor.o
+ .debug_macro   0x000000000002a831       0x57 ./Code/Motor.o
+ .debug_macro   0x000000000002a888       0x34 ./Code/Motor.o
+ .debug_macro   0x000000000002a8bc       0x10 ./Code/Motor.o
+ .debug_macro   0x000000000002a8cc       0x58 ./Code/Motor.o
+ .debug_macro   0x000000000002a924       0x71 ./Code/Motor.o
+ .debug_macro   0x000000000002a995       0x16 ./Code/Motor.o
+ .debug_macro   0x000000000002a9ab      0x12a ./Code/Motor.o
+ .debug_macro   0x000000000002aad5      0x364 ./Code/Motor.o
+ .debug_macro   0x000000000002ae39      0x194 ./Code/Motor.o
+ .debug_macro   0x000000000002afcd       0x10 ./Code/Motor.o
+ .debug_macro   0x000000000002afdd       0x16 ./Code/Motor.o
+ .debug_macro   0x000000000002aff3       0x35 ./Code/Motor.o
+ .debug_macro   0x000000000002b028       0x16 ./Code/Motor.o
+ .debug_macro   0x000000000002b03e       0x29 ./Code/Motor.o
+ .debug_macro   0x000000000002b067       0x10 ./Code/Motor.o
+ .debug_macro   0x000000000002b077      0x3c7 ./Code/Motor.o
+ .debug_macro   0x000000000002b43e       0x1a ./Code/SineTable.o
+ .debug_macro   0x000000000002b458      0x174 ./Code/main.o
+ .debug_macro   0x000000000002b5cc       0x10 ./Code/main.o
+ .debug_macro   0x000000000002b5dc       0x16 ./Code/main.o
+ .debug_macro   0x000000000002b5f2      0x196 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x000000000002b788      0xa96 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x000000000002c21e       0x8e ./Startup/system_stm32h7xx.o
+ .debug_macro   0x000000000002c2ac     0x1011 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x000000000002d2bd       0x52 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x000000000002d30f       0x34 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x000000000002d343      0x16d ./Startup/system_stm32h7xx.o
+ .debug_macro   0x000000000002d4b0       0x43 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x000000000002d4f3       0x16 ./Startup/system_stm32h7xx.o
+ .debug_macro   0x000000000002d509      0x35d ./Startup/system_stm32h7xx.o
+ .debug_macro   0x000000000002d866      0x19b ./Startup/system_stm32h7xx.o
+
+.debug_line     0x0000000000000000     0x8a40
+ .debug_line    0x0000000000000000      0xa3f ./BoardSupport/BspAnalog.o
+ .debug_line    0x0000000000000a3f      0x942 ./BoardSupport/BspCan.o
+ .debug_line    0x0000000000001381      0x4cf ./BoardSupport/BspClock.o
+ .debug_line    0x0000000000001850      0x5d1 ./BoardSupport/BspDma.o
+ .debug_line    0x0000000000001e21      0x815 ./BoardSupport/BspFlash.o
+ .debug_line    0x0000000000002636      0x6f6 ./BoardSupport/BspIo.o
+ .debug_line    0x0000000000002d2c      0x690 ./BoardSupport/BspPwm.o
+ .debug_line    0x00000000000033bc      0x52e ./BoardSupport/BspSpi.o
+ .debug_line    0x00000000000038ea      0x724 ./BoardSupport/BspTimer.o
+ .debug_line    0x000000000000400e      0x148 ./BoardSupport/SlowTimer.o
+ .debug_line    0x0000000000004156      0xaa0 ./Code/DataMan.o
+ .debug_line    0x0000000000004bf6      0xfde ./Code/Fccp.o
+ .debug_line    0x0000000000005bd4      0x5b7 ./Code/Loading.o
+ .debug_line    0x000000000000618b     0x1984 ./Code/Motor.o
+ .debug_line    0x0000000000007b0f       0x45 ./Code/SineTable.o
+ .debug_line    0x0000000000007b54      0x757 ./Code/main.o
+ .debug_line    0x00000000000082ab       0x84 ./Startup/startup_stm32h747xihx.o
+ .debug_line    0x000000000000832f      0x711 ./Startup/system_stm32h7xx.o
+
+.debug_str      0x0000000000000000    0xf68ca
+ .debug_str     0x0000000000000000    0xec873 ./BoardSupport/BspAnalog.o
+                                      0xecb2c (size before relaxing)
+ .debug_str     0x00000000000ec873      0x531 ./BoardSupport/BspCan.o
+                                      0xec5d9 (size before relaxing)
+ .debug_str     0x00000000000ecda4      0x1e8 ./BoardSupport/BspClock.o
+                                      0xec212 (size before relaxing)
+ .debug_str     0x00000000000ecf8c       0x82 ./BoardSupport/BspDma.o
+                                      0xec25f (size before relaxing)
+ .debug_str     0x00000000000ed00e      0xb5d ./BoardSupport/BspFlash.o
+                                      0xecbf4 (size before relaxing)
+ .debug_str     0x00000000000edb6b      0x2e2 ./BoardSupport/BspIo.o
+                                      0xec3f0 (size before relaxing)
+ .debug_str     0x00000000000ede4d      0x2a0 ./BoardSupport/BspPwm.o
+                                      0xeccb0 (size before relaxing)
+ .debug_str     0x00000000000ee0ed       0x8d ./BoardSupport/BspSpi.o
+                                      0xec272 (size before relaxing)
+ .debug_str     0x00000000000ee17a      0x2ca ./BoardSupport/BspTimer.o
+                                      0xecd8d (size before relaxing)
+ .debug_str     0x00000000000ee444      0x116 ./BoardSupport/SlowTimer.o
+                                       0x32e0 (size before relaxing)
+ .debug_str     0x00000000000ee55a     0x15d6 ./Code/DataMan.o
+                                      0xedfc6 (size before relaxing)
+ .debug_str     0x00000000000efb30      0x512 ./Code/Fccp.o
+                                      0xee139 (size before relaxing)
+ .debug_str     0x00000000000f0042       0xe8 ./Code/Loading.o
+                                      0xec21a (size before relaxing)
+ .debug_str     0x00000000000f012a     0x60bf ./Code/Motor.o
+                                      0xf3e0f (size before relaxing)
+ .debug_str     0x00000000000f61e9       0xae ./Code/SineTable.o
+                                       0x33be (size before relaxing)
+ .debug_str     0x00000000000f6297      0x135 ./Code/main.o
+                                      0xee598 (size before relaxing)
+ .debug_str     0x00000000000f63cc       0x31 ./Startup/startup_stm32h747xihx.o
+                                         0x60 (size before relaxing)
+ .debug_str     0x00000000000f63fd      0x4cd ./Startup/system_stm32h7xx.o
+                                      0xef6a9 (size before relaxing)
+
+.comment        0x0000000000000000       0x50
+ .comment       0x0000000000000000       0x50 ./BoardSupport/BspAnalog.o
+                                         0x51 (size before relaxing)
+ .comment       0x0000000000000050       0x51 ./BoardSupport/BspCan.o
+ .comment       0x0000000000000050       0x51 ./BoardSupport/BspClock.o
+ .comment       0x0000000000000050       0x51 ./BoardSupport/BspDma.o
+ .comment       0x0000000000000050       0x51 ./BoardSupport/BspFlash.o
+ .comment       0x0000000000000050       0x51 ./BoardSupport/BspIo.o
+ .comment       0x0000000000000050       0x51 ./BoardSupport/BspPwm.o
+ .comment       0x0000000000000050       0x51 ./BoardSupport/BspSpi.o
+ .comment       0x0000000000000050       0x51 ./BoardSupport/BspTimer.o
+ .comment       0x0000000000000050       0x51 ./BoardSupport/SlowTimer.o
+ .comment       0x0000000000000050       0x51 ./Code/DataMan.o
+ .comment       0x0000000000000050       0x51 ./Code/Fccp.o
+ .comment       0x0000000000000050       0x51 ./Code/Loading.o
+ .comment       0x0000000000000050       0x51 ./Code/Motor.o
+ .comment       0x0000000000000050       0x51 ./Code/SineTable.o
+ .comment       0x0000000000000050       0x51 ./Code/main.o
+ .comment       0x0000000000000050       0x51 ./Startup/system_stm32h7xx.o
+
+.debug_frame    0x0000000000000000     0x10a0
+ .debug_frame   0x0000000000000000      0x130 ./BoardSupport/BspAnalog.o
+ .debug_frame   0x0000000000000130      0x1a0 ./BoardSupport/BspCan.o
+ .debug_frame   0x00000000000002d0       0x38 ./BoardSupport/BspClock.o
+ .debug_frame   0x0000000000000308       0x80 ./BoardSupport/BspDma.o
+ .debug_frame   0x0000000000000388      0x15c ./BoardSupport/BspFlash.o
+ .debug_frame   0x00000000000004e4       0xe4 ./BoardSupport/BspIo.o
+ .debug_frame   0x00000000000005c8      0x108 ./BoardSupport/BspPwm.o
+ .debug_frame   0x00000000000006d0       0x54 ./BoardSupport/BspSpi.o
+ .debug_frame   0x0000000000000724      0x154 ./BoardSupport/BspTimer.o
+ .debug_frame   0x0000000000000878       0xa4 ./BoardSupport/SlowTimer.o
+ .debug_frame   0x000000000000091c      0x1bc ./Code/DataMan.o
+ .debug_frame   0x0000000000000ad8      0x278 ./Code/Fccp.o
+ .debug_frame   0x0000000000000d50       0x5c ./Code/Loading.o
+ .debug_frame   0x0000000000000dac      0x120 ./Code/Motor.o
+ .debug_frame   0x0000000000000ecc      0x108 ./Code/main.o
+ .debug_frame   0x0000000000000fd4       0x40 ./Startup/system_stm32h7xx.o
+ .debug_frame   0x0000000000001014       0x2c c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(lib_a-init.o)
+ .debug_frame   0x0000000000001040       0x2c c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x000000000000106c       0x34 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+dp/hard\libgcc.a(_udivmoddi4.o)
+
+.debug_loc      0x0000000000000000      0x188
+ .debug_loc     0x0000000000000000      0x188 ./Startup/system_stm32h7xx.o
