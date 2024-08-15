@@ -1,0 +1,73 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: MCU
+
+
+BO_ 1105 MCUData2: 8 MCU
+ SG_ MicroTemp : 16|8@1+ (1,-40) [-40|215] "degC" Vector__XXX
+ SG_ BoardTemp2 : 8|8@1+ (1,-40) [-40|215] "degC" Vector__XXX
+ SG_ BoardTemp1 : 0|8@1+ (1,-40) [-40|215] "degC" Vector__XXX
+
+BO_ 1104 MCUData1: 8 MCU
+ SG_ OperatingMode : 12|2@1+ (1,0) [0|0] "1" Vector__XXX
+ SG_ MotorSpeed : 48|16@1+ (1,-32500) [-32500|33035] "rpm" Vector__XXX
+ SG_ Iq : 32|16@1+ (0.02,-650) [-650|660.7] "A" Vector__XXX
+ SG_ HVBusVolt : 0|12@1+ (0.1,0) [0|409.5] "V" Vector__XXX
+ SG_ HVBusCur : 16|16@1+ (0.02,-650) [-650|660.7] "A" Vector__XXX
+
+BO_ 1024 MCUReq: 8 Vector__XXX
+ SG_ TorqueReq : 24|16@1+ (0.1,-3250) [-3250|3303.5] "Nm"  MCU
+ SG_ SpeedReq : 8|16@1+ (1,-32500) [-32500|33035] "rpm"  MCU
+ SG_ OperatingModeReq : 0|2@1+ (1,0) [0|0] "1"  MCU
+
+
+
+CM_ SG_ 1104 OperatingMode "0 = disabled
+1 =  torque
+2 = speed
+3 = open loop";
+CM_ SG_ 1024 OperatingModeReq "0 = disabled
+1 =  torque
+2 = speed
+3 = open loop";
+BA_DEF_ BO_  "TxRate_ms" FLOAT 0 1000;
+BA_DEF_  "MultiplexExtEnabled" ENUM  "No","Yes";
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "TxRate_ms" 10;
+BA_DEF_DEF_  "MultiplexExtEnabled" "No";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_ "TxRate_ms" BO_ 1105 100;
+

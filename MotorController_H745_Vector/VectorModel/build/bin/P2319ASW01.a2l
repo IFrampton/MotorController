@@ -1,0 +1,4551 @@
+﻿/******************************************************************************
+ *
+ *  ASAP2 file:     P2319ASW01.a2l
+ *
+ * 
+ *
+ * Code generation for model "P2319ASW01".
+ *
+ * Model version              : 1.229
+ * Simulink Coder version : 9.8 (R2022b) 13-May-2022
+ * C source code generated on : Mon Jul 15 12:16:08 2024
+ *
+ * Target selection: ert.tlc
+ * Embedded hardware selection: NXP->Cortex-M4
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+ASAP2_VERSION  1 71     /* Version 1.71 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+
+  /begin HEADER "Header Comments go here"
+  /end HEADER
+
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+    /end MOD_PAR
+
+    /begin MOD_COMMON  "Mod Common Comment Here"
+      BYTE_ORDER     MSB_LAST
+
+      ALIGNMENT_BYTE 1
+      ALIGNMENT_WORD 2
+      ALIGNMENT_LONG 4
+      ALIGNMENT_FLOAT32_IEEE 4
+      ALIGNMENT_FLOAT64_IEEE 8
+      ALIGNMENT_INT64 8
+    /end MOD_COMMON
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      AuxPwrAcvDebFall_C
+    /* Long Identifier        */      "Falling edge debounce time for input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@AuxPwrAcvDebFall_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      60.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      AuxPwrAcvDebRisng_C
+    /* Long Identifier        */      "Rising edge debounce time for input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@AuxPwrAcvDebRisng_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      60.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      AuxPwrAcvDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@AuxPwrAcvDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      AuxPwrAcvDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@AuxPwrAcvDialVal_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      AuxPwrStsIvt_C
+    /* Long Identifier        */      "Invert the auxilary power status input"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@AuxPwrStsIvt_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      BdT1DialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@BdT1DialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      BdT1DialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@BdT1DialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_degC
+    /* Lower Limit            */      -40.000000
+    /* Upper Limit            */      250.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      BdT1FilTiCon_C
+    /* Long Identifier        */      "Low pass filter time constant for signal input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@BdT1FilTiCon_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      60.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      BdT1Gain_C
+    /* Long Identifier        */      "Gain to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@BdT1Gain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_degC_per_1
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      BdT1Ofs_C
+    /* Long Identifier        */      "Offset to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@BdT1Ofs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_degC
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      BdT2DialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@BdT2DialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      BdT2DialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@BdT2DialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_degC
+    /* Lower Limit            */      -40.000000
+    /* Upper Limit            */      250.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      BdT2FilTiCon_C
+    /* Long Identifier        */      "Low pass filter time constant for signal input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@BdT2FilTiCon_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      60.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      BdT2Gain_C
+    /* Long Identifier        */      "Gain to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@BdT2Gain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_degC_per_1
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      BdT2Ofs_C
+    /* Long Identifier        */      "Offset to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@BdT2Ofs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_degC
+    /* Lower Limit            */      -40.000000
+    /* Upper Limit            */      250.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CanPwrPwmEna_C
+    /* Long Identifier        */      "Enable CanPwr modulation output: 0 = disable, 1 = enable."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CanPwrPwmEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      DrvModDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@DrvModDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      DrvModDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@DrvModDialVal_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_DRIVEMODE_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      DrvModReqDft_C
+    /* Long Identifier        */      "The default value used for this signal when the message has timedout"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@DrvModReqDft_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_DRIVEMODE_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      DrvModReqDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@DrvModReqDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      DrvModReqDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@DrvModReqDialVal_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_DRIVEMODE_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      EncoderCtPerRev_C
+    /* Long Identifier        */      "The number of encoder counts per mechanical revolution"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@EncoderCtPerRev_C@ */
+    /* Record Layout          */      Record_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_uint16_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      EncoderOfs_C
+    /* Long Identifier        */      "Offset used to align the encoder z signal with the true zero angle"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@EncoderOfs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_rad
+    /* Lower Limit            */      -6.000000
+    /* Upper Limit            */      6.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FluxLinkage_C
+    /* Long Identifier        */      "The permanent magnet flux linkage of the motor"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FluxLinkage_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V_into_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      GreenLedDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@GreenLedDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      GreenLedDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@GreenLedDialVal_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      GreenLedIvt_C
+    /* Long Identifier        */      "Invert the LED command"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@GreenLedIvt_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      HvBusCurDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@HvBusCurDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      HvBusCurDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@HvBusCurDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_A
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      HvBusCurFilTiCon_C
+    /* Long Identifier        */      "Low pass filter time constant for signal input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@HvBusCurFilTiCon_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      HvBusCurGain_C
+    /* Long Identifier        */      "Gain to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@HvBusCurGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_A_per_1
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      HvBusCurOfs_C
+    /* Long Identifier        */      "Offset to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@HvBusCurOfs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_A
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      HvBusUDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@HvBusUDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      HvBusUDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@HvBusUDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      HvBusUFilTiCon_C
+    /* Long Identifier        */      "Low pass filter time constant for signal input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@HvBusUFilTiCon_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      HvBusUGain_C
+    /* Long Identifier        */      "Gain to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@HvBusUGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V_per_1
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      HvBusUOfs_C
+    /* Long Identifier        */      "Offset to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@HvBusUOfs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      InPwrPwmEna_C
+    /* Long Identifier        */      "Enable InPwr modulation output: 0 = disable, 1 = enable."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@InPwrPwmEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      LedOffTi_C
+    /* Long Identifier        */      "The time the LED is off between pulse groups"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@LedOffTi_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      60.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      LedPlsCtDft_C
+    /* Long Identifier        */      "The number of on pulses for the LED while in this mode"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@LedPlsCtDft_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_uint8_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      LedPlsCtOpenLoop_C
+    /* Long Identifier        */      "The number of on pulses for the LED while in this mode"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@LedPlsCtOpenLoop_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_uint8_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      LedPlsCtSpdCtl_C
+    /* Long Identifier        */      "The number of on pulses for the LED while in this mode"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@LedPlsCtSpdCtl_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_uint8_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      LedPlsCtTqCtl_C
+    /* Long Identifier        */      "The number of on pulses for the LED while in this mode"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@LedPlsCtTqCtl_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_uint8_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MaiPwrAcvDebFall_C
+    /* Long Identifier        */      "Falling edge debounce time for input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MaiPwrAcvDebFall_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      60.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MaiPwrAcvDebRisng_C
+    /* Long Identifier        */      "Rising edge debounce time for input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MaiPwrAcvDebRisng_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      60.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MaiPwrAcvDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MaiPwrAcvDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MaiPwrAcvDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MaiPwrAcvDialVal_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MaiPwrStsIvt_C
+    /* Long Identifier        */      "Invert the main power status input"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MaiPwrStsIvt_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      McuData1DaDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@McuData1DaDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      McuData1DaDialVal_CA
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VAL_BLK
+    /* ECU Address            */      0x0000 /* @ECU_Address@McuData1DaDialVal_CA@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_uint8_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+    MATRIX_DIM                        8 1 
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      McuData2DaDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@McuData2DaDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      McuData2DaDialVal_CA
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VAL_BLK
+    /* ECU Address            */      0x0000 /* @ECU_Address@McuData2DaDialVal_CA@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_uint8_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+    MATRIX_DIM                        8 1 
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      McuReqTout_C
+    /* Long Identifier        */      "Timeout time for the MCUReq message"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@McuReqTout_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      McuTDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@McuTDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      McuTDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@McuTDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_degC
+    /* Lower Limit            */      -40.000000
+    /* Upper Limit            */      250.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      McuTFilTiCon_C
+    /* Long Identifier        */      "Low pass filter time constant for signal input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@McuTFilTiCon_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      60.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      McuTGain_C
+    /* Long Identifier        */      "Gain to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@McuTGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_degC_per_1
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      McuTOfs_C
+    /* Long Identifier        */      "Offset to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@McuTOfs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_degC
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      McuUBatFilTiCon_C
+    /* Long Identifier        */      "Low pass filter time constant for signal input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@McuUBatFilTiCon_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      60.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      McuUBatGain_C
+    /* Long Identifier        */      "Gain to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@McuUBatGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V_per_1
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      McuUBatOfs_C
+    /* Long Identifier        */      "Offset to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@McuUBatOfs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      McuURefFilTiCon_C
+    /* Long Identifier        */      "Low pass filter time constant for signal input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@McuURefFilTiCon_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      60.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      McuURefGain_C
+    /* Long Identifier        */      "Gain to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@McuURefGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V_per_1
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      McuURefOfs_C
+    /* Long Identifier        */      "Offset to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@McuURefOfs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotPolePairs_C
+    /* Long Identifier        */      "The number of pole pairs in the motor"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotPolePairs_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_uint8_1
+    /* Lower Limit            */      1.000000
+    /* Upper Limit            */      100.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotPosnEstimrGainI_C
+    /* Long Identifier        */      "Integral gain for MotPosn estimator."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotPosnEstimrGainI_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_1_per_s_2
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1000000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotPosnEstimrGainP_C
+    /* Long Identifier        */      "Proportional gain for MotPosn estimator."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotPosnEstimrGainP_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_1_per_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotPosnEstimrIntglEna_C
+    /* Long Identifier        */      "MotPosn estimator integral enable: 0 = disable, 1 = enable."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotPosnEstimrIntglEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotPosnMagDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotPosnMagDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotPosnMagDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotPosnMagDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_rad
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      6.283100
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotPosnOfs_C
+    /* Long Identifier        */      "Motor position offset."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotPosnOfs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_rad
+    /* Lower Limit            */      -6.283200
+    /* Upper Limit            */      6.283200
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotPosnSenMeth_C
+    /* Long Identifier        */      "Motor position sensing method: 0 = encoder, 1 = resolver."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotPosnSenMeth_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotPosnTrigDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotPosnTrigDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotPosnTrigDialVal_CA
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VAL_BLK
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotPosnTrigDialVal_CA@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_1
+    /* Lower Limit            */      -100.000000
+    /* Upper Limit            */      100.000000
+    MATRIX_DIM                        6 1 
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotSpdDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotSpdDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotSpdDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotSpdDialVal_C@ */
+    /* Record Layout          */      Record_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_int16_rpm
+    /* Lower Limit            */      -32000.000000
+    /* Upper Limit            */      32000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotSpdFilTiCon_C
+    /* Long Identifier        */      "Low pass filter time constant for this signal"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotSpdFilTiCon_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotSpdMagDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotSpdMagDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotSpdMagDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotSpdMagDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_rad_per_s
+    /* Lower Limit            */      -100000.000000
+    /* Upper Limit            */      100000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotSpdRateLim_C
+    /* Long Identifier        */      "The maximum rate at which the motor speed command is allowed to change"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotSpdRateLim_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_rpm_per_sec
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1000000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotSpdReqCanDft_C
+    /* Long Identifier        */      "The default value used for this signal when the message has timedout"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotSpdReqCanDft_C@ */
+    /* Record Layout          */      Record_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_int16_rpm
+    /* Lower Limit            */      -32000.000000
+    /* Upper Limit            */      32000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotSpdReqCanDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotSpdReqCanDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotSpdReqCanDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotSpdReqCanDialVal_C@ */
+    /* Record Layout          */      Record_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_int16_rpm
+    /* Lower Limit            */      -32000.000000
+    /* Upper Limit            */      32000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotSpdReqMax_C
+    /* Long Identifier        */      "The maximum magnitued of the speed command the control will attempt to control to"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotSpdReqMax_C@ */
+    /* Record Layout          */      Record_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_int16_rpm
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      32000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotSpdReqThdModChg_C
+    /* Long Identifier        */      "The motor speed request below which the drive is allowed to change modes"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotSpdReqThdModChg_C@ */
+    /* Record Layout          */      Record_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_uint16_rpm
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      50000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotSpdThdModChg_C
+    /* Long Identifier        */      "The motor speed below which the drive is allowed to change modes"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotSpdThdModChg_C@ */
+    /* Record Layout          */      Record_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_uint16_rpm
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      50000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotTqCmdSpdCtlDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqCmdSpdCtlDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotTqCmdSpdCtlDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqCmdSpdCtlDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_N_into_m
+    /* Lower Limit            */      -10000.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotTqCon_C
+    /* Long Identifier        */      "The motor constant that maps between current and torque"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqCon_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_N_into_m_per_A
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotTqGainBdT1_Ax
+    /* Long Identifier        */      "The axis for the table that maps between the board temperature and the gain that limits the maximum motor torque"
+    /* Type                   */      VAL_BLK
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqGainBdT1_Ax@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_degC
+    /* Lower Limit            */      -40.000000
+    /* Upper Limit            */      250.000000
+    MATRIX_DIM                        5 1 
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotTqGainBdT1_T
+    /* Long Identifier        */      "The table values for the table that maps between the board temperature and the gain that limits the maximum motor torque"
+    /* Characteristic Type    */      CURVE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqGainBdT1_T@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      P2319ASW01_CM_single_degC
+      /* Number of Axis Pts   */      5
+      /* Lower Limit          */      -40.000000
+      /* Upper Limit          */      250.000000
+      AXIS_PTS_REF                    MotTqGainBdT1_Ax
+    /end AXIS_DESCR
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotTqGainBdT2_Ax
+    /* Long Identifier        */      "The axis for the table that maps between the board temperature and the gain that limits the maximum motor torque"
+    /* Type                   */      VAL_BLK
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqGainBdT2_Ax@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_degC
+    /* Lower Limit            */      -40.000000
+    /* Upper Limit            */      250.000000
+    MATRIX_DIM                        5 1 
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotTqGainBdT2_T
+    /* Long Identifier        */      "The table values for the table that maps between the board temperature and the gain that limits the maximum motor torque"
+    /* Characteristic Type    */      CURVE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqGainBdT2_T@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      P2319ASW01_CM_single_degC
+      /* Number of Axis Pts   */      5
+      /* Lower Limit          */      -40.000000
+      /* Upper Limit          */      250.000000
+      AXIS_PTS_REF                    MotTqGainBdT2_Ax
+    /end AXIS_DESCR
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotTqGainI_C
+    /* Long Identifier        */      "Integral gain for motor speed control"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqGainI_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_N_into_m_per__rpm_into_sec_
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotTqGainP_C
+    /* Long Identifier        */      "Proportional gain for motor speed control"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqGainP_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_N_into_m_per_rpm
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotTqMaxDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqMaxDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotTqMaxDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqMaxDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_N_into_m
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotTqMaxMotSpd_Ax
+    /* Long Identifier        */      "The axis values for the table that maps between the motor speed and the maximum motor torque"
+    /* Type                   */      VAL_BLK
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqMaxMotSpd_Ax@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_rpm
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      32000.000000
+    MATRIX_DIM                        5 1 
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotTqMaxMotSpd_T
+    /* Long Identifier        */      "The table values for the table that maps between the motor speed and the maximum motor torque"
+    /* Characteristic Type    */      CURVE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqMaxMotSpd_T@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_N_into_m
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10000.000000
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      P2319ASW01_CM_single_rpm
+      /* Number of Axis Pts   */      5
+      /* Lower Limit          */      0.000000
+      /* Upper Limit          */      32000.000000
+      AXIS_PTS_REF                    MotTqMaxMotSpd_Ax
+    /end AXIS_DESCR
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotTqReqCanDft_C
+    /* Long Identifier        */      "The default value used for this signal when the message has timedout"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqReqCanDft_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_N_into_m
+    /* Lower Limit            */      -10000.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotTqReqCanDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqReqCanDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotTqReqCanDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqReqCanDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_N_into_m
+    /* Lower Limit            */      -10000.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MotTqReqThdModChg_C
+    /* Long Identifier        */      "The motor torque request below which the drive is allowed to change modes"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqReqThdModChg_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_N_into_m
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      MtrPwrPwmEna_C
+    /* Long Identifier        */      "Enable MtrPwr modulation output: 0 = disable, 1 = enable."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@MtrPwrPwmEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaAPwmDcDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaAPwmDcDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaAPwmDcDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaAPwmDcDialVal_C@ */
+    /* Record Layout          */      Record_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_uint16_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaBPwmDcDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaBPwmDcDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaBPwmDcDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaBPwmDcDialVal_C@ */
+    /* Record Layout          */      Record_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_uint16_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCPwmDcDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCPwmDcDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCPwmDcDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCPwmDcDialVal_C@ */
+    /* Record Layout          */      Record_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_uint16_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurADialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurADialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurADialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurADialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_A
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurAFilTiCon_C
+    /* Long Identifier        */      "Low pass filter time constant for signal input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurAFilTiCon_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurAGain_C
+    /* Long Identifier        */      "Gain to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurAGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_A_per_1
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurAOfs_C
+    /* Long Identifier        */      "Offset to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurAOfs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_A
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurBDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurBDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurBDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurBDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_A
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurBFilTiCon_C
+    /* Long Identifier        */      "Low pass filter time constant for signal input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurBFilTiCon_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurBGain_C
+    /* Long Identifier        */      "Gain to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurBGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_A_per_1
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurBOfs_C
+    /* Long Identifier        */      "Offset to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurBOfs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_A
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurCDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurCDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurCDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurCDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_A
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurCFilTiCon_C
+    /* Long Identifier        */      "Low pass filter time constant for signal input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurCFilTiCon_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurCGain_C
+    /* Long Identifier        */      "Gain to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurCGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_A_per_1
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurCOfs_C
+    /* Long Identifier        */      "Offset to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurCOfs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_A
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurDDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurDDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurDDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurDDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_A
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurDTarVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurDTarVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_A
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurQDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurQDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurQDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurQDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_A
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurQTarDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurQTarDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaCurQTarDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaCurQTarDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_A
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaPwmEnaDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaPwmEnaDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaPwmEnaDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaPwmEnaDialVal_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUACmdDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUACmdDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUACmdDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUACmdDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUAFilTiCon_C
+    /* Long Identifier        */      "Low pass filter time constant for signal input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUAFilTiCon_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUAGain_C
+    /* Long Identifier        */      "Gain to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUAGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V_per_1
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUAOfs_C
+    /* Long Identifier        */      "Offset to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUAOfs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUBCmdDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUBCmdDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUBCmdDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUBCmdDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUBFilTiCon_C
+    /* Long Identifier        */      "Low pass filter time constant for signal input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUBFilTiCon_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUBGain_C
+    /* Long Identifier        */      "Gain to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUBGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V_per_1
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUBOfs_C
+    /* Long Identifier        */      "Offset to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUBOfs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUCCmdDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUCCmdDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUCCmdDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUCCmdDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUCFilTiCon_C
+    /* Long Identifier        */      "Low pass filter time constant for signal input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUCFilTiCon_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUCGain_C
+    /* Long Identifier        */      "Gain to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUCGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V_per_1
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUCOfs_C
+    /* Long Identifier        */      "Offset to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUCOfs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUDAntiWindupGain_C
+    /* Long Identifier        */      "Gain used to attenuate the integrated error when the output voltage command is saturated to avoid integral windup "
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUDAntiWindupGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_1_per_V
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUDCmdDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUDCmdDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUDCmdDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUDCmdDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUDCmdOpenLoop_C
+    /* Long Identifier        */      "The d-axis phase voltage command in open loop mode"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUDCmdOpenLoop_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V
+    /* Lower Limit            */      -10000.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUDGainI_C
+    /* Long Identifier        */      "Integral control gain for d-axis current control"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUDGainI_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V_per__A_into_s_
+    /* Lower Limit            */      -10000.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUDGainP_C
+    /* Long Identifier        */      "Proportional control gain for d-axis current control"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUDGainP_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V_per_A
+    /* Lower Limit            */      -10000.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUMaxVal_C
+    /* Long Identifier        */      "The smallest value the maximum phase voltage is allowed to take on for current control calculations"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUMaxVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUQAntiWindupGain_C
+    /* Long Identifier        */      "Gain used to attenuate the integrated error when the output voltage command is saturated to avoid integral windup"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUQAntiWindupGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_1_per_V
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUQCmdDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUQCmdDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUQCmdDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUQCmdDialVal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUQCmdOpenLoop_C
+    /* Long Identifier        */      "The q-axis phase voltage command in open loop mode"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUQCmdOpenLoop_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V
+    /* Lower Limit            */      -10000.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUQGainI_C
+    /* Long Identifier        */      "Integral control gain for q-axis current control"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUQGainI_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V_per__A_into_s_
+    /* Lower Limit            */      -10000.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PhaUQGainP_C
+    /* Long Identifier        */      "Proportional control gain for q-axis current control"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PhaUQGainP_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_V_per_A
+    /* Lower Limit            */      -10000.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PlsOffTi_C
+    /* Long Identifier        */      "The time the LED is off between two pulses"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PlsOffTi_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      60.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PlsOnTi_C
+    /* Long Identifier        */      "The time the LED is on during a pulse"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PlsOnTi_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      60.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PwrCmdDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PwrCmdDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      PwrCmdDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@PwrCmdDialVal_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      RedLedDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@RedLedDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      RedLedDialVal_C
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@RedLedDialVal_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      RedLedIvt_C
+    /* Long Identifier        */      "Invert the LED command"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@RedLedIvt_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      ReloadRegisterMax_C
+    /* Long Identifier        */      "The maximum value of the register used by the hardware PWM generator"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@ReloadRegisterMax_C@ */
+    /* Record Layout          */      Record_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_int16_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      32500.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      ResolverCosFilTiCon_C
+    /* Long Identifier        */      "Low pass filter time constant for signal input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@ResolverCosFilTiCon_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      ResolverCosGain_C
+    /* Long Identifier        */      "Gain to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@ResolverCosGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_1
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      ResolverCosOfs_C
+    /* Long Identifier        */      "Offset to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@ResolverCosOfs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_1
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      ResolverExctEna_C
+    /* Long Identifier        */      "Command to enable resolver excitation waveform generation: 0 = disable, 1 = enable."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@ResolverExctEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      ResolverSinCosDialEna_C
+    /* Long Identifier        */      "Signal override enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@ResolverSinCosDialEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      ResolverSinCosDialVal_CA
+    /* Long Identifier        */      "Signal override value"
+    /* Type                   */      VAL_BLK
+    /* ECU Address            */      0x0000 /* @ECU_Address@ResolverSinCosDialVal_CA@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_1
+    /* Lower Limit            */      -1.000000
+    /* Upper Limit            */      1.000000
+    MATRIX_DIM                        2 1 
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      ResolverSinFilTiCon_C
+    /* Long Identifier        */      "Low pass filter time constant for signal input processing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@ResolverSinFilTiCon_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      ResolverSinGain_C
+    /* Long Identifier        */      "Gain to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@ResolverSinGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_1
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      ResolverSinOfs_C
+    /* Long Identifier        */      "Offset to convert raw input to engineering units"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@ResolverSinOfs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_1
+    /* Lower Limit            */      -1000.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      StatorInductanceD_C
+    /* Long Identifier        */      "The motor stator d-axis inductance"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@StatorInductanceD_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_H
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      StatorInductanceQ_C
+    /* Long Identifier        */      "The motor stator q-axis inductance"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@StatorInductanceQ_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_H
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SwPwrPwmEna_C
+    /* Long Identifier        */      "Enable SwPwr modulation output: 0 = disable, 1 = enable."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SwPwrPwmEna_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      WakeRetry_C
+    /* Long Identifier        */      "Flag used to force the drive to try and rewake the board by activiting the power command"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@WakeRetry_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      WakeTout_C
+    /* Long Identifier        */      "The amount of time the control waits for the power activation signal before shutting off the power command and terminating the wake attempt"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@WakeTout_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      60.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      YellowLedCmd_C
+    /* Long Identifier        */      "Yellow LED activation command."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@YellowLedCmd_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_boolean_1
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_AuxPwrSts
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      P2319ASW01_CM_logical_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_AuxPwrSts@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_BdT1
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      P2319ASW01_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_BdT1@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_BdT2
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      P2319ASW01_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_BdT2@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_EncoderCt
+    /* Long identifier        */      ""
+    /* Data type              */      SWORD
+    /* Conversion method      */      P2319ASW01_CM_int16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -32768
+    /* Upper limit            */      32767
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_EncoderCt@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_EncoderZ
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      P2319ASW01_CM_logical_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_EncoderZ@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_HvBusCur
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      P2319ASW01_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_HvBusCur@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_HvBusU
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      P2319ASW01_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_HvBusU@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_MaiPwrSts
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      P2319ASW01_CM_logical_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_MaiPwrSts@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_McuReqCt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      P2319ASW01_CM_uint8_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_McuReqCt@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0001
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_McuReqDa
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      P2319ASW01_CM_uint8_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    LAYOUT                            COLUMN_DIR
+    MATRIX_DIM                        8 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_McuReqDa@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0001
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_McuT
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      P2319ASW01_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_McuT@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_McuUBat
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      P2319ASW01_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_McuUBat@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_McuURef
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      P2319ASW01_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_McuURef@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_PhaCurA
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      P2319ASW01_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_PhaCurA@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_PhaCurB
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      P2319ASW01_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_PhaCurB@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_PhaCurC
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      P2319ASW01_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_PhaCurC@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_PhaUA
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      P2319ASW01_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_PhaUA@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_PhaUB
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      P2319ASW01_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_PhaUB@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_PhaUC
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      P2319ASW01_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_PhaUC@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_ResolverCos
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      P2319ASW01_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_ResolverCos@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWIN_ResolverSin
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      P2319ASW01_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWIN_ResolverSin@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWOUT_CanPwrPwmEna
+    /* Long identifier        */      "The raw output value"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SLWOUP_CM_boolean_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWOUT_CanPwrPwmEna@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWOUT_GreenLed
+    /* Long identifier        */      "The raw output value"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SLWOUP_CM_boolean_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWOUT_GreenLed@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWOUT_InPwrPwmEna
+    /* Long identifier        */      "The raw output value"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SLWOUP_CM_boolean_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWOUT_InPwrPwmEna@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWOUT_McuData1Da
+    /* Long identifier        */      "The raw message data frame"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MEDOUP_CM_uint8_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    LAYOUT                            COLUMN_DIR
+    MATRIX_DIM                        8 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWOUT_McuData1Da@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWOUT_McuData2Da
+    /* Long identifier        */      "The raw message data frame"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SLWOUP_CM_uint8_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    LAYOUT                            COLUMN_DIR
+    MATRIX_DIM                        8 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWOUT_McuData2Da@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWOUT_MtrPwrPwmEna
+    /* Long identifier        */      "The raw output value"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SLWOUP_CM_boolean_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWOUT_MtrPwrPwmEna@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWOUT_PhaAPwmDc
+    /* Long identifier        */      "The raw modulation command used by the hardware PWM generator"
+    /* Data type              */      UWORD
+    /* Conversion method      */      GATOUP_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWOUT_PhaAPwmDc@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWOUT_PhaBPwmDc
+    /* Long identifier        */      "The raw modulation command used by the hardware PWM generator"
+    /* Data type              */      UWORD
+    /* Conversion method      */      GATOUP_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWOUT_PhaBPwmDc@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWOUT_PhaCPwmDc
+    /* Long identifier        */      "The raw modulation command used by the hardware PWM generator"
+    /* Data type              */      UWORD
+    /* Conversion method      */      GATOUP_CM_uint16_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWOUT_PhaCPwmDc@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWOUT_PhaPwmEna
+    /* Long identifier        */      "The raw modulation enable command used by the hardware PWM generator: 0 = disable, 1 = enable."
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SLWOUP_CM_boolean_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWOUT_PhaPwmEna@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWOUT_RedLed
+    /* Long identifier        */      "The raw output value"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SLWOUP_CM_boolean_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWOUT_RedLed@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWOUT_ResolverExctEna
+    /* Long identifier        */      "The raw output value"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SLWOUP_CM_boolean_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWOUT_ResolverExctEna@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWOUT_SwPwrPwmEna
+    /* Long identifier        */      "The raw output value"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SLWOUP_CM_boolean_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWOUT_SwPwrPwmEna@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ASWOUT_YellowLed
+    /* Long identifier        */      "The raw output value"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SLWOUP_CM_boolean_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ASWOUT_YellowLed@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      AuxPwrAcv
+    /* Long identifier        */      "Auxilary power active flag"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SLWINP_CM_boolean_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@AuxPwrAcv@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      BdT1
+    /* Long identifier        */      "Board temperature 1"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SLWINP_CM_single_degC
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@BdT1@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      BdT2
+    /* Long identifier        */      "Board temperature 2"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SLWINP_CM_single_degC
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@BdT2@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      DrvMod
+    /* Long identifier        */      "The active drive mode"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MODCTL_CM_DRIVEMODE_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      3
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@DrvMod@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      DrvModReq
+    /* Long identifier        */      "The requested drive mode"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MEDINP_CM_DRIVEMODE_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      3
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@DrvModReq@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HvBusCur
+    /* Long identifier        */      "The DC bus current into the inverter"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      ADCINP_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HvBusCur@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HvBusU
+    /* Long identifier        */      "The DC bus voltage into the inverter"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      ADCINP_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HvBusU@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      MaiPwrAcv
+    /* Long identifier        */      "Main power active flag"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SLWINP_CM_boolean_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@MaiPwrAcv@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      McuT
+    /* Long identifier        */      "Microcontroller temperature"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SLWINP_CM_single_degC
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@McuT@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      McuUBat
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SLWINP_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@McuUBat@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      McuURef
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SLWINP_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@McuURef@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      MotPosnErr
+    /* Long identifier        */      "Motor position error."
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      POSINP_CM_single_rad
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@MotPosnErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      MotPosnMag
+    /* Long identifier        */      "The magnetic rotor position. Zero degrees represents the rotor magnetic field aligned with the stator\'s A phase."
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      POSINP_CM_single_rad
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@MotPosnMag@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      MotPosnMagMeasd
+    /* Long identifier        */      "The measured magnetic motor position. Can be used in open loop control to verify position measurement."
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      POSINP_CM_single_rad
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@MotPosnMagMeasd@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      MotPosnTrig
+    /* Long identifier        */      "The results of the trig calculations that are used in the reference frame transforms"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      POSTRG_CM_single_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    LAYOUT                            COLUMN_DIR
+    MATRIX_DIM                        6 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@MotPosnTrig@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      MotSpd
+    /* Long identifier        */      "The mechanical motor speed"
+    /* Data type              */      SWORD
+    /* Conversion method      */      POSINP_CM_int16_rpm
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -32768
+    /* Upper limit            */      32767
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@MotSpd@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      MotSpdCmd
+    /* Long identifier        */      "The motor speed command the controller is controlling to"
+    /* Data type              */      SWORD
+    /* Conversion method      */      SPDCTL_CM_int16_rpm
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -32768
+    /* Upper limit            */      32767
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@MotSpdCmd@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      MotSpdMag
+    /* Long identifier        */      "The magnetic motor speed"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      POSINP_CM_single_rad_per_s
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@MotSpdMag@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      MotSpdReqCan
+    /* Long identifier        */      "The requested motor speed"
+    /* Data type              */      SWORD
+    /* Conversion method      */      MEDINP_CM_int16_rpm
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -32768
+    /* Upper limit            */      32767
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@MotSpdReqCan@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      MotTqCmd
+    /* Long identifier        */      "The commanded motor torque after arbitration and limitations"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TRQCTL_CM_single_N_into_m
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@MotTqCmd@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      MotTqCmdSpdCtl
+    /* Long identifier        */      "The motor torque commanded by the motor speed controller"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SPDCTL_CM_single_N_into_m
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@MotTqCmdSpdCtl@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      MotTqMax
+    /* Long identifier        */      "The maximum motor torque after derates"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TRQCTL_CM_single_N_into_m
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@MotTqMax@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      MotTqReqCan
+    /* Long identifier        */      "The requested motor torque"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      MEDINP_CM_single_N_into_m
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@MotTqReqCan@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      PhaCurA
+    /* Long identifier        */      "Phase A current"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      ADCINP_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@PhaCurA@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      PhaCurB
+    /* Long identifier        */      "Phase B current"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      ADCINP_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@PhaCurB@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      PhaCurC
+    /* Long identifier        */      "Phase C current"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      ADCINP_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@PhaCurC@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      PhaCurD
+    /* Long identifier        */      "The motor current in the rotating d axis direction (non-torque producing)."
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CLAPAR_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@PhaCurD@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      PhaCurDTar
+    /* Long identifier        */      "The target d-axis current"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TRQCTL_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@PhaCurDTar@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      PhaCurQ
+    /* Long identifier        */      "The motor current in the rotating q axis direction (torque producing)."
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CLAPAR_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@PhaCurQ@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      PhaCurQTar
+    /* Long identifier        */      "The target q-axis current"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TRQCTL_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@PhaCurQTar@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      PhaUA
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      ADCINP_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@PhaUA@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      PhaUACmd
+    /* Long identifier        */      "Phase A voltage command"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      INVCPA_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@PhaUACmd@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      PhaUB
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      ADCINP_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@PhaUB@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      PhaUBCmd
+    /* Long identifier        */      "Phase B voltage command"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      INVCPA_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@PhaUBCmd@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      PhaUC
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      ADCINP_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@PhaUC@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      PhaUCCmd
+    /* Long identifier        */      "Phase C voltage command"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      INVCPA_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@PhaUCCmd@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      PhaUDCmd
+    /* Long identifier        */      "Commanded d-axis phase voltage"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CURCTL_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@PhaUDCmd@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      PhaUQCmd
+    /* Long identifier        */      "Commanded q-axis phase voltage"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CURCTL_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@PhaUQCmd@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      PwrCmd
+    /* Long identifier        */      "The command to activate the auxilary power supplies"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MODCTL_CM_boolean_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@PwrCmd@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      ResolverSinCos
+    /* Long identifier        */      "Resolver sine and cosine signals."
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      ADCINP_CM_single_1
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    LAYOUT                            COLUMN_DIR
+    MATRIX_DIM                        2 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@ResolverSinCos@ */
+  /end MEASUREMENT 
+
+  /begin AXIS_PTS 
+    /* Name                   */      MotTqGainBdT1_Ax
+    /* Long Identifier        */      "The axis for the table that maps between the board temperature and the gain that limits the maximum motor torque"
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqGainBdT1_Ax@ */
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      Axis_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_degC
+    /* Number of Axis Pts     */      5
+    /* Lower Limit            */      -40.000000
+    /* Upper Limit            */      250.000000
+  /end AXIS_PTS 
+
+  /begin AXIS_PTS 
+    /* Name                   */      MotTqGainBdT2_Ax
+    /* Long Identifier        */      "The axis for the table that maps between the board temperature and the gain that limits the maximum motor torque"
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqGainBdT2_Ax@ */
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      Axis_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_degC
+    /* Number of Axis Pts     */      5
+    /* Lower Limit            */      -40.000000
+    /* Upper Limit            */      250.000000
+  /end AXIS_PTS 
+
+  /begin AXIS_PTS 
+    /* Name                   */      MotTqMaxMotSpd_Ax
+    /* Long Identifier        */      "The axis values for the table that maps between the motor speed and the maximum motor torque"
+    /* ECU Address            */      0x0000 /* @ECU_Address@MotTqMaxMotSpd_Ax@ */
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      Axis_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      P2319ASW01_CM_single_rpm
+    /* Number of Axis Pts     */      5
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      32000.000000
+  /end AXIS_PTS 
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      ADCINP_CM_single_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "1"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      ADCINP_CM_single_A
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "A"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      ADCINP_CM_single_V
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CLAPAR_CM_single_A
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "A"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CURCTL_CM_single_V
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      GATOUP_CM_uint16_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%5.0"
+    /* Units                  */      "1"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      INVCPA_CM_single_V
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      MEDINP_CM_DRIVEMODE_1
+    /* Long identifier        */      "Enumerated data type: DRIVEMODE"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.6"
+    /* Units                  */      "1"
+    /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_MEDINP_CM_DRIVEMODE_1
+  /end COMPU_METHOD
+
+  /begin COMPU_VTAB
+    /* Name of Table          */      VTAB_FOR_MEDINP_CM_DRIVEMODE_1
+    /* Long identifier        */      "Enumerated data type: DRIVEMODE"
+    /* Conversion Type        */      TAB_VERB
+    /* Number of Elements     */      4
+    /* Table Element          */      0 "DISABLED"
+    /* Table Element          */      1 "TQ_CTRL"
+    /* Table Element          */      2 "SPD_CTRL"
+    /* Table Element          */      3 "OPEN_LOOP"
+  /end COMPU_VTAB
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      MEDINP_CM_int16_rpm
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%5.0"
+    /* Units                  */      "rpm"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      MEDINP_CM_single_N_into_m
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "N*m"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      MEDOUP_CM_uint8_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%3.0"
+    /* Units                  */      "1"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      MODCTL_CM_DRIVEMODE_1
+    /* Long identifier        */      "Enumerated data type: DRIVEMODE"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.6"
+    /* Units                  */      "1"
+    /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_MODCTL_CM_DRIVEMODE_1
+  /end COMPU_METHOD
+
+  /begin COMPU_VTAB
+    /* Name of Table          */      VTAB_FOR_MODCTL_CM_DRIVEMODE_1
+    /* Long identifier        */      "Enumerated data type: DRIVEMODE"
+    /* Conversion Type        */      TAB_VERB
+    /* Number of Elements     */      4
+    /* Table Element          */      0 "DISABLED"
+    /* Table Element          */      1 "TQ_CTRL"
+    /* Table Element          */      2 "SPD_CTRL"
+    /* Table Element          */      3 "OPEN_LOOP"
+  /end COMPU_VTAB
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      MODCTL_CM_boolean_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%1.0"
+    /* Units                  */      "1"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_DRIVEMODE_1
+    /* Long identifier        */      "Enumerated data type: DRIVEMODE"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.6"
+    /* Units                  */      "1"
+    /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_P2319ASW01_CM_DRIVEMODE_1
+  /end COMPU_METHOD
+
+  /begin COMPU_VTAB
+    /* Name of Table          */      VTAB_FOR_P2319ASW01_CM_DRIVEMODE_1
+    /* Long identifier        */      "Enumerated data type: DRIVEMODE"
+    /* Conversion Type        */      TAB_VERB
+    /* Number of Elements     */      4
+    /* Table Element          */      0 "DISABLED"
+    /* Table Element          */      1 "TQ_CTRL"
+    /* Table Element          */      2 "SPD_CTRL"
+    /* Table Element          */      3 "OPEN_LOOP"
+  /end COMPU_VTAB
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_boolean_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%1.0"
+    /* Units                  */      "1"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_int16_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%5.0"
+    /* Units                  */      "1"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_int16_rpm
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%5.0"
+    /* Units                  */      "rpm"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_logical_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%1.0"
+    /* Units                  */      "1"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "1"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_1_per_V
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "1/V"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_1_per_s
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "1/s"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_1_per_s_2
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "1/s^2"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_A
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "A"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_A_per_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "A/1"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_H
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "H"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_N_into_m
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "N*m"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_N_into_m_per_A
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "N*m/A"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_N_into_m_per__rpm_into_sec_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "N*m/(rpm*sec)"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_N_into_m_per_rpm
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "N*m/rpm"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_V
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_V_into_s
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V*s"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_V_per_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V/1"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_V_per_A
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V/A"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_V_per__A_into_s_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V/(A*s)"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_degC
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "degC"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_degC_per_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "degC/1"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_rad
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rad"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_rad_per_s
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rad/s"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_rpm
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rpm"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_rpm_per_sec
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rpm/sec"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_single_s
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "s"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_uint16_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%5.0"
+    /* Units                  */      "1"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_uint16_rpm
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%5.0"
+    /* Units                  */      "rpm"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      P2319ASW01_CM_uint8_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%3.0"
+    /* Units                  */      "1"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      POSINP_CM_int16_rpm
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%5.0"
+    /* Units                  */      "rpm"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      POSINP_CM_single_rad
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rad"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      POSINP_CM_single_rad_per_s
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rad/s"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      POSTRG_CM_single_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "1"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SLWINP_CM_boolean_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%1.0"
+    /* Units                  */      "1"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SLWINP_CM_single_V
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SLWINP_CM_single_degC
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "degC"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SLWOUP_CM_boolean_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%1.0"
+    /* Units                  */      "1"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SLWOUP_CM_uint8_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%3.0"
+    /* Units                  */      "1"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SPDCTL_CM_int16_rpm
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%5.0"
+    /* Units                  */      "rpm"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SPDCTL_CM_single_N_into_m
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "N*m"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TRQCTL_CM_single_A
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "A"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TRQCTL_CM_single_N_into_m
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "N*m"
+  /end COMPU_METHOD
+
+  /begin  RECORD_LAYOUT Record_BOOLEAN
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_FLOAT32_IEEE
+    FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_SWORD
+    FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_UBYTE
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_UWORD
+    FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /* Record Layouts for Lookup Tables in Standard Axis format */
+
+  /begin RECORD_LAYOUT Axis_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end RECORD_LAYOUT 
+
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01
+    /* Long identifier        */      "P2319ASW01"
+    /* Root                   */      ROOT
+    /begin SUB_GROUP
+      P2319ASW01_Current_Control
+      P2319ASW01_Supervisor
+      P2319ASW01_Torque_Speed_Control
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_105_CLAPAR_Model
+    /* Long identifier        */      "P2319ASW01/Current_Control/CLAPAR/Model"
+    /begin REF_MEASUREMENT
+      PhaCurD
+      PhaCurQ
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_116_CURCTL_Model
+    /* Long identifier        */      "P2319ASW01/Current_Control/CURCTL/Model"
+    /begin REF_MEASUREMENT
+      PhaUDCmd
+      PhaUQCmd
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_128_GATOUP_Model
+    /* Long identifier        */      "P2319ASW01/Current_Control/GATOUP/Model"
+    /begin REF_MEASUREMENT
+      ASWOUT_PhaAPwmDc
+      ASWOUT_PhaBPwmDc
+      ASWOUT_PhaCPwmDc
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_137_INVCPA_Model
+    /* Long identifier        */      "P2319ASW01/Current_Control/INVCPA/Model"
+    /begin REF_MEASUREMENT
+      PhaUACmd
+      PhaUBCmd
+      PhaUCCmd
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_143_POSINP_Model
+    /* Long identifier        */      "P2319ASW01/Current_Control/POSINP/Model"
+    /begin REF_MEASUREMENT
+      ASWIN_EncoderCt
+      ASWIN_EncoderZ
+      MotPosnMag
+      MotSpd
+      MotSpdMag
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_153_SPDCTL_Model
+    /* Long identifier        */      "P2319ASW01/Torque_Speed_Control/SPDCTL/Model"
+    /begin REF_MEASUREMENT
+      MotTqCmdSpdCtl
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_161_TRQCTL_Model
+    /* Long identifier        */      "P2319ASW01/Torque_Speed_Control/TRQCTL/Model"
+    /begin SUB_GROUP
+      P2319ASW01_161_TRQCTL_Model_Saturation_Dynamic
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      MotTqMax
+      PhaCurDTar
+      PhaCurQTar
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_161_TRQCTL_Model_Saturation_Dynamic
+    /* Long identifier        */      "TRQCTL/Saturation\r\nDynamic"
+    /begin REF_MEASUREMENT
+      MotTqMax
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_175_MODCTL_Model
+    /* Long identifier        */      "P2319ASW01/Supervisor/MODCTL/Model"
+    /begin REF_MEASUREMENT
+      DrvMod
+      PwrCmd
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_182_ADCINP_Model
+    /* Long identifier        */      "P2319ASW01/Current_Control/ADCINP/Model"
+    /begin REF_MEASUREMENT
+      ASWIN_HvBusCur
+      ASWIN_HvBusU
+      ASWIN_PhaCurA
+      ASWIN_PhaCurB
+      ASWIN_PhaCurC
+      ASWIN_PhaUA
+      ASWIN_PhaUB
+      ASWIN_PhaUC
+      ASWIN_ResolverCos
+      ASWIN_ResolverSin
+      HvBusCur
+      HvBusU
+      PhaCurA
+      PhaCurB
+      PhaCurC
+      ResolverSinCos
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_241_POSTRG_Model
+    /* Long identifier        */      "P2319ASW01/Current_Control/POSTRG/Model"
+    /begin REF_MEASUREMENT
+      MotPosnTrig
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_291_MEDINP_Model
+    /* Long identifier        */      "P2319ASW01/Torque_Speed_Control/MEDINP/Model"
+    /begin SUB_GROUP
+      P2319ASW01_291_MEDINP_Model_Detect_Change
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      ASWIN_McuReqCt
+      ASWIN_McuReqDa
+      DrvModReq
+      MotSpdReqCan
+      MotTqReqCan
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_291_MEDINP_Model_Detect_Change
+    /* Long identifier        */      "MEDINP/Detect\r\nChange"
+    /begin REF_MEASUREMENT
+      ASWIN_McuReqCt
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_310_SLWINP_Model
+    /* Long identifier        */      "P2319ASW01/Supervisor/SLWINP/Model"
+    /begin REF_MEASUREMENT
+      ASWIN_AuxPwrSts
+      ASWIN_BdT1
+      ASWIN_BdT2
+      ASWIN_MaiPwrSts
+      ASWIN_McuT
+      ASWIN_McuUBat
+      ASWIN_McuURef
+      AuxPwrAcv
+      BdT1
+      BdT2
+      MaiPwrAcv
+      McuT
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_322_SLWOUP_Model
+    /* Long identifier        */      "P2319ASW01/Supervisor/SLWOUP/Model"
+    /begin REF_MEASUREMENT
+      ASWOUT_CanPwrPwmEna
+      ASWOUT_GreenLed
+      ASWOUT_InPwrPwmEna
+      ASWOUT_McuData2Da
+      ASWOUT_MtrPwrPwmEna
+      ASWOUT_PhaPwmEna
+      ASWOUT_RedLed
+      ASWOUT_ResolverExctEna
+      ASWOUT_SwPwrPwmEna
+      ASWOUT_YellowLed
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_328_MEDOUP_Model
+    /* Long identifier        */      "P2319ASW01/Torque_Speed_Control/MEDOUP/Model"
+    /begin REF_MEASUREMENT
+      ASWOUT_McuData1Da
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_Current_Control
+    /* Long identifier        */      "P2319ASW01/Current_Control"
+    /begin SUB_GROUP
+      P2319ASW01_Current_Control_ADCINP
+      P2319ASW01_Current_Control_CLAPAR
+      P2319ASW01_Current_Control_CURCTL
+      P2319ASW01_Current_Control_GATOUP
+      P2319ASW01_Current_Control_INVCPA
+      P2319ASW01_Current_Control_POSINP
+      P2319ASW01_Current_Control_POSTRG
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_Current_Control_ADCINP
+    /* Long identifier        */      "P2319ASW01/Current_Control/ADCINP"
+    /begin REF_CHARACTERISTIC
+      HvBusCurDialEna_C
+      HvBusCurDialVal_C
+      HvBusCurFilTiCon_C
+      HvBusCurGain_C
+      HvBusCurOfs_C
+      HvBusUDialEna_C
+      HvBusUDialVal_C
+      HvBusUFilTiCon_C
+      HvBusUGain_C
+      HvBusUOfs_C
+      PhaCurADialEna_C
+      PhaCurADialVal_C
+      PhaCurAFilTiCon_C
+      PhaCurAGain_C
+      PhaCurAOfs_C
+      PhaCurBDialEna_C
+      PhaCurBDialVal_C
+      PhaCurBFilTiCon_C
+      PhaCurBGain_C
+      PhaCurBOfs_C
+      PhaCurCDialEna_C
+      PhaCurCDialVal_C
+      PhaCurCFilTiCon_C
+      PhaCurCGain_C
+      PhaCurCOfs_C
+      PhaUAFilTiCon_C
+      PhaUAGain_C
+      PhaUAOfs_C
+      PhaUBFilTiCon_C
+      PhaUBGain_C
+      PhaUBOfs_C
+      PhaUCFilTiCon_C
+      PhaUCGain_C
+      PhaUCOfs_C
+      ResolverCosFilTiCon_C
+      ResolverCosGain_C
+      ResolverCosOfs_C
+      ResolverSinCosDialEna_C
+      ResolverSinCosDialVal_CA
+      ResolverSinFilTiCon_C
+      ResolverSinGain_C
+      ResolverSinOfs_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      ASWIN_HvBusCur
+      ASWIN_HvBusU
+      ASWIN_PhaCurA
+      ASWIN_PhaCurB
+      ASWIN_PhaCurC
+      ASWIN_PhaUA
+      ASWIN_PhaUB
+      ASWIN_PhaUC
+      ASWIN_ResolverCos
+      ASWIN_ResolverSin
+      HvBusCur
+      HvBusU
+      PhaCurA
+      PhaCurB
+      PhaCurC
+      ResolverSinCos
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_Current_Control_CLAPAR
+    /* Long identifier        */      "P2319ASW01/Current_Control/CLAPAR"
+    /begin REF_CHARACTERISTIC
+      PhaCurDDialEna_C
+      PhaCurDDialVal_C
+      PhaCurQDialEna_C
+      PhaCurQDialVal_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      MotPosnTrig
+      PhaCurA
+      PhaCurB
+      PhaCurC
+      PhaCurD
+      PhaCurQ
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_Current_Control_CURCTL
+    /* Long identifier        */      "P2319ASW01/Current_Control/CURCTL"
+    /begin REF_CHARACTERISTIC
+      FluxLinkage_C
+      PhaUDAntiWindupGain_C
+      PhaUDCmdDialEna_C
+      PhaUDCmdDialVal_C
+      PhaUDCmdOpenLoop_C
+      PhaUDGainI_C
+      PhaUDGainP_C
+      PhaUMaxVal_C
+      PhaUQAntiWindupGain_C
+      PhaUQCmdDialEna_C
+      PhaUQCmdDialVal_C
+      PhaUQCmdOpenLoop_C
+      PhaUQGainI_C
+      PhaUQGainP_C
+      StatorInductanceD_C
+      StatorInductanceQ_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      HvBusU
+      MotSpdMag
+      PhaCurD
+      PhaCurQ
+      PhaUDCmd
+      PhaUQCmd
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_Current_Control_GATOUP
+    /* Long identifier        */      "P2319ASW01/Current_Control/GATOUP"
+    /begin REF_CHARACTERISTIC
+      PhaAPwmDcDialEna_C
+      PhaAPwmDcDialVal_C
+      PhaBPwmDcDialEna_C
+      PhaBPwmDcDialVal_C
+      PhaCPwmDcDialEna_C
+      PhaCPwmDcDialVal_C
+      ReloadRegisterMax_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      ASWOUT_PhaAPwmDc
+      ASWOUT_PhaBPwmDc
+      ASWOUT_PhaCPwmDc
+      HvBusU
+      PhaUACmd
+      PhaUBCmd
+      PhaUCCmd
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_Current_Control_INVCPA
+    /* Long identifier        */      "P2319ASW01/Current_Control/INVCPA"
+    /begin REF_CHARACTERISTIC
+      PhaUACmdDialEna_C
+      PhaUACmdDialVal_C
+      PhaUBCmdDialEna_C
+      PhaUBCmdDialVal_C
+      PhaUCCmdDialEna_C
+      PhaUCCmdDialVal_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      MotPosnTrig
+      PhaUACmd
+      PhaUBCmd
+      PhaUCCmd
+      PhaUDCmd
+      PhaUQCmd
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_Current_Control_POSINP
+    /* Long identifier        */      "P2319ASW01/Current_Control/POSINP"
+    /begin REF_CHARACTERISTIC
+      EncoderCtPerRev_C
+      EncoderOfs_C
+      MotPolePairs_C
+      MotPosnEstimrGainI_C
+      MotPosnEstimrGainP_C
+      MotPosnEstimrIntglEna_C
+      MotPosnMagDialEna_C
+      MotPosnMagDialVal_C
+      MotPosnOfs_C
+      MotPosnSenMeth_C
+      MotSpdDialEna_C
+      MotSpdDialVal_C
+      MotSpdFilTiCon_C
+      MotSpdMagDialEna_C
+      MotSpdMagDialVal_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      ASWIN_EncoderCt
+      ASWIN_EncoderZ
+      MotPosnMag
+      MotSpd
+      MotSpdMag
+      ResolverSinCos
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_Current_Control_POSTRG
+    /* Long identifier        */      "P2319ASW01/Current_Control/POSTRG"
+    /begin REF_CHARACTERISTIC
+      MotPosnTrigDialEna_C
+      MotPosnTrigDialVal_CA
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      MotPosnMag
+      MotPosnTrig
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_Supervisor
+    /* Long identifier        */      "P2319ASW01/Supervisor"
+    /begin SUB_GROUP
+      P2319ASW01_Supervisor_MODCTL
+      P2319ASW01_Supervisor_SLWINP
+      P2319ASW01_Supervisor_SLWOUP
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_Supervisor_MODCTL
+    /* Long identifier        */      "P2319ASW01/Supervisor/MODCTL"
+    /begin REF_CHARACTERISTIC
+      DrvModDialEna_C
+      DrvModDialVal_C
+      MotSpdReqThdModChg_C
+      MotSpdThdModChg_C
+      MotTqReqThdModChg_C
+      PwrCmdDialEna_C
+      PwrCmdDialVal_C
+      WakeRetry_C
+      WakeTout_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      AuxPwrAcv
+      DrvMod
+      MaiPwrAcv
+      PwrCmd
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_Supervisor_SLWINP
+    /* Long identifier        */      "P2319ASW01/Supervisor/SLWINP"
+    /begin REF_CHARACTERISTIC
+      AuxPwrAcvDebFall_C
+      AuxPwrAcvDebRisng_C
+      AuxPwrAcvDialEna_C
+      AuxPwrAcvDialVal_C
+      AuxPwrStsIvt_C
+      BdT1DialEna_C
+      BdT1DialVal_C
+      BdT1FilTiCon_C
+      BdT1Gain_C
+      BdT1Ofs_C
+      BdT2DialEna_C
+      BdT2DialVal_C
+      BdT2FilTiCon_C
+      BdT2Gain_C
+      BdT2Ofs_C
+      MaiPwrAcvDebFall_C
+      MaiPwrAcvDebRisng_C
+      MaiPwrAcvDialEna_C
+      MaiPwrAcvDialVal_C
+      MaiPwrStsIvt_C
+      McuTDialEna_C
+      McuTDialVal_C
+      McuTFilTiCon_C
+      McuTGain_C
+      McuTOfs_C
+      McuUBatFilTiCon_C
+      McuUBatGain_C
+      McuUBatOfs_C
+      McuURefFilTiCon_C
+      McuURefGain_C
+      McuURefOfs_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      ASWIN_AuxPwrSts
+      ASWIN_BdT1
+      ASWIN_BdT2
+      ASWIN_MaiPwrSts
+      ASWIN_McuT
+      ASWIN_McuUBat
+      ASWIN_McuURef
+      AuxPwrAcv
+      BdT1
+      BdT2
+      MaiPwrAcv
+      McuT
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_Supervisor_SLWOUP
+    /* Long identifier        */      "P2319ASW01/Supervisor/SLWOUP"
+    /begin REF_CHARACTERISTIC
+      CanPwrPwmEna_C
+      GreenLedDialEna_C
+      GreenLedDialVal_C
+      GreenLedIvt_C
+      InPwrPwmEna_C
+      LedOffTi_C
+      LedPlsCtDft_C
+      LedPlsCtOpenLoop_C
+      LedPlsCtSpdCtl_C
+      LedPlsCtTqCtl_C
+      McuData2DaDialEna_C
+      McuData2DaDialVal_CA
+      MtrPwrPwmEna_C
+      PhaPwmEnaDialEna_C
+      PhaPwmEnaDialVal_C
+      PlsOffTi_C
+      PlsOnTi_C
+      RedLedDialEna_C
+      RedLedDialVal_C
+      RedLedIvt_C
+      ResolverExctEna_C
+      SwPwrPwmEna_C
+      YellowLedCmd_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      ASWOUT_CanPwrPwmEna
+      ASWOUT_GreenLed
+      ASWOUT_InPwrPwmEna
+      ASWOUT_McuData2Da
+      ASWOUT_MtrPwrPwmEna
+      ASWOUT_PhaPwmEna
+      ASWOUT_RedLed
+      ASWOUT_ResolverExctEna
+      ASWOUT_SwPwrPwmEna
+      ASWOUT_YellowLed
+      BdT1
+      BdT2
+      DrvMod
+      McuT
+      PwrCmd
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_Torque_Speed_Control
+    /* Long identifier        */      "P2319ASW01/Torque_Speed_Control"
+    /begin SUB_GROUP
+      P2319ASW01_Torque_Speed_Control_MEDINP
+      P2319ASW01_Torque_Speed_Control_MEDOUP
+      P2319ASW01_Torque_Speed_Control_SPDCTL
+      P2319ASW01_Torque_Speed_Control_TRQCTL
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_Torque_Speed_Control_MEDINP
+    /* Long identifier        */      "P2319ASW01/Torque_Speed_Control/MEDINP"
+    /begin REF_CHARACTERISTIC
+      DrvModReqDft_C
+      DrvModReqDialEna_C
+      DrvModReqDialVal_C
+      McuReqTout_C
+      MotSpdReqCanDft_C
+      MotSpdReqCanDialEna_C
+      MotSpdReqCanDialVal_C
+      MotTqReqCanDft_C
+      MotTqReqCanDialEna_C
+      MotTqReqCanDialVal_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      ASWIN_McuReqCt
+      ASWIN_McuReqDa
+      DrvModReq
+      MotSpdReqCan
+      MotTqReqCan
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_Torque_Speed_Control_MEDOUP
+    /* Long identifier        */      "P2319ASW01/Torque_Speed_Control/MEDOUP"
+    /begin REF_CHARACTERISTIC
+      McuData1DaDialEna_C
+      McuData1DaDialVal_CA
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      ASWOUT_McuData1Da
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_Torque_Speed_Control_SPDCTL
+    /* Long identifier        */      "P2319ASW01/Torque_Speed_Control/SPDCTL"
+    /begin REF_CHARACTERISTIC
+      MotSpdRateLim_C
+      MotSpdReqMax_C
+      MotTqCmdSpdCtlDialEna_C
+      MotTqCmdSpdCtlDialVal_C
+      MotTqGainI_C
+      MotTqGainP_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      MotSpdReqCan
+      MotTqCmdSpdCtl
+      MotTqMax
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      P2319ASW01_Torque_Speed_Control_TRQCTL
+    /* Long identifier        */      "P2319ASW01/Torque_Speed_Control/TRQCTL"
+    /begin REF_CHARACTERISTIC
+      MotTqCon_C
+      MotTqMaxDialEna_C
+      MotTqMaxDialVal_C
+      PhaCurDTarVal_C
+      PhaCurQTarDialEna_C
+      PhaCurQTarDialVal_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      MotTqCmdSpdCtl
+      MotTqMax
+      MotTqReqCan
+      PhaCurDTar
+      PhaCurQTar
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /end MODULE
+
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF P2319ASW01.a2l*/

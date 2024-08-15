@@ -1,0 +1,473 @@
+//Command	Description				Address	DatType	Default	Min	Max	Module	VarType	Scale Factor
+<CONFIG>	Analog: Sine Feedback Offset		36	Int32	32767	0	65535	255	0	1.0
+<CONFIG>	Analog: Cosine Feedback Offset		96	Int32	32767	0	65535	255	0	1.0
+<CONFIG>	Analog: Bus Voltage Offset		104	Int32	30	0	65535	255	0	1.0
+<CONFIG>	Analog: Battery Current Offset		132	Int32	32767	0	65535	255	0	1.0
+<CONFIG>	Analog: Current A Offset		456	Int32	24650	0	65535	255	0	1.0
+<CONFIG>	Analog: Current B Offset		460	Int32	24650	0	65535	255	0	1.0
+<CONFIG>	Analog: Current C Offset		464	Int32	24650	0	65535	255	0	1.0
+<CONFIG>	Analog: Sine Feedback Gain		264	Single	0.00153	0	65535	255	0	1.0
+<CONFIG>	Analog: Cosine Feedback Gain		324	Single	0.00153	0	65535	255	0	1.0
+<CONFIG>	Analog: Bus Voltage Gain		332	Single	0.01526	0	65535	255	0	1.0
+<CONFIG>	Analog: Battery Current Gain		360	Single	0.00254	0	65535	255	0	1.0
+<CONFIG>	Analog: Current A Gain  		468	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Analog: Current B Gain  		472	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Analog: Current C Gain  		476	Single	0.00484	0	65535	255	0	1.0
+
+<CONFIG>	Vector: AuxPwrAcvDebFal_c  		480	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: AuxPwrAcvDebRisng_C		484	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: AuxPwrAcvDialEna_C		488	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: AuxPwrAcvDialVal_C		489	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: AuxPwrStsIvt_C			490	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: BdT1DialEna_C			491	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: BdT1DialVal_C			492	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: BdT1FilTiCon_C			496	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: BdT1Gain_C			500	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: BdT1Ofs_C			504	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: BdT2DialEna_C			508	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: BdT2DialVal_C			512	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: BdT2FilTiCon_C			516	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: BdT2Gain_C			520	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: BdT2Ofs_C			524	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: CanPwrPwmEna_C			528	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: DrvModDialEna_C			529	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: DrvModDialVal_C			530	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: DrvModReqDft_C			531	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: DrvModReqDialEna_C		532	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: DrvModReqDialVal_C		533	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: EncoderCtPerRev_C		534	Int16	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: EncoderOfs_C			536	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: FluxLinkage_C			540	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: GreenLedDialEna_C		544	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: GreenLedDialVal_C		545	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: GreenLedIvt_C			546	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: HvBusCurDialEna_C		547	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: HvBusCurDialVal_C		548	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: HvBusCurFilTiCon_C		552	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: HvBusCurGain_C			556	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: HvBusCurOfs_C			560	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: HvBusUDialEna_C			564	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: HvBusUDialVal_C			568	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: HvBusUFilTiCon_C		572	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: HvBusUGain_C			576	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: HvBusUOfs_C			580	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: InPwrPwmEna_C			584	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: LedOffTi_C			588	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: LedPlsCtDft_C			592	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: LedPlsCtOpenLoop_C		593	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: LedPlsCtSpdCtl_C		594	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: LedPlsCtTqCtl_C			595	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MaiPwrAcvDebFall_C		596	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MaiPwrAcvDebRisng_C		600	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MaiPwrAcvDialEna_C		604	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MaiPwrAcvDialVal_C		605	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MaiPwrStsIvt_C			606	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData1DaDialEna_C		607	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData1DaDialVal_CA(1)		608	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData1DaDialVal_CA(2)		609	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData1DaDialVal_CA(3)		610	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData1DaDialVal_CA(4)		611	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData1DaDialVal_CA(5)		612	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData1DaDialVal_CA(6)		613	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData1DaDialVal_CA(7)		614	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData1DaDialVal_CA(8)		615	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData2DaDialEna_C		616	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData2DaDialVal_CA(1)		617	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData2DaDialVal_CA(2)		618	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData2DaDialVal_CA(3)		619	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData2DaDialVal_CA(4)		620	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData2DaDialVal_CA(5)		621	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData2DaDialVal_CA(6)		622	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData2DaDialVal_CA(7)		623	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuData2DaDialVal_CA(8)		624	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuReqTout_C			628	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuTDialEna_C			632	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuTDialVal_C			636	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuTFilTiCon_C			640	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuTGain_C			644	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuTOfs_C			648	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuUBatFilTiCon_C		652	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuUBatGain_C			656	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuUBatOfs_C			660	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuURefFilTiCon_C		664	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuURefGain_C			668	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: McuURefOfs_C			672	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotPolePairs_C			676	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotPosnEstimrGainI_C		680	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotPosnEstimrGainP_C		684	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotPosnEstimrIntglEna_C		688	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotPosnMagDialEna_C		689	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotPosnMagDialVal_C		692	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotPosnOfs_C			696	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotPosnSenMeth_C		700	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotPosnTrigDialEna_C		701	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotPosnTrigDialVal_CA(1)	704	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotPosnTrigDialVal_CA(2)	708	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotPosnTrigDialVal_CA(3)	712	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotPosnTrigDialVal_CA(4)	716	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotPosnTrigDialVal_CA(5)	720	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotPosnTrigDialVal_CA(6)	724	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotSpdDialEna_C			728	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotSpdDialVal_C			730	Int16	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotSpdFilTiCon_C		732	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotSpdMagDialEna_C		736	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotSpdMagDialVal_C		740	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotSpdRateLim_C			744	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotSpdReqCanDft_C		748	Int16	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotSpdReqCanDialEna_C		750	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotSpdReqCanDialVal_C		752	Int16	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotSpdReqMax_C			754	Int16	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotSpdReqThdModChg_C		756	Int16	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotSpdThdModChg_C		758	Int16	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqCmdSpdCtlDialEna_C		760	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqCmdSpdCtlDialVal_C		764	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqCon_C			768	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT1_Ax(1)		772	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT1_Ax(2)		776	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT1_Ax(3)		780	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT1_Ax(4)		784	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT1_Ax(5)		788	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT1_T(1)		792	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT1_T(2)		796	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT1_T(3)		800	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT1_T(4)		804	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT1_T(5)		808	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT2_Ax(1)		812	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT2_Ax(2)		816	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT2_Ax(3)		820	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT2_Ax(4)		824	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT2_Ax(5)		828	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT2_T(1)		832	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT2_T(2)		826	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT2_T(3)		840	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT2_T(4)		844	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainBdT2_T(5)		848	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainI_C			852	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqGainP_C			856	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqMaxDialEna_C		860	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqMaxDialVal_C		864	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqMaxMotSpd_Ax(1)		868	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqMaxMotSpd_Ax(2)		872	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqMaxMotSpd_Ax(3)		876	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqMaxMotSpd_Ax(4)		880	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqMaxMotSpd_Ax(5)		884	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqMaxMotSpd_T(1)		888	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqMaxMotSpd_T(2)		892	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqMaxMotSpd_T(3)		896	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqMaxMotSpd_T(4)		900	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqMaxMotSpd_T(5)		904	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqReqCanDft_C		908	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqReqCanDialEna_C		912	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqReqCanDialVal_C		916	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MotTqReqThdModChg_C		920	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: MtrPwrPwmEna_C			924	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaAPwmDcDialEna_C		925	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaAPwmDcDialVal_C		926	Int16	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaBPwmDcDialEna_C		928	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaBPwmDcDialVal_C		930	Int16	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCPwmDcDialEna_C		932	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCPwmDcDialVal_C		934	Int16	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurADialEna_C		936	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurADialVal_C		940	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurAFilTiCon_C		944	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurAGain_C			948	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurAOfs_C			952	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurBDialEna_C		956	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurBDialVal_C		960	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurBFilTiCon_C		964	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurBGain_C			968	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurBOfs_C			972	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurCDialEna_C		976	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurCDialVal_C		980	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurCFilTiCon_C		984	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurCGain_C			988	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurCOfs_C			992	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurDDialEna_C		996	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurDDialVal_C		1000	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurDTarVal_C			1004	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurQDialEna_C		1008	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurQDialVal_C		1012	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurQTarDialEna_C		1016	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaCurQTarDialVal_C		1020	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaPwmEnaDialEna_C		1024	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaPwmEnaDialVal_C		1025	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUACmdDialEna_C		1026	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUACmdDialVal_C		1028	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUAFilTiCon_C			1032	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUAGain_C			1036	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUAOfs_C			1040	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUBCmdDialEna_C		1044	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUBCmdDialVal_C		1048	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUBFilTiCon_C			1052	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUBGain_C			1056	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUBOfs_C			1060	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUCCmdDialEna_C		1064	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUCCmdDialVal_C		1068	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUCFilTiCon_C			1072	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUCGain_C			1076	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUCOfs_C			1080	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUDAntiWindupGain_C		1084	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUDCmdDialEna_C		1088	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUDCmdDialVal_C		1092	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUDCmdOpenLoop_C		1096	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUDGainI_C			1100	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUDGainP_C			1104	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUMaxVal_C			1108	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUQAntiWindupGain_C		1112	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUQCmdDialEna_C		1116	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUQCmdDialVal_C		1120	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUQCmdOpenLoop_C		1124	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUQGainI_C			1128	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PhaUQGainP_C			1132	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PlsOffTi_C			1136	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PlsOnTi_C			1140	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PwrCmdDialEna_C			1144	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: PwrCmdDialVal_C			1145	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: RedLedDialEna_C			1146	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: RedLedDialVal_C			1147	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: RedLedIvt_C			1148	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: ReloadRegisterMax_C		1150	Int16	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: ResolverCosFilTiCon_C		1152	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: ResolverCosGain_C		1156	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: ResolverCosOfs_C		1160	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: ResolverExctEna_C		1164	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: ResolverSinCosDialEna_C		1165	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: ResolverSinCosDialVal_CA(1)	1168	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: ResolverSinCosDialVal_CA(2)	1172	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: ResolverSinFilTiCon_C		1176	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: ResolverSinGain_C		1180	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: ResolverSinOfs_C		1184	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: StatorInductanceD_C		1188	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: StatorInductanceQ_C		1192	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: SwPwrPwmEna_C			1196	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: WakeRetry_C			1197	Int8	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: WakeTout_C			1200	Single	0.00484	0	65535	255	0	1.0
+<CONFIG>	Vector: YellowLedCmd_C			1204	Int8	0.00484	0	65535	255	0	1.0
+
+<CONFIG>	Motor: Volts / Hz Ratio (ls)		1272	Single	0.9	0	65535	255	0	1.0
+<CONFIG>	Motor: Volts / Hz Ratio (hs)		1276	Single	0.9	0	65535	255	0	1.0
+<CONFIG>	Motor: Frequency Ramp Rate (ls)		1280	Single	0.5	0	65535	255	0	1.0
+<CONFIG>	Motor: Frequency Ramp Rate (hs)		1284	Single	0.5	0	65535	255	0	1.0
+<CONFIG>	Motor: Stopped Voltage (ls)		1288	Single	3.3	0	65535	255	0	1.0
+<CONFIG>	Motor: Stopped Voltage (hs)		1292	Single	3.3	0	65535	255	0	1.0
+<CONFIG>	Motor: Frequency Target  		1296	Single	5	0	65535	255	0	1.0
+<CONFIG>	Motor: Low to High transition  		1300	Single	5	0	65535	255	0	1.0
+<CONFIG>	Motor: Current Fault	 		1304	Single	5	0	65535	255	0	1.0
+<CONFIG>	Motor: Speed Target        		1308	Single	2	0	65535	255	0	1.0
+<CONFIG>	Motor: Speed P Gain       		1312	Single	0.01	0	65535	255	0	1.0
+<CONFIG>	Motor: Speed I Gain       		1316	Single	0.01	0	65535	255	0	1.0
+<CONFIG>	Motor: Speed D Gain       		1320	Single	0.01	0	65535	255	0	1.0
+<CONFIG>	Motor: Speed TD Gain      		1324	Single	0.01	0	65535	255	0	1.0
+<CONFIG>	Motor: Speed Integ. Max   		1328	Single	10	0	65535	255	0	1.0
+<CONFIG>	Motor: Speed Integ. Min   		1332	Single	-10	0	65535	255	0	1.0
+<CONFIG>	Motor: Max iq           		1336	Single	-10	0	65535	255	0	1.0
+<CONFIG>	Motor: Min iq           		1340	Single	-10	0	65535	255	0	1.0
+<CONFIG>	Motor: id Target        		1344	Single	2	0	65535	255	0	1.0
+<CONFIG>	Motor: Reactive P Gain       		1348	Single	0.01	0	65535	255	0	1.0
+<CONFIG>	Motor: Reactive I Gain       		1352	Single	0.01	0	65535	255	0	1.0
+<CONFIG>	Motor: Reactive D Gain       		1356	Single	0.01	0	65535	255	0	1.0
+<CONFIG>	Motor: Reactive TD Gain      		1360	Single	0.01	0	65535	255	0	1.0
+<CONFIG>	Motor: Reactive Integ. Max   		1364	Single	10	0	65535	255	0	1.0
+<CONFIG>	Motor: Reactive  Integ. Min   		1368	Single	-10	0	65535	255	0	1.0
+<CONFIG>	Motor: Reactive Output. Max   		1372	Single	10	0	65535	255	0	1.0
+<CONFIG>	Motor: Reactive Output. Min   		1376	Single	-10	0	65535	255	0	1.0
+<CONFIG>	Motor: Real P Gain       		1380	Single	0.01	0	65535	255	0	1.0
+<CONFIG>	Motor: Real I Gain       		1384	Single	0.01	0	65535	255	0	1.0
+<CONFIG>	Motor: Real D Gain       		1388	Single	0.01	0	65535	255	0	1.0
+<CONFIG>	Motor: Real TD Gain      		1392	Single	0.01	0	65535	255	0	1.0
+<CONFIG>	Motor: Real Integ. Max   		1396	Single	10	0	65535	255	0	1.0
+<CONFIG>	Motor: Real Integ. Min   		1400	Single	-10	0	65535	255	0	1.0
+<CONFIG>	Motor: Real Output. Max   		1404	Single	10	0	65535	255	0	1.0
+<CONFIG>	Motor: Real Output. Min   		1408	Single	-10	0	65535	255	0	1.0
+<CONFIG>	Motor: Default Max Feedback Amp		1412	Single	-10	0	65535	255	0	1.0
+<CONFIG>	Motor: Feedback Factor    		1416	Single	18	0	65535	255	0	1.0
+<CONFIG>	Motor: Phase Offset	   		1420	Single	10	0	65535	255	0	1.0
+<CONFIG>	Motor: Cosine Phase Offset   		1424	Single	1.02	0	65535	255	0	1.0
+<CONFIG>	Motor: Delta T          		1428	Single	0.0001	0	65535	255	0	1.0
+<CONFIG>	Motor: Frequency To Speed Fact.		1432	Single	7.5	0	65535	255	0	1.0
+<CONFIG>	Motor: Sine Filter Time Cons.		1436	Single	20	0	65535	255	0	1.0
+<CONFIG>	Motor: Resistance       		1440	Single	0.035	0	65535	255	0	1.0
+<CONFIG>	Motor: Inductor Coefficient		1444	Single	0.00107	0	65535	255	0	1.0
+<CONFIG>	Motor: Speed Timeout           		1448	Int32	30000	0	65535	255	0	1.0
+<CONFIG>	Motor: Mode             		1452	Int32	1	0	65535	255	0	1.0
+<CONFIG>	Motor: Reset Fault      		1	Bool	0	0	1	255	0	1.0
+<CONFIG>	Motor: Update Min / Max      		0	Bool	1	0	1	255	0	1.0
+<CONFIG>	CAN: Send Default Packet		2	Bool	1	0	1	255	0	1.0
+<CONFIG>	Loading: Maximum Idle Task Counts	1456	Int32	6	0	65535	255	0	1.0
+<CONFIG>	Loading: ISR Overhead			1460	Int32	6	0	65535	255	0	1.0
+<CONFIG>	Loading: Counts per second		1464	Int32	6	0	65535	255	0	1.0
+<CONFIG>	CAN: Packet Rate@3kHz,6=500sps		1468	Int32	6	0	65535	255	0	1.0
+
+//Command	Description			Address	DatType	SubRate	Module	VarType		Scale Factor
+<VARIABLE>	Analog: ANA_RSLV_SIN		0	Int16	1000	0	AnalogIn	1.0
+<VARIABLE>	Analog: ANA_V_A 		2	Int16	1000	0	AnalogIn	1.0
+<VARIABLE>	Analog: ANA_V_B 		4	Int16	1000	0	AnalogIn	1.0
+<VARIABLE>	Analog: ANA_V_C 		6	Int16	1000	0	AnalogIn	1.0
+<VARIABLE>	Analog: ANA_T_1 		8	Int16	1000	0	AnalogIn	1.0
+<VARIABLE>	Analog: ANA_RSLV_COS		10	Int16	1000	0	AnalogIn	1.0
+<VARIABLE>	Analog: ANA_V_BUS		12	Int16	1000	0	AnalogIn	1.0
+<VARIABLE>	Analog: ANA_I_IN		14	Int16	1000	0	AnalogIn	1.0
+<VARIABLE>	Analog: ANA_T_2 		16	Int16	1000	0	AnalogIn	1.0
+
+<VARIABLE>	Vector: BdT1			0	Single	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: BdT2			4	Single	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: McuT			8	Single	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: HvBusU			12	Single	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: PhaCurA			16	Single	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: PhaCurB			20	Single	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: PhaCurC			24	Single	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: HvBusCur		28	Single	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ResolverSinCos(1)	32	Single	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ResolverSinCos(2)	36	Single	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: MotPosnMag		0	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: MotSpdMag		4	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: MotPosnTrig(1)		8	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: MotPosnTrig(2)		12	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: MotPosnTrig(3)		16	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: MotPosnTrig(4)		20	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: MotPosnTrig(5)		24	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: MotPosnTrig(6)		28	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: PhaCurD			32	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: PhaCurQ			36	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: PhaUDCmd		40	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: PhaUQCmd		44	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: PhaUACmd		48	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: PhaUBCmd		52	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: PhaUCCmd		56	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: MotTqReqCan		60	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: MotTqCmdSpdCtl		64	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: PhaCurQTar		68	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: PhaCurDTar		72	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: MotTqMax		76	Single	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWIN_BdT1		40	Int16	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_BdT2		42	Int16	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_McuURef		44	Int16	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_McuT		46	Int16	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_McuUBat		48	Int16	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_HvBusU		50	Int16	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_PhaCurA		52	Int16	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_PhaCurB		54	Int16	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_PhaCurC		56	Int16	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_HvBusCur		58	Int16	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_PhaUA		60	Int16	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_PhaUB		62	Int16	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_PhaUC		64	Int16	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_ResolverSin	66	Int16	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_ResolverCos	68	Int16	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWOUT_PhaAPwmDc	80	Int16	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_PhaBPwmDc	82	Int16	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_PhaCPwmDc	84	Int16	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWIN_EncoderCt		70	Int16	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: MotSpd			86	Int16	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: MotSpdReqCan		88	Int16	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_McuData2Da(1)	90	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_McuData2Da(2)	91	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_McuData2Da(3)	92	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_McuData2Da(4)	93	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_McuData2Da(5)	94	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_McuData2Da(6)	95	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_McuData2Da(7)	96	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_McuData2Da(8)	97	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWIN_McuReqDa(1)	72	Int8	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_McuReqDa(2)	73	Int8	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_McuReqDa(3)	74	Int8	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_McuReqDa(4)	75	Int8	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_McuReqDa(5)	76	Int8	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_McuReqDa(6)	77	Int8	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_McuReqDa(7)	78	Int8	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_McuReqDa(8)	79	Int8	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_McuReqCt		80	Int8	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWOUT_McuData1Da(1)	98	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_McuData1Da(2)	99	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_McuData1Da(3)	100	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_McuData1Da(4)	101	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_McuData1Da(5)	102	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_McuData1Da(6)	103	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_McuData1Da(7)	104	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_McuData1Da(8)	105	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWIN_MaiPwrSts		81	Int8	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: ASWIN_AuxPwrSts		82	Int8	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: MaiPwrAcv		106	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: AuxPwrAcv		107	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: PwrCmd			108	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_GreenLed		109	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_RedLed		110	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_YellowLed	111	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_ResolverExctEna	112	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_CanPwrPwmEna	113	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_InPwrPwmEna	114	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_MtrPwrPwmEna	115	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_SwPwrPwmEna	116	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWOUT_PhaPwmEna	117	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: ASWIN_EncoderZ		83	Int8	1000	1	AnalogIn	1.0
+<VARIABLE>	Vector: DrvMod			118	Int8	1000	1	AnalogOut	1.0
+<VARIABLE>	Vector: DrvModReq		84	Int8	1000	1	AnalogIn	1.0
+
+<VARIABLE>	Motor: Current A		0	Single	1000	2	AnalogIn	1.0
+<VARIABLE>	Motor: Current B		4	Single	1000	2	AnalogIn	1.0
+<VARIABLE>	Motor: Current C		8	Single	1000	2	AnalogIn	1.0
+<VARIABLE>	Motor: Sine Feedback		12	Single	1000	2	AnalogIn	1.0
+<VARIABLE>	Motor: Cosine Feedback		16	Single	1000	2	AnalogIn	1.0
+<VARIABLE>	Motor: Bus Voltage		20	Single	1000	2	AnalogIn	1.0
+<VARIABLE>	Motor: Amplitude		0	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Frequency		4	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Phase    		8	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Point A  		12	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Point B  		16	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Point C  		20	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Point BC  		24	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Point CA  		28	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Point AB  		32	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Voltage A  		36	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Voltage B  		40	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Voltage C  		44	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: iq       		48	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: id       		52	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: id P Term		56	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: id I Term		60	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: id D Term		64	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: id TD Term		68	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: id Error 		72	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: id Integrator		76	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: id Adjustment		80	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Speed    		84	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Speed P Term		88	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Speed I Term		92	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Speed D Term		96	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Speed TD Term		100	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Speed Error 		104	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Speed Integrator		108	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Speed Ctrl. Out.		112	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Phase P Term		116	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Phase I Term		120	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Phase D Term		124	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Phase TD Term		128	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Phase Error 		132	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Phase Integrator		136	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Phase Ctrl. Out.		140	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Sine Angle		144	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Cosine Angle		148	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Corrected Angle		152	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Max Fb. Amp. 1		156	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Max Fb. Amp. 2		160	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Last Fb. Amp. 2		164	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Last Fb. Amp. 2		168	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Old Phase		172	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Filtered Sine		176	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Back EMF 		180	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: id Target		184	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: iq Target		188	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Applied Vd		192	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Applied Vq		196	Single	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Timeout Counter		200	Int32	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Freq. Samples		204	Int32	1000	2	AnalogOut	1.0
+<VARIABLE>	Motor: Faulted  		0	Bool	1000	2	DigitalOut	1.0
+<VARIABLE>	Motor: Previous Reset  		1	Bool	1000	2	DigitalOut	1.0
+<VARIABLE>	Motor: Prev. High Angle		2	Bool	1000	2	DigitalOut	1.0
+
+<VARIABLE>	Loading: Idle Percentage	0	Single	1000	3	AnalogOut	1.0
+<VARIABLE>	Loading: Task 0 (PwmFunct) Load	36	Single	1000	3	AnalogOut	1.0
+<VARIABLE>	Loading: Task 1 (Motor) Load	72	Single	1000	3	AnalogOut	1.0
+<VARIABLE>	Loading: Task 2 (DataMan) Load	108	Single	1000	3	AnalogOut	1.0
+<VARIABLE>	Loading: Total Load		112	Single	1000	3	AnalogOut	1.0
+<VARIABLE>	Loading: Corrected Load		116	Single	1000	3	AnalogOut	1.0
