@@ -22,6 +22,7 @@ void DataMan::Initialize()
 	_config.Digital = (DigitalConfigMan *)BspFlash::GetDigitalBufferLocation();
 
 	BspAnalog::LinkData(&_config.Analog->Analog, &_variables.AnalogIn.Analog, &_variables.AnalogOut.Analog);
+	TempSensor::LinkData(&_config.Analog->Temp, &_variables.AnalogIn.Temp, &_variables.AnalogOut.Temp);
 	VectorControl::LinkData(&_config.Analog->Vector, &_variables.AnalogIn.Vector, &_variables.AnalogOut.Vector);
 	MotorControl::LinkData(&_config.Analog->Motor, &_config.Digital->Motor, &_variables.AnalogIn.Motor, &_variables.AnalogOut.Motor, &_variables.DigitalOut.Motor);
 	ProcLoading::LinkData(&_config.Analog->Loading, &_variables.AnalogIn.Loading, &_variables.AnalogOut.Loading);
@@ -79,6 +80,7 @@ unsigned long DataMan::_configLength[2] =
 unsigned long DataMan::_relativeVariableLookup[NUM_MODULES][4] =
 {
 	{(unsigned long)&_variables.AnalogIn.Analog - (unsigned long)&_variables, (unsigned long)&_variables.DigitalIn.Analog - (unsigned long)&_variables, (unsigned long)&_variables.AnalogOut.Analog - (unsigned long)&_variables, (unsigned long)&_variables.DigitalOut.Analog - (unsigned long)&_variables},
+	{(unsigned long)&_variables.AnalogIn.Temp - (unsigned long)&_variables, (unsigned long)&_variables.DigitalIn.Temp - (unsigned long)&_variables, (unsigned long)&_variables.AnalogOut.Temp - (unsigned long)&_variables, (unsigned long)&_variables.DigitalOut.Temp - (unsigned long)&_variables},
 	{(unsigned long)&_variables.AnalogIn.Vector - (unsigned long)&_variables, (unsigned long)&_variables.DigitalIn.Vector - (unsigned long)&_variables, (unsigned long)&_variables.AnalogOut.Vector - (unsigned long)&_variables, (unsigned long)&_variables.DigitalOut.Vector - (unsigned long)&_variables},
 	{(unsigned long)&_variables.AnalogIn.Motor - (unsigned long)&_variables, (unsigned long)&_variables.DigitalIn.Motor - (unsigned long)&_variables, (unsigned long)&_variables.AnalogOut.Motor - (unsigned long)&_variables, (unsigned long)&_variables.DigitalOut.Motor - (unsigned long)&_variables},
 	{(unsigned long)&_variables.AnalogIn.Loading - (unsigned long)&_variables, (unsigned long)&_variables.DigitalIn.Loading - (unsigned long)&_variables, (unsigned long)&_variables.AnalogOut.Loading - (unsigned long)&_variables, (unsigned long)&_variables.DigitalOut.Loading - (unsigned long)&_variables}
@@ -87,6 +89,7 @@ unsigned long DataMan::_relativeVariableLookup[NUM_MODULES][4] =
 unsigned long DataMan::_relativeConfigLookup[NUM_MODULES][2] =
 {
 	{(unsigned long)&_config.Analog->Analog - (unsigned long)_config.Analog, (unsigned long)&_config.Digital->Analog - (unsigned long)_config.Digital},
+	{(unsigned long)&_config.Analog->Temp - (unsigned long)_config.Analog, (unsigned long)&_config.Digital->Temp - (unsigned long)_config.Digital},
 	{(unsigned long)&_config.Analog->Vector - (unsigned long)_config.Analog, (unsigned long)&_config.Digital->Vector - (unsigned long)_config.Digital},
 	{(unsigned long)&_config.Analog->Motor - (unsigned long)_config.Analog, (unsigned long)&_config.Digital->Motor - (unsigned long)_config.Digital},
 	{(unsigned long)&_config.Analog->Loading - (unsigned long)_config.Analog, (unsigned long)&_config.Digital->Loading - (unsigned long)_config.Digital}

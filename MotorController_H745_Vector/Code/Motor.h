@@ -17,8 +17,6 @@ class MotorControl
 		ANA_V_B,
 		ANA_V_C,
 		ANA_I_IN,
-		ANA_T_1,
-		ANA_T_2,
 		ANA_RSLV_SIN,
 		ANA_RSLV_COS,
 		NUM_ANALOGS

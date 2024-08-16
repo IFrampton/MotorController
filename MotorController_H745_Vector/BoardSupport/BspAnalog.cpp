@@ -12,7 +12,7 @@
 BspAnalog::AnalogConfig *BspAnalog::_config = (BspAnalog::AnalogConfig *)&BspAnalog::DummyVariable;
 BspAnalog::AnalogInputs *BspAnalog::_analogIn = (BspAnalog::AnalogInputs *)&BspAnalog::DummyVariable;
 BspAnalog::AnalogOutputs *BspAnalog::_analogOut = (BspAnalog::AnalogOutputs *)&BspAnalog::DummyVariable;
-long BspAnalog::_analogDataBuffer[3][19];
+long BspAnalog::_analogDataBuffer[3][20];
 bool BspAnalog::_initialized;
 bool BspAnalog::_dataLinked;
 unsigned char BspAnalog::_nextChannel[3];
@@ -63,6 +63,7 @@ void BspAnalog::InitializeAdc(void)
 				(0  <<  1)	|	// EOSMPIE = 0; End of sampling flag interrupt enable for regular conversions (0 = disabled)
 				(0  <<  0)	;	// ADRDYIE = 0; ADC ready interrupt enable (0 = disabled)
 	ADC2->IER = ADC1->IER;
+	ADC3->IER = ADC1->IER;
 	ADC1->CR =  (0  << 31)	|	// ADCAL = 0; ADC calibration (0 = Calibration complete)
 				(0  << 30)	|	// ADCALDIF = 0; Different mode for calibration (0 = single ended)
 				(0  << 29)	|	// DEEPPWD = 0; Deep power down enable (0 = disabled)
@@ -83,6 +84,7 @@ void BspAnalog::InitializeAdc(void)
 				(0  <<  1)	|	// ADDIS = 0; ADC disable command (0 = no command ongoing)
 				(0  <<  0)	;	// ADEN = 0; ADC enable command (0 = no command ongoing)
 	ADC2->CR = ADC1->CR;
+	ADC3->CR = ADC1->CR;
 	ADC1->CFGR = (0 << 31)	|	// JQDIS = 0; Injected Queue disabled
 				(0  << 28)	|	// AWD1CH = 0; Analog Input Channel 0 is monitored by watchdog (unused)
 				(0  << 25)	|	// JAUTO = 0; Automatic injected group conversion disabled
@@ -105,6 +107,7 @@ void BspAnalog::InitializeAdc(void)
 				(5  <<  2)	|	// RES = 5; Data resolution (0 = 16 bits, 5 = 14 bits, 6 = 12 bits, 3 = 10 bits, 7 = 8 bits)
 				(3  <<  0)	;	// DMNGT = 3; Data Management Confirmation (3 - DMA circular mode)
 	ADC2->CFGR = ADC1->CFGR;
+	ADC3->CFGR = ADC1->CFGR;
 	ADC1->CFGR2 = (0<< 31)	|	// LSHIFT = 0; Left Shift factor (0 = no left shift)
 //				(31 << 16)	|	// OSVR = 31; Oversampling Ratio (31 = 32 samples are down-sampled)
 				(7 << 16)	|	// OSVR = 31; Oversampling Ratio (7 = 8 samples are down-sampled)
@@ -118,6 +121,7 @@ void BspAnalog::InitializeAdc(void)
 				(0  <<  1)	|	// JOVSE = 0; Injected oversampling enable (0 = disabled)
 				(1  <<  0)	;	// ROVSE = 0; Regular oversampling enable (1 = enabled)
 	ADC2->CFGR2 = ADC1->CFGR2;
+	ADC3->CFGR2 = ADC1->CFGR2;
 	// Setup Sampling Time = t (Note: with 14bit conversion = 7.5 samples)
 	// t=0 gives 9 ADC Clocks = 1.1MSPS @ 10MHz input.
 	//		With 9 channels measured and 8 samples averaged gives 648 Counts per conversion, or 15.432kHz
@@ -153,6 +157,7 @@ void BspAnalog::InitializeAdc(void)
 				(t  <<  3)	|	// SMP1 = 1; Channel 1 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
 				(t  <<  0)	;	// SMP0 = 1; Channel 0 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
 	ADC2->SMPR1 = ADC1->SMPR1;
+	ADC3->SMPR1 = ADC1->SMPR1;
 	ADC1->SMPR2 = (t<< 27)	|	// SMP19 = 1; Channel 19 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
 				(t  << 24)	|	// SMP18 = 1; Channel 18 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
 				(t  << 21)	|	// SMP17 = 1; Channel 17 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
@@ -164,6 +169,7 @@ void BspAnalog::InitializeAdc(void)
 				(t  <<  3)	|	// SMP11 = 1; Channel 11 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
 				(t  <<  0)	;	// SMP10 = 1; Channel 10 sampling time selection (0 = 1.5 X adc_clk, 1 = 2.5 X adc_clk, 2 = 8.5 X adc_clk ...)
 	ADC2->SMPR2 = ADC1->SMPR2;
+	ADC3->SMPR2 = ADC1->SMPR2;
 	ADC1->PCSEL = (0<< 19)	|	// PCSEL19 = 0; Channel 19 is not pre-selected for conversion
 				(0  << 18)	|	// PCSEL18 = 0; Channel 18 is not pre-selected for conversion
 				(0  << 17)	|	// PCSEL17 = 0; Channel 17 is not pre-selected for conversion
@@ -185,34 +191,43 @@ void BspAnalog::InitializeAdc(void)
 				(0  <<  1)	|	// PCSEL1 = 0; Channel 1 is not pre-selected for conversion
 				(0  <<  0)	;	// PCSEL0 = 0; Channel 0 is not pre-selected for conversion
 	ADC2->PCSEL = ADC1->PCSEL;
+	ADC3->PCSEL = ADC1->PCSEL;
 	// Thresholds are not used
 	ADC1->LTR1 = 0; // Analog watchdog lower threshold register 1
 	ADC2->LTR1 = ADC1->LTR1;
+	ADC3->LTR1 = ADC1->LTR1;
 	ADC1->HTR1 = 0x03FFFFFF; // Analog watchdog higher threshold register 1
 	ADC2->HTR1 = ADC1->HTR1;
+	ADC3->HTR1 = ADC1->HTR1;
 	ADC1->SQR1 = (0 << 24)	|	// SQ4 = 0; 4th conversion in regular sequence
 				(0  << 18)	|	// SQ3 = 0; 3rd conversion in regular sequence
 				(0  << 12)	|	// SQ2 = 0; 2nd conversion in regular sequence
 				(0  <<  6)	|	// SQ1 = 0; 1st conversion in regular sequence
 				(0  <<  0)	;	// L = 0; Regular channel sequence length (0 = 1 conversion)
 	ADC2->SQR1 = ADC1->SQR1;
+	ADC3->SQR1 = ADC3->SQR1;
 	ADC1->SQR2 = (0 << 24)	|	// SQ9 = 0; 9th conversion in regular sequence
 				(0  << 18)	|	// SQ8 = 0; 8th conversion in regular sequence
 				(0  << 12)	|	// SQ7 = 0; 7th conversion in regular sequence
 				(0  <<  6)	|	// SQ6 = 0; 6th conversion in regular sequence
 				(0  <<  0)	;	// SQ5 = 0; 5th conversion in regular sequence
 	ADC2->SQR2 = ADC1->SQR2;
+	ADC3->SQR2 = ADC3->SQR2;
 	ADC1->SQR3 = (0 << 24)	|	// SQ14 = 0; 14th conversion in regular sequence
 				(0  << 18)	|	// SQ13 = 0; 13th conversion in regular sequence
 				(0  << 12)	|	// SQ12 = 0; 12th conversion in regular sequence
 				(0  <<  6)	|	// SQ11 = 0; 11th conversion in regular sequence
 				(0  <<  0)	;	// SQ10 = 0; 10th conversion in regular sequence
 	ADC2->SQR3 = ADC1->SQR3;
+	ADC3->SQR3 = ADC1->SQR3;
 	ADC1->SQR4 = (0 <<  6)	|	// SQ16 = 0; 16th conversion in regular sequence
 				(0  <<  0)	;	// SQ15 = 0; 15th conversion in regular sequence
 	ADC2->SQR4 = ADC1->SQR4;
+	ADC3->SQR4 = ADC1->SQR4;
 
 	volatile unsigned int read = ADC1->DR;
+	read = ADC2->DR;
+	read = ADC3->DR;
 
 	// None of the injected sequence is used
 	ADC1->JSQR = (0 << 27)	|	// JSQ4 = 0; 4th conversion in injected sequence
@@ -223,22 +238,27 @@ void BspAnalog::InitializeAdc(void)
 				(0  <<  2)	|	// JEXTSEL = 0; External trigger selection for injected group (0 = event 0)
 				(0  <<  0)	;	// JL = 0; Injected channel sequence length (0 = 1 conversion)
 	ADC2->JSQR = ADC1->JSQR;
+	ADC3->JSQR = ADC1->JSQR;
 	ADC1->OFR1 = (0 << 31)	|	// SSATE = 0; Signed saturation enable (0 = offset is subtracted)
 				(0  << 26)	|	// OFFSET_CH = 0; Channel selection for the data offset y (channel 0)
 				(0  <<  0)	;	// OFFSET = 0; Data offset y for the channel programmed into bits OFFSETy_CH[4:0] (0 = no offset)
 	ADC2->OFR1 = ADC1->OFR1;
+	ADC3->OFR1 = ADC1->OFR1;
 	ADC1->OFR2 = (0 << 31)	|	// SSATE = 0; Signed saturation enable (0 = offset is subtracted)
 				(0  << 26)	|	// OFFSET_CH = 0; Channel selection for the data offset y (channel 0)
 				(0  <<  0)	;	// OFFSET = 0; Data offset y for the channel programmed into bits OFFSETy_CH[4:0] (0 = no offset)
 	ADC2->OFR2 = ADC1->OFR2;
+	ADC3->OFR2 = ADC1->OFR2;
 	ADC1->OFR3 = (0 << 31)	|	// SSATE = 0; Signed saturation enable (0 = offset is subtracted)
 				(0  << 26)	|	// OFFSET_CH = 0; Channel selection for the data offset y (channel 0)
 				(0  <<  0)	;	// OFFSET = 0; Data offset y for the channel programmed into bits OFFSETy_CH[4:0] (0 = no offset)
 	ADC2->OFR3 = ADC1->OFR3;
+	ADC3->OFR3 = ADC1->OFR3;
 	ADC1->OFR4 = (0 << 31)	|	// SSATE = 0; Signed saturation enable (0 = offset is subtracted)
 				(0  << 26)	|	// OFFSET_CH = 0; Channel selection for the data offset y (channel 0)
 				(0  <<  0)	;	// OFFSET = 0; Data offset y for the channel programmed into bits OFFSETy_CH[4:0] (0 = no offset)
 	ADC2->OFR4 = ADC1->OFR4;
+	ADC3->OFR4 = ADC1->OFR4;
 
 	read = ADC1->JDR1;
 	read = ADC1->JDR2;
@@ -248,20 +268,30 @@ void BspAnalog::InitializeAdc(void)
 	read = ADC2->JDR2;
 	read = ADC2->JDR3;
 	read = ADC2->JDR4;
+	read = ADC3->JDR1;
+	read = ADC3->JDR2;
+	read = ADC3->JDR3;
+	read = ADC3->JDR4;
 
 	// Thresholds are not used
 	ADC1->AWD2CR = 0;
 	ADC2->AWD2CR = ADC1->AWD2CR;
+	ADC3->AWD2CR = ADC1->AWD2CR;
 	ADC1->LTR2 = 0; // Analog watchdog lower threshold register 2
 	ADC2->LTR2 = ADC1->LTR2;
+	ADC3->LTR2 = ADC1->LTR2;
 	ADC1->HTR2 = 0x03FFFFFF; // Analog watchdog higher threshold register 2
 	ADC2->HTR2 = ADC1->HTR2;
+	ADC3->HTR2 = ADC1->HTR2;
 	ADC1->AWD3CR = 0;
 	ADC2->AWD3CR = ADC1->AWD3CR;
+	ADC3->AWD3CR = ADC1->AWD3CR;
 	ADC1->LTR3 = 0; // Analog watchdog lower threshold register 3
 	ADC2->LTR3 = ADC1->LTR3;
+	ADC3->LTR3 = ADC1->LTR3;
 	ADC1->HTR3 = 0x03FFFFFF; // Analog watchdog higher threshold register 3
 	ADC2->HTR3 = ADC1->HTR3;
+	ADC3->HTR3 = ADC1->HTR3;
 
 	// Differential mode is unused in this configuration
 	ADC1->DIFSEL = (0<<19)	|	//DIFSEL19 = 0; Differential mode for channel 19 (0 = disabled)
@@ -285,8 +315,9 @@ void BspAnalog::InitializeAdc(void)
 				(0  <<  1)	|	//DIFSEL1 = 0; Differential mode for channel 1 (0 = disabled)
 				(0  <<  0)	;	//DIFSEL0 = 0; Differential mode for channel 0 (0 = disabled)
 	ADC2->DIFSEL = ADC1->DIFSEL;
+	ADC3->DIFSEL = ADC1->DIFSEL;
 
-	ADC12_COMMON->CCR = (0  << 24)	|	// VBATEN = 0; VBAT Enable (0 = channel disabled)
+	ADC12_COMMON->CCR = (1 << 24)	|	// VBATEN = 0; VBAT Enable (0 = channel disabled)
 				(1  << 23)	|	// TSEN = 0; Temperature Sensor Voltage Enable (1 = channel enabled)
 				(0  << 22)	|	// VREFEN = 0; V_refint enable (0 = channel disabled)
 				// 50MHz
@@ -297,9 +328,12 @@ void BspAnalog::InitializeAdc(void)
 				(0  << 14)	|	// DAMDF = 2; Dual ADC mode data format (2 = data formatting for 32 down to 1 bit resolution)
 				(0  <<  8)	|	// DELAY = 0; Delay between two sampling phases (0 = no delay)
 				(0  <<  0)	;	// DUAL = 0; Dual ADC mode selection (0 = All ADCs are independent)
+	ADC3_COMMON->CCR = ADC12_COMMON->CCR;
 
 	read = ADC12_COMMON->CDR;
 	read = ADC12_COMMON->CDR2;
+	read = ADC3_COMMON->CDR;
+	read = ADC3_COMMON->CDR2;
 	// Dummy code to make compiler happy.
 	if(read)
 	{
@@ -335,6 +369,21 @@ void BspAnalog::InitializeAdc(void)
 
 	// Wait for ADC ready
 	while((ADC2->ISR & (1 << 0)) == 0);
+
+	// Wait for voltage regulator
+	while((ADC3->ISR & (1 << 12)) == 0);
+
+	// <TODO = calibrate>
+	ADC3->CR |= (unsigned long)(1 << 31);
+
+	// Wait for calibration to complete
+	while((ADC3->CR & (1 << 31)));
+
+	// Enable ADC
+	ADC3->CR |= (1 << 0);
+
+	// Wait for ADC ready
+	while((ADC3->ISR & (1 << 0)) == 0);
 
 	_dmaRxChannel[0] = BspDma::SetupRxChannel(9, (unsigned long *)&ADC1->DR, (unsigned long *)&_analogDataBuffer[0][0], 2, sizeof(_analogDataBuffer[0][0]) / sizeof(long));
 	_dmaRxChannel[1] = BspDma::SetupRxChannel(10, (unsigned long *)&ADC2->DR, (unsigned long *)&_analogDataBuffer[1][0], 2, sizeof(_analogDataBuffer[0][0]) / sizeof(long));

@@ -18,6 +18,8 @@ class ProcLoading
 		Spare_Task,
 		Motor_Task,
 		DataMan_Task,
+		TempSensor_Task,
+		Extra_Task,
 		NUMBER_OF_TASKS
 	};
 	public: struct LoadingInfo

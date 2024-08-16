@@ -5,8 +5,9 @@
 #ifndef DATAMAN_H
 #define DATAMAN_H
 
-#include "BspAnalog.h"
 #include "BspFlash.h"
+#include "BspAnalog.h"
+#include "TempSensor.h"
 #include "VectorControl.h"
 #include "Motor.h"
 #include "Loading.h"
@@ -18,6 +19,7 @@ class DataMan
 	enum Modules
 	{
 		Analog,
+		Temp,
 		Vector,
 		Motor,
 		Loading,
@@ -26,6 +28,7 @@ class DataMan
 	struct AnalogConfigMan
 	{
 		BspAnalog::AnalogConfig Analog;
+		TempSensor::TempSensorConfig Temp;
 		VectorControl::VectorConfig Vector;
 		MotorControl::MotorConfig Motor;
 		ProcLoading::LoadingConfig Loading;
@@ -34,6 +37,7 @@ class DataMan
 	struct DigitalConfigMan
 	{
 		BspAnalog::AnalogDigitalConfig Analog;
+		bool Temp;
 		VectorControl::VectorDigitalConfig Vector;
 		MotorControl::MotorDigitalConfig Motor;
 		ProcLoading::LoadingDigitalConfig Loading;
@@ -43,11 +47,11 @@ class DataMan
 	{
 		AnalogConfigMan *Analog;
 		DigitalConfigMan *Digital;
-		long BookEnd;
 	};
 	struct AnalogInputMan
 	{
 		BspAnalog::AnalogInputs Analog;
+		TempSensor::TempSensorInputs Temp;
 		VectorControl::VectorInputs Vector;
 		MotorControl::MotorInputs Motor;
 		ProcLoading::LoadingInputs Loading;
@@ -56,6 +60,7 @@ class DataMan
 	struct DigitalInputMan
 	{
 		BspAnalog::AnalogDigitalInputs Analog;
+		bool Temp;
 		VectorControl::VectorDigitalInputs Vector;
 		MotorControl::MotorDigitalInputs Motor;
 		ProcLoading::LoadingDigitalInputs Loading;
@@ -64,6 +69,7 @@ class DataMan
 	struct AnalogOutputMan
 	{
 		BspAnalog::AnalogOutputs Analog;
+		TempSensor::TempSensorOutputs Temp;
 		VectorControl::VectorOutputs Vector;
 		MotorControl::MotorOutputs Motor;
 		ProcLoading::LoadingOutputs Loading;
@@ -72,6 +78,7 @@ class DataMan
 	struct DigitalOutputMan
 	{
 		BspAnalog::AnalogDigitalOutputs Analog;
+		bool Temp;
 		VectorControl::VectorDigitalOutputs Vector;
 		MotorControl::MotorDigitalOutputs Motor;
 		ProcLoading::LoadingDigitalOutputs Loading;

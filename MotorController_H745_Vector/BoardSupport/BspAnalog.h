@@ -16,8 +16,8 @@ class BspAnalog
 
 	public: struct AnalogConfig
 	{
-		long Offset[3][19];
-		float ScaleFactor[3][19];
+		long Offset[3][20];
+		float ScaleFactor[3][20];
 		long ExternalOffset[3];
 		float ExternalScaleFactor[3];
 	};
@@ -61,7 +61,7 @@ class BspAnalog
 			long *Offset;
 			float *ScaleFactor;
 	};
-	private: static long _analogDataBuffer[3][19];
+	private: static long _analogDataBuffer[3][20];
 	private: static bool _initialized;
 	private: static bool _dataLinked;
 	private: static unsigned char _nextChannel[3];

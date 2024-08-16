@@ -47,8 +47,6 @@ void MotorControl::Initialize(void)
 	BspAnalog::SetupChannel(0, 15,  &_analogChannels[ANA_V_C]);
 	BspAnalog::SetupChannel(1, 14,  &_analogChannels[ANA_I_IN]);
 #endif
-	BspAnalog::SetupChannel(0, 4,  &_analogChannels[ANA_T_1]);
-	BspAnalog::SetupChannel(1, 8,  &_analogChannels[ANA_T_2]);
 	BspAnalog::SetupExternalChannel(0, &_externalChannels[ANA_I_A]);
 	BspAnalog::SetupExternalChannel(1, &_externalChannels[ANA_I_B]);
 	BspAnalog::SetupExternalChannel(2, &_externalChannels[ANA_I_C]);
